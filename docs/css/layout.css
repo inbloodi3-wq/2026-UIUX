@@ -1,11 +1,13 @@
 /* Layout — Page 골격 */
 
-/* Sheet: 종이 한 장을 화면 가득 펼친 면. Cover와 Loading 화면이 같이 쓴다.
-   - 밝은 종이 바탕과 왼쪽의 검은 띠(가운데가 튀어나온 모양)를 그린다.
-   - --px 를 화면 폭에 맞춰 정한다. 이 안의 모든 크기는 --px 를 곱해 쓴다.
-   - 종이 질감은 자체 제작한 반복 Tile이다(scripts/assets/make-paper-texture.py). 띠는 Tile에 없고 CSS가 그린다.
-   - Loading 화면과 Cover가 같은 위치에서 같은 Tile을 깔기 때문에 전환할 때 바탕이 변하지 않는다. */
-.l-sheet {
+/* Portfolio의 물리적 구조
+   portfolio-stage    책상. Folder가 들어오는 동안에만 가장자리에서 보인다.
+     portfolio-folder 포트폴리오 파일 한 권. 띠(binding)와 종이가 한 물체로 함께 움직인다.
+       binding        왼쪽의 검은 띠(가운데가 튀어나온 모양)
+       sheet-stack    종이 묶음. 지금은 Cover 한 장이다. 뒤에 다른 Sheet를 넣을 수 있다.
+
+   --px 는 화면 폭에 맞춰 Stage에서 정한다. 이 안의 모든 크기는 --px 를 곱해 쓴다. */
+.portfolio-stage {
   --px: calc(100vw / var(--sheet-scale-base-mobile));
   --sheet-padding-left: calc(var(--layout-sheet-padding-left-mobile) * var(--px));
   --sheet-padding-right: calc(var(--layout-sheet-padding-right-mobile) * var(--px));
@@ -14,12 +16,21 @@
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  background: var(--color-cover-paper) url("../assets/paper-texture.webp") repeat 0 0;
+  background: var(--color-stage);
   overflow: hidden;
 }
 
-.l-sheet::before {
-  content: "";
+/* 종이 질감은 자체 제작한 반복 Tile이다(scripts/assets/make-paper-texture.py). 띠는 Tile에 없다. */
+.portfolio-folder {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--color-cover-paper) url("../assets/paper-texture.webp") repeat 0 0;
+  box-shadow: var(--shadow-folder-settled);
+  overflow: hidden;
+}
+
+.binding {
   position: absolute;
   z-index: 2;
   inset: 0 auto 0 0;
@@ -37,8 +48,13 @@
   );
 }
 
+.sheet-stack {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 600px) {
-  .l-sheet {
+  .portfolio-stage {
     --px: calc(100vw / var(--sheet-scale-base-tablet));
     --sheet-padding-left: calc(var(--layout-sheet-padding-left-tablet) * var(--px));
     --sheet-padding-right: calc(var(--layout-sheet-padding-right-tablet) * var(--px));
@@ -47,9 +63,81 @@
 
 /* Desktop: Figma 구성 그대로. 1920에서 --px 는 정확히 1px이다. */
 @media (min-width: 1024px) {
-  .l-sheet {
+  .portfolio-stage {
     --px: calc(min(100vw, 1920px) / 1920);
     --sheet-padding-left: calc(var(--layout-cover-padding-left) * var(--px));
     --sheet-padding-right: calc(var(--layout-cover-padding-right) * var(--px));
+  }
+}
+
+/* ---------- Folder가 책상에 놓이는 동작 ----------
+   Loading이 끝나면 Folder 전체가 오른쪽 위에서 비스듬히 다가와(approach) 책상에 닿고(landing)
+   제자리에 자리 잡는다(settle). 그림자는 떠 있을 때 넓고 흐리며, 닿을 때 짧고 진해진다.
+   멈춘 뒤의 모습은 화면을 가득 채운 Cover 그대로다. */
+
+.is-loading .portfolio-folder {
+  visibility: hidden;
+  /* JavaScript가 도중에 멈춰도 Folder가 숨은 채로 남지 않게 한다 */
+  animation: folder-failsafe 1ms 8s forwards;
+}
+
+.is-loaded .portfolio-folder {
+  animation: folder-land var(--duration-folder) var(--delay-folder) both;
+}
+
+@keyframes folder-land {
+  0% {
+    opacity: 0;
+    transform: translate(var(--folder-start-x), var(--folder-start-y)) rotate(var(--folder-start-rotate)) scale(var(--folder-start-scale));
+    box-shadow: var(--shadow-folder-floating);
+    animation-timing-function: var(--ease-folder-approach);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  /* landing: 책상에 닿는 순간. 살짝 지나쳐 눌린다. */
+  66% {
+    opacity: 1;
+    transform: translate(var(--folder-landing-x), var(--folder-landing-y)) rotate(var(--folder-landing-rotate)) scale(1);
+    box-shadow: var(--shadow-folder-landing);
+    animation-timing-function: linear;
+  }
+
+  80% {
+    transform: translate(var(--folder-landing-x), var(--folder-landing-y)) rotate(var(--folder-landing-rotate)) scale(1);
+    box-shadow: var(--shadow-folder-landing);
+    animation-timing-function: var(--ease-folder-settle);
+  }
+
+  /* settle: 제자리 */
+  100% {
+    opacity: 1;
+    transform: none;
+    box-shadow: var(--shadow-folder-settled);
+  }
+}
+
+@keyframes folder-failsafe {
+  to {
+    visibility: visible;
+  }
+}
+
+/* 움직임을 줄이도록 설정한 환경: 이동·회전 없이 짧게 나타난다 */
+@media (prefers-reduced-motion: reduce) {
+  .is-loaded .portfolio-folder {
+    animation: folder-fade var(--duration-folder) both;
+  }
+}
+
+@keyframes folder-fade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

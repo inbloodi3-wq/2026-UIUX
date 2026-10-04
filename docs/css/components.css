@@ -5,34 +5,13 @@
 .cover {
   display: flex;
   align-items: center;
-}
-
-/* Cover 종이 한 장. Loading이 끝나면 오른쪽에서 들어와 왼쪽 띠 아래에 끼워진다.
-   멈춘 뒤에는 바탕 종이와 같은 위치에 같은 질감을 깔아 겹쳐 보이지 않는다.
-   띠(l-sheet::before)는 이 종이보다 위에 있고 움직이지 않는다. */
-.cover__sheet {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: var(--color-cover-paper) url("../assets/paper-texture.webp") repeat 0 0;
-  border-left: 1px solid var(--color-sheet-edge);
-  box-shadow: calc(var(--size-sheet-shadow-offset) * var(--px) * -1) 0 calc(var(--size-sheet-shadow-blur) * var(--px)) var(--shadow-sheet-edge);
-  transition:
-    transform var(--duration-sheet) var(--ease-sheet) var(--delay-sheet),
-    opacity var(--duration-sheet) var(--ease-sheet) var(--delay-sheet);
-}
-
-.is-loading .cover__sheet {
-  opacity: var(--sheet-enter-opacity);
-  transform: translateX(var(--sheet-enter-offset));
-  transition: none;
-  animation: cover-failsafe 1ms 8s forwards;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 /* Figma: 1080 높이 화면 안의 950 높이 영역. 위아래 여백을 뺀 나머지를 채운다. */
 .cover__inner {
   position: relative;
-  z-index: 3;
   display: flex;
   align-items: center;
   width: 100%;
@@ -151,7 +130,8 @@
 }
 
 /* ---------- Cover 등장 ----------
-   Loading이 끝나면 종이가 들어오고, 안착한 뒤 글자들이 아래에서 제자리로 올라오며 차례로 나타난다.
+   Folder가 책상에 자리 잡을 즈음 글자들이 아래에서 제자리로 올라오며 차례로 나타난다(layout.css의 folder-land 참고).
+   순서: 필기체 문구 → 제목 → 이름·직함 → 연도·연락처
    숨김 상태는 JavaScript가 Loading을 켰을 때(.is-loading)만 적용된다. */
 
 .cover__reveal {
@@ -161,11 +141,11 @@
   transition-delay: var(--delay-reveal);
 }
 
-.cover__reveal:nth-child(2) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 1); }
-.cover__reveal:nth-child(3) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 2); }
-.cover__reveal:nth-child(4) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 3); }
-.cover__year.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 4); }
-.cover__contact.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 5); }
+.cover__title.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 1); }
+.cover__name.cover__reveal,
+.cover__caption.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 2); }
+.cover__year.cover__reveal,
+.cover__contact.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 3); }
 
 .is-loading .cover__reveal {
   opacity: 0;
@@ -183,7 +163,8 @@
 }
 
 /* ---------- Loader ----------
-   Cover와 같은 종이·띠·여백·글자 양식을 쓴다. 가는 선 하나가 왼쪽에서 오른쪽으로 찬다. */
+   Folder가 놓이기 전의 빈 책상(Stage) 위에 보인다. Cover와 같은 여백·글자 양식을 쓰고 색만 어두운 바탕에 맞춘다.
+   가는 선 하나가 왼쪽에서 오른쪽으로 찬다. */
 
 .loader {
   display: none;
@@ -196,6 +177,7 @@
   z-index: 10;
   display: flex;
   align-items: center;
+  background: var(--color-stage);
   pointer-events: none;
   transition:
     opacity var(--duration-loader-out) var(--ease-out),
@@ -230,7 +212,7 @@
   align-items: baseline;
   justify-content: space-between;
   padding-bottom: calc(var(--space-cover-stack-gap) * 1px);
-  color: var(--color-cover-text);
+  color: var(--color-profile-heading);
 }
 
 .loader__label {
@@ -239,7 +221,7 @@
   line-height: var(--text-cover-caption-leading);
   letter-spacing: calc(var(--text-small-tracking-mobile) * 1px);
   text-transform: uppercase;
-  color: var(--color-cover-caption);
+  color: var(--color-profile-muted);
 }
 
 .loader__value {
@@ -252,12 +234,12 @@
 
 .loader__track {
   height: calc(var(--size-cover-year-rule-height) * 1px);
-  background: var(--color-contents-rule);
+  background: var(--color-profile-divider);
 }
 
 .loader__bar {
   height: 100%;
-  background: var(--color-cover-text);
+  background: var(--color-profile-heading);
   transform: scaleX(0);
   transform-origin: left center;
 }

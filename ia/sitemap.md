@@ -89,7 +89,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 ## Interactions
 | ID | 위치 | 동작 | JS 없이 |
 |---|---|---|---|
-| loading | index 진입 시 | Loading 화면 → 진행 표시 → Cover 종이가 오른쪽에서 들어와 왼쪽 띠 아래에 안착 → Cover 글자 등장(사용자 지정, 2026-10-04) | Loading 화면이 나타나지 않고 Cover가 바로 보인다 |
+| loading | index 진입 시 | 빈 책상 위의 Loading 표시 → Portfolio Folder(띠 + 종이)가 오른쪽 위에서 다가와 책상에 놓임 → Cover 글자 등장(사용자 지정, 2026-10-04) | Loading 없이 Cover가 바로 보인다 |
 
 ## Open Content Requests
 `design-source/implementation-spec.md`의 Content Gaps 참조.

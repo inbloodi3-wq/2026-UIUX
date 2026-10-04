@@ -241,21 +241,27 @@
   --space-profile-stack-gap-compact: 48;
   --space-profile-groups-gap-compact: 40;  /* 390 폭: 제목 묶음 높이를 고정하지 않고 줄 높이로 간격을 만든다 */
 
-  /* Motion — Figma에 없다. Loading → Cover 전환용(사용자 지정 Interaction).
-     근거: design-source/implementation-spec.md "Loading Experience" */
-  --duration-loader-out: 200ms;   /* Loading 글자·선이 사라지는 시간 */
-  --delay-sheet: 200ms;           /* 그 뒤에 Cover 종이가 들어오기 시작한다 */
-  --duration-sheet: 600ms;        /* 종이가 오른쪽에서 들어와 띠 아래에 안착하는 시간 */
-  --ease-sheet: cubic-bezier(0.25, 0.75, 0.2, 1);   /* 들어오면서 점점 느려져 끝에서 천천히 멈춘다(튕김 없음) */
-  --sheet-enter-offset: 100%;     /* 종이의 시작 위치: 화면 오른쪽 바깥 */
-  --sheet-enter-opacity: 0.9;
-  --shadow-sheet-edge: rgba(0, 0, 0, 0.2);        /* 들어오는 종이의 왼쪽 가장자리 그림자 */
-  --color-sheet-edge: rgba(255, 255, 255, 0.55);  /* 종이 가장자리의 밝은 선 */
-  --size-sheet-shadow-offset: 26;
-  --size-sheet-shadow-blur: 54;
-  --delay-reveal: 700ms;          /* 종이가 거의 안착한 뒤 글자가 나타나기 시작한다 */
+  /* Motion — Figma에 없다. Loading → Folder가 책상에 놓임 → Cover 글자 등장(사용자 지정 Interaction).
+     근거: design-source/implementation-spec.md "Cover Entry Motion" */
+  --color-stage: #3a3836;            /* 책상. Folder가 들어오는 동안 가장자리에서 보이는 따뜻한 짙은 회색. 띠(#272727)보다 밝아 Folder 외곽과 그림자가 보인다 */
+  --duration-loader-out: 200ms;      /* Loading 글자·선이 사라지는 시간 */
+  --delay-folder: 150ms;             /* 그 뒤에 Folder가 나타나기 시작한다 */
+  --duration-folder: 640ms;          /* approach 약 420ms + landing 약 90ms + settle 약 130ms */
+  --ease-folder-approach: cubic-bezier(0.2, 0.6, 0.2, 1);   /* 처음엔 빠르고 책상에 가까워질수록 느려진다 */
+  --ease-folder-settle: cubic-bezier(0.3, 0, 0.3, 1);
+  --folder-start-x: 6vw;             /* 시작: 오른쪽 위, 살짝 기울고 조금 작다 */
+  --folder-start-y: -4vh;
+  --folder-start-rotate: 1.4deg;
+  --folder-start-scale: 0.97;
+  --folder-landing-x: -3px;          /* 닿는 순간: 제자리를 아주 조금 지나친다 */
+  --folder-landing-y: 4px;
+  --folder-landing-rotate: -0.18deg;
+  --shadow-folder-floating: 0 44px 90px rgba(0, 0, 0, 0.42);
+  --shadow-folder-landing: 0 8px 18px rgba(0, 0, 0, 0.5);
+  --shadow-folder-settled: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --delay-reveal: 690ms;             /* Folder가 거의 자리 잡을 때 글자가 나타나기 시작한다 */
   --duration-reveal: 600ms;
-  --stagger-reveal: 80ms;
+  --stagger-reveal: 90ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --distance-reveal: 14;
 }
@@ -264,10 +270,8 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-loader-out: 1ms;
-    --delay-sheet: 0ms;
-    --duration-sheet: 1ms;
-    --sheet-enter-offset: 0%;
-    --sheet-enter-opacity: 1;
+    --delay-folder: 0ms;
+    --duration-folder: 160ms;
     --delay-reveal: 0ms;
     --duration-reveal: 180ms;
     --stagger-reveal: 0ms;

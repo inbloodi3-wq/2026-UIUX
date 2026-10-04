@@ -25,37 +25,43 @@
 </head>
 <body>
 
-  <div class="loader l-sheet" data-loader>
-    <div class="loader__inner" role="status">
-      <div class="loader__row">
-        <span class="loader__label">Loading</span>
-        <span class="loader__value" data-loader-value>0%</span>
+  <main>
+    <div class="portfolio-stage">
+      <div class="loader" data-loader>
+        <div class="loader__inner" role="status">
+          <div class="loader__row">
+            <span class="loader__label">Loading</span>
+            <span class="loader__value" data-loader-value>0%</span>
+          </div>
+          <div class="loader__track">
+            <div class="loader__bar" data-loader-bar></div>
+          </div>
+        </div>
       </div>
-      <div class="loader__track">
-        <div class="loader__bar" data-loader-bar></div>
+
+      <div class="portfolio-folder">
+        <div class="binding" aria-hidden="true"></div>
+        <div class="sheet-stack">
+          <section class="cover sheet" id="cover">
+            <div class="cover__inner">
+              <div class="cover__heading">
+                <p class="cover__script cover__reveal">Design with clarity.</p>
+                <h1 class="cover__title cover__reveal">Portfolio</h1>
+                <p class="cover__name cover__reveal">Kim Yun-Gyeom</p>
+                <p class="cover__caption cover__reveal">BRAND &amp; WEB DESIGN PORTFOLIO</p>
+              </div>
+
+              <p class="cover__year cover__reveal">2026</p>
+
+              <address class="cover__contact cover__reveal">
+                <span>inbloodi3@gmail.com</span>
+                <span>Seoul, Korea</span>
+              </address>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-
-  <main>
-    <section class="cover l-sheet" id="cover">
-      <div class="cover__sheet" aria-hidden="true"></div>
-      <div class="cover__inner">
-        <div class="cover__heading">
-          <p class="cover__script cover__reveal">Design with clarity.</p>
-          <h1 class="cover__title cover__reveal">Portfolio</h1>
-          <p class="cover__name cover__reveal">Kim Yun-Gyeom</p>
-          <p class="cover__caption cover__reveal">BRAND &amp; WEB DESIGN PORTFOLIO</p>
-        </div>
-
-        <p class="cover__year cover__reveal">2026</p>
-
-        <address class="cover__contact cover__reveal">
-          <span>inbloodi3@gmail.com</span>
-          <span>Seoul, Korea</span>
-        </address>
-      </div>
-    </section>
 
     <section class="profile" id="profile">
       <div class="profile__card">

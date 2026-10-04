@@ -239,7 +239,7 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
 - Figma의 띠는 사진 속 종이라서 경계에 가는 밝은 선(양각 느낌)과 약간 둥근 모서리가 있다. CSS 띠는 경계가 곧다.
 - 종이 질감은 통계는 맞췄지만 무늬 자체는 다르다. Figma 쪽이 섬유 결이 조금 더 가늘고 또렷하다. Tile이 512px마다 반복된다.
 
-## 21. Cover Entry Motion (2026-10-04, 사용자 지정 — 18절의 "전환"을 대체한다)
+## 21. (폐기) 종이 한 장이 옆에서 들어오는 방식 — 23절로 대체됐다. 세로 그림자가 화면을 지나가는 Wipe처럼 보여 사용자가 폐기했다
 - **개념**: Loading → 종이 한 장이 오른쪽에서 들어온다 → 왼쪽 띠(Binding) 아래에 안착한다 → Cover 글자가 나타난다.
 - **구조**: `.cover__sheet`는 Cover 위에 겹친 종이 Layer다(같은 질감 Tile). 띠(`l-sheet::before`)는 그 위에 있고 Loading부터 끝까지 움직이지 않는다. 종이의 왼쪽 가장자리에 그림자(`--shadow-sheet-edge`)와 가는 밝은 선(`--color-sheet-edge`)이 있어 같은 종이 위를 지나가는 것이 보인다. 멈춘 뒤에는 바탕과 같은 위치에 같은 질감이 놓여 겹친 것이 보이지 않는다.
 - **시간**(Loading 종료 = 0): Loading 글자·선 사라짐 `--duration-loader-out` → `--delay-sheet` 뒤 종이 진입 `--duration-sheet`(`--ease-sheet`, 튕김 없음, 시작 위치 `--sheet-enter-offset` = 화면 오른쪽 바깥, 불투명도 `--sheet-enter-opacity` → 1) → `--delay-reveal`부터 글자가 `--stagger-reveal` 간격으로: 필기체 문구 → 제목 → 이름 → 직함 줄 → 연도 → 연락처. 글자는 `--distance-reveal`만큼 아래에서 올라온다.
@@ -280,4 +280,29 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
 - Card·사진 틀·모든 Text의 x 위치: 차이 0–1.
 - Text의 y 위치: 기간 0, 이력 이름 +1, 필기체 제목·이름·Tool Card 글자 +2. 서체별 세로 Metric 처리 차이로 본다(고치지 않음, P3).
 - 사진 아래 영역: Figma에는 생년월일 줄과 전화번호 줄이 있어 이름 블록과 연락처가 더 길다. 삭제 결정에 따라 이메일 줄이 전화번호 자리에 온다.
+
+## 23. Cover Entry Motion — Folder가 책상에 놓인다 (2026-10-04, 사용자 지정. 18절의 Visual·전환과 21절을 대체한다)
+- **개념**: "포트폴리오 파일 하나를 책상 위에 내려놓는다." 띠(Binding)와 종이를 따로 움직이지 않고 **하나의 물체(`portfolio-folder`)**로 다룬다.
+- **구조**
+  ```
+  portfolio-stage      책상(`--color-stage`). Folder가 들어오는 동안에만 가장자리에서 보인다
+    loader             Folder가 놓이기 전의 빈 책상 위에 뜨는 Loading 표시
+    portfolio-folder   파일 한 권. 종이 바탕 + 그림자. 이 요소 하나가 움직인다
+      binding          왼쪽 띠(이전의 `l-sheet::before`)
+      sheet-stack      종이 묶음
+        cover (sheet)  지금은 Cover 한 장
+  ```
+  뒤에 Profile·Contents를 Sheet로 넣을 수 있는 구조다. 그때는 Folder를 다시 움직이지 않고 Sheet만 바꾼다(이번에는 구현하지 않았다). 현재 Profile은 Stage 아래의 일반 Section으로 남아 있다.
+- **Loading 화면이 바뀌었다**: Folder가 나중에 놓이려면 그 전에는 책상만 보여야 한다. 그래서 Loading은 종이 위가 아니라 **빈 책상(Stage 색) 위**에 뜬다. 배치·서체·크기·진행 방식은 그대로이고 색만 어두운 바탕에 맞췄다(Profile의 글자색 Token 사용). 띠는 Folder의 일부이므로 Loading 중에는 보이지 않는다.
+- **동작**(Loading 종료 = 0, `layout.css`의 `folder-land`)
+  | 구간 | 시간 | 모습 |
+  |---|---|---|
+  | Loading 글자·선 사라짐 | 0 – 약 120ms | |
+  | approach | 150 – 약 570ms | 오른쪽 위(`--folder-start-x/y`)에서 살짝 기울고(`--folder-start-rotate`) 조금 작은(`--folder-start-scale`) 상태로 나타나 감속하며 다가온다. 그림자는 넓고 흐리다(`--shadow-folder-floating`) |
+  | landing | 약 570 – 660ms | 제자리를 아주 조금 지나쳐 닿는다(`--folder-landing-x/y/rotate`). 그림자가 짧고 진해진다(`--shadow-folder-landing`) |
+  | settle | 약 660 – 790ms | 제자리. 얕은 그림자(`--shadow-folder-settled`). 되튀지 않는다 |
+  | 글자 등장 | 약 690ms부터 | 필기체 문구 → 제목 → 이름·직함 → 연도·연락처(`--stagger-reveal` 간격) |
+- 멈춘 뒤의 화면은 Figma Cover와 같다(1920 재측정: 제목 0px, 나머지 0–1px).
+- **Reduced Motion**: 이동·회전·축소 없이 짧은 Fade. **JavaScript 실패**: 8초 뒤 Folder와 글자가 보인다. **JavaScript 꺼짐**: Loading 없이 Cover가 바로 보인다.
+- 쓰는 속성: `transform`, `opacity`, `box-shadow`. Library 없음.
 

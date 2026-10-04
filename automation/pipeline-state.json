@@ -38,10 +38,10 @@
     "page": "index",
     "section": "contents (다음) — profile은 사진만 남음",
     "updated_at": "2026-10-04",
-    "resume_hint": "Loading → Cover 진입 Motion과 index#profile 구현 완료. 남은 것: 프로필 사진(본인 사진·웹 공개 승인 확인 후 assets/manifest 등록 → .profile__photo 안에 img). 다음 Section은 index#contents(Figma 2012:9389, Token은 tokens.css에 있음, 서체는 이미 있는 Outfit·Allura). Contents의 Project 제목을 링크로 쓸지는 Project Page(G1/G2) 결정에 달려 있다. QA: node scripts/qa/capture.cjs"
+    "resume_hint": "Cover Entry Motion이 Folder(띠+종이 한 물체)가 책상에 놓이는 방식으로 바뀌었다(layout.css folder-land, 구조: portfolio-stage > loader + portfolio-folder > binding + sheet-stack > cover). Loading은 이제 Stage 색 위에 뜬다. 사용자가 실제 재생을 보고 승인하면 다음으로 간다. 남은 것: 프로필 사진 승인 확인, index#contents. Profile을 sheet-stack 안의 Sheet로 옮기는 것과 Sheet 전환 Motion은 아직 하지 않았다(사용자 지시 대기)."
   },
   "render_checked": true,
-  "qa_status": "Cover Entry Motion PASS(네 Viewport, Reduced Motion, JS 실패). index#profile: 1920에서 Figma와 x 0–1px / y 0–2px, 1440·768·390 측정 문제 0건. 프로필 사진 미적용(승인 확인 대기)",
+  "qa_status": "Cover Entry Motion을 Folder 방식으로 재구현(네 Viewport 측정 문제 0건, Reduced Motion·JS 실패·JS 꺼짐 확인). 실제 재생에 대한 사용자 확인 대기. index#profile은 이전 실행에서 구현됨(사진 미적용)",
   "retry_count": 2,
   "blockers": [
     {
@@ -69,7 +69,7 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Cover Entry Motion(종이가 오른쪽에서 들어와 띠 아래에 안착 → 글자 등장) 추가, Loading 준비 조건을 Cover 필수 Asset으로 한정. index#profile 구현(이메일 오탈자 수정, 전화번호·생년월일 제외, 사진 미적용). Pretendard 400/700, Noto Sans KR 글자 Subset, Outfit 600 Self-host. Breakpoint 1440 추가."
+    "summary": "Cover Entry Motion 재구현: 종이만 옆에서 들어오던 방식 폐기 → portfolio-stage / portfolio-folder / binding / sheet-stack 구조, Folder 전체가 오른쪽 위에서 다가와 landing → settle. Loading 화면 바탕이 종이에서 Stage 색으로 변경. l-sheet와 cover__sheet 제거."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {
