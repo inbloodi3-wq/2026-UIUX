@@ -1,0 +1,247 @@
+/* Components */
+
+/* ---------- Cover ---------- */
+
+.cover {
+  display: flex;
+  align-items: center;
+}
+
+/* Figma: 1080 높이 화면 안의 950 높이 영역. 위아래 여백을 뺀 나머지를 채운다. */
+.cover__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh - 2 * var(--sheet-margin-block));
+  height: calc(100svh - 2 * var(--sheet-margin-block));
+  min-height: calc(var(--layout-cover-title-block-height) * var(--px));
+  padding-left: var(--sheet-padding-left);
+  padding-right: var(--sheet-padding-right);
+}
+
+.cover__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: max(calc(var(--space-cover-stack-gap) * var(--px)), calc(var(--text-cover-stack-gap-min) * 1px));
+}
+
+.cover__script {
+  padding-bottom: calc(var(--space-cover-script-bottom) * var(--px));
+  font-family: var(--font-script);
+  font-size: max(calc(var(--text-cover-script-size) * var(--px)), calc(var(--text-cover-script-size-min) * 1px));
+  font-weight: var(--text-cover-script-weight);
+  line-height: var(--text-cover-script-leading);
+  color: var(--color-cover-text);
+}
+
+/* Figma에서 제목은 남는 높이를 차지하는 칸의 세로 가운데에 놓인다 */
+.cover__title {
+  font-size: calc(var(--text-cover-title-size) * var(--px));
+  font-weight: var(--text-cover-title-weight);
+  line-height: calc(var(--text-cover-title-leading-px-mobile) * var(--px));
+  letter-spacing: calc(var(--text-cover-title-tracking) * var(--px));
+  white-space: nowrap;
+  color: var(--color-cover-text);
+}
+
+.cover__name {
+  padding-top: calc(var(--space-cover-name-top) * var(--px));
+  font-family: var(--font-serif);
+  font-size: max(calc(var(--text-cover-name-size) * var(--px)), calc(var(--text-cover-name-size-min) * 1px));
+  font-weight: var(--text-cover-name-weight);
+  line-height: var(--text-cover-name-leading);
+  letter-spacing: calc(var(--text-cover-name-tracking) * var(--px));
+  color: var(--color-cover-name);
+}
+
+/* 작은 글자는 화면이 좁아져도 줄이지 않는다(1px 곱). 390 폭에서만 한 단계 작게 쓴다. */
+.cover__caption {
+  font-size: calc(var(--text-small-size-mobile) * 1px);
+  font-weight: var(--text-cover-caption-weight);
+  line-height: var(--text-cover-caption-leading);
+  letter-spacing: calc(var(--text-small-tracking-mobile) * 1px);
+  text-transform: uppercase;
+  color: var(--color-cover-caption);
+}
+
+/* 오른쪽 위: 짧은 선 + 연도 */
+.cover__year {
+  position: absolute;
+  top: 0;
+  right: var(--sheet-padding-right);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: calc(var(--text-cover-year-size) * 1px);
+  font-weight: var(--text-cover-year-weight);
+  line-height: var(--text-cover-year-leading);
+  letter-spacing: calc(var(--text-cover-year-tracking) * 1px);
+  white-space: nowrap;
+  color: var(--color-cover-text);
+}
+
+.cover__year::before {
+  content: "";
+  width: calc(var(--size-cover-year-rule-width) * 1px);
+  height: calc(var(--size-cover-year-rule-height) * 1px);
+  background: var(--color-cover-text);
+}
+
+/* 오른쪽 아래: 이메일, 지역 */
+.cover__contact {
+  position: absolute;
+  right: var(--sheet-padding-right);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: calc(var(--text-cover-contact-size) * 1px);
+  font-weight: var(--text-cover-contact-weight);
+  line-height: calc(var(--text-cover-contact-leading-px) * 1px);
+  letter-spacing: calc(var(--text-cover-contact-tracking) * 1px);
+  text-align: right;
+  white-space: nowrap;
+  color: var(--color-cover-text);
+}
+
+/* 600 이상: Figma의 제목 묶음 구성(고정 높이 안에서 제목이 세로 가운데) */
+@media (min-width: 600px) {
+  .cover__heading {
+    height: calc(var(--layout-cover-title-block-height) * var(--px));
+  }
+
+  .cover__title {
+    display: flex;
+    flex: 1 0 0;
+    align-items: center;
+    min-height: 1px;
+    line-height: calc(var(--text-cover-title-leading-px) * var(--px));
+  }
+
+  .cover__caption {
+    font-size: calc(var(--text-cover-caption-size) * 1px);
+    letter-spacing: calc(var(--text-cover-caption-tracking) * 1px);
+  }
+}
+
+/* ---------- Cover 등장 ----------
+   Loading이 끝나면 글자들이 아래에서 제자리로 올라오며 나타난다.
+   숨김 상태는 JavaScript가 Loading을 켰을 때(.is-loading)만 적용된다. */
+
+.cover__reveal {
+  transition:
+    opacity var(--duration-reveal) var(--ease-out),
+    transform var(--duration-reveal) var(--ease-out);
+  transition-delay: var(--delay-reveal);
+}
+
+.cover__reveal:nth-child(2) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 1); }
+.cover__reveal:nth-child(3) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 2); }
+.cover__reveal:nth-child(4) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 3); }
+.cover__year.cover__reveal,
+.cover__contact.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 5); }
+
+.is-loading .cover__reveal {
+  opacity: 0;
+  transform: translateY(calc(var(--distance-reveal) * var(--px)));
+  transition: none;
+  /* JavaScript가 도중에 멈춰도 글자가 숨은 채로 남지 않게 한다 */
+  animation: cover-failsafe 1ms 8s forwards;
+}
+
+@keyframes cover-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Loader ----------
+   Cover와 같은 종이·띠·여백·글자 양식을 쓴다. 가는 선 하나가 왼쪽에서 오른쪽으로 찬다. */
+
+.loader {
+  display: none;
+}
+
+.is-loading .loader,
+.is-loaded .loader {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  transition:
+    opacity var(--duration-loader-out) var(--ease-out),
+    visibility 0s linear var(--duration-loader-out);
+}
+
+.is-loading .loader {
+  /* JavaScript가 도중에 멈춰도 Loading 화면이 내용을 가린 채로 남지 않게 한다 */
+  animation: loader-failsafe 1ms 8s forwards;
+}
+
+.is-loaded .loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes loader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader__inner {
+  width: 100%;
+  padding-left: var(--sheet-padding-left);
+  padding-right: var(--sheet-padding-right);
+}
+
+.loader__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: calc(var(--space-cover-stack-gap) * 1px);
+  color: var(--color-cover-text);
+}
+
+.loader__label {
+  font-size: calc(var(--text-small-size-mobile) * 1px);
+  font-weight: var(--text-cover-caption-weight);
+  line-height: var(--text-cover-caption-leading);
+  letter-spacing: calc(var(--text-small-tracking-mobile) * 1px);
+  text-transform: uppercase;
+  color: var(--color-cover-caption);
+}
+
+.loader__value {
+  font-size: calc(var(--text-cover-year-size) * 1px);
+  font-weight: var(--text-cover-year-weight);
+  line-height: var(--text-cover-year-leading);
+  letter-spacing: calc(var(--text-cover-year-tracking) * 1px);
+  font-variant-numeric: tabular-nums;
+}
+
+.loader__track {
+  height: calc(var(--size-cover-year-rule-height) * 1px);
+  background: var(--color-contents-rule);
+}
+
+.loader__bar {
+  height: 100%;
+  background: var(--color-cover-text);
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+@media (min-width: 600px) {
+  .loader__label {
+    font-size: calc(var(--text-cover-caption-size) * 1px);
+    letter-spacing: calc(var(--text-cover-caption-tracking) * 1px);
+  }
+}

@@ -1,7 +1,17 @@
 # Implementation Spec
 
 source: Figma `4IjbcMoAkTyWkoacnVAmNe` (READ ONLY) · read_at 2026-10-04
-**상태: PARTIAL — Level 3 결정 3건(G1, G2, G3) 대기. SITE SCAFFOLD를 아직 시작할 수 없다.**
+**상태: index는 구현 진행 중(Loading + Cover 구현, 2026-10-04). Project Page는 G2 결정 대기.**
+
+## 0. 사용자 결정 (2026-10-04)
+| 항목 | 결정 |
+|---|---|
+| Build 우선순위 | 첫 Master Experience는 **Loading → Cover**다(profile 아님). Loading + Cover가 PASS하기 전에는 profile, contents, Project Page를 만들지 않는다 |
+| G1 Page 구조 | index에 Cover·Profile·Contents를 두고 Project는 별도 Detail Route로 간다는 방향으로 지시가 내려왔다("Project Detail Route는 이번 단계에서는 만들지 않는다"). 링크 방식과 돌아오는 방법은 Project Page 단계에서 확정한다 |
+| G3 Responsive | Desktop 1920을 먼저 정밀 구현하고 1440 → 768 → 390 순으로 Conservative Adaptation을 한다. 허용: 위치 재조정, 크기 감소, 줄바꿈, 여백 감소, 장식 위치 조정. 금지: 새 구성, 새 Graphic, 콘텐츠 삭제, Direction 변경 |
+| Unit Policy | Figma 값을 Raw 값으로 보존한다. 단위 변환이 새 디자인 동작을 만들면 안 된다. `clamp()`를 단순 px 변환 수단으로 쓰지 않는다. 1920에서 Render 크기가 Figma와 같아야 한다 |
+| Loading Experience | 사용자가 추가한 Interaction이다. Figma에 Loading 화면이 없으므로 새 Direction을 만들지 않고 Cover의 Visual Language를 그대로 쓴다 |
+| G2 Case Study 구현 방식 | **미결정** |
 
 값(Hex, px)은 여기에 적지 않는다. `design-source/extracted-tokens.json`의 Token 이름으로 서술한다.
 
@@ -143,11 +153,51 @@ Lorem ipsum, TODO, Sample Text는 `포트폴리오` 안에서 발견되지 않�
 | 숨김 Layer | 구현하지 않는다 | 숨김 상태 |
 
 ## 17. Build Order
-G1–G3 결정에 따라 달라진다. 결정과 무관하게 정해진 것:
-1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격.
-2. **Master Page = index.** Master Section = **profile**(서체 5종 중 4종, Component 3종, 가장 많은 간격 규칙을 포함해 구현 규칙을 검증하기 좋다).
-3. index#cover → index#contents.
+1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격. (완료 2026-10-04)
+2. **Master Experience = Loading → index#cover.** (구현 2026-10-04, Font·Texture Gap 남음)
+3. index#profile → index#contents. Loading + Cover가 PASS한 뒤에 시작한다.
 4. Project Page는 G2 결정 후: aidora → tj-media → asics-korea 순(Contents 순서).
 5. Interaction(링크) → FULL QA.
 
 Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figma와 같은 모습으로 Render할 수 없다. SITE SCAFFOLD 전에 필요하다.
+
+## 18. Loading Experience (사용자 지정 Interaction — Figma에 없음)
+- **Visual**: Cover와 같은 면(`l-sheet`: 종이 바탕, 왼쪽 띠, 같은 좌우 여백)을 그대로 쓴다. 그 위에 세 요소만 둔다: 왼쪽 Label "Loading"(Cover의 직함 줄과 같은 양식 — `--text-cover-caption-*`), 오른쪽 진행률 숫자(Cover의 연도와 같은 양식 — `--text-cover-year-*`), 그 아래 가는 선(Cover 연도 위의 짧은 선과 같은 굵기 `--size-cover-year-rule-height`, 바탕 선 색은 `--color-contents-rule`). 세로 위치는 화면 가운데이며 띠의 돌출부와 같은 높이다.
+- 문구 "Loading"은 Figma에 없는 유일한 글자다(사용자가 허용한 Minimal status text).
+- **Progress**: 실제 준비 상태에 연결한다. HTML 해석 완료 30 → Font 준비(`document.fonts.ready`) 70 → 첫 화면 필수 이미지(`img[data-critical]`, 지금은 없음) 90 → `window load` 100. 화면의 숫자와 선은 목표값을 따라 부드럽게 올라가며 줄어들지 않는다. 일부러 늘린 대기 시간은 없다. 4초가 지나면 무조건 100으로 간다.
+- **전환**: 100이 되면 `<html>`의 `is-loading`이 `is-loaded`로 바뀐다. Loading 요소가 옅어지고(`--duration-loader-out`), 조금 뒤(`--delay-reveal`) Cover의 글자가 아래에서 제자리로 올라오며 차례로 나타난다(`--duration-reveal`, `--stagger-reveal`, 이동 거리 `--distance-reveal`). 종이와 띠는 두 화면이 같아서 움직이지 않는다. 쓰는 속성은 `opacity`와 `transform`뿐이다.
+- **Reduced Motion**: 이동 거리 0, 전환 시간 1ms, 진행률은 목표값으로 바로 간다.
+- **JavaScript 없음 / 실패**: Loading 상태는 `<head>`의 한 줄 Script가 켠다. JavaScript가 꺼져 있으면 Loading 화면이 나타나지 않고 Cover가 바로 보인다. `main.js`가 실패하면 CSS Animation이 8초 뒤에 Loading 화면을 걷고 글자를 보이게 한다. Loading 화면은 `pointer-events: none`이라 어떤 경우에도 조작을 막지 않는다.
+- 재방문 시 건너뛰기 같은 Session Logic은 넣지 않았다.
+
+## 19. Cover 구현 기록 (2026-10-04)
+### Implementation Judgements (추가)
+| 항목 | 판단 | 이유 |
+|---|---|---|
+| 단위 | Token을 단위 없는 "Figma px" 숫자로 두고 `--px`를 곱해 쓴다. `--px`는 1920 이상에서 정확히 1px | 1920에서 Figma와 같은 Render 크기를 보장하고, 좁은 화면에서는 구성 전체를 같은 비율로 줄인다(`clamp()` 미사용) |
+| 1024–1919 폭 (1440 포함) | Cover 구성을 화면 폭에 비례해 줄인다. 16px 이하의 작은 글자(직함 줄, 연도, 연락처)는 줄이지 않는다 | Figma에 디자인이 없다. 구성·위계를 그대로 유지하는 가장 보수적인 대응. 작은 글자는 줄이면 읽을 수 없다 |
+| 600–1023 폭 (768 포함) | 같은 구성. 제목 "Portfolio"가 화면 폭에 맞도록 기준 폭을 바꾼다(`--sheet-scale-base-tablet`), 좌우 여백은 `--layout-sheet-padding-*-tablet` | 제목이 잘리지 않고 한 줄을 유지 |
+| 600 미만 (390 포함) | 같은 구성·같은 순서. 기준 폭 `--sheet-scale-base-mobile`. 필기체와 이름에 최소 크기를 두고, 직함 줄은 한 단계 작게(`--text-small-*-mobile`), 제목 묶음 높이는 고정하지 않는다 | 축소판이 되어 읽을 수 없게 되는 것을 막는다. 콘텐츠 삭제·새 요소 없음 |
+| Cover 높이 | 화면 높이(`100svh`)를 채운다. 안쪽 영역은 화면 높이에서 위아래 `--layout-cover-frame-margin`을 뺀 높이 | Figma의 1080 높이 안 950 영역 구성. 1920 × 1080 화면에서 Figma와 같다 |
+| 종이 Texture | 단색 `--color-cover-paper`와 CSS로 그린 띠(`--color-cover-band`, 돌출부 좌표 `--layout-cover-band-*`)로 대신한다 | ASSET GAP. Texture 이미지의 권리가 확인되지 않았다. 색과 띠 모양은 Figma Render에서 실측했다. 종이 질감(Grain)은 없다 |
+| 이메일 | 링크가 아닌 Text로 둔다 | Figma에 링크 표시가 없다 |
+| `<title>`, description | cover의 글자를 조합해 "Portfolio — Kim Yun-Gyeom", "Kim Yun-Gyeom — Brand & Web Design Portfolio"로 넣었다 | Content Gap C4. 확정이 아니다 |
+| Favicon | 빈 Icon(`data:,`) | Figma에 없다. 404 요청을 막기 위한 것 |
+
+### Font / Asset 상태
+- **Outfit Regular·Light**: 사용자 PC에 설치된 TTF를 Self-host했다(SIL OFL 1.1, 근거는 Font 파일의 name table — `legal/license-evidence.jsonl`, `assets/manifest.jsonl`에 APPROVED).
+- **FONT GAP — Allura, Cormorant Garamond**: 파일이 이 PC와 저장소에 없다. CSS에는 두 서체 이름을 지정해 두었고, 지금은 Browser의 기본 필기체·Serif로 대신 그려진다. 대체 서체를 확정한 것이 아니다. 파일이 들어오면 `@font-face`만 추가하면 된다.
+- **ASSET GAP — 종이 Texture**: Figma의 이미지 Fill(사진 한 장: 종이 질감 + 왼쪽 검은 띠)이다. 출처를 알 수 없어 `docs/`에 넣지 않았다.
+
+### 1920 Figma 대비 (실측, px)
+| 요소 | 위치 차이 | 비고 |
+|---|---|---|
+| 연도와 짧은 선 | 0 | 일치 |
+| 직함 줄 | x 0, y −1 | 일치 |
+| 이메일·지역 | x −1, y 0 | 일치 |
+| 제목 "Portfolio" | x 0, 폭 0, y +6 | 크기·자간·좌우 위치 일치. 세로 6px 차이는 위아래 두 줄(필기체, 이름)이 대체 서체로 그려져 줄 높이가 달라진 영향으로 본다. 두 서체가 들어온 뒤 다시 측정한다 |
+| 필기체 "Design with clarity." | 비교 불가 | FONT GAP |
+| 이름 "Kim Yun-Gyeom" | 위치 일치, 글자 모양·폭 다름 | FONT GAP |
+| 왼쪽 띠 | 폭·돌출부 좌표 일치 | 질감 없음(ASSET GAP) |
+| 종이 바탕 | 평균색 일치 | 질감 없음(ASSET GAP) |
+

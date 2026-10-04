@@ -74,6 +74,7 @@ site:
 
 viewports:                  # Browser QA 기준 폭(px). scripts/qa/capture.cjs가 이 값을 읽는다
   desktop: 1440
+  # laptop: 1440            # 선택. 넣으면 QA가 이 폭도 검사한다(Desktop 디자인이 1920처럼 넓을 때)
   tablet: 768
   mobile: 390
 

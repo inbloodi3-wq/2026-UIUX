@@ -2,7 +2,9 @@
 
 Website 구조 문서다(두 mode 공통 형식). Figma Node 대응은 `design-source/frame-map.md`에 있다.
 
-**상태: PARTIAL.** Figma 디자인은 Page 구분과 내비게이션이 없는 **하나의 긴 문서**(Cover → Profile → Contents → Project 01 → 02 → 03)다. 아래 Section 구성은 Figma에 있는 그대로 등록했고, 그것을 어떤 Page(URL)로 나눌지는 Figma에 정해져 있지 않아 사용자 결정을 기다린다(`design-source/implementation-spec.md` Design Gap G1). 표의 `파일` 열은 **제안안**이며 확정이 아니다.
+**상태: PARTIAL.** (2026-10-04: index는 확정. Project는 별도 Detail Route 방향이며 세부는 Project Page 단계에서 확정)
+
+처음 기록: Figma 디자인은 Page 구분과 내비게이션이 없는 **하나의 긴 문서**(Cover → Profile → Contents → Project 01 → 02 → 03)다. 아래 Section 구성은 Figma에 있는 그대로 등록했고, 그것을 어떤 Page(URL)로 나눌지는 Figma에 정해져 있지 않아 사용자 결정을 기다린다(`design-source/implementation-spec.md` Design Gap G1). 표의 `파일` 열은 **제안안**이며 확정이 아니다.
 
 ## Pages
 | Page ID | 파일(URL / Route) — 제안, 미확정 | 목적 | Figma에 있는 근거 |
@@ -87,7 +89,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 ## Interactions
 | ID | 위치 | 동작 | JS 없이 |
 |---|---|---|---|
-| — | — | Figma에서 확인된 Interaction 없음(Prototype 정보는 읽기 도구로 확인되지 않았고, 화면에 상태 변형도 없다) | — |
+| loading | index 진입 시 | Loading 화면 → 진행 표시 → Cover 등장(사용자 지정, 2026-10-04) | Loading 화면이 나타나지 않고 Cover가 바로 보인다 |
 
 ## Open Content Requests
 `design-source/implementation-spec.md`의 Content Gaps 참조.

@@ -1,0 +1,251 @@
+/* Design Tokens — 코드에서 쓰는 디자인 값의 유일한 원본.
+   design-source/extracted-tokens.json(Figma에서 읽은 값)에서 SITE SCAFFOLD 때 옮겼다.
+
+   단위 규칙
+   - 크기·간격·자간 Token은 단위 없는 숫자다. 뜻은 "Figma 화면(1920 폭)에서의 px"이다.
+   - 쓸 때 --px 를 곱한다:  font-size: calc(var(--text-cover-title-size) * var(--px));
+   - --px 는 "디자인 1px이 지금 화면에서 차지하는 길이"다. 1920 이상에서는 정확히 1px이고,
+     더 좁은 화면에서는 Section이 정한 비율로 줄어든다(layout.css, components.css에서 재정의).
+   - 작은 글자(16 이하)는 줄이지 않는다. 그런 곳은 --px 대신 1px을 곱한다.
+   - 색, 굵기, 줄 높이 배수(-leading)는 그대로 쓴다. -leading-px 는 --px 를 곱해 쓴다.
+*/
+
+:root {
+  --px: calc(min(100vw, 1920px) / 1920);
+
+  /* Color */
+  --color-cover-base: #11100d;
+  --color-cover-text: #111111;
+  --color-cover-name: #222222;
+  --color-cover-caption: #555555;
+  --color-contents-title: #131313;
+  --color-contents-project: #141414;
+  --color-contents-label: #575757;
+  --color-contents-sub: #5b5b5b;
+  --color-contents-number: #666666;
+  --color-contents-rule: rgba(38,38,38,0.25);
+  --color-profile-page: rgb(15,15,17);
+  --color-profile-card: #141416;
+  --color-profile-card-border: rgba(255,255,255,0.05);
+  --color-profile-photo-bg: #1e1e1e;
+  --color-profile-heading: #f8f5ec;
+  --color-profile-body: #d4d4d4;
+  --color-profile-date: #cfcfcf;
+  --color-profile-muted: #888888;
+  --color-profile-divider: rgba(255,255,255,0.1);
+  --color-profile-dot: rgba(255,255,255,0.2);
+  --color-tool-card-bg: #1b1b1d;
+  --color-tool-card-border: rgba(79,79,84,0.65);
+  --color-tool-card-symbol: #ebe8db;
+  --color-tool-card-label: #adadad;
+  --color-cover-paper: #e0dfdd;
+  --color-cover-band: #292929;
+
+  /* Typography */
+  --font-display: "Outfit", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Allura", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-kr-heading: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-kr-body: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --text-cover-title-size: 240;
+  --text-cover-title-weight: 400;
+  --text-cover-title-leading-px: 160;
+  --text-cover-title-tracking: 3;
+  --text-cover-script-size: 62;
+  --text-cover-script-weight: 400;
+  --text-cover-script-leading: normal;
+  --text-cover-script-tracking: 0;
+  --text-cover-name-size: 42;
+  --text-cover-name-weight: 500;
+  --text-cover-name-leading: normal;
+  --text-cover-name-tracking: 0.72;
+  --text-cover-caption-size: 14;
+  --text-cover-caption-weight: 400;
+  --text-cover-caption-leading: 1.5;
+  --text-cover-caption-tracking: 4.2;
+  --text-cover-year-size: 14;
+  --text-cover-year-weight: 300;
+  --text-cover-year-leading: normal;
+  --text-cover-year-tracking: 1.4;
+  --text-cover-contact-size: 14;
+  --text-cover-contact-weight: 300;
+  --text-cover-contact-leading-px: 25.2;
+  --text-cover-contact-tracking: 0.84;
+  --text-contents-title-size: 108;
+  --text-contents-title-weight: 400;
+  --text-contents-title-leading: normal;
+  --text-contents-title-tracking: 5.4;
+  --text-contents-eyebrow-size: 18;
+  --text-contents-eyebrow-weight: 500;
+  --text-contents-eyebrow-leading: 1.35;
+  --text-contents-eyebrow-tracking: 0.9;
+  --text-contents-project-size: 42;
+  --text-contents-project-weight: 400;
+  --text-contents-project-leading: 1.35;
+  --text-contents-project-tracking: 0;
+  --text-contents-number-size: 16;
+  --text-contents-number-weight: 400;
+  --text-contents-number-leading: 1.35;
+  --text-contents-number-tracking: 1.28;
+  --text-contents-item-size: 16;
+  --text-contents-item-weight: 400;
+  --text-contents-item-leading: 1.35;
+  --text-contents-item-tracking: 1.28;
+  --text-contents-caption-size: 14;
+  --text-contents-caption-weight: 400;
+  --text-contents-caption-leading: 1.35;
+  --text-contents-caption-tracking: 1.4;
+  --text-profile-name-size: 48;
+  --text-profile-name-weight: 700;
+  --text-profile-name-leading-px: 58;
+  --text-profile-name-tracking: -0.72;
+  --text-profile-birth-size: 16;
+  --text-profile-birth-weight: 300;
+  --text-profile-birth-leading-px: 24;
+  --text-profile-birth-tracking: 1.6;
+  --text-profile-contact-label-size: 16;
+  --text-profile-contact-label-weight: 500;
+  --text-profile-contact-label-leading-px: 24;
+  --text-profile-contact-label-tracking: 0;
+  --text-profile-contact-size: 16;
+  --text-profile-contact-weight: 400;
+  --text-profile-contact-leading-px: 24;
+  --text-profile-contact-tracking: 0.8;
+  --text-profile-intro-size: 20;
+  --text-profile-intro-weight: 400;
+  --text-profile-intro-leading-px: 31;
+  --text-profile-intro-tracking: 0;
+  --text-profile-heading-size: 42;
+  --text-profile-heading-weight: 400;
+  --text-profile-heading-leading-px: 46;
+  --text-profile-heading-tracking: 0;
+  --text-profile-date-size: 16;
+  --text-profile-date-weight: 400;
+  --text-profile-date-leading-px: 24;
+  --text-profile-date-tracking: 0;
+  --text-profile-item-size: 16;
+  --text-profile-item-weight: 700;
+  --text-profile-item-leading-px: 24;
+  --text-profile-item-tracking: 0;
+  --text-profile-item-sub-size: 16;
+  --text-profile-item-sub-weight: 400;
+  --text-profile-item-sub-leading-px: 25;
+  --text-profile-item-sub-tracking: 0;
+  --text-tool-symbol-size: 24;
+  --text-tool-symbol-weight: 600;
+  --text-tool-symbol-leading-px: 30;
+  --text-tool-symbol-tracking: 0;
+  --text-tool-label-size: 14;
+  --text-tool-label-weight: 400;
+  --text-tool-label-leading-px: 20;
+  --text-tool-label-tracking: 0;
+
+  /* Layout */
+  --layout-frame-width: 1920;
+  --layout-slide-height: 1080;
+  --layout-cover-inner-height: 950;
+  --layout-cover-padding-left: 180;
+  --layout-cover-padding-right: 100;
+  --layout-cover-title-block-height: 500;
+  --layout-contents-inner-width: 1620;
+  --layout-contents-inner-height: 850;
+  --layout-contents-left-width: 500;
+  --layout-contents-right-width: 1040;
+  --layout-contents-index-column-width: 230;
+  --layout-contents-project-row-height: 100;
+  --layout-profile-page-padding-block: 65;
+  --layout-profile-page-padding-inline: 160;
+  --layout-profile-card-width: 1600;
+  --layout-profile-card-height: 950;
+  --layout-profile-card-padding-top: 157;
+  --layout-profile-card-padding-right: 97;
+  --layout-profile-card-padding-bottom: 35;
+  --layout-profile-card-padding-left: 129;
+  --layout-profile-aside-width: 320;
+  --layout-profile-photo-width: 320;
+  --layout-profile-photo-height: 400;
+  --layout-profile-date-column-width: 154;
+  --layout-tool-card-size: 76;
+  --layout-case-study-aidora-width: 1600;
+  --layout-cover-band-width: 74;
+  --layout-cover-band-tab-width: 107;
+  --layout-cover-band-tab-top: 102;
+  --layout-cover-band-tab-flat-top: 40;
+  --layout-cover-band-tab-flat-bottom: 60;
+  --layout-cover-band-tab-bottom: 122;
+  --layout-cover-frame-margin: 65;
+
+  /* Space */
+  --space-cover-stack-gap: 16;
+  --space-cover-script-bottom: 54;
+  --space-cover-name-top: 29;
+  --space-contents-columns-gap: 80;
+  --space-contents-heading-gap: 28;
+  --space-contents-groups-gap: 44;
+  --space-contents-group-gap: 28;
+  --space-contents-title-gap: 28;
+  --space-contents-index-gap: 20;
+  --space-contents-item-gap: 12;
+  --space-profile-columns-gap: 124;
+  --space-profile-aside-gap: 36;
+  --space-profile-info-gap: 28;
+  --space-profile-name-gap: 10;
+  --space-profile-contact-gap: 14;
+  --space-profile-contact-label-gap: 16;
+  --space-profile-intro-to-body: 160;
+  --space-profile-rows-gap: 24;
+  --space-profile-row-columns-gap: 80;
+  --space-profile-block-gap: 28;
+  --space-profile-list-gap: 22;
+  --space-profile-item-gap: 24;
+  --space-profile-item-inner-gap: 2;
+  --space-tool-cards-gap: 8;
+  --space-character-gap-row: 12;
+  --space-character-gap-column: 16;
+
+  /* Shape */
+  --radius-profile-card: 16;
+  --radius-profile-photo: 8;
+  --radius-tool-card: 8;
+  --shadow-profile-card: 0 25px 25px rgba(0, 0, 0, 0.25);
+  --border-hairline: 1;
+  --size-cover-year-rule-width: 30;
+  --size-cover-year-rule-height: 1;
+  --size-character-dot: 4;
+
+  /* Responsive Adaptation — Figma에 없다(Desktop 1920 디자인만 있음).
+     좁은 화면에서 Cover 구성을 유지하기 위한 구현 판단값이다.
+     근거: design-source/implementation-spec.md "Responsive Strategy" */
+  --sheet-scale-base-mobile: 1130;   /* 화면 폭을 이 숫자로 나눈 값이 --px. 왼쪽 140 + 제목 930 + 오른쪽 60 */
+  --sheet-scale-base-tablet: 1175;   /* 왼쪽 165 + 제목 930 + 오른쪽 80 */
+  --layout-sheet-padding-left-mobile: 140;
+  --layout-sheet-padding-right-mobile: 60;
+  --layout-sheet-padding-left-tablet: 165;
+  --layout-sheet-padding-right-tablet: 80;
+  --text-small-size-mobile: 12;      /* 14px 대문자 Label이 390 폭에서 한 줄에 들어가도록 */
+  --text-small-tracking-mobile: 3;
+  --text-cover-script-size-min: 30;  /* 필기체와 이름이 읽히는 최소 크기(px) */
+  --text-cover-name-size-min: 20;
+  --text-cover-stack-gap-min: 10;
+  --text-cover-title-leading-px-mobile: 220;  /* 390 폭: 제목 묶음 높이를 고정하지 않고 줄 높이로 간격을 만든다 */
+
+  /* Motion — Figma에 없다. Loading → Cover 전환용(사용자 지정 Interaction).
+     근거: design-source/implementation-spec.md "Loading Experience" */
+  --duration-loader-out: 500ms;
+  --duration-reveal: 800ms;
+  --delay-reveal: 150ms;      /* Loading 선이 옅어진 뒤에 글자가 나타나기 시작한다 */
+  --stagger-reveal: 70ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --distance-reveal: 24;
+}
+
+/* 움직임을 줄이도록 설정한 환경: 이동을 없애고 전환을 즉시 끝낸다 */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-loader-out: 1ms;
+    --duration-reveal: 1ms;
+    --delay-reveal: 0ms;
+    --stagger-reveal: 0ms;
+    --distance-reveal: 0;
+  }
+}

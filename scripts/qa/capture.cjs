@@ -16,8 +16,9 @@ const fs = require('fs');
 const path = require('path');
 const { startServer, readConfigValue, ROOT, DOCS } = require('./serve.cjs');
 
-const VIEWPORT_HEIGHT = { desktop: 900, tablet: 1024, mobile: 844 };
-const VIEWPORT_DEFAULT_WIDTH = { desktop: 1440, tablet: 768, mobile: 390 };
+// laptop은 선택 Viewport다. config/project.yaml의 viewports에 laptop이 있을 때만 검사한다.
+const VIEWPORT_HEIGHT = { desktop: 900, laptop: 900, tablet: 1024, mobile: 844 };
+const VIEWPORT_DEFAULT_WIDTH = { desktop: 1440, laptop: null, tablet: 768, mobile: 390 };
 
 function parseArgs(argv) {
   const args = { check: false, pages: null, label: null, url: null };
@@ -31,11 +32,14 @@ function parseArgs(argv) {
 }
 
 function getViewports() {
-  return Object.keys(VIEWPORT_DEFAULT_WIDTH).map((name) => ({
-    name,
-    width: Number(readConfigValue(name)) || VIEWPORT_DEFAULT_WIDTH[name],
-    height: VIEWPORT_HEIGHT[name],
-  }));
+  return Object.keys(VIEWPORT_DEFAULT_WIDTH)
+    .map((name) => {
+      const width = Number(readConfigValue(name)) || VIEWPORT_DEFAULT_WIDTH[name];
+      // 1920 이상 Desktop은 16:9 화면(1080 높이)을 기준으로 첫 화면을 본다.
+      const height = name === 'desktop' && width >= 1920 ? 1080 : VIEWPORT_HEIGHT[name];
+      return { name, width, height };
+    })
+    .filter((viewport) => viewport.width);
 }
 
 // 이미 설치된 Playwright를 찾는다: 환경 변수 → 일반 require → npx 캐시.
@@ -96,12 +100,25 @@ function measurePage() {
     imagesWithoutAlt: images.filter((img) => !img.hasAttribute('alt')).map((img) => img.getAttribute('src')),
     imagesWithoutSize: images.filter((img) => !img.hasAttribute('width') || !img.hasAttribute('height')).map((img) => img.getAttribute('src')),
     brokenImages: images.filter((img) => img.complete && img.naturalWidth === 0).map((img) => img.getAttribute('src')),
+    stillLoading: doc.classList.contains('is-loading'),
     rootAbsolutePaths: Array.from(document.querySelectorAll('[href], [src]'))
       .map((el) => el.getAttribute('href') || el.getAttribute('src'))
       .filter(isRootAbsolute),
     inlineStyleCount: document.querySelectorAll('[style]').length,
     textLength: document.body ? document.body.innerText.trim().length : 0,
   };
+}
+
+// Loading 상태(<html class="is-loading">)가 끝나고 진행 중인 Transition/Animation이 끝날 때까지 기다린다.
+// 최종 화면을 찍기 위한 것이며, 8초 안에 끝나지 않으면 그대로 진행한다(측정에서 드러난다).
+async function waitUntilSettled(page) {
+  try {
+    await page.waitForFunction(() => !document.documentElement.classList.contains('is-loading'), null, { timeout: 8000 });
+    await page.evaluate(() => Promise.all(document.getAnimations().map((animation) => animation.finished.catch(() => {}))));
+  } catch {
+    // 시간 초과: 아래 측정과 스크린샷에 그 상태가 남는다
+  }
+  await page.waitForTimeout(200);
 }
 
 async function capturePage(browser, baseUrl, pageFile, viewport, outDir) {
@@ -124,7 +141,7 @@ async function capturePage(browser, baseUrl, pageFile, viewport, outDir) {
   const url = new URL(pageFile === 'index.html' ? '' : pageFile, baseUrl).href;
   await page.goto(url, { waitUntil: 'load' });
   await page.evaluate(() => document.fonts && document.fonts.ready);
-  await page.waitForTimeout(300);
+  await waitUntilSettled(page);
 
   const name = pageFile.replace(/\.html$/, '').replace(/[\\/]/g, '_') + '-' + viewport.name;
   await page.screenshot({ path: path.join(outDir, name + '-fold.png') });
@@ -165,6 +182,7 @@ async function captureNoJs(browser, baseUrl, pageFile, viewport, outDir) {
 
 function summarize(result) {
   const problems = [];
+  if (result.stillLoading) problems.push('Loading 상태가 끝나지 않음(is-loading)');
   if (result.horizontalOverflow) problems.push('가로 Overflow (scrollWidth ' + result.scrollWidth + ' > ' + result.clientWidth + ')');
   if (result.consoleErrors.length) problems.push('Console Error ' + result.consoleErrors.length + '건');
   if (result.failedRequests.length) problems.push('실패 Request ' + result.failedRequests.length + '건');

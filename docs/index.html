@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio — Kim Yun-Gyeom</title>
+  <meta name="description" content="Kim Yun-Gyeom — Brand &amp; Web Design Portfolio">
+
+  <link rel="icon" href="data:,">
+
+  <!-- 첫 화면이 그려지기 전에 Loading 상태를 켠다. JavaScript가 꺼져 있으면 Loading 화면은 나타나지 않는다. -->
+  <script>document.documentElement.className = 'js is-loading';</script>
+
+  <link rel="preload" href="assets/fonts/Outfit-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Outfit-Light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <div class="loader l-sheet" data-loader>
+    <div class="loader__inner" role="status">
+      <div class="loader__row">
+        <span class="loader__label">Loading</span>
+        <span class="loader__value" data-loader-value>0%</span>
+      </div>
+      <div class="loader__track">
+        <div class="loader__bar" data-loader-bar></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="cover l-sheet" id="cover">
+      <div class="cover__inner">
+        <div class="cover__heading">
+          <p class="cover__script cover__reveal">Design with clarity.</p>
+          <h1 class="cover__title cover__reveal">Portfolio</h1>
+          <p class="cover__name cover__reveal">Kim Yun-Gyeom</p>
+          <p class="cover__caption cover__reveal">BRAND &amp; WEB DESIGN PORTFOLIO</p>
+        </div>
+
+        <p class="cover__year cover__reveal">2026</p>
+
+        <address class="cover__contact cover__reveal">
+          <span>inbloodi3@gmail.com</span>
+          <span>Seoul, Korea</span>
+        </address>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

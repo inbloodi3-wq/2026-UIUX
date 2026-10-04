@@ -1,0 +1,53 @@
+/* Layout — Page 골격 */
+
+/* Sheet: 종이 한 장을 화면 가득 펼친 면. Cover와 Loading 화면이 같이 쓴다.
+   - 밝은 종이 바탕과 왼쪽의 검은 띠(가운데가 튀어나온 모양)를 그린다.
+   - --px 를 화면 폭에 맞춰 정한다. 이 안의 모든 크기는 --px 를 곱해 쓴다.
+   - 종이 질감 이미지는 아직 권리 확인 전이라 단색으로 대신한다(ASSET GAP). */
+.l-sheet {
+  --px: calc(100vw / var(--sheet-scale-base-mobile));
+  --sheet-padding-left: calc(var(--layout-sheet-padding-left-mobile) * var(--px));
+  --sheet-padding-right: calc(var(--layout-sheet-padding-right-mobile) * var(--px));
+  --sheet-margin-block: calc(var(--layout-cover-frame-margin) * var(--px));
+
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--color-cover-paper);
+  overflow: hidden;
+}
+
+.l-sheet::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--layout-cover-band-tab-width) * var(--px));
+  background: var(--color-cover-band);
+  clip-path: polygon(
+    0 0,
+    calc(var(--layout-cover-band-width) * var(--px)) 0,
+    calc(var(--layout-cover-band-width) * var(--px)) calc(50% - var(--layout-cover-band-tab-top) * var(--px)),
+    100% calc(50% - var(--layout-cover-band-tab-flat-top) * var(--px)),
+    100% calc(50% + var(--layout-cover-band-tab-flat-bottom) * var(--px)),
+    calc(var(--layout-cover-band-width) * var(--px)) calc(50% + var(--layout-cover-band-tab-bottom) * var(--px)),
+    calc(var(--layout-cover-band-width) * var(--px)) 100%,
+    0 100%
+  );
+}
+
+@media (min-width: 600px) {
+  .l-sheet {
+    --px: calc(100vw / var(--sheet-scale-base-tablet));
+    --sheet-padding-left: calc(var(--layout-sheet-padding-left-tablet) * var(--px));
+    --sheet-padding-right: calc(var(--layout-sheet-padding-right-tablet) * var(--px));
+  }
+}
+
+/* Desktop: Figma 구성 그대로. 1920에서 --px 는 정확히 1px이다. */
+@media (min-width: 1024px) {
+  .l-sheet {
+    --px: calc(min(100vw, 1920px) / 1920);
+    --sheet-padding-left: calc(var(--layout-cover-padding-left) * var(--px));
+    --sheet-padding-right: calc(var(--layout-cover-padding-right) * var(--px));
+  }
+}

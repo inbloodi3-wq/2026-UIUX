@@ -35,7 +35,7 @@ docs/
 ## CSS
 - 색·타입·간격·반경·그림자·Motion 값은 `tokens.css`의 Custom Property로만 정의하고, 다른 파일에서는 `var(--…)`로 참조한다. 다른 CSS 파일에 Raw Hex/px 값을 반복해 쓰지 않는다(`0`, `1px` Border, `100%` 같은 구조 값은 예외).
 - Mobile-first로 작성하고 `min-width` Media Query로 확장한다. Breakpoint는 `config/project.yaml`의 `site.breakpoints`에 정한 것만 쓴다(Custom Property는 Media Query에 쓸 수 없으므로 이 값만 Config가 원본이다).
-- Type과 간격은 `rem` 기반, 유동 크기는 `clamp()`를 쓴다. 고정 폭(px) Container로 Viewport를 가정하지 않는다.
+- Type과 간격은 `rem` 기반, 유동 크기는 `clamp()`를 쓴다. 고정 폭(px) Container로 Viewport를 가정하지 않는다. 단 `figma_implementation`에서 Design Definition(`implementation-spec.md`)이 단위 정책을 따로 정했으면 그것이 우선이다(Figma와 Render 크기가 달라지면 안 된다).
 - Class 이름은 `.claude/rules/naming-convention.md`를 따른다. ID Selector와 `!important`로 Specificity를 올리지 않는다.
 - 같은 선언 묶음이 3번 나오면 Component나 Utility로 합친다. 그 전에 추상화하지 않는다.
 - `:focus-visible` Style을 제거하지 않는다. `prefers-reduced-motion`을 존중한다.
@@ -48,7 +48,7 @@ docs/
 ## JavaScript
 - 최소한으로, 목적이 분명할 때만 쓴다. CSS로 되는 것(Hover, 단순 Transition, Sticky, Scroll Snap, `details`)은 CSS로 한다.
 - **JavaScript가 꺼져 있어도 핵심 콘텐츠와 내비게이션은 읽고 쓸 수 있어야 한다.** JS는 Progressive Enhancement다(콘텐츠를 JS로 주입하지 않는다, JS 전제로 숨긴 콘텐츠는 `.js` Class가 있을 때만 숨긴다).
-- `main.js` 하나에서 시작한다. `defer`로 로드한다. 파일이 길어져 역할이 섞일 때만 나눈다.
+- `main.js` 하나에서 시작한다. `defer`로 로드한다. 예외: 첫 화면이 그려지기 전에 `<html>`에 상태 Class를 붙이는 한 줄짜리 Inline Script는 `<head>`에 둘 수 있다(그 밖의 Inline Script는 쓰지 않는다). 이 상태가 JavaScript 실패 시에도 내용을 가리지 않도록 CSS만으로 풀리는 장치를 함께 둔다. 파일이 길어져 역할이 섞일 때만 나눈다.
 - Library 없이 표준 API를 쓴다. Class 상속, 자체 State 관리, Event Bus 같은 구조를 만들지 않는다.
 - 새 Interaction을 넣기 전에 "이 동작이 무엇을 더 잘 전달하는가"에 한 줄로 답한다. 답이 없으면 넣지 않는다.
 

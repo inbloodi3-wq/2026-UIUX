@@ -3,9 +3,9 @@
   "project_id": "personal-portfolio",
   "config_file": "config/project.yaml",
   "mode": "figma_implementation",
-  "current_stage": "implementation_plan",
-  "stage_status": "BLOCKED",
-  "last_completed_stage": "content_asset_mapping",
+  "current_stage": "master_page_build",
+  "stage_status": "PARTIAL",
+  "last_completed_stage": "site_scaffold",
   "optional_stages": {
     "reference_research": "N/A (figma_implementation)",
     "asset_sourcing": "NOT_STARTED"
@@ -34,44 +34,38 @@
     }
   },
   "checkpoint": {
-    "stage": "implementation_plan",
-    "page": null,
-    "section": null,
+    "stage": "master_page_build",
+    "page": "index",
+    "section": "cover (+ loader)",
     "updated_at": "2026-10-04",
-    "resume_hint": "Figma Intake 완료. 디자인은 웹사이트 화면이 아니라 1920 폭의 긴 포트폴리오 문서(Cover → Profile → Contents → AIDORA → TJ MEDIA → ASICS KOREA)다. design-source/implementation-spec.md의 Design Gap G1(Page 구조·내비게이션), G2(Case Study 구현 방식), G3(Responsive)에 대한 사용자 답을 받은 뒤: (1) ia/sitemap.md의 Page 확정 (2) G2에 따라 Project Page의 calibration 범위 결정 (3) Font 파일과 index Asset(Texture, 프로필 사진)의 권리 확인·확보 (4) site_scaffold. 답을 받기 전에는 docs/를 만들지 않는다."
+    "resume_hint": "Loading + Cover 구현과 QA 3 Pass 완료. 남은 것은 코드가 아니라 자료다: (1) Allura Regular, Cormorant Garamond Medium Font 파일 확보(사용자 제공 또는 공식 배포처 다운로드 승인) → assets/manifest 등록 → base.css에 @font-face 추가 → 1920 재측정(제목 y +6px 확인) (2) 종이 Texture의 출처 확인 → 승인되면 l-sheet 배경에 적용. 두 가지가 해결되어 1920 비교가 PASS하면 index#profile로 넘어간다. 그 전에는 profile/contents/Project Page를 만들지 않는다. QA: node scripts/qa/capture.cjs (desktop 1920, laptop 1440, tablet 768, mobile 390)."
   },
-  "render_checked": false,
-  "qa_status": "NOT_STARTED",
-  "retry_count": 0,
+  "render_checked": true,
+  "qa_status": "PARTIAL — Loading + Cover: 측정 문제 0건(1920/1440/768/390), Outfit으로 그려지는 요소는 Figma와 0–1px 일치. Allura·Cormorant Garamond(FONT GAP)와 종이 Texture(ASSET GAP) 때문에 1920 시각 일치는 PASS가 아니다",
+  "retry_count": 3,
   "blockers": [
     {
-      "stage": "implementation_plan",
-      "type": "scope",
-      "detail": "Design Gap G1 — Figma에 Page 구분과 사이트 내비게이션이 없다(하나의 긴 문서). Page 분할과 링크 방식 결정 필요",
-      "since": "2026-10-04"
-    },
-    {
-      "stage": "implementation_plan",
-      "type": "scope",
-      "detail": "Design Gap G2 — Case Study와 AIDORA 결과 화면(약 43 Section, Text Node 4,100여 개)의 구현 방식 결정 필요. G4(AIDORA 화면이 보여 주는 대상인지 동작하는 Page인지) 포함",
-      "since": "2026-10-04"
-    },
-    {
-      "stage": "implementation_plan",
-      "type": "scope",
-      "detail": "Design Gap G3 — Desktop 1920 디자인만 있다. Tablet·Mobile·좁은 Desktop 대응 방식 결정 필요",
-      "since": "2026-10-04"
-    },
-    {
-      "stage": "site_scaffold",
+      "stage": "master_page_build",
       "type": "rights",
-      "detail": "Font 6종의 라이선스 확인과 woff2 파일 확보 방법, index의 Texture 배경 이미지 출처, 프로필 사진 사용 확인이 필요하다",
+      "detail": "FONT GAP — Allura Regular, Cormorant Garamond Medium 파일이 없다. Cover의 필기체 문구와 이름이 대체 서체로 그려진다",
       "since": "2026-10-04"
     },
     {
-      "stage": "implementation_plan",
+      "stage": "master_page_build",
+      "type": "rights",
+      "detail": "ASSET GAP — Cover/Contents의 종이 Texture 이미지 출처 미확인. 단색과 CSS 띠로 대신하고 있다",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "secondary_pages",
+      "type": "scope",
+      "detail": "Design Gap G2 — Case Study와 AIDORA 결과 화면의 구현 방식 미결정(G4 포함)",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "section_build",
       "type": "content",
-      "detail": "Content Gap C1(profile 이메일 gmali.com 오탈자 여부), C2(전화번호·생년월일 공개 여부), C4(title/description 문구)",
+      "detail": "Content Gap C1(profile 이메일 gmali.com), C2(전화번호·생년월일 공개 여부), C4(title/description 문구 확정) — profile 구현 전에 필요",
       "since": "2026-10-04"
     }
   ],
@@ -87,14 +81,14 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Figma Design Source Intake: 자동화 > 포트폴리오 > 프로세스 구조 확인, frame-map / extracted-tokens(index + Figma Variable) / implementation-spec / sitemap 작성. viewports.desktop을 Figma Frame 폭 1920으로 변경. Figma 수정 없음, docs/ 생성 없음, Asset 다운로드 없음."
+    "summary": "SITE SCAFFOLD + Loading/Cover Master Experience: docs/ 최초 생성(index.html, css 4, js/main.js, Outfit Font 2). tokens.css를 extracted-tokens.json에서 생성(단위 없는 Figma px × --px). Loading 화면(진행률·가는 선)과 Cover 등장 전환 구현. QA Script에 선택 Viewport(laptop)와 Loading 종료 대기 추가. frontend-code Rule에 Inline 상태 Script 예외와 figma mode 단위 정책 우선 추가."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {
     "design_source_intake": "COMPLETE",
     "figma_calibration": "PARTIAL — index(cover, profile, contents)는 Node 단위로 추출, 프로세스 전체의 Figma Variable/Text Style 추출. Case Study와 AIDORA 결과 화면의 Node 단위 값은 G2 결정 후",
     "content_asset_mapping": "PARTIAL — Website 구조와 Frame Map 등록 완료, Asset·Font 목록 작성. Page 분할(G1) 미확정, ASICS 문안 미확인(C5)",
-    "implementation_plan": "BLOCKED — Design Gap G1, G2, G3 결정 대기",
+    "implementation_plan": "COMPLETE for index (사용자 결정 2026-10-04: Loading → Cover 우선, Responsive는 Conservative Adaptation). Project Page는 G2 결정 대기",
     "autonomous_stages": "N/A — env_calibration, content_ia, reference_research, visual_direction, visual_system은 이 mode에서 실행하지 않는다"
   }
 }
