@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "project_id": "personal-portfolio",
+  "config_file": "config/project.yaml",
+  "current_stage": "project_load",
+  "stage_status": "BLOCKED",
+  "last_completed_stage": null,
+  "optional_stages": {
+    "reference_research": "NOT_STARTED",
+    "asset_sourcing": "NOT_STARTED"
+  },
+  "environment": {
+    "checked_at": "2026-10-04",
+    "node": "v24.18.1",
+    "browser_qa": {
+      "status": "VERIFIED",
+      "command": "node scripts/qa/capture.cjs",
+      "playwright": "기존 npx 캐시의 playwright 1.64.0-alpha (@playwright/mcp 의존성)",
+      "browser": "설치된 Chrome (channel: chrome)",
+      "new_install_required": false,
+      "risk": "Playwright가 npx 캐시에 있어 캐시가 정리되면 사라진다. 그 경우 capture.cjs가 종료 코드 2로 끝나며, 설치하지 말고 Level 3 Blocker로 보고한다."
+    },
+    "git_remote": "origin = github.com/inbloodi3-wq/2026-UIUX",
+    "pages_settings": "UNVERIFIED — GitHub Pages Source(main / docs) 설정 여부와 Repository 공개 범위를 확인하지 못함"
+  },
+  "checkpoint": {
+    "stage": "project_load",
+    "page": null,
+    "section": null,
+    "updated_at": "2026-10-04",
+    "resume_hint": "config/project.yaml의 project.name, description, goals, audiences, primary_user_tasks가 비어 있다. 사용자에게 사이트 목적·대상·실을 내용을 요청한 뒤(최대 3개 질문) content_ia Stage를 시작한다. docs/에는 .nojekyll만 있고 사이트 코드는 아직 없다."
+  },
+  "render_checked": false,
+  "qa_status": "NOT_STARTED",
+  "retry_count": 0,
+  "blockers": [
+    {
+      "stage": "project_load",
+      "type": "content",
+      "detail": "프로젝트 목표, 대상 방문자, Primary Task, 사이트에 실을 콘텐츠(이름, 소개, 경력, 프로젝트, 연락 방법)가 제공되지 않았다. 추정하지 않는다.",
+      "since": "2026-10-04"
+    }
+  ],
+  "approval_required": [
+    {
+      "action": "Git History에 남은 .playwright-mcp 타사 사이트 스크린샷 처리 여부 결정",
+      "target": "origin/main history (commit 99c320e)",
+      "effect": "현재 Tracking에서는 제거됐지만 History에는 남아 있다. Repository가 Public이면 열람 가능하다. 제거하려면 History rewrite와 force push가 필요하며 둘 다 현재 금지 사항이다.",
+      "reversibility": "History rewrite는 되돌릴 수 없다",
+      "status": "PENDING_APPROVAL"
+    }
+  ],
+  "last_deploy": null,
+  "last_meaningful_change": {
+    "date": "2026-10-04",
+    "summary": "Automation Foundation Migration: Figma 자동화를 archive/legacy-figma-automation으로 이동하고 Automation Core를 웹사이트 제작(HTML/CSS/Vanilla JS, GitHub Pages docs/)용으로 재작성. 사이트 디자인·구현은 시작하지 않음."
+  },
+  "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS"
+}

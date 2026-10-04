@@ -1,25 +1,32 @@
 ---
 name: apply-approved-assets
-description: 승인된(assets/approved 또는 assets/generated) 이미지만 Figma 화면에 삽입할 때 사용한다.
+description: 권리 승인된(manifest에서 APPROVED) 이미지·Font만 docs/assets/에 복사해 HTML/CSS에 적용할 때 사용한다.
 ---
 
 # Apply Approved Assets
 
 ## Required Inputs
-- 삽입 대상 Figma Screen ID (`figma/screen-registry.md` 기준)
+- 대상 `Page#Section`(`ia/sitemap.md` 기준)
 - `assets/manifest.jsonl`
 
 ## Procedure
-1. 삽입하려는 이미지가 `assets/approved/` 또는 `assets/generated/`에 있는지 확인한다.
-2. 저장 위치와 무관하게(생성 Asset 포함) `assets/manifest.jsonl`에서 해당 Asset이 `status: APPROVED`인지 확인한다. Generated Asset이라는 이유로 이 확인을 생략하지 않는다.
-3. 확인되면 Figma MCP(`use_figma` 등)로 해당 Screen ID의 대상 요소에만 삽입한다.
-4. 삽입 후 `assets/manifest.jsonl`의 해당 레코드에 `used_in_screen`, `used_in_element`를 기록한다.
+1. 넣으려는 Asset이 `assets/approved/` 또는 `assets/generated/`에 있고, `assets/manifest.jsonl`에서 `status: APPROVED`인지 확인한다. Generated·User-provided라는 이유로 이 확인을 생략하지 않는다.
+2. 파일을 `docs/assets/`에 복사한다. 이름은 `.claude/rules/naming-convention.md`를 따른다(소문자 kebab-case, ASCII).
+3. 표시 크기에 비해 지나치게 큰 원본이면 그대로 넣지 않고 보고한다. 변환 도구를 새로 설치하지 않는다(사용자에게 적정 크기 파일을 요청하거나, 이미 설치된 도구로만 처리).
+4. HTML에 적용한다(Edit로 대상 Section만):
+   - 콘텐츠 이미지는 `<img>` + 의미를 전달하는 `alt`. 장식이면 `alt=""` 또는 CSS Background.
+   - `width`와 `height` 속성으로 비율을 고정한다(Layout Shift 방지).
+   - 첫 화면 밖이면 `loading="lazy"`, 첫 화면 핵심 이미지는 lazy를 쓰지 않는다.
+   - 경로는 상대 경로(`assets/…`).
+5. Provider가 Attribution을 요구하면 `ia/`에 정한 위치(예: Footer, Credits)에 표기한다.
+6. `assets/manifest.jsonl`의 해당 레코드에 `used_in_page`, `used_in_section`, `deployed_path`를 기록한다.
+7. 세 Viewport에서 Render해 Crop과 비율을 확인한다.
 
 ## Fail Conditions
-- `assets/manifest.jsonl`에 없거나 `status`가 `APPROVED`가 아닌 이미지는 삽입하지 않는다(생성 Asset도 예외 없음).
-- `assets/approved/`, `assets/generated/` 외의 경로(예: 임시 다운로드, 웹 URL 직접 삽입)에서 이미지를 가져오지 않는다.
-- 대상 Screen ID가 `figma/screen-registry.md`에 없으면 먼저 등록 여부를 확인한다.
+- manifest에 없거나 `APPROVED`가 아닌 Asset은 넣지 않는다.
+- `assets/approved/`, `assets/generated/` 외의 경로(임시 다운로드, 웹 URL Hotlink, `archive/`의 이미지 직접 복사)에서 가져오지 않는다.
+- 외부 URL을 `src`로 직접 쓰지 않는다(Provider 정책이 Hotlink를 요구하는 경우는 Level 3로 보고).
 
 ## Output
-- Figma 화면에 삽입된 이미지
-- `assets/manifest.jsonl`의 `used_in_screen`, `used_in_element` 갱신
+- `docs/assets/<file>`과 적용된 Markup
+- `assets/manifest.jsonl`의 사용 위치 기록

@@ -1,52 +1,67 @@
-# Automated Web Redesign Portfolio System
+# Website Automation System
 
-Claude Code의 Rules, Subagents, Skills와 Figma MCP를 사용해 웹사이트 리디자인 포트폴리오 제작을 자동화하는 범용 시스템이다.
+Claude Code의 Rules, Subagents, Skills로 **실제 반응형 웹사이트**(HTML5 · CSS3 · Vanilla JavaScript)를 제작하고 GitHub Pages로 배포하는 자동화 시스템이다. 현재 프로젝트는 개인 포트폴리오 / 프로필 웹사이트다.
 
-## 목적
-Research → Reference Research → Visual Direction → IA → Design System → Asset Sourcing → Figma 화면 제작 → Responsive → QA → Final Rights Audit까지, 웹 리디자인 포트폴리오 제작 과정을 하나의 Pipeline으로 자동화한다.
+최종 산출물은 `docs/`의 코드다. Framework, Build Tool, Package Manager를 쓰지 않는다. Figma는 필요하지 않다.
 
-이 시스템 자체(`.claude/agents`, `.claude/rules`, `.claude/skills`, `legal/source-policy.yaml`)는 특정 회사나 산업에 종속되지 않는다. 프로젝트별 정보는 `config/project.yaml`과 `research/`, `ia/`, `design-system/` 등 프로젝트 데이터 디렉터리에 저장된다.
+## 저장소 구조
+세 영역이 분리되어 있다.
 
-## 폴더 구조
-- `config/` : 프로젝트 정의(`project.yaml`)와 새 프로젝트용 템플릿(`project-template.yaml`)
-- `automation/` : Pipeline 진행 상태(`pipeline-state.json`)
-- `.claude/rules` : 프로젝트에 관계없이 항상 적용되는 규칙
-- `.claude/agents` : 역할별 Subagent (WHO / 판단 책임)
-- `.claude/skills` : 반복 작업 절차 (HOW-TO)
-- `research` : 현황 분석, 사용자 정의, 문제 정의 — 현재 프로젝트 데이터
-- `references` : 웹 디자인 레퍼런스 조사 기록 — 텍스트 관찰만, 이미지 저장 없음
-- `ia` : 정보구조(사이트맵), 사용자 플로우 — 현재 프로젝트 데이터
-- `design-system` : 현재 프로젝트의 디자인 토큰, Visual Language
-- `assets` : 이미지 Asset 원본/승인/생성본과 `manifest.jsonl`
-- `legal` : Provider Policy(`source-policy.yaml`, 범용)와 라이선스 확인 근거
-- `figma` : Screen Registry, 파일 링크
-- `output` : 내보내기 결과물
+| 영역 | 위치 | 내용 |
+|---|---|---|
+| Website Source | `docs/` | 배포되는 사이트. GitHub Pages에 공개되는 유일한 디렉터리 |
+| Automation System | `CLAUDE.md`, `.claude/`, `config/`, `automation/`, `scripts/qa/`, `legal/` | 제작 방법, 규칙, 진행 상태, QA 도구 |
+| Project Source Documents | `content/`, `ia/`, `design-system/`, `references/`, `assets/`, `qa/` | 무엇을 만들지에 대한 원본 문서(Stage가 진행되며 생성된다) |
+| Archive | `archive/legacy-figma-automation/` | 이전 Figma 자동화와 프로젝트 기록(READ ONLY) |
 
-## 새 프로젝트 시작 방법
-1. `config/project-template.yaml`을 `config/project.yaml`로 복사하고 값을 채운다(Project Name/URL/Goals/Audience/Core Task/Viewports/Project-specific Constraints 등). PowerShell 환경이면 `./scripts/init-project.ps1 -New`로 이 단계와 아래 3번의 Runtime 초기화를 함께 수행할 수 있다(기존 데이터를 임의로 지우지 않으며 실행 전 확인을 거친다).
-2. `research/`, `ia/`, `design-system/`, `figma/screen-registry.md`, `figma/file-links.md`의 자유 서술 문서를 새 프로젝트 내용으로 다시 작성한다(형식이 프로젝트마다 달라 스크립트가 자동으로 비우지 않는다).
-3. `references/reference-index.jsonl`, `assets/manifest.jsonl`, `legal/license-evidence.jsonl`을 비우고 `automation/pipeline-state.json`을 초기 상태로 재설정한다.
-4. Claude Code를 실행하고 Pipeline을 시작한다(`.claude/agents/automation-orchestrator.md` 참고).
+- `config/project.yaml` — 프로젝트 정의(목표, 대상, Stack, 배포, Viewport)
+- `automation/pipeline-state.json` — Pipeline 진행 상태와 Checkpoint
+- `.claude/rules/` — 항상 적용되는 규칙 8개(action-safety, git-deploy, frontend-code, design-system, ux-principles, naming-convention, project-architecture, web-research-safety)
+- `.claude/agents/` — automation-orchestrator, ia-planner, visual-director, frontend-builder, site-reviewer, asset-sourcer, rights-auditor, reference-researcher(선택)
+- `.claude/skills/` — define-ia, design-tokens, scaffold-site, build-section, review-browser, review-code, deploy-pages, apply-approved-assets, validate-asset-rights, final-rights-audit, source-safe-assets, research-visual-references
+- `scripts/qa/` — Browser QA 도구(`serve.cjs`, `capture.cjs`). 사이트의 Dependency가 아니다
 
-`.claude/` 내부(Agent/Rule/Skill)는 새 프로젝트를 시작해도 수정할 필요가 없다.
+## Pipeline
+PROJECT LOAD → ENV / CODEBASE CALIBRATION → CONTENT / IA → VISUAL SYSTEM → SITE SCAFFOLD → MASTER PAGE BUILD → SECTION BUILD → BROWSER QA → TARGETED FIX → SECONDARY PAGES → INTERACTION → FULL QA → TARGETED FIX → PRE-DEPLOY CHECK → DEPLOY → LIVE QA → DONE
 
-## Pipeline 실행 방법
+Reference Research와 Asset Sourcing은 필요할 때만 실행하는 Optional Stage다. 각 Stage는 파일 존재가 아니라 실제 내용으로 PASS를 판정한다(`.claude/agents/automation-orchestrator.md`).
+
+## 실행
 ```powershell
 cd <project-dir>
 claude
 ```
-Claude는 세션 시작 시 `config/project.yaml`과 `automation/pipeline-state.json`을 먼저 읽고, `automation-orchestrator`가 정의한 순서와 통과 조건에 따라 다음 단계를 진행한다. 각 단계는 파일 존재 여부가 아니라 실제 내용(Placeholder/TODO 없음, 필수 데이터 존재)으로 PASS 여부를 판정한다.
+Claude는 세션 시작 시 `config/project.yaml`과 `automation/pipeline-state.json`을 읽고 마지막 Checkpoint에서 이어간다.
 
-## Asset Safety 개념
-- 최종 결과물에 사용하는 외부 이미지는 공식 Provider API(Pixabay/Unsplash/선택적 Pexels)로만 소싱한다.
-- Pinterest/Behance/Notefolio 등은 레퍼런스 조사 전용이며 이미지를 다운로드하거나 최종 결과물에 삽입하지 않는다.
-- 출처·라이선스·콘텐츠 안전성이 불명확한 이미지는 사용하지 않는다(Fail Closed, UNKNOWN = REJECTED).
-- Global Safety Policy는 `legal/source-policy.yaml`(범용)이 담당하고, 프로젝트별 추가 제한은 `config/project.yaml`의 `project_asset_restrictions`가 담당한다.
-- 내부에서 생성한 Vector/SVG Asset(`assets/generated/`)도 예외 없이 `assets/manifest.jsonl`에 기록한다.
-- API Key는 `.env`(gitignore 처리)에만 저장한다. `.env.example`을 복사해서 사용한다.
+## 디자인 값의 원본
+- 값(색, Type Scale, 간격 등): `docs/css/tokens.css` **하나**
+- Direction, 원칙, 사용 이유: `design-system/visual-language.md`(값은 적지 않는다)
+- Breakpoint: `config/project.yaml`의 `site.breakpoints`
 
-## 공유 시 제외되는 파일
-`.git/`, `.env`, `.claude/settings.local.json`, 임시 파일, 로그, 다운로드 캐시, 다운로드된 원본/승인 이미지 바이너리(`assets/original/*`, `assets/approved/*`)는 이 시스템의 배포본/공유본에 포함하지 않는다. `.gitignore`에 반영되어 있다.
+## Responsive
+Desktop · Tablet · Mobile을 Section을 만들 때마다 함께 구현하고 함께 Render한다. 기준 폭은 `config/project.yaml`의 `viewports`다. Mobile은 Desktop의 축소판이 아니다.
 
-## 현재 프로젝트
-이 저장소에는 예시로 TJ미디어(TJ MEDIA) 리디자인 프로젝트가 진행 중이다. 세부 내용은 `config/project.yaml`, `research/`, `ia/`, `figma/screen-registry.md`에서 확인한다.
+## Browser QA
+```powershell
+node scripts/qa/capture.cjs --check        # 도구 동작 확인
+node scripts/qa/capture.cjs                # 모든 Page를 세 Viewport에서 Render
+node scripts/qa/serve.cjs                  # 수동 확인용 로컬 서버 (http://127.0.0.1:8765/2026-UIUX/)
+```
+- Node 내장 서버가 `docs/`를 배포와 같은 Base Path 아래에서 서빙하고, 이미 설치된 Playwright와 Chrome으로 Render한다.
+- 스크린샷과 측정 보고는 `qa/screenshots/`에 남는다(git 미추적).
+- Playwright는 프로젝트에 설치되어 있지 않고 기존 npx 캐시의 것을 찾아 쓴다. 찾지 못하면 Script가 종료 코드 2로 끝난다. 이때 자동으로 설치하지 않는다(사용자 승인 필요).
+
+## 배포
+- GitHub Pages, `main` branch의 `docs/`. Base Path는 `/2026-UIUX/`이므로 사이트 내부 경로는 상대 경로로 쓴다.
+- Stage 단위 local commit은 자동으로 한다. **`git push`(= 배포)는 매번 사용자 승인이 필요하다.** Force push와 History rewrite는 하지 않는다(`.claude/rules/git-deploy.md`).
+- 최초 배포 시 GitHub Repository Settings → Pages에서 Source를 `main` / `/docs`로 지정해야 한다(사용자가 직접 설정).
+- Pages에 서빙되는 것은 `docs/`뿐이지만, Repository가 Public이면 나머지 디렉터리와 Git History도 GitHub에서 열람된다.
+
+## 안전 규칙
+- `.claude/settings.json`이 Bash와 PowerShell 양쪽에서 push, reset, rebase, amend, 변경 폐기, branch 삭제, 재귀 삭제, Package 설치에 확인을 요구하고, force push·History rewrite·`.env`/Key 파일 접근을 차단한다.
+- 이미지·Font는 `assets/manifest.jsonl`에서 `APPROVED`인 것만 `docs/assets/`에 넣는다. 출처·라이선스가 불명확하면 사용하지 않는다(Fail Closed, `legal/source-policy.yaml`).
+- 사이트에는 사용자가 명시적으로 제공한 개인정보만 싣는다.
+- API Key는 `.env`(git 미추적)에만 둔다. `.env.example`을 복사해 사용한다.
+
+## Archive
+`archive/legacy-figma-automation/`에는 이전 Figma 기반 자동화(TJ MEDIA, AUTORUN_01–03, PORTFOLIO_03)와 Figma 전용 Rule/Agent/Skill이 보관되어 있다. 현재 Pipeline은 이를 사용하지 않는다. 자세한 내용은 그 안의 `README.md`.

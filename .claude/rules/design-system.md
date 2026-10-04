@@ -3,38 +3,43 @@
 ## 핵심 원칙: DESIGN FOUNDATION ≠ VISUAL STYLE
 두 Layer를 분리해서 판단한다.
 
-| Layer | 역할 | 내용 | Source |
-|---|---|---|---|
-| A. Foundation | 완성도의 안전선(안정성) | Typography 위계, Line height, Letter spacing, Margin/Padding, 정렬, Grid, Text measure, 여백, Rhythm, Baseline, 가독성 | `design-system/foundation-grammar.md`, `typography.md`, `spacing.md`, `grid.md` |
-| B. Expressive Direction | 프로젝트의 개성(Portfolio Diversity) | Color intensity, Artwork, Photo/Illustration, Type expression, Composition, Overlap, Asymmetry, Scale contrast, Texture, Shape, Motif, Image dominance, Motion, Experimental layout | `design-system/visual-language.md` |
+| Layer | 역할 | 내용 |
+|---|---|---|
+| A. Foundation | 완성도의 안전선 | Typography 위계, Line height, Margin/Padding, 정렬, Grid, Text measure, 여백 Rhythm, 가독성, 대비 |
+| B. Expressive Direction | 이 사이트의 개성 | Color intensity, Artwork, Image treatment, Type expression, Composition, Scale contrast, Motif, Motion |
 
-- Foundation은 "정확히 이 값을 써라"가 아니라 **"시각적으로 무너지는 것을 막는 안전선"**이다. 큰 Type, Full Bleed, 비대칭, Overlap, Off-grid, 과감한 Crop, 실험적 간격은 허용된다. 단 가독성 저하·위계 붕괴·정렬 오류·의미 없는 장식으로 이어지면 FAIL이다.
-- Foundation Reference(Master Reference Page 등)를 Visual Style Template로 사용하지 않는다.
+- Foundation은 "정확히 이 값을 써라"가 아니라 **"시각적으로 무너지는 것을 막는 안전선"**이다. 큰 Type, Full Bleed, 비대칭, Overlap, 과감한 Crop은 허용된다. 단 가독성 저하·위계 붕괴·정렬 오류·의미 없는 장식으로 이어지면 FAIL이다.
+- Expressive Direction은 `design-system/visual-language.md`에서 결정하고, 승인된 뒤의 변경은 Level 3다.
 
-## 토큰 사용
-- 화면마다 임의의 색상/간격 값을 반복 작성하지 않는다. 먼저 `design-system/`의 기존 토큰을 검색한다.
-- 기존 토큰은 **일관성**을 위한 것이지 창의성 제한이 아니다. "기존 토큰이 없으니 이 표현은 금지"로 해석하지 않는다.
-- 새 표현에 토큰이 필요하면 확장한다. 조건:
-  1. `design-system/visual-language.md`에 그 표현의 필요성(무엇을 전달하는지)이 먼저 정의되어 있을 것
-  2. 토큰을 `design-system/`에 먼저 추가하고 이유를 기록한 뒤 Figma에 적용할 것 (Figma에서 임의 값을 만든 뒤 문서에 나중에 적는 방식 금지)
-- 승인된(APPROVED/LOCK) 토큰 값을 덮어쓰는 변경은 Brand Identity 변경이면 Level 3(질문), 그 외는 Level 2(실행 후 보고)다(`CLAUDE.md` Decision Authority).
+## Source of Truth — 값은 한 곳에만
+| 무엇 | 어디 |
+|---|---|
+| 디자인 **값**(색, Type Scale, 간격, 반경, 그림자, Motion) | `docs/css/tokens.css` — **유일한 원본** |
+| Breakpoint 값 | `config/project.yaml`의 `site.breakpoints`(Media Query에는 Custom Property를 쓸 수 없다) |
+| Direction, 원칙, 각 Token의 **역할과 사용 이유**, Component 사용 규칙 | `design-system/*.md` |
+
+- `design-system/` 문서에 Hex, px, rem 같은 구체 값을 적지 않는다. Token **이름**(`--color-accent`)과 그 역할·이유만 적는다. 같은 값을 문서와 CSS 양쪽에서 따로 관리하지 않는다.
+- 값을 바꿀 때는 `tokens.css`만 고친다. 역할이나 이유가 바뀌면 문서를 고친다.
+- Browser에서 발견한 문제를 개별 Selector에 Raw 값으로 덧대어 고치지 않는다. Token 문제면 Token을, 구조 문제면 Layout/Component를 고친다.
+
+## Token 사용
+- 새 값이 필요하면 먼저 기존 Token을 검색한다. 같은 의미의 Token을 중복 생성하지 않는다.
+- 기존 Token은 **일관성**을 위한 것이지 창의성 제한이 아니다. 새 표현에 Token이 필요하면 `visual-language.md`에 필요성(무엇을 전달하는가)을 적고 `tokens.css`에 추가한 뒤 사용한다.
+- Token 이름은 값이 아니라 역할을 나타낸다(`--color-accent` O, `--color-blue` X). 규칙은 `naming-convention.md`.
 
 ## Minimalism Bias 방지
-다음 판단은 자동 기본값이 될 수 없다: "깔끔하니까 좋다", "안전하니까 유지한다", "정보가 많으니 흰 배경 + 카드로 정리한다".
-프로젝트 성격에 따라 Strong Color, Large Artwork, Editorial Image, Typography-led Composition, Graphic Motif, Pattern/Texture, Illustration, High Contrast, Layering, Large Scale Type, Full Bleed, Irregular Grid를 적극적으로 선택할 수 있다. Restrained 표현을 선택할 때도 그 이유를 `visual-language.md`에 기록한다.
+"깔끔하니까 좋다", "안전하니까 유지한다", "정보가 많으니 흰 배경 + 카드로 정리한다"는 자동 기본값이 될 수 없다. Strong Color, Large Type, Full Bleed, Irregular Grid, Graphic Motif를 선택할 수 있고, Restrained 표현을 선택할 때도 이유를 `visual-language.md`에 적는다. 어느 쪽이든 사이트의 목적과 콘텐츠에 맞아야 한다.
 
 ## Semantic Visual Rule
-Image/Artwork/Graphic을 배치하기 전에 **"What must this visual prove?"**를 한 줄로 정의한다. 답할 수 없으면 사용하지 않는다(Artwork ≠ Decoration). 비율 통일보다 의미 전달이 우선이다.
-예) Hero Artwork → Brand/Product Mood · Comparison → Difference · Search → Search Interaction · Campaign Graphic → Brand Energy · Portfolio Process → Decision Evidence
+Image/Artwork/Graphic/Motion을 넣기 전에 **"What must this visual prove?"**를 한 줄로 정의한다. 답할 수 없으면 넣지 않는다(Artwork ≠ Decoration).
 
 ## Artwork System
-Expressive/Artwork-heavy Direction이면 Artwork를 개별 장식이 아니라 하나의 System으로 `visual-language.md`에 정의한다: Core motif(1~2개), Shape language, Color behavior, Image treatment, Texture, Typography interaction, Composition rule, Variation rule. Section/Page마다 새 Graphic Style을 만들지 않는다. Variation은 허용, Visual Language는 하나.
+Artwork가 Direction의 핵심이면 개별 장식이 아니라 하나의 System으로 `visual-language.md`에 정의한다: Core motif(1~2개), Shape language, Color behavior, Image treatment, Typography interaction, Composition rule, Variation rule. Section/Page마다 새 Graphic Style을 만들지 않는다.
+
+## Layout Priority (CSS)
+1. 문서 흐름과 Flex/Grid로 배치한다.
+2. `position: absolute/fixed`는 흐름으로 표현할 수 없는 요소(Overlap, Off-grid Expressive 요소, Overlay)에만 쓴다.
+3. 고정 높이로 콘텐츠를 가두지 않는다. 콘텐츠가 길어져도 무너지지 않아야 한다.
 
 ## 참조
-Colors `design-system/colors.md` · Typography `typography.md` · Spacing `spacing.md` · Grid `grid.md` · Components `components.md` · Foundation `foundation-grammar.md` · Expressive `visual-language.md`
-
-## Position Priority
-1. Figma 오토레이아웃/제약 조건
-2. X/Y 절대 좌표 (오토레이아웃으로 표현 불가능한 요소 — Overlap/Off-grid Expressive 요소 포함)
-3. 정렬 (`top-right`, `center` 등)
-4. 레이아웃 기본값
+Direction `design-system/visual-language.md` · 값 `docs/css/tokens.css` · 코드 규칙 `.claude/rules/frontend-code.md`

@@ -1,0 +1,73 @@
+# Project Definition — Personal Portfolio / Profile Website
+# 이 파일이 프로젝트의 목표·대상·제약에 대한 Source of Truth다. Schema는 config/project-template.yaml.
+# 비어 있는 값은 아직 사용자가 정하지 않은 것이다. Agent가 추정해 채우지 않는다(Level 3).
+
+project:
+  id: personal-portfolio
+  name: ""                 # 사이트 이름/표기할 이름 — 사용자 제공 필요
+  type: "personal portfolio / profile website"
+  description: ""          # 한두 문장 — 사용자 제공 필요
+
+goals: []                  # 이 사이트가 달성해야 하는 것 — 사용자 제공 필요
+
+audiences: []              # 누가 이 사이트를 보는가 — 사용자 제공 필요
+  # - id: ""
+  #   name: ""
+  #   description: ""
+  #   core_tasks: []
+
+primary_user_tasks: []     # 방문자가 가장 먼저/자주 하는 행동 — 사용자 제공 필요
+
+ux_requirements: []
+design_constraints: []
+project_asset_restrictions: []
+reference_preferences: []
+
+# ---------------- Site (2026-10-04 사용자 승인 — 변경은 Level 3) ----------------
+site:
+  stack: ["HTML5", "CSS3", "Vanilla JavaScript"]
+  forbidden: ["React", "Vue", "Next.js", "TypeScript", "Tailwind", "build tools", "package managers", "JS/CSS frameworks"]
+  source_dir: docs
+  repository: "inbloodi3-wq/2026-UIUX"
+  deploy:
+    platform: github-pages
+    method: branch          # GitHub Actions 사용 안 함
+    branch: main
+    folder: /docs
+  base_path: "/2026-UIUX/"
+  url: "https://inbloodi3-wq.github.io/2026-UIUX/"
+  pages: []                # content_ia Stage에서 확정. 예: [{ id: index, file: index.html }]
+  breakpoints: []          # site_scaffold Stage에서 확정(min-width, px). CSS Media Query 값의 유일한 원본
+  js_policy:
+    progressive_enhancement: true   # JS 없이 핵심 콘텐츠·내비게이션 사용 가능
+    files: ["js/main.js"]
+    review_threshold_lines: 150     # 넘으면 review-code에서 이유를 확인한다(금지선이 아니다)
+  performance_budget:               # 초기 기준. Page당, 로컬 측정(capture.cjs) 기준
+    max_transfer_kb: 1500
+    max_requests: 30
+
+viewports:                 # Browser QA 기준 폭(px). 세 Viewport 모두 필수
+  desktop: 1440
+  tablet: 768
+  mobile: 390
+
+automation:
+  autonomy_mode: autonomous     # guided | autonomous
+  user_approval_budget: 3
+  max_polish_passes: 3
+  state_file: automation/pipeline-state.json
+
+visual_expression:              # auto | low | medium | high (style_bias: auto | restrained | balanced | expressive)
+  style_bias: auto
+  color_intensity: auto
+  typography_expressiveness: auto
+  composition_experimentation: auto
+  imagery_dominance: auto
+  artwork_intensity: auto
+  motion_intensity: auto
+
+visual_direction:
+  status: NOT_STARTED           # NOT_STARTED | PROPOSED | APPROVED (APPROVED 이후 변경은 Level 3)
+  name: ""
+
+status: not_started

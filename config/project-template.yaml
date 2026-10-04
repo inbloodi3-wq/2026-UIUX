@@ -1,107 +1,82 @@
-# Project Definition Template
-# 새 프로젝트를 시작할 때 이 파일을 config/project.yaml로 복사하고 값을 채운다.
-# .claude/(agents/rules/skills)는 수정할 필요가 없다 — 이 파일의 값만으로 동일한 Pipeline을 사용한다.
+# Project Definition Template (Schema 참고용)
+# 이 저장소의 프로젝트는 config/project.yaml 하나다. 이 파일은 각 필드의 의미를 설명한다.
+# 비워 둔 값을 Agent가 추정해 채우지 않는다.
 
 project:
-  id: ""              # kebab-case 식별자, 예: "acme-shop-redesign"
-  name: ""            # 실제 서비스/회사명
-  url: ""             # 현행 웹사이트 URL (있는 경우)
-  type: ""            # 자유 서술, 예: "ecommerce", "media", "saas", "portfolio"
-  description: ""     # 한두 문장 설명
-
-portfolio:
-  purpose: ""              # 이 리디자인 작업의 목적, 예: "포트폴리오 제작", "실제 납품"
-  deadline_or_scope: ""    # 마감일 또는 작업 범위 요약
+  id: ""              # kebab-case 식별자
+  name: ""            # 사이트 이름 또는 표기할 이름
+  type: ""            # 예: "personal portfolio / profile website"
+  description: ""     # 한두 문장
 
 goals: []
-  # 예: ["결제 전환율 개선", "모바일 이탈률 감소"]
+  # 사이트가 달성해야 하는 것. 예: ["채용 담당자가 2분 안에 대표 작업 3개를 본다"]
 
 audiences: []
-  # 예:
-  # - id: "primary-user"
+  # - id: "recruiter"
   #   name: ""
   #   description: ""
   #   core_tasks: []
 
 primary_user_tasks: []
-  # 이 서비스에서 사용자가 가장 먼저/가장 자주 하는 행동. 예: ["상품 검색", "장바구니 담기"]
-
-information_architecture:
-  segment_separation_required: false   # 서로 다른 사용자 그룹(예: B2C/B2B)을 화면 구조에서 분리해야 하면 true
-  segments: []
-    # segment_separation_required: true일 때만 사용. 예:
-    # - id: "customer"
-    #   label: "Customer"
-    #   description: "일반 고객 화면"
-
-screen_id_policy:
-  prefixes: {}
-    # segments를 정의했다면 Segment id -> Prefix 매핑.
-    # 비워두면 .claude/rules/naming-convention.md의 기본값({domain}-{screen})을 사용한다.
-    # 예: { customer: "c", partner: "b", common: "g" }
-
-viewports:
-  desktop: 1440
-  tablet: null
-  mobile: 390
-
-figma:
-  file_key: ""              # Figma fileKey
-  final_section: ""         # 최종 화면을 모아두는 Section/Frame 이름
-  design_system_section: "" # Design System Section/Frame 이름
-
-design_constraints: []
-  # 예: ["임시 폰트 사용, 추후 교체 예정", "브랜드 컬러는 CTA/강조에만 제한적으로 사용"]
+  # 방문자가 가장 먼저/자주 하는 행동. 예: ["대표 프로젝트 보기", "연락하기"]
 
 ux_requirements: []
-  # 예: ["핵심 검색 진입점은 above the fold에 노출"]
+  # 예: ["연락 방법은 모든 Page에서 한 번의 클릭으로 접근"]
+
+design_constraints: []
+  # 예: ["본인 사진은 사용하지 않음"]
 
 project_asset_restrictions: []
-  # 이 프로젝트에서 사용하지 않을 이미지 유형(legal/source-policy.yaml의 공용 규칙에 프로젝트별로 추가되는 항목).
-  # 예: ["실제 인물 사진", "타사 로고가 보이는 이미지"]
+  # 이 사이트에서 쓰지 않을 이미지 유형(legal/source-policy.yaml의 공용 규칙에 추가되는 항목)
 
 reference_preferences: []
-  # 레퍼런스 조사 시 우선 참고할 서비스/카테고리. 예: ["동종 업계 서비스 3~5개", "Award-winning e-commerce UI"]
-  # 비워 두어도 Reference Researcher가 Product/UX(Group A)와 타 산업 Art Direction(Group B)을 직접 조사한다.
+  # 레퍼런스 조사 시 우선 참고할 방향. 비워도 Reference Research는 동작한다(Optional Stage)
 
-# ---------------- V2 (Autonomous Design System) — 아래 블록은 모두 선택 사항 ----------------
-# 비워 두거나 블록 자체가 없으면 괄호 안 기본값으로 동작한다(기존 프로젝트와 호환).
+site:
+  stack: ["HTML5", "CSS3", "Vanilla JavaScript"]   # 변경은 Level 3
+  forbidden: []             # 도입하지 않을 기술
+  source_dir: docs          # 웹사이트 소스이자 배포 대상
+  repository: ""            # owner/name
+  deploy:
+    platform: github-pages
+    method: branch
+    branch: main
+    folder: /docs
+  base_path: "/"            # Project Site면 "/<repository-name>/"
+  url: ""
+  pages: []                 # [{ id: index, file: index.html }] — content_ia에서 확정
+  breakpoints: []           # min-width(px) — site_scaffold에서 확정. Media Query 값의 유일한 원본
+  js_policy:
+    progressive_enhancement: true
+    files: ["js/main.js"]
+    review_threshold_lines: 150
+  performance_budget:
+    max_transfer_kb: 1500
+    max_requests: 30
+
+viewports:                  # Browser QA 기준 폭(px). scripts/qa/capture.cjs가 이 값을 읽는다
+  desktop: 1440
+  tablet: 768
+  mobile: 390
 
 automation:
-  autonomy_mode: autonomous     # guided | autonomous | night_run  (기본 autonomous)
-  user_approval_budget: 3       # 한 Run에서 사용자에게 묶어서 물을 Critical Decision 최대 개수 (기본 3)
-  max_polish_passes: 3          # 화면/Section당 Structural+Visual QA+Micro Fix (기본 3)
-  master_reference_page: ""     # Figma Page 이름 또는 page node id. 비우면 Master Grammar Calibration SKIPPED
-  master_reference_usage: grammar_only   # 고정값. Template/Layout 복제 금지, Foundation Grammar만 추출
-  reference_protection: page_read_only   # page_read_only(기본) | frozen_existing_frames (Node ID로 등록된 기존 Frame만 보호)
-  working_scope: ""             # frozen_existing_frames일 때 new_frames_only (State의 editable_scopes에 등록된 신규 Node만 쓰기)
-  execution_mode: supervised_test        # supervised_test | unattended_night_run
-  figma_write_isolation: none   # none | policy_only(Same File Mode, supervised 전용) | isolated_file | tool_enforced_verified — isolated_file/tool_enforced_verified만 unattended Figma 쓰기 허용
-  state_file: automation/pipeline-state.json   # 이 프로젝트의 Pipeline State 경로
+  autonomy_mode: autonomous     # guided(Level 2도 실행 전 확인) | autonomous
+  user_approval_budget: 3       # 한 번에 묶어 묻는 Level 3 질문 최대 개수
+  max_polish_passes: 3          # Page/Section당 Structural + Visual QA + Micro Fix
+  state_file: automation/pipeline-state.json
 
-# paths:                        # 선택. 다른 프로젝트와 문서를 분리할 때만 지정(없으면 루트 디렉터리 사용)
-#   research: experiments/<id>/research
-#   references: experiments/<id>/references
-#   ia: experiments/<id>/ia
-#   design_system: experiments/<id>/design-system
-#   figma: experiments/<id>/figma
-
-portfolio_context:
-  existing_visual_signatures: []
-    # 기존 포트폴리오 작업의 시각적 특징. 예: ["Minimal", "Neutral palette", "White-space heavy", "Card-based"]
-  desired_portfolio_gap: []
-    # 이번 프로젝트로 보완하고 싶은 경험. 예: ["Strong Color", "Artwork System", "Expressive Typography"]
-    # 비워 두면 Visual Director가 existing_visual_signatures와 Brand를 바탕으로 판단한다.
-
-visual_expression:             # 값: auto | low | medium | high (style_bias만 auto | restrained | balanced | expressive)
+visual_expression:              # auto | low | medium | high (style_bias: auto | restrained | balanced | expressive)
   style_bias: auto
   color_intensity: auto
-  artwork_intensity: auto
-  composition_experimentation: auto
   typography_expressiveness: auto
+  composition_experimentation: auto
   imagery_dominance: auto
+  artwork_intensity: auto
   motion_intensity: auto
-  # auto인 항목은 Research / Brand / References / Portfolio Gap을 근거로 Visual Director가 결정하고
-  # design-system/visual-language.md에 근거를 남긴다. 사용자에게 묻지 않는다.
+  # auto인 항목은 Visual Director가 결정하고 design-system/visual-language.md에 근거를 남긴다
 
-status: not_started   # not_started | in_progress | review | complete
+visual_direction:
+  status: NOT_STARTED           # NOT_STARTED | PROPOSED | APPROVED
+  name: ""
+
+status: not_started             # not_started | in_progress | review | complete
