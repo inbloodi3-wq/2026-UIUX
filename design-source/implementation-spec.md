@@ -154,7 +154,7 @@ Lorem ipsum, TODO, Sample Text는 `포트폴리오` 안에서 발견되지 않�
 
 ## 17. Build Order
 1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격. (완료 2026-10-04)
-2. **Master Experience = Loading → index#cover.** (구현 2026-10-04, Font·Texture Gap 남음)
+2. **Master Experience = Loading → index#cover.** (완료 2026-10-04 — 20절)
 3. index#profile → index#contents. Loading + Cover가 PASS한 뒤에 시작한다.
 4. Project Page는 G2 결정 후: aidora → tj-media → asics-korea 순(Contents 순서).
 5. Interaction(링크) → FULL QA.
@@ -200,4 +200,42 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
 | 이름 "Kim Yun-Gyeom" | 위치 일치, 글자 모양·폭 다름 | FONT GAP |
 | 왼쪽 띠 | 폭·돌출부 좌표 일치 | 질감 없음(ASSET GAP) |
 | 종이 바탕 | 평균색 일치 | 질감 없음(ASSET GAP) |
+
+## 20. Visual Gap Resolution (2026-10-04) — 19절의 Font / Asset 상태와 1920 대비를 대체한다
+### 사용자 결정
+- Allura Regular, Cormorant Garamond Medium을 Google Fonts 공식 Source(또는 그것이 명시하는 공식 upstream)에서 받아 Self-host한다. CDN과 Google Fonts CSS는 쓰지 않는다.
+- Figma의 종이 Texture Image Fill은 출처 미확인이므로 **REFERENCE ONLY**다. 사이트에는 프로젝트 안에서 새로 만든 Texture(**INTERNAL_CREATED**)를 쓴다. 검은 띠는 Texture에 넣지 않고 CSS로 그린다.
+
+### Font
+| 서체 | 파일 | Source | 근거 |
+|---|---|---|---|
+| Allura Regular (400) | `Allura-Regular.ttf` | google/fonts `ofl/allura` | OFL.txt 원문, METADATA.pb, Font name table |
+| Cormorant Garamond Medium (500) | `CormorantGaramond-Medium.woff2` | 공식 upstream CatharsisFonts/Cormorant `fonts/webfonts` | google/fonts에는 Variable Font(1.2MB)만 있어 upstream의 Static Medium을 썼다. OFL.txt 원문 2부, upstream TTF의 name table(Version 4.003) |
+| Outfit Regular·Light | 기존 파일 유지 | 사용자 PC 설치본 | google/fonts `ofl/outfit/OFL.txt` 원문을 추가로 보존 |
+
+모두 SIL Open Font License 1.1이다. License 원문은 `legal/licenses/`와 `docs/assets/fonts/OFL-*.txt`에 있다.
+
+### Paper Texture
+- 생성기: `scripts/assets/make-paper-texture.py`(Pillow, 고정 Seed). 다섯 크기의 얼룩(고운 Grain, 작은 얼룩, 세로 섬유 결, 뭉침, 넓은 밝기 변화)을 섞은 이음매 없는 Tile.
+- `paper-texture.webp`(512², 종이)와 `paper-texture-dark.webp`(256², 띠 안쪽 질감). 둘 다 `l-sheet`가 깔기 때문에 Loading 화면과 Cover의 바탕이 같다.
+- Figma Render는 눈으로 보는 기준과 통계 기준으로만 썼다(Pixel 복사 없음).
+
+### 1920 Figma 대비 (실측, px)
+| 요소 | Figma (x, y, 폭) | Browser | 차이 |
+|---|---|---|---|
+| 필기체 "Design with clarity." | 185, 303, 414 | 185, 303, 414 | 0 |
+| 제목 "Portfolio" | 200, 463, 918 | 200, 464, 918 | y +1 (Font 교체 전 +6 → 대체 서체의 줄 높이가 원인이었다) |
+| 이름 "Kim Yun-Gyeom" | 183, 714, 281 | 181, 713, 284 | x −2, 폭 +3 |
+| 직함 줄 | 181, 775 | 181, 774 | y −1 |
+| 연도 | 1783, 65 | 1783, 65 | 0 |
+| 짧은 선 | y 65, x 1790–1819 | 같음 | 0 |
+| 이메일·지역 | 1674, 972 | 1673, 972 | x −1 |
+| 띠 경계 x (y=100 / 470 / 500–600 / 630 / 900) | 74 / 92 / 107 / 90 / 74 | 74 / 92 / 107 / 91 / 74 | 0–1 |
+| 띠 안쪽 밝기 (평균 / 편차) | 38.7 / 6.0 | 38.3 / 6.2 | — |
+| 종이 (평균색 / 편차) | 226.6, 225.2, 223.3 / 1.83 | 227.0, 225.0, 223.0 / 1.79 | — |
+
+### 남은 차이 (고치지 않음)
+- 이름의 폭이 약 1% 넓다. Figma가 쓰는 Cormorant Garamond와 upstream Static 파일의 Build가 조금 다를 수 있다. 눈에 띄지 않는 수준(P3)이다.
+- Figma의 띠는 사진 속 종이라서 경계에 가는 밝은 선(양각 느낌)과 약간 둥근 모서리가 있다. CSS 띠는 경계가 곧다.
+- 종이 질감은 통계는 맞췄지만 무늬 자체는 다르다. Figma 쪽이 섬유 결이 조금 더 가늘고 또렷하다. Tile이 512px마다 반복된다.
 

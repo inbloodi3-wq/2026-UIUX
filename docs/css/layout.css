@@ -3,7 +3,8 @@
 /* Sheet: 종이 한 장을 화면 가득 펼친 면. Cover와 Loading 화면이 같이 쓴다.
    - 밝은 종이 바탕과 왼쪽의 검은 띠(가운데가 튀어나온 모양)를 그린다.
    - --px 를 화면 폭에 맞춰 정한다. 이 안의 모든 크기는 --px 를 곱해 쓴다.
-   - 종이 질감 이미지는 아직 권리 확인 전이라 단색으로 대신한다(ASSET GAP). */
+   - 종이 질감은 자체 제작한 반복 Tile이다(scripts/assets/make-paper-texture.py). 띠는 Tile에 없고 CSS가 그린다.
+   - Loading 화면과 Cover가 같은 위치에서 같은 Tile을 깔기 때문에 전환할 때 바탕이 변하지 않는다. */
 .l-sheet {
   --px: calc(100vw / var(--sheet-scale-base-mobile));
   --sheet-padding-left: calc(var(--layout-sheet-padding-left-mobile) * var(--px));
@@ -13,7 +14,7 @@
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  background: var(--color-cover-paper);
+  background: var(--color-cover-paper) url("../assets/paper-texture.webp") repeat 0 0;
   overflow: hidden;
 }
 
@@ -22,7 +23,7 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: calc(var(--layout-cover-band-tab-width) * var(--px));
-  background: var(--color-cover-band);
+  background: var(--color-cover-band) url("../assets/paper-texture-dark.webp") repeat 0 0;
   clip-path: polygon(
     0 0,
     calc(var(--layout-cover-band-width) * var(--px)) 0,

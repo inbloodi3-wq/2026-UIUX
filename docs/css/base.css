@@ -1,6 +1,6 @@
 /* Base — Reset, Font, Element 기본값 */
 
-/* Font: Self-hosted (SIL Open Font License 1.1). 기록은 assets/manifest.jsonl */
+/* Font: Self-hosted. 모두 SIL Open Font License 1.1 (assets/fonts/OFL-*.txt, 기록은 assets/manifest.jsonl) */
 @font-face {
   font-family: "Outfit";
   src: url("../assets/fonts/Outfit-Light.ttf") format("truetype");
@@ -13,6 +13,22 @@
   font-family: "Outfit";
   src: url("../assets/fonts/Outfit-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Allura";
+  src: url("../assets/fonts/Allura-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("../assets/fonts/CormorantGaramond-Medium.woff2") format("woff2");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }

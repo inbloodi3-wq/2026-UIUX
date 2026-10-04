@@ -677,16 +677,16 @@
       "figma": "2025:7249"
     },
     "--color-cover-paper": {
-      "value": "#e0dfdd",
+      "value": "#e3e1df",
       "category": "color",
-      "figma": "2025:7132 Render 실측(밝은 영역 평균)",
-      "note": "ASSET GAP 대체값. 종이 Texture 이미지가 승인되기 전까지 쓰는 단색. Texture의 평균색이다"
+      "figma": "2025:7132 Render 실측(글자 없는 종이 영역 8곳의 평균 약 227, 225, 223)",
+      "note": "종이 평균색. 자체 제작 Texture Tile(assets/generated/paper-texture.webp)의 기준색과 같다. 2026-10-04 재측정(이전 값 #e0dfdd는 글자 Pixel이 섞인 평균이었다)"
     },
     "--color-cover-band": {
-      "value": "#292929",
+      "value": "#272727",
       "category": "color",
-      "figma": "2025:7132 Render 실측(왼쪽 띠 평균)",
-      "note": "ASSET GAP 대체값. Texture 이미지 안에 그려진 왼쪽 검은 띠의 평균색"
+      "figma": "2025:7132 Render 실측(왼쪽 띠 안쪽 평균 약 39)",
+      "note": "Figma에서는 Texture 사진 안에 그려진 띠다. Website에서는 CSS로 그린다. 2026-10-04 재측정(이전 값 #292929)"
     },
     "--layout-cover-band-width": {
       "value": 74,
