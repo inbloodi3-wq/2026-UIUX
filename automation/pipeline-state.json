@@ -37,7 +37,7 @@
     "page": null,
     "section": null,
     "updated_at": "2026-10-04",
-    "resume_hint": "mode는 figma_implementation이다. config/project.yaml의 design_source.reference.url이 비어 있다. 사용자에게 사이트 디자인이 있는 Figma 파일/Page URL을 받은 뒤 design_source_intake(read-design-source Skill, Stage 1)를 시작한다. content_ia / visual_direction / visual_system은 실행하지 않는다. docs/에는 .nojekyll만 있다."
+    "resume_hint": "mode는 figma_implementation이다. config/project.yaml의 design_source.reference.url이 비어 있다. 사용자에게 사이트 디자인이 있는 Figma 파일/Page URL을 받은 뒤 design_source_intake(read-design-source Skill, Stage 1)를 시작한다. Design Definition 구간의 산출물은 design-source/(frame-map.md, extracted-tokens.json, implementation-spec.md)와 ia/sitemap.md뿐이며 docs/는 만들지 않는다. docs/는 site_scaffold에서 처음 생성한다. content_ia / visual_direction / visual_system은 실행하지 않는다."
   },
   "render_checked": false,
   "qa_status": "NOT_STARTED",
@@ -62,7 +62,7 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Dual Mode Architecture Amendment: project.mode(figma_implementation | autonomous_generation) 도입. Design Definition 구간만 분기하고 site_scaffold 이후 Build Core는 공유. 현재 프로젝트는 figma_implementation. Figma는 READ ONLY Design Source(읽기 allow, 쓰기 deny). read-design-source Skill 추가. 사이트 코드는 아직 없음."
+    "summary": "Stage Boundary Fix: Design Definition 구간에서 docs/를 만들지 않도록 수정(figma_calibration → design-source/extracted-tokens.json, visual_system → design-system/token-source.json). docs/css/tokens.css는 site_scaffold에서 Token Source로부터 생성. Figma Node 대응을 ia/sitemap.md에서 design-source/frame-map.md로 분리. 미리 만들어 둔 docs/.nojekyll 제거."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {

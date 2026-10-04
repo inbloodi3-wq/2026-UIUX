@@ -7,11 +7,12 @@ Claude Code로 **실제 반응형 웹사이트**(HTML5 · CSS3 · Vanilla JavaSc
 
 | Mode | 입력 | Design Definition | 하지 않는 것 |
 |---|---|---|---|
-| `figma_implementation` | 완성된 Figma 디자인(READ ONLY) | `design-source/implementation-spec.md` + `docs/css/tokens.css` (`read-design-source` Skill) | IA 재설계, Visual Direction 제안, 디자인 개선·재디자인, Figma 수정 |
-| `autonomous_generation` | Brief와 Content | `ia/` + 승인된 `design-system/visual-language.md` + `docs/css/tokens.css` | Figma 사용(필요 없다) |
+| `figma_implementation` | 완성된 Figma 디자인(READ ONLY) | `design-source/`(`frame-map.md`, `extracted-tokens.json`, `implementation-spec.md`) + `ia/sitemap.md` (`read-design-source` Skill) | IA 재설계, Visual Direction 제안, 디자인 개선·재디자인, Figma 수정 |
+| `autonomous_generation` | Brief와 Content | `content/` + `ia/sitemap.md` + 승인된 `design-system/visual-language.md` + `design-system/token-source.json` | Figma 사용(필요 없다) |
 
 - `figma_implementation`에서 Figma는 **READ ONLY Design Source**다. Figma를 수정하지 않고, Node를 만들지 않고, 작업 공간이나 상태 저장소로 쓰지 않는다. 필요한 것은 Figma → Implementation Specification 변환뿐이다.
 - Figma가 명확하지 않은 부분만 Implementation Judgement로 처리하고 기록한다. 디자인을 바꿔야 할 정도의 문제는 자동 수정하지 않고 보고한다(Level 3).
+- **Design Definition 구간에서는 어느 mode에서도 `docs/`를 만들지 않는다.** `docs/`는 SITE SCAFFOLD에서 처음 생성되고, 그때 Token Source(`extracted-tokens.json` 또는 `token-source.json`)로부터 `docs/css/tokens.css`가 만들어진다.
 - `mode`가 비어 있거나 `design_source`와 맞지 않으면 추정하지 않고 묻는다.
 
 ## 시작할 때 항상 먼저 한다
@@ -76,11 +77,11 @@ Micro Approval 질문("간격을 줄일까요?", "이 색이 좋을까요?")은 
 | `config/project.yaml` | 프로젝트 정의(목표, 대상, Stack, 배포, Viewport) |
 | `automation/pipeline-state.json` | Pipeline 진행 상태, Checkpoint |
 | Figma (`design_source.reference`) | `figma_implementation`의 **Design Intent 원본**. READ ONLY |
-| `design-source/` | `figma_implementation`: Figma에서 변환한 Implementation Spec(**값은 적지 않는다**) |
+| `design-source/` | `figma_implementation`: Figma에서 추출한 구현 데이터 — `frame-map.md`(Figma Node 대응), `extracted-tokens.json`(Token Source), `implementation-spec.md`(값 없음) |
 | `content/` | `autonomous_generation`: 사이트에 실리는 문안·프로젝트 정보의 원본(사용자 제공) |
-| `ia/` | Page/Section 등록부(`sitemap.md`). figma mode에서는 Figma 구조를 그대로 등록, autonomous mode에서는 설계 |
-| `design-system/` | `autonomous_generation`: Visual Direction·원칙·사용 이유(**값은 적지 않는다**) |
-| `docs/css/tokens.css` | **코드에서 쓰는 디자인 값(색·타입·간격·반경 등)의 유일한 원본** (두 mode 공통) |
+| `ia/` | Website 구조(`sitemap.md`: Page, URL/Route, 내비게이션, Section). 두 mode 공통 형식. Figma Node ID를 담지 않는다 |
+| `design-system/` | `autonomous_generation`: Visual Direction·원칙·사용 이유(`visual-language.md`, 값 없음), `token-source.json`(Token Source) |
+| `docs/css/tokens.css` | **코드에서 쓰는 디자인 값(색·타입·간격·반경 등)의 유일한 원본** (두 mode 공통). SITE SCAFFOLD에서 Token Source로부터 생성 |
 | `docs/` | 웹사이트 소스. GitHub Pages에 공개되는 유일한 디렉터리 |
 | `references/` | 레퍼런스 조사(텍스트만, 이미지 없음) |
 | `assets/`, `legal/` | Asset 후보·승인 이력(`manifest.jsonl`), 출처 정책, 라이선스 근거 |

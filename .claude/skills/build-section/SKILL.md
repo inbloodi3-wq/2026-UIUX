@@ -12,7 +12,7 @@ description: ia/sitemap.md에 등록된 Section 하나(또는 새 Page 하나의
 - `project.mode`, 콘텐츠 원본(figma mode: Figma Text / autonomous mode: `content/`), Design Definition(figma mode: `design-source/implementation-spec.md` + 해당 Figma Node / autonomous mode: `design-system/visual-language.md`), `docs/css/tokens.css`
 
 ## Before Writing
-1. `ia/sitemap.md`에서 Section의 목적, 콘텐츠 출처, 우선순위, Viewport별 비고(figma mode: Viewport별 Figma Node ID)를 읽는다.
+1. `ia/sitemap.md`에서 Section의 목적, 콘텐츠 출처, 우선순위, Viewport별 비고를 읽는다. figma mode에서는 `design-source/frame-map.md`에서 이 Section의 Viewport별 Figma Node ID를 찾는다.
 2. Design Definition을 확인한다.
    - figma mode: Spec의 해당 Component·Layout 규칙을 읽고, 그 Section의 Figma Node를 `get_screenshot`(필요 시 `get_design_context`)으로 본다. 디자인이 있는 Viewport는 그대로 따르고, 없는 Viewport는 Spec의 Responsive Plan을 따른다.
    - autonomous mode: `visual-language.md`에서 이 Section의 Visual Role과 쓸 Expressive Device를 확인한다.

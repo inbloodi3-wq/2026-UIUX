@@ -25,11 +25,11 @@ Pipeline 조정자다. 각 Stage를 직접 수행하지 않고, 이전 Stage가 
 |---|---|---|---|
 | 0 | `project_load` | orchestrator | State 확인, Blocker 목록 |
 | F1 | `design_source_intake` | frontend-builder / `read-design-source` | Figma 접근 확인, Page·Frame 목록과 구현 대상(`design_source.reference`), `viewports`, QA 도구 확인 |
-| F2 | `figma_calibration` | frontend-builder / `read-design-source` + `design-tokens` | `docs/css/tokens.css` |
-| F3 | `content_asset_mapping` | frontend-builder / `read-design-source` → rights-auditor | `ia/sitemap.md`(Figma 구조 등록), Asset·Font·Interaction 목록, manifest |
+| F2 | `figma_calibration` | frontend-builder / `read-design-source` | `design-source/extracted-tokens.json` (`docs/`는 만들지 않는다) |
+| F3 | `content_asset_mapping` | frontend-builder / `read-design-source` | `ia/sitemap.md`(Website 구조, Node ID 없음), `design-source/frame-map.md`(Figma 대응), Asset·Font·Interaction 목록 |
 | F4 | `implementation_plan` | frontend-builder / `read-design-source` | `design-source/implementation-spec.md`, Design Gap 보고 |
 
-이 mode에서는 `content_ia`, `reference_research`, `visual_direction`, `visual_system`을 실행하지 않는다. `ia-planner`, `visual-director`, `reference-researcher`를 호출하지 않는다.
+이 구간에서는 `docs/`에 HTML/CSS/JS를 만들지 않는다. 이 mode에서는 `content_ia`, `reference_research`, `visual_direction`, `visual_system`을 실행하지 않는다. `ia-planner`, `visual-director`, `reference-researcher`를 호출하지 않는다.
 
 ## Design Definition — `autonomous_generation`
 | # | Stage (`current_stage` 값) | 담당 (Agent / Skill) | 산출물 | Skip 조건 |
@@ -39,7 +39,7 @@ Pipeline 조정자다. 각 Stage를 직접 수행하지 않고, 이전 Stage가 
 | A2 | `content_ia` | ia-planner / `define-ia` | `content/`, `ia/sitemap.md` | — |
 | opt | `reference_research` | reference-researcher / `research-visual-references` | `references/reference-index.jsonl` | 사용자가 Direction을 이미 정했거나 `style_bias: restrained`로 충분할 때 |
 | A3 | `visual_direction` | visual-director | `design-system/visual-language.md`(Candidate와 추천안), 사용자 승인 요청(Level 3) | — |
-| A4 | `visual_system` | visual-director / `design-tokens` | 승인된 Direction의 `docs/css/tokens.css` | — |
+| A4 | `visual_system` | visual-director / `design-tokens` | 승인된 Direction의 `design-system/token-source.json` (`docs/`는 만들지 않는다) | — |
 | opt | `asset_sourcing` | asset-sourcer → rights-auditor | `assets/manifest.jsonl`의 APPROVED Asset | 필요한 이미지가 없거나 전부 이미 APPROVED |
 
 이 mode는 Figma 도구 없이 처음부터 끝까지 실행된다.
@@ -47,7 +47,7 @@ Pipeline 조정자다. 각 Stage를 직접 수행하지 않고, 이전 Stage가 
 ## Common Build Core (두 mode 공유)
 | # | Stage (`current_stage` 값) | 담당 (Agent / Skill) | 산출물 | Skip 조건 |
 |---|---|---|---|---|
-| 4 | `site_scaffold` | frontend-builder / `scaffold-site` | `docs/` 골격, 세 Viewport Render 확인 | — |
+| 4 | `site_scaffold` | frontend-builder / `scaffold-site` | `docs/`를 **처음** 생성: Token Source → `docs/css/tokens.css`, 골격, 세 Viewport Render 확인 | — |
 | 5 | `master_page_build` | frontend-builder / `build-section` | Direction을 대표하는 Page의 첫 Section들 | — |
 | 6 | `section_build` | frontend-builder / `build-section` | Section 1개(세 Viewport 동시) | — |
 | 7 | `browser_qa` | site-reviewer / `review-browser` | Section QA 판정 | — |
@@ -68,15 +68,15 @@ Stage 6~8은 Section 단위 Loop다. `site_scaffold` 직후 배포 Smoke Test(�
 
 | Stage | PASS 조건 |
 |---|---|
-| design_source_intake (F) | Figma 읽기 도구가 실제로 응답했고, 구현 대상 Frame이 Page·Viewport별로 Node ID와 함께 Config에 기록됨. QA 도구 `--check` 성공. 도구 실패·한도 초과면 BLOCKED(tool) |
-| figma_calibration (F) | `tokens.css`의 값이 Figma에서 읽은 값이고(추정·창작 없음), 문서에 값이 중복 기재되지 않음 |
-| content_asset_mapping (F) | `ia/sitemap.md`의 모든 Section에 Figma Node ID가 있고, Asset·Font가 전부 manifest에 등록됨(승인 여부와 무관하게 누락 0) |
+| design_source_intake (F) | Figma 읽기 도구가 실제로 응답했고, 구현 대상 Frame이 Page·Viewport별로 Node ID와 함께 `design-source/frame-map.md`에 기록됨. QA 도구 `--check` 성공. 도구 실패·한도 초과면 BLOCKED(tool) |
+| figma_calibration (F) | `extracted-tokens.json`의 값이 Figma에서 읽은 값이고(추정·창작·통일 없음) 출처(`figma` 필드)가 있음. `docs/`에 파일이 생기지 않음. Markdown 문서에 값이 중복 기재되지 않음 |
+| content_asset_mapping (F) | `ia/sitemap.md`에 Page·Section·내비게이션이 등록되고 Figma Node ID가 없음. `frame-map.md`에 모든 Section의 Node ID가 있음. Asset·Font 목록에 누락 0 |
 | implementation_plan (F) | `implementation-spec.md`의 모든 절이 채워짐. 디자인이 없는 Viewport의 대응 방식이 적혀 있음. Design Gap이 보고됨. 디자인을 바꾸는 결정이 임의로 내려지지 않음 |
 | env_calibration (A) | `node scripts/qa/capture.cjs --check`가 실제로 성공했고 결과가 `state.environment`에 기록됨. 실패면 BLOCKED(tool) |
 | content_ia (A) | `content/`의 문안이 사용자 제공 사실로 채워짐(Placeholder·임의 작성 없음). `ia/sitemap.md`에 Page·Section·ID·콘텐츠 출처가 등록됨 |
 | visual_direction (A) | `visual-language.md`에 Candidate 평가와 선택 근거가 있고 구체 값이 없음. 사용자 승인 기록(`visual_direction.status: APPROVED`) |
-| visual_system (A) | `tokens.css`에 승인된 Direction이 요구한 Token이 정의됨 |
-| site_scaffold | 세 Viewport에서 Render됨, 가로 Overflow 0, Console Error 0, 모든 경로가 상대 경로, JS 비활성 Render에서도 콘텐츠가 보임 |
+| visual_system (A) | `design-system/token-source.json`에 승인된 Direction이 요구한 Token이 정의됨. `docs/`에 파일이 생기지 않음 |
+| site_scaffold | `docs/css/tokens.css`가 Token Source의 모든 Token을 담고 있음(누락·임의 추가 없음). 세 Viewport에서 Render됨, 가로 Overflow 0, Console Error 0, 모든 경로가 상대 경로, JS 비활성 Render에서도 콘텐츠가 보임 |
 | asset_sourcing | 사용 예정 Asset이 전부 `APPROVED` |
 | master_page / section / secondary | 대상 Section이 세 Viewport에서 Render 확인됨(`render_checked: true`), `review-browser` PASS(기준: figma mode는 해당 Figma Frame, autonomous mode는 Visual Language), 등록된 Page/Section만 수정됨 |
 | interaction | JS 비활성에서도 핵심 콘텐츠·내비게이션 사용 가능, Keyboard 조작 가능 |

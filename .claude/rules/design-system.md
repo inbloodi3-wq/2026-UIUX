@@ -15,13 +15,15 @@
 ## Source of Truth — 값은 한 곳에만
 | 무엇 | 어디 |
 |---|---|
-| 디자인 **값**(색, Type Scale, 간격, 반경, 그림자, Motion) | `docs/css/tokens.css` — **유일한 원본** |
+| 코드에서 쓰는 디자인 **값**(색, Type Scale, 간격, 반경, 그림자, Motion) | `docs/css/tokens.css` — **유일한 원본**. SITE SCAFFOLD에서 생성된다 |
+| Scaffold의 입력이 되는 Token 값(Token Source) | figma mode: `design-source/extracted-tokens.json` · autonomous mode: `design-system/token-source.json` |
 | Breakpoint 값 | `config/project.yaml`의 `site.breakpoints`(Media Query에는 Custom Property를 쓸 수 없다) |
 | Design Intent(`figma_implementation`) | Figma — READ ONLY. 구현 규칙으로 옮긴 것이 `design-source/implementation-spec.md` |
 | Direction, 원칙, 각 Token의 **역할과 사용 이유**, Component 사용 규칙(`autonomous_generation`) | `design-system/*.md` |
 
-- `design-system/`과 `design-source/` 문서에 Hex, px, rem 같은 구체 값을 적지 않는다. Token **이름**(`--color-accent`)과 그 역할·이유만 적는다. 같은 값을 문서와 CSS 양쪽에서 따로 관리하지 않는다.
-- figma mode에서는 최초 구현 때 Figma 값을 읽어 `tokens.css`에 옮긴다. 그 뒤 코드 안에서는 `tokens.css`만 참조한다. Figma와 코드가 다르면: 최초 구현 중에는 Figma 우선, 사용자 승인으로 바꾼 것은 Spec의 기록 우선, 판단할 수 없으면 보고한다.
+- `design-system/`과 `design-source/`의 Markdown 문서에 Hex, px, rem 같은 구체 값을 적지 않는다(값은 Token Source JSON과 `tokens.css`에만 있다). Token **이름**(`--color-accent`)과 그 역할·이유만 적는다. 같은 값을 문서와 CSS 양쪽에서 따로 관리하지 않는다.
+- 값의 흐름은 한 방향이다: Design Intent(Figma 또는 승인된 Direction) → Token Source → `docs/css/tokens.css`. Design Definition 구간에서는 `docs/`를 만들지 않고, `tokens.css`는 SITE SCAFFOLD에서 Token Source로부터 생성한다. 그 뒤 코드 안에서는 `tokens.css`만 참조하고 Token Source를 두 번째 원본으로 유지하지 않는다.
+- figma mode에서 Figma와 코드가 다르면: 최초 구현 중에는 Figma 우선, 사용자 승인으로 바꾼 것은 Spec의 기록 우선, 판단할 수 없으면 보고한다.
 - 값을 바꿀 때는 `tokens.css`만 고친다. 역할이나 이유가 바뀌면 문서를 고친다.
 - Browser에서 발견한 문제를 개별 Selector에 Raw 값으로 덧대어 고치지 않는다. Token 문제면 Token을, 구조 문제면 Layout/Component를 고친다.
 

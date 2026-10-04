@@ -11,11 +11,11 @@
 ## 디렉터리
 - `config/project.yaml` — 프로젝트 정의. 이 저장소의 프로젝트는 하나다(`project-template.yaml`은 Schema 참고용).
 - `automation/pipeline-state.json` — Pipeline 진행 상태와 Checkpoint.
-- `design-source/` — (`figma_implementation`) Figma에서 변환한 `implementation-spec.md`. 값은 담지 않는다. Figma 자체는 저장소 밖의 READ ONLY 원본이다.
+- `design-source/` — (`figma_implementation`) Figma에서 추출한 구현 데이터: `frame-map.md`(Website Page/Section ↔ Figma Node), `extracted-tokens.json`(Token Source), `implementation-spec.md`(규칙과 계획, 값 없음). Figma 자체는 저장소 밖의 READ ONLY 원본이다.
 - `content/` — (`autonomous_generation`) 사이트에 실리는 문안과 프로젝트 정보. 사용자가 제공한 사실만 담는다.
-- `ia/` — Page/Section 등록부(`sitemap.md`). 두 mode 공통이며 Build Core가 대상을 특정하는 기준이다.
-- `design-system/` — (`autonomous_generation`) Visual Direction과 원칙·이유(`visual-language.md`). 값은 담지 않는다.
-- `docs/` — 웹사이트. 값의 원본은 `docs/css/tokens.css`.
+- `ia/` — Website 구조(`sitemap.md`: Page, URL/Route, 내비게이션, Section). 두 mode가 같은 형식을 쓰며 Build Core가 대상을 특정하는 기준이다. Figma Node ID 같은 Design Source 전용 정보는 담지 않는다.
+- `design-system/` — (`autonomous_generation`) Visual Direction과 원칙·이유(`visual-language.md`, 값 없음)와 `token-source.json`(Token Source).
+- `docs/` — 웹사이트. **SITE SCAFFOLD Stage에서 처음 생성된다.** 그 전의 Design Definition 구간에서는 어느 mode에서도 `docs/`에 파일을 만들지 않는다. 코드 값의 원본은 `docs/css/tokens.css`.
 - `references/` — 레퍼런스 조사(텍스트 관찰만).
 - `assets/` — Asset 후보·승인 Staging과 `manifest.jsonl`. 사이트에서 쓰는 사본은 `docs/assets/`.
 - `legal/` — 출처 정책과 라이선스 확인 근거.
@@ -24,7 +24,7 @@
 
 ## Source of Truth와 수정 순서
 - `autonomous_generation`: 구조는 `ia/`가, 문안은 `content/`가, Direction은 `design-system/`이, 값은 `tokens.css`가 원본이다.
-- `figma_implementation`: 구조·문안·Design Intent는 Figma가 원본이고(`ia/sitemap.md`와 `design-source/`는 그것을 옮긴 기록), 코드 값은 `tokens.css`가 원본이다. Figma는 수정하지 않는다.
+- `figma_implementation`: 구조·문안·Design Intent는 Figma가 원본이고(`ia/sitemap.md`는 그 구조를 Website 구조로 옮긴 것, `design-source/`는 추출한 구현 데이터), 코드 값은 `tokens.css`가 원본이다. Figma는 수정하지 않는다.
 - Operating Mode는 Design Definition 구간만 가른다. `docs/`, `scripts/qa/`, Build·QA·Deploy 관련 Rule/Agent/Skill은 mode별로 따로 만들지 않는다.
 - 구조·문안·Direction을 바꿔야 하면 원본 문서를 먼저 고치고 `docs/`에 반영한다. `docs/`에서 먼저 바꾸고 문서를 나중에 맞추지 않는다.
 - 구현 결함(Overflow, 정렬, 대비, 깨진 링크, 접근성)은 원본 문서와 무관하므로 `docs/`에서 바로 고친다.

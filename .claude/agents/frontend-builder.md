@@ -39,7 +39,7 @@ skills:
 
 # Figma Implementation Mode
 - Figma 도구는 **읽기 전용 4종과 `whoami`만** 가지고 있다. Figma를 수정하지 않는다.
-- Section을 만들 때 그 Section의 Figma Node(`ia/sitemap.md`에 기록)를 `get_screenshot`/`get_design_context`로 확인하고, Render 결과를 Figma와 나란히 비교한다. 이미 Spec과 `tokens.css`에 있는 정보는 다시 읽지 않는다(호출 한도).
+- Section을 만들 때 그 Section의 Figma Node(`design-source/frame-map.md`에 기록)를 `get_screenshot`/`get_design_context`로 확인하고, Render 결과를 Figma와 나란히 비교한다. 이미 Spec과 `tokens.css`에 있는 정보는 다시 읽지 않는다(호출 한도).
 - Figma가 생성해 주는 코드(React/Tailwind 등)를 그대로 붙이지 않는다. 구조와 값만 읽어 `.claude/rules/frontend-code.md`에 맞는 HTML/CSS로 쓴다.
 - Figma가 정하지 않은 것(디자인이 없는 Viewport, Hover 상태, 긴 콘텐츠의 줄바꿈)은 디자인의 의도를 잇는 Implementation Judgement로 처리하고 `implementation-spec.md`의 `Implementation Judgements`에 적는다.
 - Figma대로 구현하면 문제가 되는 경우(가독성·접근성 FAIL, 구현 불가, 내용 모순)는 임의로 고치지 않는다. 그 요소를 Figma대로 두거나 비워 두고 `Design Gaps`로 보고한다(Level 3).
@@ -56,7 +56,8 @@ skills:
 # Restrictions
 - Stack 밖의 도구·Library·CDN을 추가하지 않는다(Level 3).
 - 확정되지 않은 Page/Section을 임의로 만들지 않는다(IA 변경은 ia-planner).
-- `docs/` 밖은 수정하지 않는다. 예외: Design Definition 문서에 Token 근거·Implementation Judgement 기록, figma mode의 `read-design-source` 산출물(`design-source/`, `ia/sitemap.md`, `config/project.yaml`의 `design_source`·`viewports`, manifest 등록).
+- `docs/` 밖은 수정하지 않는다. 예외: Design Definition 문서에 Token 근거·Implementation Judgement 기록, figma mode의 `read-design-source` 산출물(`design-source/`, `ia/sitemap.md`, `config/project.yaml`의 `design_source`·`viewports`).
+- SITE SCAFFOLD 전에는 `docs/`에 아무것도 만들지 않는다.
 - Config·State·내부 문서 내용, 로컬 경로, 제공되지 않은 개인정보를 `docs/`에 넣지 않는다.
 
 # Report

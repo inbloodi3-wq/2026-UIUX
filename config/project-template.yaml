@@ -10,8 +10,9 @@ project:
   description: ""     # 한두 문장
 
 # Design Source — mode에 따라 디자인 정의가 오는 곳
-#   figma_implementation   → type: figma,     Figma(READ ONLY) → design-source/implementation-spec.md + docs/css/tokens.css
-#   autonomous_generation  → type: generated, Brief → ia/ → design-system/visual-language.md(승인) + docs/css/tokens.css
+#   figma_implementation   → type: figma,     Figma(READ ONLY) → design-source/(frame-map, extracted-tokens, implementation-spec) + ia/sitemap.md
+#   autonomous_generation  → type: generated, Brief → content/ + ia/sitemap.md → design-system/visual-language.md(승인) + token-source.json
+#   두 mode 모두 docs/는 SITE SCAFFOLD에서 처음 생성되고, token_source → docs/css/tokens.css
 design_source:
   type: ""                 # figma | generated
   access: read_only        # figma일 때 고정값
@@ -19,9 +20,9 @@ design_source:
   reference:               # figma일 때만
     url: ""
     file_key: ""
-    pages: []              # [{ name, node_id }]
-    frames: []             # [{ page_id, viewport, name, node_id, width }]
   local_exports: ""        # 선택. Figma 도구를 쓸 수 없을 때의 대체 입력(사용자가 내보낸 이미지 폴더)
+  frame_map: ""            # figma만: design-source/frame-map.md (Website Page/Section ↔ Figma Node ID)
+  token_source: ""         # figma: design-source/extracted-tokens.json · generated: design-system/token-source.json — scaffold-site의 입력
   spec: ""                 # figma: design-source/implementation-spec.md · generated: design-system/visual-language.md
 
 # goals / audiences / primary_user_tasks: autonomous_generation에서는 필수, figma_implementation에서는 선택

@@ -9,9 +9,10 @@ Claude Code의 Rules, Subagents, Skills로 **실제 반응형 웹사이트**(HTM
 
 | Mode | 언제 | Design Definition |
 |---|---|---|
-| `figma_implementation` | 완성된 Figma 디자인을 코드로 정확히 구현할 때 | Figma(READ ONLY) → `design-source/implementation-spec.md` + `docs/css/tokens.css` |
-| `autonomous_generation` | Figma 없이 Brief와 Content로 사이트 전체를 만들 때 | `ia/` → 승인된 `design-system/visual-language.md` → `docs/css/tokens.css` |
+| `figma_implementation` | 완성된 Figma 디자인을 코드로 정확히 구현할 때 | Figma(READ ONLY) → `design-source/`(Frame Map, Extracted Tokens, Implementation Spec) + `ia/sitemap.md` |
+| `autonomous_generation` | Figma 없이 Brief와 Content로 사이트 전체를 만들 때 | `content/` + `ia/sitemap.md` → 승인된 `design-system/visual-language.md` + `token-source.json` |
 
+- Design Definition 구간에서는 `docs/`를 만들지 않는다. `docs/`는 SITE SCAFFOLD에서 처음 생성되고, 그때 Token Source로부터 `docs/css/tokens.css`가 만들어진다.
 - 분기하는 것은 Design Definition 구간뿐이다. SITE SCAFFOLD 이후의 구현·QA·배포는 두 mode가 같은 Agent, Skill, Script를 쓴다.
 - `figma_implementation`에서 Figma는 읽기 전용 원본이다. Figma를 수정하지 않고, 디자인을 다시 설계하거나 개선하지 않는다.
 - `autonomous_generation`은 Figma 없이 처음부터 끝까지 실행된다.
@@ -53,7 +54,9 @@ claude
 Claude는 세션 시작 시 `config/project.yaml`과 `automation/pipeline-state.json`을 읽고 마지막 Checkpoint에서 이어간다.
 
 ## 디자인 값의 원본
-- 코드에서 쓰는 값(색, Type Scale, 간격 등): `docs/css/tokens.css` **하나** (두 mode 공통)
+- 값의 흐름: Design Intent(Figma 또는 승인된 Direction) → Token Source(`design-source/extracted-tokens.json` 또는 `design-system/token-source.json`) → `docs/css/tokens.css`
+- 사이트 코드가 생긴 뒤 코드에서 쓰는 값(색, Type Scale, 간격 등)의 원본: `docs/css/tokens.css` **하나** (두 mode 공통)
+- Website 구조: `ia/sitemap.md`(두 mode 공통 형식). Figma Node 대응은 `design-source/frame-map.md`에 따로 둔다
 - Design Intent: figma mode는 Figma(읽기 전용), autonomous mode는 승인된 `design-system/visual-language.md`
 - 구현 규칙·근거: figma mode는 `design-source/implementation-spec.md`, autonomous mode는 `design-system/visual-language.md`(둘 다 값은 적지 않는다)
 - figma mode에서 Figma와 코드가 다르면: 최초 구현 중에는 Figma 우선, 사용자 승인으로 바꾼 것은 기록 우선, 판단할 수 없으면 보고

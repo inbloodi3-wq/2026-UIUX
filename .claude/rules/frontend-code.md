@@ -20,6 +20,7 @@ docs/
   assets/
   .nojekyll
 ```
+- `docs/`는 SITE SCAFFOLD Stage에서 처음 만든다. 그 전에는 Production HTML/CSS/JS를 만들지 않는다.
 - 이 구조가 시작점이다. Page가 실제로 추가될 때 그 HTML을 만들고, 한 Page에서만 쓰는 Style이 `components.css`를 흐릴 정도가 되면 그때 `css/pages/<page>.css`를 만든다. 미리 만들지 않는다.
 - CSS 로드 순서는 tokens → base → layout → components → page다. 뒤 파일이 앞 파일의 값을 재정의하지 않는다.
 
