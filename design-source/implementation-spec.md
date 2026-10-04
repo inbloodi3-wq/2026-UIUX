@@ -294,14 +294,16 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
   ```
   뒤에 Profile·Contents를 Sheet로 넣을 수 있는 구조다. 그때는 Folder를 다시 움직이지 않고 Sheet만 바꾼다(이번에는 구현하지 않았다). 현재 Profile은 Stage 아래의 일반 Section으로 남아 있다.
 - **Loading 화면이 바뀌었다**: Folder가 나중에 놓이려면 그 전에는 책상만 보여야 한다. 그래서 Loading은 종이 위가 아니라 **빈 책상(Stage 색) 위**에 뜬다. 배치·서체·크기·진행 방식은 그대로이고 색만 어두운 바탕에 맞췄다(Profile의 글자색 Token 사용). 띠는 Folder의 일부이므로 Loading 중에는 보이지 않는다.
-- **동작**(Loading 종료 = 0, `layout.css`의 `folder-land`)
+- **동작**(Loading 종료 = 0, `layout.css`의 `folder-land`. 2026-10-04 "가볍게 던져 놓는다"로 조정)
   | 구간 | 시간 | 모습 |
   |---|---|---|
-  | Loading 글자·선 사라짐 | 0 – 약 120ms | |
-  | approach | 150 – 약 570ms | 오른쪽 위(`--folder-start-x/y`)에서 살짝 기울고(`--folder-start-rotate`) 조금 작은(`--folder-start-scale`) 상태로 나타나 감속하며 다가온다. 그림자는 넓고 흐리다(`--shadow-folder-floating`) |
-  | landing | 약 570 – 660ms | 제자리를 아주 조금 지나쳐 닿는다(`--folder-landing-x/y/rotate`). 그림자가 짧고 진해진다(`--shadow-folder-landing`) |
-  | settle | 약 660 – 790ms | 제자리. 얕은 그림자(`--shadow-folder-settled`). 되튀지 않는다 |
-  | 글자 등장 | 약 690ms부터 | 필기체 문구 → 제목 → 이름·직함 → 연도·연락처(`--stagger-reveal` 간격) |
+  | 100% 유지 | Loading 종료 전 100ms | |
+  | Loading 글자·선 사라짐 | 0 – 200ms | 고르게 옅어진다 |
+  | approach | 60 – 약 640ms | Loading이 사라지는 도중에 시작한다(빈 책상만 보이는 틈 없음). 오른쪽 위 멀리(`--folder-start-x/y`)에서 기울고(`--folder-start-rotate`) 작은(`--folder-start-scale`) 상태로 나타나 다가온다. 처음 보일 때 화면의 약 64%를 덮는다. 그림자는 넓고 흐리다가(`--shadow-folder-floating`) 가까워지며 좁아진다(`--shadow-folder-near`) |
+  | landing | 약 640 – 740ms | 책상에 닿아 제자리를 아주 조금 지나친다(`--folder-landing-x/y/rotate/scale`). 짧고 가까운 그림자(`--shadow-folder-landing`) |
+  | settle | 약 740 – 850ms | 제자리. 얕은 그림자(`--shadow-folder-settled`). 되튀지 않는다 |
+  | 글자 등장 | 약 750ms부터 | settle 도중에 필기체 문구가 시작 → 제목 → 이름·직함 → 연도·연락처(`--stagger-reveal` 간격) |
+  Page 진입부터 전체 완료까지 약 2.6초.
 - 멈춘 뒤의 화면은 Figma Cover와 같다(1920 재측정: 제목 0px, 나머지 0–1px).
 - **Reduced Motion**: 이동·회전·축소 없이 짧은 Fade. **JavaScript 실패**: 8초 뒤 Folder와 글자가 보인다. **JavaScript 꺼짐**: Loading 없이 Cover가 바로 보인다.
 - 쓰는 속성: `transform`, `opacity`, `box-shadow`. Library 없음.

@@ -245,21 +245,24 @@
      근거: design-source/implementation-spec.md "Cover Entry Motion" */
   --color-stage: #3a3836;            /* 책상. Folder가 들어오는 동안 가장자리에서 보이는 따뜻한 짙은 회색. 띠(#272727)보다 밝아 Folder 외곽과 그림자가 보인다 */
   --duration-loader-out: 200ms;      /* Loading 글자·선이 사라지는 시간 */
-  --delay-folder: 150ms;             /* 그 뒤에 Folder가 나타나기 시작한다 */
-  --duration-folder: 640ms;          /* approach 약 420ms + landing 약 90ms + settle 약 130ms */
-  --ease-folder-approach: cubic-bezier(0.2, 0.6, 0.2, 1);   /* 처음엔 빠르고 책상에 가까워질수록 느려진다 */
+  --delay-folder: 60ms;              /* Loading이 사라지는 도중에 Folder가 다가오기 시작한다(빈 책상만 보이는 틈을 없앤다) */
+  --duration-folder: 790ms;          /* approach 약 580ms + landing 약 100ms + settle 약 110ms (layout.css folder-land의 73% / 86%) */
+  --ease-folder-approach: cubic-bezier(0.33, 0.45, 0.4, 1);   /* 이동이 눈에 보이게 고르게 오다가 책상 가까이에서 느려진다 */
+  --ease-folder-landing: cubic-bezier(0.3, 0, 0.6, 1);
   --ease-folder-settle: cubic-bezier(0.3, 0, 0.3, 1);
-  --folder-start-x: 6vw;             /* 시작: 오른쪽 위, 살짝 기울고 조금 작다 */
-  --folder-start-y: -4vh;
-  --folder-start-rotate: 1.4deg;
-  --folder-start-scale: 0.97;
-  --folder-landing-x: -3px;          /* 닿는 순간: 제자리를 아주 조금 지나친다 */
-  --folder-landing-y: 4px;
-  --folder-landing-rotate: -0.18deg;
-  --shadow-folder-floating: 0 44px 90px rgba(0, 0, 0, 0.42);
-  --shadow-folder-landing: 0 8px 18px rgba(0, 0, 0, 0.5);
+  --folder-start-x: 22vw;            /* 시작: 오른쪽 위 멀리, 기울고 작다 */
+  --folder-start-y: -14vh;
+  --folder-start-rotate: 3deg;
+  --folder-start-scale: 0.9;
+  --folder-landing-x: -4px;          /* 닿는 순간: 제자리를 아주 조금 지나친다 */
+  --folder-landing-y: 6px;
+  --folder-landing-rotate: -0.3deg;
+  --folder-landing-scale: 1.003;
+  --shadow-folder-floating: 0 70px 130px rgba(0, 0, 0, 0.36);   /* 떠 있을 때: 넓고 흐리다 */
+  --shadow-folder-near: 0 16px 34px rgba(0, 0, 0, 0.42);        /* 책상 바로 위 */
+  --shadow-folder-landing: 0 5px 12px rgba(0, 0, 0, 0.5);       /* 닿았을 때: 짧고 가깝다 */
   --shadow-folder-settled: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --delay-reveal: 690ms;             /* Folder가 거의 자리 잡을 때 글자가 나타나기 시작한다 */
+  --delay-reveal: 740ms;             /* Folder가 자리 잡는 마지막 구간에서 글자가 나타나기 시작한다 */
   --duration-reveal: 600ms;
   --stagger-reveal: 90ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);

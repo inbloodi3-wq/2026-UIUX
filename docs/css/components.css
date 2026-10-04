@@ -179,8 +179,9 @@
   align-items: center;
   background: var(--color-stage);
   pointer-events: none;
+  /* 고르게 옅어진다. 그 사이에 Folder가 아래에서 다가오기 시작한다. */
   transition:
-    opacity var(--duration-loader-out) var(--ease-out),
+    opacity var(--duration-loader-out) linear,
     visibility 0s linear var(--duration-loader-out);
 }
 

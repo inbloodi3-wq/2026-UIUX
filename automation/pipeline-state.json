@@ -41,7 +41,7 @@
     "resume_hint": "Cover Entry Motion이 Folder(띠+종이 한 물체)가 책상에 놓이는 방식으로 바뀌었다(layout.css folder-land, 구조: portfolio-stage > loader + portfolio-folder > binding + sheet-stack > cover). Loading은 이제 Stage 색 위에 뜬다. 사용자가 실제 재생을 보고 승인하면 다음으로 간다. 남은 것: 프로필 사진 승인 확인, index#contents. Profile을 sheet-stack 안의 Sheet로 옮기는 것과 Sheet 전환 Motion은 아직 하지 않았다(사용자 지시 대기)."
   },
   "render_checked": true,
-  "qa_status": "Cover Entry Motion을 Folder 방식으로 재구현(네 Viewport 측정 문제 0건, Reduced Motion·JS 실패·JS 꺼짐 확인). 실제 재생에 대한 사용자 확인 대기. index#profile은 이전 실행에서 구현됨(사진 미적용)",
+  "qa_status": "Cover Entry Motion(Folder를 가볍게 던져 놓는 동작): 정상 속도 Screencast 녹화로 네 Viewport 확인 — 접근 구간 약 580ms가 Frame으로 구분됨, 빈 책상 Frame 0, 되튐 없음, 멈춘 Cover는 Figma와 0–1px. 사용자의 실제 재생 확인 대기. index#profile은 이전에 구현됨(사진 미적용)",
   "retry_count": 2,
   "blockers": [
     {
@@ -69,7 +69,7 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Cover Entry Motion 재구현: 종이만 옆에서 들어오던 방식 폐기 → portfolio-stage / portfolio-folder / binding / sheet-stack 구조, Folder 전체가 오른쪽 위에서 다가와 landing → settle. Loading 화면 바탕이 종이에서 Stage 색으로 변경. l-sheet와 cover__sheet 제거."
+    "summary": "Cover Entry Motion 조정: 시작 위치를 더 멀리(22vw, -14vh, 3deg, 0.9배), approach 약 580ms, Loading 사라짐과 겹쳐 시작, landing(−4px, +6px, −0.3deg, 1.003배) → settle. 그림자 4단계."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {

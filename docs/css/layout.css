@@ -93,20 +93,22 @@
     animation-timing-function: var(--ease-folder-approach);
   }
 
-  12% {
+  /* 멀리서 나타난다: 처음 잠깐 동안만 옅다 */
+  14% {
     opacity: 1;
   }
 
-  /* landing: 책상에 닿는 순간. 살짝 지나쳐 눌린다. */
-  66% {
+  /* approach 끝: 책상 바로 위. 그림자가 좁아진다 */
+  73% {
     opacity: 1;
-    transform: translate(var(--folder-landing-x), var(--folder-landing-y)) rotate(var(--folder-landing-rotate)) scale(1);
-    box-shadow: var(--shadow-folder-landing);
-    animation-timing-function: linear;
+    transform: none;
+    box-shadow: var(--shadow-folder-near);
+    animation-timing-function: var(--ease-folder-landing);
   }
 
-  80% {
-    transform: translate(var(--folder-landing-x), var(--folder-landing-y)) rotate(var(--folder-landing-rotate)) scale(1);
+  /* landing: 책상에 닿아 제자리를 아주 조금 지나친다 */
+  86% {
+    transform: translate(var(--folder-landing-x), var(--folder-landing-y)) rotate(var(--folder-landing-rotate)) scale(var(--folder-landing-scale));
     box-shadow: var(--shadow-folder-landing);
     animation-timing-function: var(--ease-folder-settle);
   }
