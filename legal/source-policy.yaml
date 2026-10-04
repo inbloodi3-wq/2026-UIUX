@@ -138,3 +138,15 @@ sources:
     api_required: false
     direct_automation: true
     notes: "Allura 공식 upstream(google/fonts ofl/allura의 METADATA.pb source.repository_url)."
+
+  # --- Font Source 추가 (2026-10-04 사용자 승인: Profile의 Noto Sans KR, Pretendard Self-host) ---
+  github.com/orioncactus/pretendard:
+    tier: final_asset_allowed
+    api_required: false
+    direct_automation: true
+    notes: "Pretendard 공식 저장소(제작자 배포). dist/web/static의 woff2 Subset과 LICENSE를 받는다."
+  fonts.googleapis.com:
+    tier: final_asset_allowed
+    api_required: false
+    direct_automation: true
+    notes: "Google Fonts 공식 배포(css2 API와 fonts.gstatic.com 파일). 필요한 글자만 담은 Subset 파일을 받아 Self-host하는 용도로만 쓴다. 사이트가 실행 중에 이 주소를 호출하게 만들지 않는다(CDN Runtime 금지)."

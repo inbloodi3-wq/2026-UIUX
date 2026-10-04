@@ -57,7 +57,7 @@ site:
   url: "https://inbloodi3-wq.github.io/2026-UIUX/"
   pages:
     - { id: index, file: index.html }   # Project Page는 구현할 때 추가한다
-  breakpoints: [600, 1024] # min-width(px). CSS Media Query 값의 유일한 원본. 1024 이상 = Figma Desktop 구성(1920까지 비례), 600–1023 = Tablet, 600 미만 = Mobile
+  breakpoints: [600, 1024, 1440] # min-width(px). CSS Media Query 값의 유일한 원본. 600 미만 = Mobile, 600 이상 = Tablet, 1024 이상 = Cover의 Figma 구성(비례 축소), 1440 이상 = Profile의 Figma 구성(비례 축소)
   js_policy:
     progressive_enhancement: true   # JS 없이 핵심 콘텐츠·내비게이션 사용 가능
     files: ["js/main.js"]

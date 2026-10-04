@@ -7,9 +7,32 @@
   align-items: center;
 }
 
+/* Cover 종이 한 장. Loading이 끝나면 오른쪽에서 들어와 왼쪽 띠 아래에 끼워진다.
+   멈춘 뒤에는 바탕 종이와 같은 위치에 같은 질감을 깔아 겹쳐 보이지 않는다.
+   띠(l-sheet::before)는 이 종이보다 위에 있고 움직이지 않는다. */
+.cover__sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--color-cover-paper) url("../assets/paper-texture.webp") repeat 0 0;
+  border-left: 1px solid var(--color-sheet-edge);
+  box-shadow: calc(var(--size-sheet-shadow-offset) * var(--px) * -1) 0 calc(var(--size-sheet-shadow-blur) * var(--px)) var(--shadow-sheet-edge);
+  transition:
+    transform var(--duration-sheet) var(--ease-sheet) var(--delay-sheet),
+    opacity var(--duration-sheet) var(--ease-sheet) var(--delay-sheet);
+}
+
+.is-loading .cover__sheet {
+  opacity: var(--sheet-enter-opacity);
+  transform: translateX(var(--sheet-enter-offset));
+  transition: none;
+  animation: cover-failsafe 1ms 8s forwards;
+}
+
 /* Figma: 1080 높이 화면 안의 950 높이 영역. 위아래 여백을 뺀 나머지를 채운다. */
 .cover__inner {
   position: relative;
+  z-index: 3;
   display: flex;
   align-items: center;
   width: 100%;
@@ -128,7 +151,7 @@
 }
 
 /* ---------- Cover 등장 ----------
-   Loading이 끝나면 글자들이 아래에서 제자리로 올라오며 나타난다.
+   Loading이 끝나면 종이가 들어오고, 안착한 뒤 글자들이 아래에서 제자리로 올라오며 차례로 나타난다.
    숨김 상태는 JavaScript가 Loading을 켰을 때(.is-loading)만 적용된다. */
 
 .cover__reveal {
@@ -141,7 +164,7 @@
 .cover__reveal:nth-child(2) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 1); }
 .cover__reveal:nth-child(3) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 2); }
 .cover__reveal:nth-child(4) { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 3); }
-.cover__year.cover__reveal,
+.cover__year.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 4); }
 .cover__contact.cover__reveal { transition-delay: calc(var(--delay-reveal) + var(--stagger-reveal) * 5); }
 
 .is-loading .cover__reveal {
@@ -243,5 +266,331 @@
   .loader__label {
     font-size: calc(var(--text-cover-caption-size) * 1px);
     letter-spacing: calc(var(--text-cover-caption-tracking) * 1px);
+  }
+}
+
+/* ---------- Profile ----------
+   1440 이상: Figma 구성 그대로(좌우 2단 Card). 크기는 화면 폭에 비례한다(--px).
+   1440 미만: Figma에 디자인이 없다. 같은 내용을 같은 순서로 위에서 아래로 쌓고, 크기는 px 그대로 쓴다. */
+
+.profile {
+  --px: 1px;
+
+  padding: calc(var(--layout-profile-page-padding-mobile) * 2 * var(--px)) calc(var(--layout-profile-page-padding-mobile) * var(--px));
+  background: var(--color-profile-page);
+}
+
+.profile__card {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-stack-gap-compact) * var(--px));
+  padding: calc(var(--layout-profile-card-padding-mobile) * var(--px));
+  border-radius: calc(var(--radius-profile-card) * var(--px));
+  background: var(--color-profile-card);
+  /* 테두리는 안쪽 그림자로 그린다. Figma의 선은 안쪽에 놓이고 여백 계산에 들어가지 않는다. */
+  box-shadow: inset 0 0 0 1px var(--color-profile-card-border), var(--shadow-profile-card);
+}
+
+.profile__aside {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-aside-gap) * var(--px));
+}
+
+/* 프로필 사진 자리. 사진 Asset이 승인되면 이 안에 <img>를 넣는다. */
+.profile__photo {
+  width: 100%;
+  max-width: calc(var(--layout-profile-photo-width-compact) * var(--px));
+  aspect-ratio: var(--layout-profile-photo-width) / var(--layout-profile-photo-height);
+  overflow: hidden;
+  border-radius: calc(var(--radius-profile-photo) * var(--px));
+  background: var(--color-profile-photo-bg);
+  box-shadow: inset 0 0 0 1px var(--color-profile-card-border);
+}
+
+.profile__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-info-gap) * var(--px));
+}
+
+.profile__name {
+  font-family: var(--font-kr-heading);
+  font-size: calc(var(--text-profile-name-size) * var(--px));
+  font-weight: var(--text-profile-name-weight);
+  line-height: calc(var(--text-profile-name-leading-px) * var(--px));
+  letter-spacing: calc(var(--text-profile-name-tracking) * var(--px));
+  color: var(--color-profile-heading);
+}
+
+.profile__divider {
+  width: 100%;
+  height: 1px;
+  margin: 0;
+  border: 0;
+  background: var(--color-profile-divider);
+}
+
+.profile__contact {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-profile-contact-label-gap) * var(--px));
+  font-family: var(--font-kr-heading);
+  font-size: calc(var(--text-profile-contact-size) * var(--px));
+  line-height: calc(var(--text-profile-contact-leading-px) * var(--px));
+}
+
+.profile__contact-label {
+  width: calc(var(--layout-profile-contact-label-width) * var(--px));
+  font-weight: var(--text-profile-contact-label-weight);
+  color: var(--color-profile-muted);
+}
+
+.profile__contact-value {
+  font-weight: var(--text-profile-contact-weight);
+  letter-spacing: calc(var(--text-profile-contact-tracking) * var(--px));
+  color: var(--color-profile-body);
+}
+
+.profile__main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-stack-gap-compact) * var(--px));
+  min-width: 0;
+}
+
+.profile__intro {
+  padding: 1px 0;
+  border-top: 1px solid var(--color-profile-card-border);
+  border-bottom: 1px solid var(--color-profile-card-border);
+  font-family: var(--font-kr-body);
+  font-size: calc(var(--text-profile-intro-size) * var(--px));
+  font-weight: var(--text-profile-intro-weight);
+  line-height: calc(var(--text-profile-intro-leading-px) * var(--px));
+  color: var(--color-profile-body);
+  word-break: keep-all;
+}
+
+/* Experience / Career / Tools / Character 네 묶음. 폭이 허락하면 두 칸, 아니면 한 칸 */
+.profile__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--layout-profile-group-min-width) * var(--px))), 1fr));
+  gap: calc(var(--space-profile-groups-gap-compact) * var(--px));
+}
+
+.profile__group {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-block-gap) * var(--px));
+  min-width: 0;
+}
+
+/* 필기체 묶음 제목 */
+.script-heading {
+  font-family: var(--font-script);
+  font-size: calc(var(--text-profile-heading-size) * var(--px));
+  font-weight: var(--text-profile-heading-weight);
+  line-height: calc(var(--text-profile-heading-leading-px) * var(--px));
+  color: var(--color-profile-heading);
+}
+
+/* 이력 목록: 기간 + 이름(+ 설명) */
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-list-gap) * var(--px));
+}
+
+.history-item {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-item-inner-gap) * var(--px));
+  font-family: var(--font-kr-body);
+  font-size: calc(var(--text-profile-date-size) * var(--px));
+  line-height: calc(var(--text-profile-date-leading-px) * var(--px));
+}
+
+.history-item__date {
+  flex: none;
+  color: var(--color-profile-date);
+}
+
+.history-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-profile-item-inner-gap) * var(--px));
+  min-width: 0;
+}
+
+.history-item__title {
+  font-weight: var(--text-profile-item-weight);
+  color: var(--color-profile-heading);
+}
+
+.history-item__note {
+  line-height: calc(var(--text-profile-item-sub-leading-px) * var(--px));
+  color: var(--color-profile-muted);
+}
+
+/* 도구 Card */
+.tool-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--space-tool-cards-gap) * var(--px));
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space-tool-card-inner-gap) * var(--px));
+  width: calc(var(--layout-tool-card-size) * var(--px));
+  height: calc(var(--layout-tool-card-size) * var(--px));
+  border: 1px solid var(--color-tool-card-border);
+  border-radius: calc(var(--radius-tool-card) * var(--px));
+  background: var(--color-tool-card-bg);
+  white-space: nowrap;
+}
+
+.tool-card__symbol {
+  font-size: calc(var(--text-tool-symbol-size) * var(--px));
+  font-weight: var(--text-tool-symbol-weight);
+  line-height: calc(var(--text-tool-symbol-leading-px) * var(--px));
+  color: var(--color-tool-card-symbol);
+}
+
+.tool-card__label {
+  font-size: calc(var(--text-tool-label-size) * var(--px));
+  font-weight: var(--text-tool-label-weight);
+  line-height: calc(var(--text-tool-label-leading-px) * var(--px));
+  color: var(--color-tool-card-label);
+}
+
+/* 성격 Keyword: 낱말 사이에 작은 점 */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--space-character-gap-row) * var(--px)) calc(var(--space-character-gap-column) * var(--px));
+  font-family: var(--font-kr-body);
+  font-size: calc(var(--text-profile-date-size) * var(--px));
+  line-height: calc(var(--text-profile-date-leading-px) * var(--px));
+  color: var(--color-profile-body);
+}
+
+.keywords__item {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--space-character-gap-column) * var(--px));
+  white-space: nowrap;
+}
+
+.keywords__item:not(:last-child)::after {
+  content: "";
+  width: calc(var(--size-character-dot) * var(--px));
+  height: calc(var(--size-character-dot) * var(--px));
+  border-radius: 50%;
+  background: var(--color-profile-dot);
+}
+
+@media (min-width: 600px) {
+  .profile {
+    padding: calc(var(--layout-profile-page-padding-tablet) * 2 * var(--px)) calc(var(--layout-profile-page-padding-tablet) * var(--px));
+  }
+
+  .profile__card {
+    padding: calc(var(--layout-profile-card-padding-tablet) * var(--px));
+  }
+
+  /* 사진 옆에 이름과 연락처 */
+  .profile__aside {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .profile__photo {
+    flex: none;
+    width: calc(var(--layout-profile-photo-width-compact) * var(--px));
+  }
+
+  .profile__info {
+    flex: 1;
+  }
+
+  /* 기간 옆에 이름 */
+  .history-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: calc(var(--space-profile-item-gap) * var(--px));
+  }
+
+  .history-item__date {
+    width: calc(var(--layout-profile-date-column-width) * var(--px));
+  }
+}
+
+/* 1440 이상: Figma 구성 */
+@media (min-width: 1440px) {
+  .profile {
+    --px: calc(min(100vw, 1920px) / 1920);
+
+    display: flex;
+    justify-content: center;
+    padding: calc(var(--layout-profile-page-padding-block) * var(--px)) 0;
+  }
+
+  .profile__card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--space-profile-columns-gap) * var(--px));
+    width: calc(var(--layout-profile-card-width) * var(--px));
+    height: calc(var(--layout-profile-card-height) * var(--px));
+    padding: calc(var(--layout-profile-card-padding-top) * var(--px)) calc(var(--layout-profile-card-padding-right) * var(--px)) calc(var(--layout-profile-card-padding-bottom) * var(--px)) calc(var(--layout-profile-card-padding-left) * var(--px));
+  }
+
+  .profile__aside {
+    flex: none;
+    flex-direction: column;
+    align-items: stretch;
+    align-self: stretch;
+    width: calc(var(--layout-profile-aside-width) * var(--px));
+  }
+
+  .profile__photo {
+    width: calc(var(--layout-profile-photo-width) * var(--px));
+    max-width: none;
+    height: calc(var(--layout-profile-photo-height) * var(--px));
+  }
+
+  .profile__info {
+    flex: none;
+  }
+
+  .profile__main {
+    flex: 1 0 0;
+    align-self: stretch;
+    gap: calc(var(--space-profile-intro-to-body) * var(--px));
+  }
+
+  .profile__groups {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(var(--space-profile-rows-gap) * var(--px)) calc(var(--space-profile-row-columns-gap) * var(--px));
+  }
+
+  /* Figma: 설명 줄이 없는 항목도 설명 줄만큼의 높이를 가진다(Experience) */
+  .history--detailed .history-item__body {
+    min-height: calc((var(--text-profile-item-leading-px) + var(--space-profile-item-inner-gap) + var(--text-profile-item-sub-leading-px)) * var(--px));
+  }
+
+  .tool-cards {
+    flex-wrap: nowrap;
   }
 }

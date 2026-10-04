@@ -33,6 +33,41 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Outfit";
+  src: url("../assets/fonts/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pretendard: 공식 배포본의 한글 2,350자 Subset */
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Regular.subset.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../assets/fonts/Pretendard-Bold.subset.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Noto Sans KR: Profile의 이름과 이메일에 쓰이는 글자만 담은 Subset(굵기 400–700 가변).
+   이 서체로 쓰는 글자가 바뀌면 파일을 다시 받아야 한다(assets/manifest.jsonl 참고). */
+@font-face {
+  font-family: "Noto Sans KR";
+  src: url("../assets/fonts/NotoSansKR-profile-subset.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -53,9 +88,17 @@ body {
 }
 
 h1,
+h2,
+h3,
 p,
+ul,
 address {
   margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
 }
 
 address {

@@ -28,7 +28,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 | 순서 | Section ID | 목적 | 콘텐츠 출처 | 우선순위 | Mobile / Tablet / Desktop 비고 |
 |---|---|---|---|---|---|
 | 1 | cover | 표지: 문구, "Portfolio", 이름, 직함 줄, 연도, 이메일, 지역 | Figma Text | P1 | Desktop 디자인만 있음(1920 × 1080 고정 구성) |
-| 2 | profile | 사진, 이름, 생년월일, 연락처, 한 줄 소개, Experience, Career, Tools, Character | Figma Text | P1 | 〃 |
+| 2 | profile | 사진, 이름, 이메일, 한 줄 소개, Experience, Career, Tools, Character (생년월일·전화번호는 사용자 결정으로 싣지 않는다) | Figma Text | P1 | 1440 이상: Figma의 좌우 2단 Card. 1440 미만: 같은 순서로 쌓기(디자인 없음) |
 | 3 | contents | 목차: Project 3개와 각 Project의 Index 4항목 | Figma Text | P1 | 〃 |
 
 ## aidora
@@ -89,7 +89,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 ## Interactions
 | ID | 위치 | 동작 | JS 없이 |
 |---|---|---|---|
-| loading | index 진입 시 | Loading 화면 → 진행 표시 → Cover 등장(사용자 지정, 2026-10-04) | Loading 화면이 나타나지 않고 Cover가 바로 보인다 |
+| loading | index 진입 시 | Loading 화면 → 진행 표시 → Cover 종이가 오른쪽에서 들어와 왼쪽 띠 아래에 안착 → Cover 글자 등장(사용자 지정, 2026-10-04) | Loading 화면이 나타나지 않고 Cover가 바로 보인다 |
 
 ## Open Content Requests
 `design-source/implementation-spec.md`의 Content Gaps 참조.

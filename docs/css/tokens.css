@@ -166,6 +166,7 @@
   --layout-profile-photo-height: 400;
   --layout-profile-date-column-width: 154;
   --layout-tool-card-size: 76;
+  --layout-profile-contact-label-width: 20;
   --layout-case-study-aidora-width: 1600;
   --layout-cover-band-width: 74;
   --layout-cover-band-tab-width: 107;
@@ -200,6 +201,7 @@
   --space-profile-item-gap: 24;
   --space-profile-item-inner-gap: 2;
   --space-tool-cards-gap: 8;
+  --space-tool-card-inner-gap: 2;
   --space-character-gap-row: 12;
   --space-character-gap-column: 16;
 
@@ -227,24 +229,47 @@
   --text-cover-script-size-min: 30;  /* 필기체와 이름이 읽히는 최소 크기(px) */
   --text-cover-name-size-min: 20;
   --text-cover-stack-gap-min: 10;
-  --text-cover-title-leading-px-mobile: 220;  /* 390 폭: 제목 묶음 높이를 고정하지 않고 줄 높이로 간격을 만든다 */
+  --text-cover-title-leading-px-mobile: 220;
+
+  /* Profile — 1440 미만에서 쓰는 값(px). 1440 이상은 Figma 구성을 화면 폭에 비례해 쓴다 */
+  --layout-profile-page-padding-mobile: 16;
+  --layout-profile-page-padding-tablet: 32;
+  --layout-profile-card-padding-mobile: 24;
+  --layout-profile-card-padding-tablet: 48;
+  --layout-profile-photo-width-compact: 240;
+  --layout-profile-group-min-width: 330;   /* 묶음(Experience 등) 한 칸의 최소 폭. 이보다 좁아지면 한 줄에 하나씩 */
+  --space-profile-stack-gap-compact: 48;
+  --space-profile-groups-gap-compact: 40;  /* 390 폭: 제목 묶음 높이를 고정하지 않고 줄 높이로 간격을 만든다 */
 
   /* Motion — Figma에 없다. Loading → Cover 전환용(사용자 지정 Interaction).
      근거: design-source/implementation-spec.md "Loading Experience" */
-  --duration-loader-out: 240ms;
-  --duration-reveal: 800ms;
-  --delay-reveal: 150ms;      /* Loading 선이 옅어진 뒤에 글자가 나타나기 시작한다 */
-  --stagger-reveal: 70ms;
+  --duration-loader-out: 200ms;   /* Loading 글자·선이 사라지는 시간 */
+  --delay-sheet: 200ms;           /* 그 뒤에 Cover 종이가 들어오기 시작한다 */
+  --duration-sheet: 600ms;        /* 종이가 오른쪽에서 들어와 띠 아래에 안착하는 시간 */
+  --ease-sheet: cubic-bezier(0.25, 0.75, 0.2, 1);   /* 들어오면서 점점 느려져 끝에서 천천히 멈춘다(튕김 없음) */
+  --sheet-enter-offset: 100%;     /* 종이의 시작 위치: 화면 오른쪽 바깥 */
+  --sheet-enter-opacity: 0.9;
+  --shadow-sheet-edge: rgba(0, 0, 0, 0.2);        /* 들어오는 종이의 왼쪽 가장자리 그림자 */
+  --color-sheet-edge: rgba(255, 255, 255, 0.55);  /* 종이 가장자리의 밝은 선 */
+  --size-sheet-shadow-offset: 26;
+  --size-sheet-shadow-blur: 54;
+  --delay-reveal: 700ms;          /* 종이가 거의 안착한 뒤 글자가 나타나기 시작한다 */
+  --duration-reveal: 600ms;
+  --stagger-reveal: 80ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --distance-reveal: 24;
+  --distance-reveal: 14;
 }
 
 /* 움직임을 줄이도록 설정한 환경: 이동을 없애고 전환을 즉시 끝낸다 */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-loader-out: 1ms;
-    --duration-reveal: 1ms;
+    --delay-sheet: 0ms;
+    --duration-sheet: 1ms;
+    --sheet-enter-offset: 0%;
+    --sheet-enter-opacity: 1;
     --delay-reveal: 0ms;
+    --duration-reveal: 180ms;
     --stagger-reveal: 0ms;
     --distance-reveal: 0;
   }

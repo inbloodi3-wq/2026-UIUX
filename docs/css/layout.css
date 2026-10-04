@@ -21,6 +21,7 @@
 .l-sheet::before {
   content: "";
   position: absolute;
+  z-index: 2;
   inset: 0 auto 0 0;
   width: calc(var(--layout-cover-band-tab-width) * var(--px));
   background: var(--color-cover-band) url("../assets/paper-texture-dark.webp") repeat 0 0;

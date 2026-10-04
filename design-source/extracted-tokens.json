@@ -729,6 +729,16 @@
       "category": "layout",
       "figma": "2025:7133 / 7134",
       "note": "1080 높이 Section 안에서 950 높이 안쪽 영역의 위·아래 여백((1080-950)/2)"
+    },
+    "--layout-profile-contact-label-width": {
+      "value": 20,
+      "category": "layout",
+      "figma": "2025:7168, 7173"
+    },
+    "--space-tool-card-inner-gap": {
+      "value": 2,
+      "category": "space",
+      "figma": "2025:7228"
     }
   },
   "figma_variables": {

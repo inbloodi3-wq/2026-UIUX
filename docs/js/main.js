@@ -18,7 +18,7 @@
 
   // 시간 설정(ms)
   var FILL_TIME = 1000;    // 준비가 빨리 끝나도 0 → 100은 이 시간에 걸쳐 올라간다
-  var HOLD_TIME = 180;     // 100%를 잠깐 보여 준 뒤 넘어간다
+  var HOLD_TIME = 150;     // 100%를 잠깐 보여 준 뒤 넘어간다
   var MAX_STEP = 2.5;      // 한 Frame에 올라갈 수 있는 최대 폭(준비가 늦게 끝나도 튀지 않게)
   var SAFETY_TIME = 7000;  // 무언가 끝나지 않아도 이 시간 뒤에는 넘어간다
 
@@ -32,23 +32,28 @@
     if (next > target) target = next;
   }
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(function () { raiseTarget(70); });
-  } else {
-    raiseTarget(70);
+  // Cover를 그리는 데 꼭 필요한 것만 기다린다: <head>에서 preload한 Font와 이미지.
+  // (아래쪽 Section의 Font는 기다리지 않는다)
+  function preloaded(as) {
+    return Array.prototype.slice.call(document.querySelectorAll('link[rel="preload"][as="' + as + '"]'));
   }
 
-  // 첫 화면에 꼭 필요한 이미지(data-critical)가 있으면 기다린다. 지금은 없다.
-  var criticalImages = Array.prototype.slice.call(document.querySelectorAll('img[data-critical]'));
-  Promise.all(criticalImages.map(function (image) {
-    return image.decode ? image.decode().catch(function () {}) : Promise.resolve();
-  })).then(function () { raiseTarget(90); });
+  // Cover에 쓰이는 서체. base.css의 @font-face와 같은 이름·굵기다.
+  var coverFonts = ['300 1em Outfit', '400 1em Outfit', '400 1em Allura', '500 1em "Cormorant Garamond"'];
+  var fontsReady = (document.fonts && document.fonts.load)
+    ? Promise.all(coverFonts.map(function (font) { return document.fonts.load(font).catch(function () {}); }))
+    : Promise.resolve();
 
-  if (document.readyState === 'complete') {
-    raiseTarget(100);
-  } else {
-    window.addEventListener('load', function () { raiseTarget(100); });
-  }
+  var imagesReady = Promise.all(preloaded('image').map(function (link) {
+    return new Promise(function (resolve) {
+      var image = new Image();
+      image.onload = image.onerror = resolve;
+      image.src = link.href;
+    });
+  }));
+
+  fontsReady.then(function () { raiseTarget(70); });
+  Promise.all([fontsReady, imagesReady]).then(function () { raiseTarget(100); });
 
   window.setTimeout(function () { raiseTarget(100); }, SAFETY_TIME);
 

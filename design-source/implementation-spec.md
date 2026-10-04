@@ -155,7 +155,7 @@ Lorem ipsum, TODO, Sample Text는 `포트폴리오` 안에서 발견되지 않�
 ## 17. Build Order
 1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격. (완료 2026-10-04)
 2. **Master Experience = Loading → index#cover.** (완료 2026-10-04 — 20절)
-3. index#profile → index#contents. Loading + Cover가 PASS한 뒤에 시작한다.
+3. index#profile (구현 2026-10-04 — 22절, 프로필 사진만 남음) → index#contents.
 4. Project Page는 G2 결정 후: aidora → tj-media → asics-korea 순(Contents 순서).
 5. Interaction(링크) → FULL QA.
 
@@ -238,4 +238,46 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
 - 이름의 폭이 약 1% 넓다. Figma가 쓰는 Cormorant Garamond와 upstream Static 파일의 Build가 조금 다를 수 있다. 눈에 띄지 않는 수준(P3)이다.
 - Figma의 띠는 사진 속 종이라서 경계에 가는 밝은 선(양각 느낌)과 약간 둥근 모서리가 있다. CSS 띠는 경계가 곧다.
 - 종이 질감은 통계는 맞췄지만 무늬 자체는 다르다. Figma 쪽이 섬유 결이 조금 더 가늘고 또렷하다. Tile이 512px마다 반복된다.
+
+## 21. Cover Entry Motion (2026-10-04, 사용자 지정 — 18절의 "전환"을 대체한다)
+- **개념**: Loading → 종이 한 장이 오른쪽에서 들어온다 → 왼쪽 띠(Binding) 아래에 안착한다 → Cover 글자가 나타난다.
+- **구조**: `.cover__sheet`는 Cover 위에 겹친 종이 Layer다(같은 질감 Tile). 띠(`l-sheet::before`)는 그 위에 있고 Loading부터 끝까지 움직이지 않는다. 종이의 왼쪽 가장자리에 그림자(`--shadow-sheet-edge`)와 가는 밝은 선(`--color-sheet-edge`)이 있어 같은 종이 위를 지나가는 것이 보인다. 멈춘 뒤에는 바탕과 같은 위치에 같은 질감이 놓여 겹친 것이 보이지 않는다.
+- **시간**(Loading 종료 = 0): Loading 글자·선 사라짐 `--duration-loader-out` → `--delay-sheet` 뒤 종이 진입 `--duration-sheet`(`--ease-sheet`, 튕김 없음, 시작 위치 `--sheet-enter-offset` = 화면 오른쪽 바깥, 불투명도 `--sheet-enter-opacity` → 1) → `--delay-reveal`부터 글자가 `--stagger-reveal` 간격으로: 필기체 문구 → 제목 → 이름 → 직함 줄 → 연도 → 연락처. 글자는 `--distance-reveal`만큼 아래에서 올라온다.
+- 쓰는 속성은 `transform`과 `opacity`뿐이다. Rotation, 3D, 튕김, Library 없음.
+- **Reduced Motion**: 종이 이동 없음(`--sheet-enter-offset: 0%`), 글자 이동 없음, 짧은 Fade만.
+- **JavaScript 실패**: 8초 뒤 CSS가 종이와 글자를 제자리에 둔다.
+- Loading이 기다리는 대상을 Cover에 필요한 것(`<head>`에서 preload한 Font 4개와 Texture 2개)으로 한정했다. 아래쪽 Section의 Font는 기다리지 않는다.
+
+## 22. Profile 구현 기록 (2026-10-04)
+### 사용자 결정
+- 이메일의 `gmali.com`은 오탈자이므로 Cover와 같은 `gmail.com`으로 고친다(Content Gap C1 해결).
+- 전화번호와 생년월일은 공개 사이트에 싣지 않는다. 빈자리를 다른 내용으로 채우지 않는다(C2 해결).
+- 프로필 사진은 본인 사진이고 웹 공개가 승인된 경우에만 쓴다. **아직 그 확인이 없어 사진을 넣지 않았다**(Figma의 사진 틀과 바탕색만 구현).
+- Noto Sans KR, Pretendard를 공식 Source에서 받아 Self-host한다(필요한 굵기만).
+
+### 구현
+- Figma `2025:7153`의 Auto Layout 구조를 그대로 옮겼다. Component: `history`/`history-item`(변형 `history--detailed`: 설명 줄이 있는 목록), `tool-cards`/`tool-card`, `script-heading`, `keywords`.
+- Card와 사진 틀의 테두리는 안쪽 그림자로 그렸다. Figma의 선은 안쪽에 놓이고 여백 계산에 들어가지 않기 때문이다.
+- Figma에 없는 정보(숙련도 수치 등)는 넣지 않았다. 문안은 Figma 그대로이며 이메일만 위 결정대로 고쳤다.
+
+### Font
+| 서체 | 파일 | 비고 |
+|---|---|---|
+| Pretendard 400 / 700 | 공식 저장소의 Subset woff2 2개(각 약 270KB) | Figma에는 Light(300)도 있으나 생년월일에만 쓰여서 받지 않았다 |
+| Noto Sans KR 400–700 | Google Fonts가 만들어 준 글자 Subset 1개(9.6KB) | 이름과 이메일에 쓰이는 글자만 들어 있다. 글자가 바뀌면 다시 받아야 한다 |
+| Outfit 600 | 사용자 PC 설치본 | Tool Card 기호 |
+| SUIT | 받지 않음 | Profile에서 쓰이지 않는다 |
+
+### Responsive (Figma에 디자인 없음 — Implementation Judgement)
+| 폭 | 대응 |
+|---|---|
+| 1440 이상 | Figma 구성을 화면 폭에 비례해 줄인다. 글자도 함께 줄어든다(1440에서 본문 12px). 줄이지 않으면 기간·이름 칸이 맞지 않아 구성이 깨진다 |
+| 600–1439 | 한 단으로 쌓는다: 사진 옆에 이름·연락처 → 한 줄 소개 → 네 묶음(폭이 허락하면 두 칸). 글자 크기는 Figma 값 그대로 |
+| 600 미만 | 전부 한 줄에 하나씩. 이력은 기간 아래에 이름. Tool Card는 줄바꿈 |
+순서 변경, 내용 삭제, 새 요소 없음.
+
+### 1920 Figma 대비 (실측, px)
+- Card·사진 틀·모든 Text의 x 위치: 차이 0–1.
+- Text의 y 위치: 기간 0, 이력 이름 +1, 필기체 제목·이름·Tool Card 글자 +2. 서체별 세로 Metric 처리 차이로 본다(고치지 않음, P3).
+- 사진 아래 영역: Figma에는 생년월일 줄과 전화번호 줄이 있어 이름 블록과 연락처가 더 길다. 삭제 결정에 따라 이메일 줄이 전화번호 자리에 온다.
 

@@ -4,7 +4,7 @@
   "config_file": "config/project.yaml",
   "mode": "figma_implementation",
   "current_stage": "section_build",
-  "stage_status": "NOT_STARTED",
+  "stage_status": "PARTIAL",
   "last_completed_stage": "master_page_build",
   "optional_stages": {
     "reference_research": "N/A (figma_implementation)",
@@ -36,24 +36,18 @@
   "checkpoint": {
     "stage": "section_build",
     "page": "index",
-    "section": "profile",
+    "section": "contents (다음) — profile은 사진만 남음",
     "updated_at": "2026-10-04",
-    "resume_hint": "Loading + Cover PASS. 다음은 index#profile(Figma 2025:7153, Token은 이미 tokens.css에 있음). 시작 전에 사용자 확인: Content Gap C1(이메일 gmali.com 오탈자 — 답이 없으면 Figma 그대로 싣게 된다), C2(전화번호·생년월일 공개 여부). 프로필 사진은 본인 사진 확인 후 manifest 등록 필요. Noto Sans KR·Pretendard Font 파일 확보도 필요하다(같은 방식: 공식 Source, OFL 확인). contents와 Project Page는 그 뒤. QA: node scripts/qa/capture.cjs"
+    "resume_hint": "Loading → Cover 진입 Motion과 index#profile 구현 완료. 남은 것: 프로필 사진(본인 사진·웹 공개 승인 확인 후 assets/manifest 등록 → .profile__photo 안에 img). 다음 Section은 index#contents(Figma 2012:9389, Token은 tokens.css에 있음, 서체는 이미 있는 Outfit·Allura). Contents의 Project 제목을 링크로 쓸지는 Project Page(G1/G2) 결정에 달려 있다. QA: node scripts/qa/capture.cjs"
   },
   "render_checked": true,
-  "qa_status": "PASS — Loading + Cover: 1920에서 Figma와 0–2px 일치(서체 3종 적용), 종이·띠 질감 적용, 1440/768/390 측정 문제 0건, Reduced Motion·JS 실패 대비 유지",
-  "retry_count": 0,
+  "qa_status": "Cover Entry Motion PASS(네 Viewport, Reduced Motion, JS 실패). index#profile: 1920에서 Figma와 x 0–1px / y 0–2px, 1440·768·390 측정 문제 0건. 프로필 사진 미적용(승인 확인 대기)",
+  "retry_count": 2,
   "blockers": [
     {
       "stage": "section_build",
-      "type": "content",
-      "detail": "index#profile 전에: C1(이메일 오탈자), C2(전화번호·생년월일 공개 여부), 프로필 사진 사용 확인",
-      "since": "2026-10-04"
-    },
-    {
-      "stage": "section_build",
       "type": "rights",
-      "detail": "index#profile의 서체 Noto Sans KR, Pretendard 파일 확보(다운로드 승인 또는 제공)",
+      "detail": "프로필 사진: 본인 사진이며 웹 공개를 승인한다는 확인이 필요하다. 확인 전까지 사진 틀만 보인다",
       "since": "2026-10-04"
     },
     {
@@ -75,7 +69,7 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Loading/Cover Visual Gap 해결: Allura Regular(google/fonts), Cormorant Garamond Medium(공식 upstream) Self-host, OFL 1.1 확인·원문 보존. 자체 제작 종이 Texture 2종(INTERNAL_CREATED, scripts/assets/make-paper-texture.py) 적용. 1920 재측정: 제목 y +6 → +1. source-policy에 Font Source 3곳 등록."
+    "summary": "Cover Entry Motion(종이가 오른쪽에서 들어와 띠 아래에 안착 → 글자 등장) 추가, Loading 준비 조건을 Cover 필수 Asset으로 한정. index#profile 구현(이메일 오탈자 수정, 전화번호·생년월일 제외, 사진 미적용). Pretendard 400/700, Noto Sans KR 글자 Subset, Outfit 600 Self-host. Breakpoint 1440 추가."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {
