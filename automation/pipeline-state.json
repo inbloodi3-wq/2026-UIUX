@@ -2,11 +2,12 @@
   "schema_version": 3,
   "project_id": "personal-portfolio",
   "config_file": "config/project.yaml",
+  "mode": "figma_implementation",
   "current_stage": "project_load",
   "stage_status": "BLOCKED",
   "last_completed_stage": null,
   "optional_stages": {
-    "reference_research": "NOT_STARTED",
+    "reference_research": "N/A (figma_implementation)",
     "asset_sourcing": "NOT_STARTED"
   },
   "environment": {
@@ -21,14 +22,22 @@
       "risk": "Playwright가 npx 캐시에 있어 캐시가 정리되면 사라진다. 그 경우 capture.cjs가 종료 코드 2로 끝나며, 설치하지 말고 Level 3 Blocker로 보고한다."
     },
     "git_remote": "origin = github.com/inbloodi3-wq/2026-UIUX",
-    "pages_settings": "UNVERIFIED — GitHub Pages Source(main / docs) 설정 여부와 Repository 공개 범위를 확인하지 못함"
+    "pages_settings": "UNVERIFIED — GitHub Pages Source(main / docs) 설정 여부와 Repository 공개 범위를 확인하지 못함",
+    "figma_access": {
+      "status": "VERIFIED",
+      "checked_at": "2026-10-04",
+      "method": "기존 Figma connector(claude.ai Figma MCP) — whoami 응답 확인. 새 설치·설정 변경 없음",
+      "policy": "READ ONLY. 읽기 도구(get_metadata, get_design_context, get_screenshot, get_variable_defs, whoami)만 allow, 쓰기 도구는 settings.json deny",
+      "risk": "계정의 Plan/Seat에 따라 Figma 도구 호출 한도가 낮을 수 있다(확인된 Seat: starter/View 2곳, student/Full 1곳). 대상 파일이 어느 Team에 있는지에 따라 달라지며 실제 한도는 미확인. 한도에 걸리면 재시도하지 않고 Blocker로 보고한다(대체 입력: design_source.local_exports).",
+      "file_read": "UNVERIFIED — 대상 파일 URL이 아직 없어 실제 파일 읽기는 시험하지 않음"
+    }
   },
   "checkpoint": {
     "stage": "project_load",
     "page": null,
     "section": null,
     "updated_at": "2026-10-04",
-    "resume_hint": "config/project.yaml의 project.name, description, goals, audiences, primary_user_tasks가 비어 있다. 사용자에게 사이트 목적·대상·실을 내용을 요청한 뒤(최대 3개 질문) content_ia Stage를 시작한다. docs/에는 .nojekyll만 있고 사이트 코드는 아직 없다."
+    "resume_hint": "mode는 figma_implementation이다. config/project.yaml의 design_source.reference.url이 비어 있다. 사용자에게 사이트 디자인이 있는 Figma 파일/Page URL을 받은 뒤 design_source_intake(read-design-source Skill, Stage 1)를 시작한다. content_ia / visual_direction / visual_system은 실행하지 않는다. docs/에는 .nojekyll만 있다."
   },
   "render_checked": false,
   "qa_status": "NOT_STARTED",
@@ -37,7 +46,7 @@
     {
       "stage": "project_load",
       "type": "content",
-      "detail": "프로젝트 목표, 대상 방문자, Primary Task, 사이트에 실을 콘텐츠(이름, 소개, 경력, 프로젝트, 연락 방법)가 제공되지 않았다. 추정하지 않는다.",
+      "detail": "Design Source 위치가 제공되지 않았다. 구현 대상 Figma 파일(또는 Page) URL이 필요하다. archive에 기록된 예전 파일을 대상으로 가정하지 않는다.",
       "since": "2026-10-04"
     }
   ],
@@ -53,7 +62,14 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Automation Foundation Migration: Figma 자동화를 archive/legacy-figma-automation으로 이동하고 Automation Core를 웹사이트 제작(HTML/CSS/Vanilla JS, GitHub Pages docs/)용으로 재작성. 사이트 디자인·구현은 시작하지 않음."
+    "summary": "Dual Mode Architecture Amendment: project.mode(figma_implementation | autonomous_generation) 도입. Design Definition 구간만 분기하고 site_scaffold 이후 Build Core는 공유. 현재 프로젝트는 figma_implementation. Figma는 READ ONLY Design Source(읽기 allow, 쓰기 deny). read-design-source Skill 추가. 사이트 코드는 아직 없음."
   },
-  "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS"
+  "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
+  "design_definition": {
+    "design_source_intake": "NOT_STARTED",
+    "figma_calibration": "NOT_STARTED",
+    "content_asset_mapping": "NOT_STARTED",
+    "implementation_plan": "NOT_STARTED",
+    "autonomous_stages": "N/A — env_calibration, content_ia, reference_research, visual_direction, visual_system은 이 mode에서 실행하지 않는다"
+  }
 }

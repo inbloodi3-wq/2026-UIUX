@@ -8,7 +8,7 @@
 - 장식·부가 정보가 Primary Task보다 시각적으로 앞서지 않는다.
 
 ## 원칙 2: 콘텐츠가 구조를 정한다
-- Section은 실제 콘텐츠(`content/`)가 있을 때만 만든다. 채울 내용이 없는 Section을 구조만 먼저 만들지 않는다.
+- Section은 실제 콘텐츠(콘텐츠 원본: figma mode는 Figma, autonomous mode는 `content/`)가 있을 때만 만든다. 채울 내용이 없는 Section을 구조만 먼저 만들지 않는다.
 - Placeholder 문구(Lorem ipsum, 임의 작성 소개)를 완성물에 남기지 않는다.
 - 같은 메시지를 3번 이상 반복하지 않는다.
 
@@ -24,4 +24,6 @@
 - Touch Target은 Mobile에서 누르기 충분한 크기를 갖는다.
 
 ## 검수
+`figma_implementation`에서 이 원칙들은 디자인을 다시 설계하는 근거가 아니다. Figma가 원칙과 어긋나 보이면 구현을 바꾸지 않고 Design Gap으로 보고한다. 디자인이 없는 Viewport를 구현할 때와 QA 판정에는 그대로 적용한다.
+
 세부 검수 항목은 `.claude/skills/review-browser/`와 `.claude/skills/review-code/`의 Checklist를 사용한다.

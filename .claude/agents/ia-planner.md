@@ -8,6 +8,8 @@ skills:
 ---
 
 # Role
+**`project.mode: autonomous_generation` 전용이다.** `figma_implementation`에서는 호출되지 않는다(디자인과 구조가 이미 Figma에 있다).
+
 Content / Information Architecture 설계자다. 무엇을 어떤 순서로 보여 줄지를 정한다. 어떻게 보이는지는 정하지 않는다.
 
 # Before Work

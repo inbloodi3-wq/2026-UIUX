@@ -9,16 +9,19 @@
 | B. Expressive Direction | 이 사이트의 개성 | Color intensity, Artwork, Image treatment, Type expression, Composition, Scale contrast, Motif, Motion |
 
 - Foundation은 "정확히 이 값을 써라"가 아니라 **"시각적으로 무너지는 것을 막는 안전선"**이다. 큰 Type, Full Bleed, 비대칭, Overlap, 과감한 Crop은 허용된다. 단 가독성 저하·위계 붕괴·정렬 오류·의미 없는 장식으로 이어지면 FAIL이다.
-- Expressive Direction은 `design-system/visual-language.md`에서 결정하고, 승인된 뒤의 변경은 Level 3다.
+- `autonomous_generation`: Expressive Direction은 `design-system/visual-language.md`에서 결정하고, 승인된 뒤의 변경은 Level 3다.
+- `figma_implementation`: 두 Layer 모두 **Figma가 이미 정했다.** 새로 판단하지 않고 옮긴다. Foundation 문제(가독성·대비 FAIL 등)를 Figma에서 발견하면 고치지 않고 Design Gap으로 보고한다. 아래 "Minimalism Bias 방지", "Semantic Visual Rule", "Artwork System"은 autonomous mode의 설계 원칙이며 figma mode에서 디자인을 바꾸는 근거가 되지 않는다.
 
 ## Source of Truth — 값은 한 곳에만
 | 무엇 | 어디 |
 |---|---|
 | 디자인 **값**(색, Type Scale, 간격, 반경, 그림자, Motion) | `docs/css/tokens.css` — **유일한 원본** |
 | Breakpoint 값 | `config/project.yaml`의 `site.breakpoints`(Media Query에는 Custom Property를 쓸 수 없다) |
-| Direction, 원칙, 각 Token의 **역할과 사용 이유**, Component 사용 규칙 | `design-system/*.md` |
+| Design Intent(`figma_implementation`) | Figma — READ ONLY. 구현 규칙으로 옮긴 것이 `design-source/implementation-spec.md` |
+| Direction, 원칙, 각 Token의 **역할과 사용 이유**, Component 사용 규칙(`autonomous_generation`) | `design-system/*.md` |
 
-- `design-system/` 문서에 Hex, px, rem 같은 구체 값을 적지 않는다. Token **이름**(`--color-accent`)과 그 역할·이유만 적는다. 같은 값을 문서와 CSS 양쪽에서 따로 관리하지 않는다.
+- `design-system/`과 `design-source/` 문서에 Hex, px, rem 같은 구체 값을 적지 않는다. Token **이름**(`--color-accent`)과 그 역할·이유만 적는다. 같은 값을 문서와 CSS 양쪽에서 따로 관리하지 않는다.
+- figma mode에서는 최초 구현 때 Figma 값을 읽어 `tokens.css`에 옮긴다. 그 뒤 코드 안에서는 `tokens.css`만 참조한다. Figma와 코드가 다르면: 최초 구현 중에는 Figma 우선, 사용자 승인으로 바꾼 것은 Spec의 기록 우선, 판단할 수 없으면 보고한다.
 - 값을 바꿀 때는 `tokens.css`만 고친다. 역할이나 이유가 바뀌면 문서를 고친다.
 - Browser에서 발견한 문제를 개별 Selector에 Raw 값으로 덧대어 고치지 않는다. Token 문제면 Token을, 구조 문제면 Layout/Component를 고친다.
 
@@ -42,4 +45,4 @@ Artwork가 Direction의 핵심이면 개별 장식이 아니라 하나의 System
 3. 고정 높이로 콘텐츠를 가두지 않는다. 콘텐츠가 길어져도 무너지지 않아야 한다.
 
 ## 참조
-Direction `design-system/visual-language.md` · 값 `docs/css/tokens.css` · 코드 규칙 `.claude/rules/frontend-code.md`
+Design Definition `design-source/implementation-spec.md`(figma) / `design-system/visual-language.md`(autonomous) · 값 `docs/css/tokens.css` · 코드 규칙 `.claude/rules/frontend-code.md`

@@ -5,11 +5,11 @@ Autonomy는 "모든 작업을 자동 실행"이 아니다. **LOW-RISK 작업은 
 ## Risk Tier (모든 Tool Action을 실행 전에 분류)
 | Tier | 성격 | 예 | 행동 |
 |---|---|---|---|
-| 0 SAFE / READ | 읽기 | Project-local 읽기, 공개 웹 Research, Reference 분석, Local 검색, `git status/diff/log` | AUTO |
+| 0 SAFE / READ | 읽기 | Project-local 읽기, Figma Design Source 읽기(metadata·screenshot·design context·variable), 공개 웹 Research, Reference 분석, Local 검색, `git status/diff/log` | AUTO |
 | 1 LOCAL / REVERSIBLE | 프로젝트 내부·복구 가능 | `docs/` HTML/CSS/JS 수정, Project-local Markdown/JSON 수정, 로컬 정적 서버·Browser QA 실행, Temp 파일, `git add`, 새 local commit | AUTO (Project scope 내부 + diff로 복구 가능할 때만) |
 | 2 SENSITIVE READ | 민감 데이터 열람 | 개인정보, 비공개 사용자 데이터, 계정 정보, Private/내부 문서, 연락처, 금융 내역 | SCOPE CHECK — 사용자가 해당 데이터 사용을 명확히 요청했고 현재 작업에 꼭 필요할 때만, 필요한 부분만 |
 | 3 CONSEQUENTIAL | 외부 효과·비가역 | `git push`, Production deploy(GitHub Pages는 push가 곧 배포), Pages/Repository 설정 변경, 결제·구독, 계정·권한 변경, 이메일·메시지 전송, 게시, 외부 업로드·공유, 파일·디렉터리 대량 삭제, branch 삭제, `git reset --hard`, `git rebase`, `git commit --amend`, `git checkout --`/`git restore`로 변경 폐기, Package 설치 | HUMAN CONFIRMATION (Commit Gate) |
-| 금지 | 승인 요청 대상도 아님 | `git push --force`, History rewrite(`filter-branch`, `filter-repo`) | 실행하지 않는다. 필요하다고 판단되면 이유만 보고한다 |
+| 금지 | 승인 요청 대상도 아님 | `git push --force`, History rewrite(`filter-branch`, `filter-repo`), Figma 쓰기(수정·Node 생성·Upload — Figma는 READ ONLY Design Source다) | 실행하지 않는다. 필요하다고 판단되면 이유만 보고한다 |
 | 4 SECRET / CREDENTIAL | 인증 비밀값 | Password, OTP, MFA Code, Private Key, Recovery Code, Token, API Key | DO NOT REQUEST · STORE · LOG · COPY INTO PROJECT FILES · PASS TO SUBAGENTS. 기존 Auth Session / System Credential Store만 사용 |
 
 **Fail Closed**: Tier가 불확실하면 한 단계 **높은** Tier로 취급한다.

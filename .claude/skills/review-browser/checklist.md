@@ -5,7 +5,7 @@
 ## Layout (Foundation Safety — 값 일치가 아니라 무너짐 여부)
 - [ ] [측정] 가로 Overflow가 없다(`horizontalOverflow: false`, 세 Viewport 모두)
 - [ ] 잘린 텍스트, 의도하지 않은 겹침, 컨테이너 밖으로 나간 요소가 없다
-- [ ] 정렬 기준선이 의도 없이 어긋난 요소가 없다(의도된 Off-grid는 `visual-language.md`에 근거가 있으면 PASS)
+- [ ] 정렬 기준선이 의도 없이 어긋난 요소가 없다(의도된 Off-grid는 Design Definition에 근거가 있으면 PASS)
 - [ ] 본문 가독성: 글자 크기, 줄 간격, 줄 길이(Text measure)가 읽기에 무리가 없다
 - [ ] 정보 위계가 3단계 이상 구분되고 붕괴하지 않았다
 - [ ] 콘텐츠 길이가 달라도 무너지지 않는다(고정 높이에 갇힌 텍스트 없음)
@@ -18,7 +18,17 @@
 - [ ] Mobile에서 Touch Target이 누르기 충분하고 서로 붙어 있지 않다
 - [ ] Breakpoint 경계 근처에서 Layout이 깨지지 않는다(의심되면 그 폭으로 추가 Render)
 
-## Visual (Direction 일치)
+## Visual — `figma_implementation` (Design Fidelity: Figma Frame이 정답)
+- [ ] 디자인이 있는 Viewport에서 Section의 구조·순서·정렬이 Figma Frame과 같다
+- [ ] Typography(서체, 크기 단계, 굵기), Color, Spacing이 Figma와 눈에 띄는 차이가 없다
+- [ ] 이미지의 Crop·비율·위치가 Figma와 같다
+- [ ] 문안이 Figma Text와 같다(임의 수정 없음)
+- [ ] Figma에 없는 요소를 더하거나 있는 요소를 빼지 않았다
+- [ ] Figma와 다른 곳은 전부 `implementation-spec.md`의 Implementation Judgements 또는 승인된 Design Gaps에 기록되어 있다
+- [ ] 디자인이 없는 Viewport는 Spec의 Responsive Plan을 따르고, 있는 디자인의 순서·우선순위·분위기를 잇는다
+- 판정 주의: 서체 Rendering 차이와 1~2px 수준의 차이는 FAIL이 아니다. "Figma보다 낫게"는 Issue가 아니다. Figma 자체의 문제는 Design Gap으로 보고한다
+
+## Visual — `autonomous_generation` (Direction 일치)
 - [ ] 첫 시선이 그 Section의 역할(`ia/`의 목적, `visual-language.md`의 Visual Role)로 간다
 - [ ] Color·Typography·Spacing이 `visual-language.md`의 Direction과 일치한다
 - [ ] 각 Image/Artwork가 "What must this visual prove?"에 답한다(답 없는 장식은 FAIL)
@@ -27,7 +37,7 @@
 
 ## Content
 - [ ] Placeholder 문구, 임의 작성 문안, 깨진 문자가 없다
-- [ ] 문안이 `content/`와 일치한다
+- [ ] 문안이 콘텐츠 원본(figma mode: Figma Text / autonomous mode: `content/`)과 일치한다
 - [ ] 같은 메시지가 3회 이상 반복되지 않는다
 - [ ] 사용자가 제공하지 않은 개인정보, 내부 경로, Config/Automation 정보가 보이지 않는다
 

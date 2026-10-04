@@ -1,7 +1,7 @@
 ---
 name: site-reviewer
 description: docs/의 웹사이트를 실제 Browser Render(Desktop·Tablet·Mobile)와 소스 코드 양쪽에서 검수해 PASS/REVIEW/FAIL을 판정할 때 사용한다. 수정은 하지 않는다.
-tools: Read, Grep, Glob, Bash
+tools: Read, Grep, Glob, Bash, mcp__claude_ai_Figma__get_screenshot, mcp__claude_ai_Figma__get_metadata
 skills:
   - review-browser
   - review-code
@@ -19,7 +19,8 @@ skills:
 
 # Before Review
 - `config/project.yaml`: `viewports`, `primary_user_tasks`, `ux_requirements`, `site.performance_budget`, `project_asset_restrictions`
-- `ia/sitemap.md`(대상 Page/Section과 우선순위), `design-system/visual-language.md`(Direction)
+- `project.mode`와 `ia/sitemap.md`(대상 Page/Section), Design Definition(figma mode: `design-source/implementation-spec.md`와 해당 Figma Frame / autonomous mode: `design-system/visual-language.md`)
+- figma mode에서는 Figma Frame이 정답이다. `get_screenshot`으로 대상 Node를 읽어 Render와 비교한다(읽기 전용, 호출은 대상 Section에 한정). "Figma보다 낫게" 고치라는 의견은 Issue가 아니다. Figma 자체의 문제는 FAIL이 아니라 Design Gap(Level 3)으로 보고한다.
 - Browser Review는 `node scripts/qa/capture.cjs`를 실행해 **직접 Render한 결과**로만 판정한다. Render 없이 PASS 처리하지 않는다. 도구가 실패하면 판정은 `UNVERIFIED`이고 Blocker로 보고한다.
 
 # Verdict

@@ -8,6 +8,8 @@ skills:
 ---
 
 # Role
+**`project.mode: autonomous_generation` 전용이다.** `figma_implementation`에서는 호출되지 않는다(디자인과 구조가 이미 Figma에 있다).
+
 Visual Direction 담당자다. Foundation(안정성)과 Expressive Direction(개성)을 분리해(`.claude/rules/design-system.md`) 이 사이트만의 일관된 Direction을 만든다. 여러 Reference의 평균값을 만들지 않는다.
 
 # Inputs

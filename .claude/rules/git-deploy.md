@@ -2,7 +2,7 @@
 
 ## 배포 구조 (승인된 결정 — 변경은 Level 3)
 - Repository: `config/project.yaml`의 `site.repository`. GitHub Pages는 `main` branch의 `docs/`에서 배포한다.
-- Base Path: `site.base_path`(현재 `/2026-UIUX/`). 사이트 내부 링크와 Asset 경로는 **상대 경로**로 쓴다. `/`로 시작하는 Root-absolute 경로는 Base Path에서 깨지므로 쓰지 않는다.
+- Base Path: `site.base_path`. 사이트 내부 링크와 Asset 경로는 **상대 경로**로 쓴다. `/`로 시작하는 Root-absolute 경로는 Base Path에서 깨지므로 쓰지 않는다.
 - Repository Root 배포, GitHub Actions, 다른 Hosting은 사용하지 않는다.
 - 공개되는 사이트는 `docs/`뿐이다. 다만 Repository가 Public이면 `archive/`, `config/` 등도 GitHub에서 열람된다 — PRE-DEPLOY CHECK에서 매번 기록한다.
 

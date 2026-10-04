@@ -4,10 +4,27 @@
 
 project:
   id: ""              # kebab-case 식별자
+  mode: ""            # figma_implementation(완성된 Figma 디자인을 코드로 구현) | autonomous_generation(Brief와 Content로 전체 생성)
   name: ""            # 사이트 이름 또는 표기할 이름
   type: ""            # 예: "personal portfolio / profile website"
   description: ""     # 한두 문장
 
+# Design Source — mode에 따라 디자인 정의가 오는 곳
+#   figma_implementation   → type: figma,     Figma(READ ONLY) → design-source/implementation-spec.md + docs/css/tokens.css
+#   autonomous_generation  → type: generated, Brief → ia/ → design-system/visual-language.md(승인) + docs/css/tokens.css
+design_source:
+  type: ""                 # figma | generated
+  access: read_only        # figma일 때 고정값
+  status: NOT_CONFIRMED    # figma: NOT_CONFIRMED | CONFIRMED | CALIBRATED | PLAN_READY · generated: NOT_STARTED | PROPOSED | APPROVED
+  reference:               # figma일 때만
+    url: ""
+    file_key: ""
+    pages: []              # [{ name, node_id }]
+    frames: []             # [{ page_id, viewport, name, node_id, width }]
+  local_exports: ""        # 선택. Figma 도구를 쓸 수 없을 때의 대체 입력(사용자가 내보낸 이미지 폴더)
+  spec: ""                 # figma: design-source/implementation-spec.md · generated: design-system/visual-language.md
+
+# goals / audiences / primary_user_tasks: autonomous_generation에서는 필수, figma_implementation에서는 선택
 goals: []
   # 사이트가 달성해야 하는 것. 예: ["채용 담당자가 2분 안에 대표 작업 3개를 본다"]
 
@@ -65,6 +82,7 @@ automation:
   max_polish_passes: 3          # Page/Section당 Structural + Visual QA + Micro Fix
   state_file: automation/pipeline-state.json
 
+# 아래 두 블록은 autonomous_generation 전용이다
 visual_expression:              # auto | low | medium | high (style_bias: auto | restrained | balanced | expressive)
   style_bias: auto
   color_intensity: auto

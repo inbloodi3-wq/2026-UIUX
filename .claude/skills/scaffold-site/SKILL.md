@@ -6,15 +6,16 @@ description: docs/에 웹사이트의 최소 골격(index.html, css 4개 파일,
 # Scaffold Site
 
 ## Preconditions (하나라도 아니면 중단)
-- `content_ia`가 COMPLETE다(`ia/sitemap.md`에 첫 Page와 Section이 등록됨).
-- `visual_system`이 COMPLETE다(`design-system/visual-language.md` 승인, `docs/css/tokens.css` 존재).
+- Design Definition 구간이 COMPLETE다(두 mode 공통 조건: `ia/sitemap.md`에 첫 Page와 Section이 등록됨, `docs/css/tokens.css` 존재).
+  - figma mode: `implementation_plan` COMPLETE(`design-source/implementation-spec.md`, `design_source.status: PLAN_READY`)
+  - autonomous mode: `visual_system` COMPLETE(`design-system/visual-language.md` 승인)
 - `docs/index.html`이 아직 없다. 있으면 이 Skill이 아니라 `build-section`을 쓴다.
 
 ## 만드는 것 (이것만)
 ```
 docs/
   index.html
-  css/tokens.css      (visual_system에서 이미 만들어짐 — 수정하지 않는다)
+  css/tokens.css      (Design Definition 구간에서 이미 만들어짐 — 수정하지 않는다)
   css/base.css
   css/layout.css
   css/components.css
@@ -25,8 +26,8 @@ docs/
 다른 Page, Page 전용 CSS, 추가 JS 파일은 실제로 필요해질 때 만든다.
 
 ## Procedure
-1. **Breakpoint 확정**: `ia/sitemap.md`의 Viewport별 비고와 `viewports`를 보고 `min-width` Breakpoint를 정해 `config/project.yaml`의 `site.breakpoints`에 기록한다(보통 2개: Tablet 진입, Desktop 진입).
-2. **`index.html`**: `<!doctype html>`, `<html lang>`, `charset`, `viewport`, `title`, `description`(문안은 `content/`에서), CSS `<link>` 4개(tokens → base → layout → components), `<script src="js/main.js" defer>`. Body는 Skip Link, `header`(+`nav`), `main`, `footer` 골격과 `ia/sitemap.md`에 등록된 Section의 빈 `<section id>`·제목까지만. Section 내부 디자인은 `build-section`에서 한다.
+1. **Breakpoint 확정**: figma mode는 Spec의 Responsive Plan, autonomous mode는 `ia/sitemap.md`의 Viewport별 비고와 `viewports`를 보고 `min-width` Breakpoint를 정해 `config/project.yaml`의 `site.breakpoints`에 기록한다(보통 2개: Tablet 진입, Desktop 진입).
+2. **`index.html`**: `<!doctype html>`, `<html lang>`, `charset`, `viewport`, `title`, `description`(문안은 콘텐츠 원본에서. 없으면 비워 두고 요청), CSS `<link>` 4개(tokens → base → layout → components), `<script src="js/main.js" defer>`. Body는 Skip Link, `header`(+`nav`), `main`, `footer` 골격과 `ia/sitemap.md`에 등록된 Section의 빈 `<section id>`·제목까지만. Section 내부 디자인은 `build-section`에서 한다.
 3. **`base.css`**: 최소 Reset(`box-sizing`, margin), `html`/`body` 기본 Typography(Token 참조), 링크·이미지 기본, `:focus-visible`, `.u-visually-hidden`, `prefers-reduced-motion`. Self-hosted Font가 있으면 `@font-face`.
 4. **`layout.css`**: `.l-container`, Section 간격, Header/Footer 골격. Mobile 기본 → Breakpoint에서 확장.
 5. **`components.css`**: 골격에 실제로 쓰인 Component만(예: 내비게이션). 비어 있어도 된다.

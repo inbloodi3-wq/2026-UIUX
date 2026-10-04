@@ -5,6 +5,8 @@ description: 사용자 제공 콘텐츠를 content/에 정리하고 Page/Section
 
 # Define Content / IA
 
+`project.mode: autonomous_generation` 전용이다. `figma_implementation`에서는 `read-design-source`가 Figma 구조를 `ia/sitemap.md`에 그대로 등록한다(같은 Output Format에 Figma Node ID 열을 더한다).
+
 ## Required Inputs
 - `config/project.yaml`의 `project`, `goals`, `audiences`, `primary_user_tasks`, `ux_requirements`, `site.pages`, `viewports`
 - 사용자가 제공한 콘텐츠(대화, 파일, `content/`의 기존 문서)

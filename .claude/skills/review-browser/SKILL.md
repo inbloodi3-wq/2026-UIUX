@@ -10,7 +10,7 @@ Local Static Server → Playwright Render → 세 Viewport 스크린샷 → Visu
 ## Required Inputs
 - 검수 범위: 특정 `Page#Section`(Section Loop) 또는 전체(FULL QA) 또는 배포 URL(LIVE QA)
 - `config/project.yaml`(`viewports`, `primary_user_tasks`, `ux_requirements`, `site.performance_budget`)
-- `ia/sitemap.md`, `design-system/visual-language.md`
+- `project.mode`, `ia/sitemap.md`, Design Definition(figma mode: `design-source/implementation-spec.md` + 대상 Figma Frame / autonomous mode: `design-system/visual-language.md`)
 
 ## Tool
 ```
@@ -27,7 +27,7 @@ node scripts/qa/serve.cjs                                # 수동 확인용 서�
 ## Procedure
 1. Script를 실행한다. 종료 코드와 출력의 측정 문제를 기록한다.
 2. **스크린샷을 Read로 직접 연다.** Section 검수면 그 Section이 보이는 `-full.png`를 세 Viewport 모두, FULL QA면 모든 Page × 세 Viewport와 `-nojs`를 본다. Script의 `ok`만으로 PASS 판정하지 않는다(측정은 Overflow·Error만 잡는다).
-3. `checklist.md`의 해당 절을 검사한다.
+3. figma mode면 대상 Section의 Figma Frame을 `get_screenshot`으로 읽어 같은 Viewport의 Render와 나란히 비교한다(디자인이 있는 Viewport만, 읽기 전용). 그다음 `checklist.md`의 해당 절을 검사한다. Visual 절은 mode에 맞는 쪽만 쓴다.
    - Section Loop: Layout · Responsive · Visual · Content
    - FULL QA: 전 항목(Interaction · Accessibility · Performance 포함)
    - LIVE QA: Layout · 링크/리소스 · Base Path

@@ -20,7 +20,7 @@ description: GitHub Pages(main branch의 docs/) 배포를 준비하고(PRE-DEPLO
    - `content/`에 없는 개인정보(이메일, 전화번호 패턴)
 5. `docs/`에 사이트에 필요 없는 파일(QA 스크린샷, Markdown 메모, 원본 PSD 등)이 없는지 확인한다. `.nojekyll`이 있는지 확인한다.
 6. `git status`로 미커밋 변경을, `git log origin/main..HEAD --oneline`으로 push될 commit을 확인한다. 내가 만들지 않은 변경이 있으면 중단하고 보고한다.
-7. **Repository 공개 범위 고지**: Pages에 서빙되는 것은 `docs/`뿐이지만, Repository가 Public이면 `archive/`, `config/`, `content/`, `.claude/`와 전체 Git History도 GitHub에서 열람된다. History에는 이전에 추적됐던 `.playwright-mcp/`의 타사 사이트 스크린샷이 남아 있다(History rewrite는 금지 사항이므로 별도 Level 3 결정). 이 사실을 매 배포 승인 요청에 적는다.
+7. **Repository 공개 범위 고지**: Pages에 서빙되는 것은 `docs/`뿐이지만, Repository가 Public이면 `archive/`, `config/`, `content/`, `.claude/`와 전체 Git History도 GitHub에서 열람된다. State의 `approval_required`에 History 관련 미결 항목이 있으면 함께 적는다(History rewrite는 금지 사항이므로 별도 Level 3 결정). 이 사실을 매 배포 승인 요청에 적는다.
 8. 결과를 `qa/pre-deploy-report.md`에 기록한다.
 
 ## Phase 2 — 승인 요청 (여기서 멈춘다)

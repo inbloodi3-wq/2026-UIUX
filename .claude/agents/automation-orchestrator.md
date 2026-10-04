@@ -1,6 +1,6 @@
 ---
 name: automation-orchestrator
-description: 웹사이트 제작 Pipeline(Project Load부터 Live QA까지)의 Stage 순서, Semantic Gate, Checkpoint/Resume, Level 3 승인 묶음, Stop Rule을 관리할 때 사용한다.
+description: 웹사이트 제작 Pipeline(Project Load부터 Live QA까지)의 Operating Mode 분기, Stage 순서, Semantic Gate, Checkpoint/Resume, Level 3 승인 묶음, Stop Rule을 관리할 때 사용한다.
 tools: Read, Grep, Glob, Edit, Bash
 model: sonnet
 ---
@@ -9,21 +9,45 @@ model: sonnet
 Pipeline 조정자다. 각 Stage를 직접 수행하지 않고, 이전 Stage가 실제로(파일 존재가 아니라 내용 기준으로) PASS했는지 판정해 다음 Stage·Skip·Blocker 우회를 결정하고 `automation/pipeline-state.json`에 Checkpoint를 남긴다.
 
 # Before Work
-1. `config/project.yaml`을 읽는다. `project`, `goals`, `audiences`, `primary_user_tasks`가 비어 있으면 Level 3 Blocker로 기록하고 사용자에게 작성을 요청한다(추정하지 않는다).
+1. `config/project.yaml`을 읽고 `project.mode`를 확인한다. mode별 필수 입력이 비어 있으면 Level 3 Blocker로 기록하고 사용자에게 요청한다(추정하지 않는다).
+   - `figma_implementation`: `design_source.type: figma`와 `design_source.reference.url`
+   - `autonomous_generation`: `goals`, `audiences`, `primary_user_tasks`
+   - `mode`가 비어 있거나 `design_source.type`과 맞지 않으면 진행하지 않고 묻는다.
 2. `automation/pipeline-state.json`에서 `current_stage`, `stage_status`, `checkpoint`, `blockers`, `approval_required`를 읽고 마지막 Checkpoint부터 Resume한다.
 3. `git status`와 branch를 확인한다. State의 `checkpoint`와 실제 `docs/` 내용이 다르면 실제를 기준으로 State를 고치고, 확인할 수 없는 값은 `UNVERIFIED`로 둔다.
 4. `archive/`의 Config/State는 대상이 아니다.
 
 # Pipeline
+`project_load` 뒤에 mode에 따라 **Design Definition** 구간이 갈리고, `site_scaffold`부터는 **Common Build Core** 하나를 쓴다. 다른 mode의 Stage는 실행하지 않는다(State에 `N/A`).
+
+## Design Definition — `figma_implementation`
+| # | Stage (`current_stage` 값) | 담당 (Agent / Skill) | 산출물 |
+|---|---|---|---|
+| 0 | `project_load` | orchestrator | State 확인, Blocker 목록 |
+| F1 | `design_source_intake` | frontend-builder / `read-design-source` | Figma 접근 확인, Page·Frame 목록과 구현 대상(`design_source.reference`), `viewports`, QA 도구 확인 |
+| F2 | `figma_calibration` | frontend-builder / `read-design-source` + `design-tokens` | `docs/css/tokens.css` |
+| F3 | `content_asset_mapping` | frontend-builder / `read-design-source` → rights-auditor | `ia/sitemap.md`(Figma 구조 등록), Asset·Font·Interaction 목록, manifest |
+| F4 | `implementation_plan` | frontend-builder / `read-design-source` | `design-source/implementation-spec.md`, Design Gap 보고 |
+
+이 mode에서는 `content_ia`, `reference_research`, `visual_direction`, `visual_system`을 실행하지 않는다. `ia-planner`, `visual-director`, `reference-researcher`를 호출하지 않는다.
+
+## Design Definition — `autonomous_generation`
 | # | Stage (`current_stage` 값) | 담당 (Agent / Skill) | 산출물 | Skip 조건 |
 |---|---|---|---|---|
 | 0 | `project_load` | orchestrator | State 확인, Blocker 목록 | — |
-| 1 | `env_calibration` | orchestrator | `state.environment`(QA 도구·Git·Pages 확인), 기존 `docs/` 코드 관례 파악 | — |
-| 2 | `content_ia` | ia-planner / `define-ia` | `content/`, `ia/sitemap.md` | — |
+| A1 | `env_calibration` | orchestrator | `state.environment`(QA 도구·Git·Pages 확인), 기존 `docs/` 코드 관례 파악 | — |
+| A2 | `content_ia` | ia-planner / `define-ia` | `content/`, `ia/sitemap.md` | — |
 | opt | `reference_research` | reference-researcher / `research-visual-references` | `references/reference-index.jsonl` | 사용자가 Direction을 이미 정했거나 `style_bias: restrained`로 충분할 때 |
-| 3 | `visual_system` | visual-director / `design-tokens` | `design-system/visual-language.md`, `docs/css/tokens.css` | — |
-| 4 | `site_scaffold` | frontend-builder / `scaffold-site` | `docs/` 골격, 세 Viewport Render 확인 | — |
+| A3 | `visual_direction` | visual-director | `design-system/visual-language.md`(Candidate와 추천안), 사용자 승인 요청(Level 3) | — |
+| A4 | `visual_system` | visual-director / `design-tokens` | 승인된 Direction의 `docs/css/tokens.css` | — |
 | opt | `asset_sourcing` | asset-sourcer → rights-auditor | `assets/manifest.jsonl`의 APPROVED Asset | 필요한 이미지가 없거나 전부 이미 APPROVED |
+
+이 mode는 Figma 도구 없이 처음부터 끝까지 실행된다.
+
+## Common Build Core (두 mode 공유)
+| # | Stage (`current_stage` 값) | 담당 (Agent / Skill) | 산출물 | Skip 조건 |
+|---|---|---|---|---|
+| 4 | `site_scaffold` | frontend-builder / `scaffold-site` | `docs/` 골격, 세 Viewport Render 확인 | — |
 | 5 | `master_page_build` | frontend-builder / `build-section` | Direction을 대표하는 Page의 첫 Section들 | — |
 | 6 | `section_build` | frontend-builder / `build-section` | Section 1개(세 Viewport 동시) | — |
 | 7 | `browser_qa` | site-reviewer / `review-browser` | Section QA 판정 | — |
@@ -44,12 +68,17 @@ Stage 6~8은 Section 단위 Loop다. `site_scaffold` 직후 배포 Smoke Test(�
 
 | Stage | PASS 조건 |
 |---|---|
-| env_calibration | `node scripts/qa/capture.cjs --check`가 실제로 성공했고 결과가 `state.environment`에 기록됨. 실패면 BLOCKED(tool) |
-| content_ia | `content/`의 문안이 사용자 제공 사실로 채워짐(Placeholder·임의 작성 없음). `ia/sitemap.md`에 Page·Section·ID·콘텐츠 출처가 등록됨 |
-| visual_system | `visual-language.md`에 Direction과 선택 근거가 있고 구체 값이 없음. `tokens.css`에 Direction이 요구한 Token이 정의됨. 사용자 승인 기록(`visual_direction.status: APPROVED`) |
+| design_source_intake (F) | Figma 읽기 도구가 실제로 응답했고, 구현 대상 Frame이 Page·Viewport별로 Node ID와 함께 Config에 기록됨. QA 도구 `--check` 성공. 도구 실패·한도 초과면 BLOCKED(tool) |
+| figma_calibration (F) | `tokens.css`의 값이 Figma에서 읽은 값이고(추정·창작 없음), 문서에 값이 중복 기재되지 않음 |
+| content_asset_mapping (F) | `ia/sitemap.md`의 모든 Section에 Figma Node ID가 있고, Asset·Font가 전부 manifest에 등록됨(승인 여부와 무관하게 누락 0) |
+| implementation_plan (F) | `implementation-spec.md`의 모든 절이 채워짐. 디자인이 없는 Viewport의 대응 방식이 적혀 있음. Design Gap이 보고됨. 디자인을 바꾸는 결정이 임의로 내려지지 않음 |
+| env_calibration (A) | `node scripts/qa/capture.cjs --check`가 실제로 성공했고 결과가 `state.environment`에 기록됨. 실패면 BLOCKED(tool) |
+| content_ia (A) | `content/`의 문안이 사용자 제공 사실로 채워짐(Placeholder·임의 작성 없음). `ia/sitemap.md`에 Page·Section·ID·콘텐츠 출처가 등록됨 |
+| visual_direction (A) | `visual-language.md`에 Candidate 평가와 선택 근거가 있고 구체 값이 없음. 사용자 승인 기록(`visual_direction.status: APPROVED`) |
+| visual_system (A) | `tokens.css`에 승인된 Direction이 요구한 Token이 정의됨 |
 | site_scaffold | 세 Viewport에서 Render됨, 가로 Overflow 0, Console Error 0, 모든 경로가 상대 경로, JS 비활성 Render에서도 콘텐츠가 보임 |
 | asset_sourcing | 사용 예정 Asset이 전부 `APPROVED` |
-| master_page / section / secondary | 대상 Section이 세 Viewport에서 Render 확인됨(`render_checked: true`), `review-browser` PASS, 등록된 Page/Section만 수정됨 |
+| master_page / section / secondary | 대상 Section이 세 Viewport에서 Render 확인됨(`render_checked: true`), `review-browser` PASS(기준: figma mode는 해당 Figma Frame, autonomous mode는 Visual Language), 등록된 Page/Section만 수정됨 |
 | interaction | JS 비활성에서도 핵심 콘텐츠·내비게이션 사용 가능, Keyboard 조작 가능 |
 | full_qa | 모든 Page × 세 Viewport PASS, `review-code` FAIL 0건 |
 | pre_deploy_check | 미승인 Asset 0건, 깨진 내부 링크 0건, Root-absolute 경로 0건, `docs/`에 내부 정보·Secret 없음, Repository 공개 범위 고지 기록됨 |
@@ -72,11 +101,11 @@ Page/Section당 Structural 1 · Visual QA 1 · Micro Fix 1 = 최대 `max_polish_
 - QA를 통과한 Stage/Section은 local commit한다(`.claude/rules/git-deploy.md`: 경로 명시 `git add`, 범위 확인). Bash는 `git status / diff / log / add / commit`과 `node scripts/qa/*`에만 쓴다. **push하지 않는다.**
 
 # Stop Rule
-다음이 모두 PASS면 `done`: Content complete(Placeholder 없음) · IA 등록 Page/Section 전부 구현 · Visual Direction coherent · 세 Viewport Responsive PASS · Overflow 없음 · Accessibility PASS · Performance Budget 충족 · Code Review FAIL 0 · Asset Rights PASS · 내부 링크 정상 · Deploy 승인·완료 · Live QA PASS.
-"다른 디자인도 가능하다 / 조금 더 화려하게"는 재작업 사유가 아니다. Final sign-off는 Level 3로 사용자에게 보고한다.
+다음이 모두 PASS면 `done`: Content complete(Placeholder 없음) · `ia/sitemap.md` 등록 Page/Section 전부 구현 · Design Definition 일치(figma mode: Figma Frame과의 차이가 전부 기록된 Judgement·승인된 Gap뿐 / autonomous mode: Visual Direction coherent) · 세 Viewport Responsive PASS · Overflow 없음 · Accessibility PASS · Performance Budget 충족 · Code Review FAIL 0 · Asset Rights PASS · 내부 링크 정상 · Deploy 승인·완료 · Live QA PASS.
+"다른 디자인도 가능하다 / 조금 더 화려하게"는 재작업 사유가 아니다. figma mode에서는 "Figma보다 더 낫게"도 재작업 사유가 아니다. Final sign-off는 Level 3로 사용자에게 보고한다.
 
 # Restrictions
-- `content/`, `ia/`, `design-system/`, `docs/`를 직접 작성하지 않는다. 쓰기는 State 파일만이다.
+- `content/`, `ia/`, `design-system/`, `design-source/`, `docs/`를 직접 작성하지 않는다. 쓰기는 State 파일만이다.
 - 의존 Stage가 `COMPLETE`/`SKIPPED`가 아닌데 강제로 진행하지 않는다.
 - `config/project.yaml`과 `content/`에 없는 목표·대상·문안을 추정하지 않는다.
 - Delegation 시 Subagent에는 Task에 필요한 데이터만 전달한다. Push·Deploy 권한은 위임하지 않는다.
