@@ -1,0 +1,521 @@
+{
+  "schema_version": 2,
+  "project_id": "AUTORUN_02",
+  "config_file": "config/experiments/autonomous-run-02.yaml",
+  "current_stage": "done",
+  "stage_status": "CLOSED",
+  "last_completed_stage": "export_qa",
+  "autonomy_mode": "guided",
+  "execution_mode": "supervised_test",
+  "run_mode": "SUPERVISED_CONTINUOUS_PRODUCTION (2026-09-30)",
+  "target_file": {
+    "working": "4IjbcMoAkTyWkoacnVAmNe",
+    "page": "1716:2382",
+    "same_file_mode": true,
+    "decided_by": "user (AUTORUN_02 FIGMA PRODUCTION 지시)"
+  },
+  "frozen_scopes": [
+    {
+      "type": "FROZEN_REFERENCE",
+      "node_ids": "AUTORUN_01 State의 42개(1880:4717 … 1880:5122)",
+      "baseline": "692555fc / 451 nodes"
+    },
+    {
+      "type": "FROZEN_PROJECT",
+      "node_id": "1889:1910",
+      "name": "AUTORUN_01_WORK (SeMA UI 4 + Case Study)",
+      "baseline": "c098f8fd / 860 nodes"
+    },
+    {
+      "type": "READ_ONLY",
+      "node_id": "1892:1910",
+      "name": "00_WRITE_TEST (STEP04)",
+      "note": "page 최상위 x -1993 y 1542 — 겹침 검사 대상만"
+    }
+  ],
+  "editable_scopes": [
+    {
+      "node_id": "1915:1910",
+      "name": "AUTORUN_02_WORK",
+      "type": "WORKING_ROOT",
+      "match": "node_id_and_all_descendants",
+      "bounds": {
+        "x": 2160,
+        "y": 1685,
+        "w": 6060,
+        "h": 14543
+      },
+      "created_at": "2026-09-30"
+    }
+  ],
+  "blockers": [],
+  "approval_required": [
+    {
+      "action": "legal/source-policy.yaml에 airkorea.or.kr 등 reference_only 등록",
+      "risk_tier": 1,
+      "status": "PENDING_APPROVAL",
+      "detail": "공용 정책 파일 — 임의 수정하지 않음. 텍스트 사실만 사용, 이미지 미사용"
+    },
+    {
+      "action": "external_publish",
+      "risk_tier": 3,
+      "status": "NOT_REQUESTED"
+    }
+  ],
+  "observations": [
+    "2026-09-30 사전 검사: AUTORUN_01_WORK 높이 21238(AUTORUN_01 State 기록 21928). 00_WRITE_TEST 1892:1910이 루트 밖(page 최상위 x -1993)으로 이동되어 있음 — 이번 세션의 쓰기가 아님. AUTORUN_01 파일은 수정하지 않고 여기 기록만 함"
+  ],
+  "stage_log": [
+    {
+      "stage": "project_load",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "master_grammar_calibration",
+      "status": "SKIPPED",
+      "at": "2026-09-30",
+      "note": "AUTORUN_01 foundation-grammar.md 읽기 전용 재사용"
+    },
+    {
+      "stage": "current_site_research",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "ux_competitor_research",
+      "status": "SKIPPED",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "art_direction_research",
+      "status": "SKIPPED",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "portfolio_gap_analysis",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "visual_direction",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Particle Count. 제작 단계에서 입자 규칙 개정(visual-direction.md 5-1)"
+    },
+    {
+      "stage": "ia_core_flow",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "design_system",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "asset_artwork_strategy",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "precheck",
+      "status": "PASS",
+      "at": "2026-09-30",
+      "note": "폰트 가용(Noto Sans KR, IBM Plex Mono), 대상 파일 확정(사용자), 빈 영역 확정, 보호 기준값 측정. 예보 등급 구간·행동요령 원문을 S8 스냅샷에서 확인"
+    },
+    {
+      "stage": "master_screen",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "1915:1911 QA_PASS (2 Pass)"
+    },
+    {
+      "stage": "render",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "get_screenshot enableBase64Response, 화면 원 크기"
+    },
+    {
+      "stage": "self_qa",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "targeted_fix",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Master 4 + Mobile Now 1 + Global 1 = 6"
+    },
+    {
+      "stage": "secondary_screens",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "1917:1910 · 1918:1910 · 1919:1910 QA_PASS"
+    },
+    {
+      "stage": "responsive",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Mobile 첫 화면: 판단 + 3항목 하단 y=556 ≤ 844"
+    },
+    {
+      "stage": "case_study",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "1922:1910, 8 sections + footer, 1440x14543, Render QA PASS"
+    },
+    {
+      "stage": "why_audit",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "W1–W15 필드 점검, W15 추가, 과장 표현 3건 정정"
+    },
+    {
+      "stage": "final_review",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "읽기 전용 확인 1회. Figma 쓰기 0"
+    }
+  ],
+  "screens": {
+    "c-air-now.desktop": {
+      "frame_name": "AUTORUN_02_Desktop_AirNow",
+      "role": "master",
+      "node_id": "1915:1911",
+      "parent": "1915:1910",
+      "size": [
+        1440,
+        1605
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "qa": {
+        "passes": 2,
+        "fixes": [
+          "PM2.5 입자·아이콘 Ø3→Ø4, PM10 Ø12→Ø16(4:1 유지)",
+          "예보 카드 아이콘 Ø2→Ø3 등 가시성",
+          "O3 코드 서체 IBM Plex Mono→Noto Sans KR('03' 오독 방지)",
+          "경보 문구 '경보 / 0건' 줄바꿈 → 줄 분리",
+          "(Global) 예보 카드 아이콘 등급색→중립색"
+        ]
+      },
+      "particle_counts": {
+        "pm10": 19,
+        "pm25": 13,
+        "o3": 54
+      }
+    },
+    "c-air-forecast.desktop": {
+      "frame_name": "AUTORUN_02_Desktop_Forecast",
+      "node_id": "1917:1910",
+      "parent": "1915:1910",
+      "size": [
+        1440,
+        1922
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "qa": {
+        "passes": 1,
+        "fixes": []
+      }
+    },
+    "c-air-now.mobile": {
+      "frame_name": "AUTORUN_02_Mobile_AirNow",
+      "node_id": "1918:1910",
+      "parent": "1915:1910",
+      "size": [
+        390,
+        1684
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "qa": {
+        "passes": 2,
+        "fixes": [
+          "등급 출처 캡션과 입자 섹션 사이 여백 0 → 20"
+        ]
+      },
+      "first_screen": "판단 카드 + 3항목 하단 y=556 (390×844 기준)",
+      "particle_counts": {
+        "pm10": 19,
+        "pm25": 13,
+        "o3": 54
+      }
+    },
+    "c-air-forecast.mobile": {
+      "frame_name": "AUTORUN_02_Mobile_Forecast",
+      "node_id": "1919:1910",
+      "parent": "1915:1910",
+      "size": [
+        390,
+        2270
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "qa": {
+        "passes": 1,
+        "fixes": []
+      }
+    }
+  },
+  "global_consistency": {
+    "at": "2026-09-30",
+    "result": "PASS",
+    "checked": "Root 전체 Render 비교 + 화면별 원 크기 Render: 토큰·배지·칩·시각 접두어·고지문 일치. 예보 아이콘 중립색 통일(수정 1)"
+  },
+  "data_integrity": {
+    "measured": {
+      "source": "S2 홈",
+      "station": "서울 중구 측정소",
+      "at": "2026.09.30 20시",
+      "pm10": "19 ㎍/㎥ 좋음",
+      "pm25": "13 ㎍/㎥ 좋음",
+      "o3": "0.0544 ppm 보통",
+      "grades": "에어코리아 표시값 그대로"
+    },
+    "forecast": {
+      "source": "S8",
+      "issued": "2026.09.30 17시",
+      "region": "서울",
+      "today": "PM10 좋음 · PM2.5 보통 · O3 발표 없음(당일 05·11시)",
+      "tomorrow": "좋음 · 좋음 · 보통",
+      "dayafter": "좋음 · 좋음 · 보통(오존: '전 권역 보통' 문구)"
+    },
+    "official_criteria": "S8 '예보등급 및 행동요령' 표 원문 — 예보 등급 구간. 측정 등급 기준은 미확인 → 측정값을 예보 구간에 대입하지 않음",
+    "guidance": "S8 행동요령 원문을 예보 등급에만 연결. 지금 화면은 S2 홈 원문 문구만",
+    "palette": "제안 팔레트(공식 색 아님) — 화면 푸터·등급 구간 표에 명시",
+    "not_shown": [
+      "원 예보 표의 '미세먼지' 종합 행(정의 미확인)",
+      "원 홈 예보 표의 오늘 오존(지역·발표 시각 미확인)",
+      "데이터 지연·미수신 실제 사례(샘플에 없음)"
+    ]
+  },
+  "protection_qa": {
+    "method": "모든 쓰기 호출 안에서 전후 FNV fingerprint(id,type,name,geometry,parent,visible,opacity,fills,strokes,text,font) 비교 + 조상 체인 검사 + 영역 겹침 검사",
+    "not_compared": "effects, constraints, blendMode, rotation, auto-layout 속성",
+    "history": [
+      {
+        "call": "PRECHECK (read)",
+        "frozen": "692555fc",
+        "a1": "c098f8fd"
+      },
+      {
+        "call": "Master create #1",
+        "result": "ReferenceError(return 단계) → 전체 롤백 확인(root 없음, stray 0, 해시 동일)"
+      },
+      {
+        "call": "Master create #2",
+        "frozen": "692555fc→692555fc",
+        "a1": "c098f8fd→c098f8fd"
+      },
+      {
+        "call": "Master micro fix",
+        "frozen": "unchanged",
+        "a1": "unchanged"
+      },
+      {
+        "call": "Desktop Forecast create",
+        "frozen": "unchanged",
+        "a1": "unchanged"
+      },
+      {
+        "call": "Mobile Now create",
+        "frozen": "unchanged",
+        "a1": "unchanged"
+      },
+      {
+        "call": "Mobile Now fix + Mobile Forecast create",
+        "frozen": "unchanged",
+        "a1": "unchanged"
+      },
+      {
+        "call": "Global consistency fix + audit",
+        "frozen": "692555fc / 451",
+        "a1": "c098f8fd / 860",
+        "overlap": "none"
+      },
+      {
+        "call": "Case Study precheck + build 1–4 (+ 실패 1 롤백)",
+        "frozen": "692555fc",
+        "a1": "c098f8fd",
+        "ui4": {
+          "1915:1911": "4b982467",
+          "1917:1910": "deb89caa",
+          "1918:1910": "c01d9b80",
+          "1919:1910": "c8982fe2"
+        },
+        "note": "UI4 기준값은 이번 사전 검사에서 처음 측정(이전 저장값 없음). 모든 쓰기 전후 동일. 겹침 없음"
+      }
+    ],
+    "result": "VERIFIED (비교 범위 내)"
+  },
+  "approval_metrics": {
+    "scope": "AUTORUN_02 FIGMA PRODUCTION (2026-09-30), Claude 측 기록",
+    "TOOL_CALLS_current_stage": {
+      "use_figma": 9,
+      "use_figma_detail": "read 2(PRECHECK, 롤백 확인) · write 7(실패 1 롤백 포함: Master 2, Master fix 1, Desktop Forecast 1, Mobile Now 1, Mobile Forecast+fix 1, Global fix 1)",
+      "get_screenshot": 7,
+      "Bash": 6,
+      "Read": 1,
+      "Edit_Write": "최종 보고에 기록",
+      "WebFetch": 0,
+      "Playwright": 0
+    },
+    "TOOL_CALLS_cumulative": {
+      "use_figma_AUTORUN_02": 15,
+      "other": "UNKNOWN"
+    },
+    "PERMISSION_REQUESTS": "UNKNOWN (Claude는 승인 창을 관측할 수 없음. use_figma는 allow 미등록)",
+    "TOOL_CALLS_case_study_stage": {
+      "use_figma": 6,
+      "use_figma_detail": "read 1 + write 5(실패 1 롤백 포함)",
+      "get_screenshot": 14,
+      "Bash": 2,
+      "Edit": 2,
+      "WebFetch": 0,
+      "Playwright": 0
+    }
+  },
+  "checkpoint": {
+    "stage": "done",
+    "screen": null,
+    "step": null,
+    "updated_at": "2026-09-30",
+    "resume_hint": "AUTORUN_02 CLOSED. 외부 게시·제출은 사용자 결정. 공용 source-policy 등록 여부는 PENDING_APPROVAL로 남음"
+  },
+  "updated_at": "2026-09-30",
+  "case_study": {
+    "frame_name": "AUTORUN_02_CaseStudy",
+    "node_id": "1922:1910",
+    "parent": "1915:1910",
+    "size": [
+      1440,
+      14543
+    ],
+    "abs_xy": [
+      6780,
+      1685
+    ],
+    "status": "QA_PASS",
+    "sections": {
+      "S01 PROJECT OVERVIEW": "1922:1911",
+      "S02 AS-IS & PROBLEM": "1922:2080",
+      "S03 UX STRATEGY": "1923:1910",
+      "S04 VISUAL DIRECTION": "1923:1962",
+      "S05 INFORMATION DESIGN": "1923:2101",
+      "S06 DESKTOP EXPERIENCE": "1925:1916",
+      "S07 MOBILE EXPERIENCE": "1925:2018",
+      "S08 OUTCOME & REFLECTION": "1926:1910",
+      "Footer · attribution": "1926:2003"
+    },
+    "section_roles": {
+      "01": "EXPLANATION",
+      "02": "EVIDENCE",
+      "03": "EXPLANATION",
+      "04": "EXPLANATION",
+      "05": "EVIDENCE",
+      "06": "SHOWCASE",
+      "07": "SHOWCASE",
+      "08": "REFLECTION"
+    },
+    "renders_used": [
+      {
+        "src": "1915:1911",
+        "crop": "y0-900",
+        "scale": "export 2x, display 0.867"
+      },
+      {
+        "src": "1917:1910",
+        "crop": "y0-720"
+      },
+      {
+        "src": "1917:1910",
+        "crop": "y740-1586"
+      },
+      {
+        "src": "1918:1910",
+        "crop": "y0-844 / y844-1684",
+        "display": "1x"
+      },
+      {
+        "src": "1919:1910",
+        "crop": "y0-844",
+        "export_scale": 1.76
+      }
+    ],
+    "qa": {
+      "passes": "build 4회 + 섹션별 Render 14회",
+      "fixes": [
+        "S01 제목 어절 중간 줄바꿈(48px 재줄바꿈)",
+        "S02 한계 라벨 정렬",
+        "S04/S05 소제목-내용 묶음(간격 20)",
+        "S03/S04 카드 높이 통일",
+        "S06 번호 마커가 UI 글자 가림 → 여백으로 이동",
+        "S06 하단 crop 경계 문장 잘림 → 1586",
+        "S07 오버레이 라벨이 캡션 덮음 → 캡션으로 이동"
+      ],
+      "tool_errors": [
+        "build 3 createImage 크기 제한 → 롤백 확인(그룹 수 2·4) 후 배율 상한으로 재실행"
+      ]
+    },
+    "data_integrity": "PASS — 측정/예보 구분, 단위, 시각, 예보 등급 구간 원문, 행동요령 적용 조건, 누락(오늘 O3) 표시, 입자 계산(19/13/54.4→54) 표기, PM 합산·O3 비교 금지 문구, 제안 팔레트 표기",
+    "export": "DONE — 사용자가 별도로 PDF Export(보고 기준). 이후 Case Study 쓰기 없음 → 재출력 불필요"
+  },
+  "closure": {
+    "at": "2026-09-30",
+    "case_study": {
+      "node_id": "1922:1910",
+      "parent": "1915:1910",
+      "size": [
+        1440,
+        14543
+      ],
+      "abs_xy": [
+        6780,
+        1685
+      ],
+      "sections": 9,
+      "fingerprint": "b563316a / 906 nodes (closure baseline)"
+    },
+    "data_visualization_review": {
+      "result": "PASS — 수정 없음",
+      "evidence": [
+        "Desktop Now 필드 캡션에 단위 병기: 점 19개 = 19 ㎍/㎥ · 점 13개 = 13 ㎍/㎥ · 고리 54개 ≈ 0.0544 ppm",
+        "Desktop·Mobile 규칙 박스: 변환 규칙(1점 = 1 ㎍/㎥, 1고리 = 0.001 ppm 반올림) + \"오존은 단위가 달라 점 개수와 비교하지 않습니다\"",
+        "항목별 별도 칸(겹침 없음), 점/고리 형태 구분",
+        "Case Study S05: PM 합산 금지·O3 비교 불가 명시"
+      ],
+      "residual": "Mobile Now 필드 캡션(점 19개 등)에는 단위가 없으나 바로 아래 규칙 박스와 위 수치 행에 단위가 있어 수정하지 않음"
+    },
+    "why_presence": {
+      "WHY AirKorea": "S01 1922:1911",
+      "P1–P3": "S02 1922:2080",
+      "Particle Count 선정": "S04 1923:1962 (+S05)",
+      "Responsive": "S07 1925:2018"
+    },
+    "protection": {
+      "frozen": "692555fc / 451",
+      "autorun_01": "c098f8fd / 860",
+      "ui4": {
+        "1915:1911": "4b982467",
+        "1917:1910": "deb89caa",
+        "1918:1910": "c01d9b80",
+        "1919:1910": "c8982fe2"
+      },
+      "result": "VERIFIED (비교 범위 내: effects·constraints·auto-layout 제외)"
+    },
+    "tool_calls": {
+      "use_figma": 1,
+      "use_figma_mode": "read-only",
+      "figma_write": 0,
+      "Bash": 1
+    },
+    "status": "CLOSED"
+  }
+}

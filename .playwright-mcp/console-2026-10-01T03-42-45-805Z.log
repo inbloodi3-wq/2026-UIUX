@@ -1,0 +1,17 @@
+[    1538ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=text&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rJ (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:73553)
+    at https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:170872
+    at sy (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:174439)
+    at sm (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:165691)
+    at https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:160509
+    at sr (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:160610)
+    at sW (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:187191)
+    at MessagePort.O (https://www.salomon.com/_next/static/immutable/chunks/1hdqioa0011t-.js:2:13604)
+[    1789ms] Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')
+    at <anonymous> (https://cdn.cookielaw.org/scripttemplates/202606.1.0/otBannerSdk.js:6:562401)
+    at <anonymous> (https://cdn.cookielaw.org/scripttemplates/202606.1.0/otBannerSdk.js:6:572521)
+[    2965ms] [LOG] GTM Piano Analytics Tag Template - Set consent mode -  essential @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    2966ms] [LOG] GTM Piano Analytics Tag Template - Send event -  click.action {click: Geolocalisation Popin, click_chapter1: Open, product_id: undefined, product: undefined, product_category1: undefined} @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    2968ms] [LOG] GTM Piano Analytics Tag Template - Send event -  page.display {page_type: list-page, page: listing:menss21:shoes:trailrunning, page_sub_type: undefined, page_category: catalog, site_language: en} @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    3024ms] [ERROR] The path of the provided scope ('/_/service_worker') is not under the max scope allowed ('/_/service_worker/69f0/'). Adjust the scope, move the Service Worker script, or use the Service-Worker-Allowed HTTP header to allow the scope. @ :0
+[    7956ms] [WARNING] The resource https://www.salomon.com/_next/static/immutable/chunks/0qsatyqvssqd-.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://www.salomon.com/en-us/c/men/shoes/trail-running-shoes:0

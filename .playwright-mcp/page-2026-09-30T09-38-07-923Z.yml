@@ -1,0 +1,314 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - list:
+      - listitem:
+        - link "본문 바로가기" [ref=e2] [cursor=pointer]:
+          - /url: "#contents"
+      - listitem:
+        - link "전체메뉴 바로가기" [ref=e3] [cursor=pointer]:
+          - /url: "#nav"
+      - listitem:
+        - link "하단 바로가기" [ref=e4] [cursor=pointer]:
+          - /url: "#footer"
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "서울시립미술관 SEOUL MUSEUM OF ART" [level=1] [ref=e8]
+        - generic [ref=e10]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: /kr/index
+            - img "서울시립미술관 SEOUL MUSEUM OF ART" [ref=e13]
+          - link "메뉴" [ref=e14] [cursor=pointer]:
+            - /url: javascript:;
+      - region "검색" [ref=e15]:
+        - heading "전시와 프로그램" [level=2] [ref=e16]
+        - generic [ref=e18]:
+          - generic [ref=e19]: 전시와 프로그램
+          - generic [ref=e20]: 원하는 조건의 전시와 프로그램을 검색하실 수 있습니다.
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - paragraph [ref=e24]: 선택된 필터
+            - list [ref=e25]:
+              - listitem [ref=e26]:
+                - generic [ref=e27]: 전시
+                - button "현재 필터 삭제" [ref=e28]
+              - listitem [ref=e30]:
+                - generic [ref=e31]: 문화행사
+                - button "현재 필터 삭제" [ref=e32]
+              - listitem [ref=e34]:
+                - generic [ref=e35]: 서울미디어시티비엔날레
+                - button "현재 필터 삭제" [ref=e36]
+              - listitem [ref=e38]:
+                - generic [ref=e39]: 서울사진축제
+                - button "현재 필터 삭제" [ref=e40]
+              - listitem [ref=e42]:
+                - generic [ref=e43]: 현재
+                - button "현재 필터 삭제" [ref=e44]
+              - listitem [ref=e46]:
+                - generic [ref=e47]: 어린이
+                - button "현재 필터 삭제" [ref=e48]
+              - listitem [ref=e50]:
+                - generic [ref=e51]: 청소년
+                - button "현재 필터 삭제" [ref=e52]
+              - listitem [ref=e54]:
+                - generic [ref=e55]: 성인
+                - button "현재 필터 삭제" [ref=e56]
+          - button "필터 보기 축소됨" [ref=e59] [cursor=pointer]:
+            - text: 필터 보기
+            - generic: 축소됨
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - link "서울시립 서서울미술관 플레이 라운지 《어쩌면 우리에게 더 멋진 일이 있을지도 몰라》 전시 서울시립 서서울미술관 2026/09/01~2026/10/11" [ref=e63] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e65]:
+                - strong [ref=e66]: 서울시립 서서울미술관 플레이 라운지 《어쩌면 우리에게 더 멋진 일이 있을지도 몰라》
+                - generic [ref=e67]: 전시
+                - text: 서울시립 서서울미술관 2026/09/01~2026/10/11
+            - link "《오윤》 전시 서울시립 미술아카이브 2026/08/27~2027/02/14" [ref=e70] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e72]:
+                - strong [ref=e73]: 《오윤》
+                - generic [ref=e74]: 전시
+                - text: 서울시립 미술아카이브 2026/08/27~2027/02/14
+            - link "2026 투어링 케이-아츠 《아마도, 모두 우리》 전시 주캐나다한국문화원 2026/08/25~2026/10/14" [ref=e77] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e79]:
+                - strong [ref=e80]: 2026 투어링 케이-아츠 《아마도, 모두 우리》
+                - generic [ref=e81]: 전시
+                - text: 주캐나다한국문화원 2026/08/25~2026/10/14
+            - 'link "서울시립 서서울미술관 미디어 작가전 《김희천: 두더지들》 전시 서울시립 서서울미술관 2026/08/20~2026/11/08" [ref=e84] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e86]:
+                - strong [ref=e87]: "서울시립 서서울미술관 미디어 작가전 《김희천: 두더지들》"
+                - generic [ref=e88]: 전시
+                - text: 서울시립 서서울미술관 2026/08/20~2026/11/08
+            - 'link "2026 타이틀 매치 《오인환 vs. 장서영: 휴먼 에러》 전시 서울시립 북서울미술관 2026/08/13~2026/10/25" [ref=e91] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e93]:
+                - strong [ref=e94]: "2026 타이틀 매치 《오인환 vs. 장서영: 휴먼 에러》"
+                - generic [ref=e95]: 전시
+                - text: 서울시립 북서울미술관 2026/08/13~2026/10/25
+            - 'link "2026년 한국 대표 조각가전 《조숙진: 지나가는 자리》 전시 서울시립 남서울미술관 2026/07/29~2026/11/15" [ref=e98] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e100]:
+                - strong [ref=e101]: "2026년 한국 대표 조각가전 《조숙진: 지나가는 자리》"
+                - generic [ref=e102]: 전시
+                - text: 서울시립 남서울미술관 2026/07/29~2026/11/15
+            - 'link "《마틴 파 : We Are Martin Parr》 전시 서울시립 사진미술관 2026/07/16~2026/10/18" [ref=e105] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e107]:
+                - strong [ref=e108]: "《마틴 파 : We Are Martin Parr》"
+                - generic [ref=e109]: 전시
+                - text: 서울시립 사진미술관 2026/07/16~2026/10/18
+            - link "유휴공간 전시 《보편타당한 당신 ― 심이다은》 전시 서울시립 북서울미술관 2026/06/25~2027/04/11" [ref=e112] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e114]:
+                - strong [ref=e115]: 유휴공간 전시 《보편타당한 당신 ― 심이다은》
+                - generic [ref=e116]: 전시
+                - text: 서울시립 북서울미술관 2026/06/25~2027/04/11
+            - 'link "《권병준: 내 마음속에 너는》 전시 서울시립 북서울미술관 2026/06/11~2027/05/16" [ref=e119] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e121]:
+                - strong [ref=e122]: "《권병준: 내 마음속에 너는》"
+                - generic [ref=e123]: 전시
+                - text: 서울시립 북서울미술관 2026/06/11~2027/05/16
+            - 'link "2026년 한국 근대 거장전 《유영국: 산은 내 안에 있다》 전시 서울시립미술관 서소문본관 2026/05/19~2026/10/25" [ref=e126] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e128]:
+                - strong [ref=e129]: "2026년 한국 근대 거장전 《유영국: 산은 내 안에 있다》"
+                - generic [ref=e130]: 전시
+                - text: 서울시립미술관 서소문본관 2026/05/19~2026/10/25
+            - 'link "가나아트컬렉션 《기술의 저변: 경계에 선 장면들》 전시 서울시립미술관 서소문본관 2026/04/16~2026/11/22" [ref=e133] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e135]:
+                - strong [ref=e136]: "가나아트컬렉션 《기술의 저변: 경계에 선 장면들》"
+                - generic [ref=e137]: 전시
+                - text: 서울시립미술관 서소문본관 2026/04/16~2026/11/22
+            - link "유휴공간 프로젝트 전시 《몸을 위한 간주곡 ― 소목장세미》 전시 서울시립 북서울미술관 2026/04/02~2027/05/30" [ref=e140] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e142]:
+                - strong [ref=e143]: 유휴공간 프로젝트 전시 《몸을 위한 간주곡 ― 소목장세미》
+                - generic [ref=e144]: 전시
+                - text: 서울시립 북서울미술관 2026/04/02~2027/05/30
+          - generic [ref=e146]:
+            - generic [ref=e147]: 1 / 2 페이지
+            - link "다음" [ref=e149] [cursor=pointer]:
+              - /url: "#"
+    - generic [ref=e150]:
+      - link [ref=e153] [cursor=pointer]:
+        - /url: /kr/index
+        - img "서울시립미술관 SEOUL MUSEUM OF ART" [ref=e154]
+      - list [ref=e156]:
+        - listitem [ref=e157]:
+          - link "미술관 소개" [ref=e158] [cursor=pointer]:
+            - /url: /kr/sema/landing
+        - listitem [ref=e159]:
+          - link "뉴스와 공지" [ref=e160] [cursor=pointer]:
+            - /url: /kr/sema/news/landing
+        - listitem [ref=e161]:
+          - link "지원과 양성" [ref=e162] [cursor=pointer]:
+            - /url: /kr/support/landing
+        - listitem [ref=e163]:
+          - link "시설대관" [ref=e164] [cursor=pointer]:
+            - /url: /kr/sema/rental/info
+        - listitem [ref=e165]:
+          - link "후원회 SeMA人[in]" [ref=e166] [cursor=pointer]:
+            - /url: /kr/sema/sema_in
+        - listitem [ref=e167]:
+          - link "기증자 전당" [ref=e168] [cursor=pointer]:
+            - /url: /kr/knowledge_research/donorhall
+      - list [ref=e170]:
+        - listitem [ref=e171]:
+          - link "응답소" [ref=e172] [cursor=pointer]:
+            - /url: https://eungdapso.seoul.go.kr/
+        - listitem [ref=e173]:
+          - link "SeMA 뉴스레터" [ref=e174] [cursor=pointer]:
+            - /url: /kr/sema/newsletters/list
+        - listitem [ref=e175]:
+          - link "도슨팅앱 다운로드" [ref=e176] [cursor=pointer]:
+            - /url: /kr/sema/app_download
+      - generic [ref=e177]:
+        - link "자주 묻는 질문" [ref=e179] [cursor=pointer]:
+          - /url: /kr/sema/faq/list
+        - list [ref=e180]:
+          - listitem [ref=e181]:
+            - text: ·
+            - link "전시실에서 사진 촬영이 가능한가요?" [ref=e182] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=173584#0173584
+          - listitem [ref=e183]:
+            - text: ·
+            - link "시립미술관에서 발간한 전시 관련 도서 및 도록은 어디서 구매하나요?" [ref=e184] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=309862#0309862
+          - listitem [ref=e185]:
+            - text: ·
+            - link "소장품의 수집은 어떻게 이루어지나요?" [ref=e186] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=173747#0173747
+          - listitem [ref=e187]:
+            - text: ·
+            - link "서울시립 미술아카이브는 어떤곳인가요?" [ref=e188] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=1161779#01161779
+      - generic [ref=e189]: 사이트맵SITE MAP
+      - generic [ref=e190]:
+        - link "전시" [ref=e192] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=FROM_TODAY
+        - list [ref=e193]:
+          - listitem [ref=e194]:
+            - link "현재전시" [ref=e195] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=FROM_TODAY
+          - listitem [ref=e196]:
+            - link "예정전시" [ref=e197] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=PLAN_DAY
+          - listitem [ref=e198]:
+            - link "과거전시" [ref=e199] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=PAST_DAY
+      - generic [ref=e200]:
+        - link "교육·이벤트" [ref=e202] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY
+        - list [ref=e203]:
+          - listitem [ref=e204]:
+            - link "모두" [ref=e205] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY
+          - listitem [ref=e206]:
+            - link "어린이" [ref=e207] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT05
+          - listitem [ref=e208]:
+            - link "청소년" [ref=e209] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT06
+          - listitem [ref=e210]:
+            - link "성인" [ref=e211] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT07
+      - generic [ref=e212]:
+        - link "소장품과 미술연구" [ref=e214] [cursor=pointer]:
+          - /url: /kr/knowledge_research/landing
+        - list [ref=e215]:
+          - listitem [ref=e216]:
+            - link "SeMA 소장품" [ref=e217] [cursor=pointer]:
+              - /url: /kr/knowledge_research/collection/landing
+          - listitem [ref=e218]:
+            - link "미술아카이브" [ref=e219] [cursor=pointer]:
+              - /url: https://sema.seoul.go.kr/semaaa
+          - listitem [ref=e220]:
+            - link "모두의 연구실 '코랄'" [ref=e221] [cursor=pointer]:
+              - /url: http://semacoral.org/
+          - listitem [ref=e222]:
+            - link "SeMA 도서와 자료" [ref=e223] [cursor=pointer]:
+              - /url: /kr/knowledge_research/book/list
+      - generic [ref=e224]:
+        - link "서울미디어시티비엔날레" [ref=e226] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EB&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=Y&whatChoice5=N&whenType=ALL_DAY
+        - list [ref=e227]:
+          - listitem [ref=e228]:
+            - link "모두" [ref=e229] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EB&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=Y&whatChoice5=N&whenType=ALL_DAY
+          - listitem [ref=e230]:
+            - link "SMB 웹시스템" [ref=e231] [cursor=pointer]:
+              - /url: https://mediacityseoul.kr/ko/today
+      - generic [ref=e232]:
+        - link "서울사진축제" [ref=e234] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EO&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=Y&whenType=ALL_DAY
+        - list [ref=e235]:
+          - listitem [ref=e236]:
+            - link "모두" [ref=e237] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EO&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=Y&whenType=ALL_DAY
+      - generic [ref=e238]:
+        - generic [ref=e239]: 방문하기
+        - list [ref=e240]:
+          - listitem [ref=e241]:
+            - link "접근성 안내" [ref=e242] [cursor=pointer]:
+              - /url: /kr/visit/webaccess
+          - listitem [ref=e243]:
+            - link "서소문본관" [ref=e244] [cursor=pointer]:
+              - /url: /kr/visit/seosomun
+          - listitem [ref=e245]:
+            - link "북서울미술관" [ref=e246] [cursor=pointer]:
+              - /url: /kr/visit/bukseoul
+          - listitem [ref=e247]:
+            - link "서서울미술관" [ref=e248] [cursor=pointer]:
+              - /url: /kr/visit/seoseoul
+          - listitem [ref=e249]:
+            - link "미술아카이브" [ref=e250] [cursor=pointer]:
+              - /url: /kr/visit/art_archive
+          - listitem [ref=e251]:
+            - link "사진미술관" [ref=e252] [cursor=pointer]:
+              - /url: /kr/visit/photosema
+          - listitem [ref=e253]:
+            - link "남서울미술관" [ref=e254] [cursor=pointer]:
+              - /url: /kr/visit/namseoul
+          - listitem [ref=e255]:
+            - link "난지미술창작스튜디오" [ref=e256] [cursor=pointer]:
+              - /url: /kr/visit/nanji_residency
+          - listitem [ref=e257]:
+            - link "백남준을 기억하는 집" [ref=e258] [cursor=pointer]:
+              - /url: /kr/visit/nam_june_paik_house
+          - listitem [ref=e259]:
+            - link "전시해설" [ref=e260] [cursor=pointer]:
+              - /url: /kr/visit/excmmntry
+      - generic [ref=e261]:
+        - link "서울시립미술관 공식 페이스북" [ref=e262] [cursor=pointer]:
+          - /url: https://www.facebook.com/SeoulMuseumofArt.kr
+        - link "서울시립미술관 공식 트위터" [ref=e263] [cursor=pointer]:
+          - /url: https://twitter.com/SeoulSema
+        - link "서울시립미술관 공식 인스타그램" [ref=e264] [cursor=pointer]:
+          - /url: https://www.instagram.com/seoulmuseumofart/
+        - link "서울시립미술관 공식 유튜브" [ref=e265] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/SeoulMuseumofArt
+        - link "서울시립미술관 공식 카카오 채널" [ref=e266] [cursor=pointer]:
+          - /url: https://pf.kakao.com/_QgRPn
+        - link "서울시립미술관 공식 네이버 블로그" [ref=e267] [cursor=pointer]:
+          - /url: https://blog.naver.com/semaofficial
+      - paragraph [ref=e269]:
+        - text: 서울 중구 덕수궁길 61 (대표자) 최은주, (사업자등록번호) 101-83-02866 (대표번호) 02–2124–8800 , 02–120 (직원찾기)
+        - link "직원 및 연락처" [ref=e270] [cursor=pointer]:
+          - /url: https://sema.seoul.go.kr/kr/sema/landing#orgArea
+      - list [ref=e272]:
+        - listitem [ref=e273]:
+          - link "개인정보처리방침" [ref=e274] [cursor=pointer]:
+            - /url: /kr/sema/privacy
+        - listitem [ref=e275]:
+          - link "이메일무단수집거부" [ref=e276] [cursor=pointer]:
+            - /url: /kr/sema/email_refuse
+      - generic [ref=e278]:
+        - link "과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2026.2.22 ~ 2027.2.21" [ref=e279] [cursor=pointer]:
+          - /url: http://webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110&npp=9&skey=1&sval=%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80
+        - link "서울책방" [ref=e280] [cursor=pointer]:
+          - /url: https://store.seoul.go.kr/cp/index.html

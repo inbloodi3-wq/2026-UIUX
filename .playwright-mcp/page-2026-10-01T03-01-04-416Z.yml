@@ -1,0 +1,88 @@
+- generic [active] [ref=f4e1]:
+  - link "본문 바로가기" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - generic [ref=f4e5]:
+        - text: 날씨누리
+        - generic [ref=f4e6]: 리디자인 콘셉트 · 비공식
+      - button "메뉴" [ref=f4e7]
+  - note [ref=f4e8]:
+    - generic [ref=f4e9]:
+      - generic [ref=f4e10]:
+        - text: 새로운 날씨지도가 나왔습니다.
+        - link "지도로 보기" [ref=f4e11] [cursor=pointer]:
+          - /url: "#"
+        - text: 에서 바로 열 수 있습니다.
+      - button "공지 닫기" [ref=f4e12] [cursor=pointer]: 닫기 ✕
+  - main [ref=f4e13]:
+    - generic [ref=f4e16]:
+      - generic [ref=f4e17]:
+        - generic [ref=f4e18]: 우리 동네
+        - heading "서울" [level=1] [ref=f4e19]
+        - button "위치 변경" [ref=f4e20]
+        - button "관심지역" [ref=f4e21]
+      - generic [ref=f4e22]:
+        - generic [ref=f4e23]: "22.1"
+        - generic [ref=f4e24]: ℃
+      - generic [ref=f4e25]: 구름많음
+      - paragraph [ref=f4e28]: 09.30(수) 21:00 갱신 · 날씨지도 표시값 · 서울 지점
+      - generic [ref=f4e29]: 전국특보 없음
+    - generic [ref=f4e33]:
+      - region [ref=f4e34]:
+        - heading "수도권·인접 지점" [level=2] [ref=f4e35]
+        - paragraph [ref=f4e36]: 같은 시각(09.30 21:00) 날씨지도 표시값
+        - generic [ref=f4e37]:
+          - generic [ref=f4e38]:
+            - generic [ref=f4e41]:
+              - generic [ref=f4e42]: 인천
+              - generic [ref=f4e43]: 구름많음
+            - generic [ref=f4e44]: 21.8°
+          - generic [ref=f4e45]:
+            - generic [ref=f4e48]:
+              - generic [ref=f4e49]: 수원
+              - generic [ref=f4e50]: 맑음
+            - generic [ref=f4e51]: 21.0°
+          - generic [ref=f4e52]:
+            - generic [ref=f4e55]:
+              - generic [ref=f4e56]: 춘천
+              - generic [ref=f4e57]: 흐림
+            - generic [ref=f4e58]: 18.3°
+      - region [ref=f4e59]:
+        - heading "시간별 예보" [level=2] [ref=f4e60]
+        - generic [ref=f4e61]:
+          - generic [ref=f4e65]:
+            - strong [ref=f4e66]: 이 시안에는 시간별 예보 수치가 없습니다
+            - paragraph [ref=f4e67]: 조사에서 시간별 예보 값을 수집하지 않아, 수치를 만들어 넣지 않았습니다. 이 시안 구조에서는 이 자리에 시간 순서대로 기호·기온·강수 정보를 넣도록 설계했습니다.
+          - generic [aria-hidden] [ref=f4e68]:
+            - generic [ref=f4e69]: —
+            - generic [ref=f4e70]: —
+            - generic [ref=f4e71]: —
+            - generic [ref=f4e72]: —
+            - generic [ref=f4e73]: —
+            - generic [ref=f4e74]: —
+            - generic [ref=f4e75]: —
+            - generic [ref=f4e76]: —
+      - region [ref=f4e77]:
+        - heading "다음에 볼 것" [level=2] [ref=f4e78]
+        - paragraph [ref=f4e79]: 지도는 하나의 진입점으로 모았습니다
+        - generic [ref=f4e80]:
+          - generic [ref=f4e82]: 전국특보 없음
+          - generic [ref=f4e83]: 홈 상단 표시 기준
+        - generic [ref=f4e84]:
+          - link [ref=f4e85] [cursor=pointer]:
+            - /url: nation.html
+            - strong [ref=f4e86]: 전국 지금 →
+            - text: 39개 지점을 권역별로 보기
+          - link [ref=f4e87] [cursor=pointer]:
+            - /url: "#"
+            - strong [ref=f4e88]: 지도로 보기 →
+            - text: 레이어(강수·바람·기온)는 지도 안에서 선택
+          - link [ref=f4e89] [cursor=pointer]:
+            - /url: "#"
+            - strong [ref=f4e90]: 대기질 예·경보 →
+            - text: 에어코리아로 연결(원 사이트 링크)
+  - contentinfo [ref=f4e91]:
+    - generic [ref=f4e92]:
+      - strong [ref=f4e93]: 비공식 개인 포트폴리오 · AUTORUN_03
+      - text: 기상청 날씨누리의 공식 서비스가 아닙니다. 기온·날씨 상태·특보 표시는 2026-09-30 날씨누리 홈(21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 공지 문구는 원 공지를 줄여 쓴 리디자인 문안입니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다.

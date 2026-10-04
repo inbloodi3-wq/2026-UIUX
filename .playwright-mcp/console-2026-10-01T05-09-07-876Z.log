@@ -1,0 +1,28 @@
+[     163ms] Uncaught TypeError: Cannot read properties of null (reading 'appendChild')
+    at <anonymous> (https://script.ifdo.co.kr/jfullscript.js:0:211690)
+[     380ms] [LOG] %c IF %c A %c DO %c B %c 이프두 %c 마케팅 자동화 & 온사이트 마케팅 서비스 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold font-weight: bold;background-color:#313235;color:#ffffff;background: linear-gradient(91.59deg, #107BF9 -0.96%, #E20A65 99.96%);border-radius:3px;padding:8px; @ https://script.ifdo.co.kr/jfullscript.js:0
+[     490ms] [LOG] this.retval.getReqType() 5002 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92
+[    1284ms] [LOG] 2026-07-06 20:11 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:881
+[    1284ms] [LOG] 20261001140909 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1303
+[    1289ms] [LOG] Debugging 0 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1805
+[    1290ms] [LOG] PC Device Width: 1440 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:3218
+[    1508ms] [LOG] ID 로컬 스토리지에 저장: 166c7f7dfa50570f @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1647
+[    1661ms] [LOG] %c IF %c A %c DO %c B %c 이프두 %c 마케팅 자동화 & 온사이트 마케팅 서비스 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold font-weight: bold;background-color:#313235;color:#ffffff;background: linear-gradient(91.59deg, #107BF9 -0.96%, #E20A65 99.96%);border-radius:3px;padding:8px; @ https://script.ifdo.co.kr/jfullscript.js:0
+[    1710ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/:0
+[    1710ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/:0
+[    1710ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/:0
+[    1884ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    1904ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92
+[    2115ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    2707ms] [LOG] ✅ Edge 브라우저 여부: false @ https://widgets.cre.ma/asics.co.kr/v2/init.js:76
+[    2707ms] [LOG] ✅ PC여부: true @ https://widgets.cre.ma/asics.co.kr/v2/init.js:77
+[    2707ms] [LOG] ✅ 상품 상세 페이지 여부: false @ https://widgets.cre.ma/asics.co.kr/v2/init.js:78
+[    2707ms] [LOG] ❌ window.fromCrema 객체가 존재하지 않습니다. @ https://widgets.cre.ma/asics.co.kr/v2/init.js:81
+[    7531ms] [LOG] API 전송 조건 불충족: prevUserId/referrer/memberSeq 값 확인 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1746
+[    7531ms] [LOG] PrevUserId: 166c7f7dfa50570f @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1747
+[    7531ms] [LOG] Referrer: https://www.asics.co.kr/ @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1748
+[    7531ms] [LOG] ReferrerMatched: false @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1749
+[    7531ms] [LOG] MemberSeq:  @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1750
+[    7531ms] [LOG] WaitedMs: 5174 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1751
+[   19942ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92
+[   37967ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92

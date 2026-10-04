@@ -1,0 +1,121 @@
+# Source Policy — Asset/Reference 출처 등급 (범용, 전체 Automation Core 공통)
+#
+# 등급:
+#   final_asset_allowed — 최종 결과물에 사용할 이미지를 가져올 수 있는 출처
+#   reference_only      — 디자인 분석(텍스트 관찰)에만 사용, 이미지 다운로드/삽입 금지
+#   blocked             — Asset/Reference 어느 용도로도 사용하지 않음
+#
+# Unknown Source는 자동 승인하지 않는다 (기본값: blocked for asset use).
+# 이 파일은 프로젝트에 관계없이 공통으로 적용되며, 프로젝트별 추가 제한은
+# config/project.yaml의 project_asset_restrictions에 둔다.
+# 함께 사용: legal/license-evidence.jsonl, .claude/rules/web-research-safety.md
+
+fail_closed: true
+
+sources:
+  pixabay.com:
+    tier: final_asset_allowed
+    api_required: true
+    direct_automation: true
+    notes: >
+      공식 API만 사용. HTML scraping 금지. 동일 검색어는 24시간 캐시를 우선 사용해
+      불필요한 재조회를 피한다. Mass query/download 금지, 실제 채택한 Asset만
+      로컬에 저장한다. Permanent hotlink 금지.
+
+  unsplash.com:
+    tier: final_asset_allowed
+    api_required: true
+    direct_automation: true
+    notes: >
+      공식 API만 사용. API가 반환한 이미지 URL 정책을 그대로 따른다. Attribution
+      메타데이터(작가명/프로필 URL)를 유지한다. 실제 채택 시 download_location
+      endpoint 호출이 필수다. Compliance 여부가 불확실한 후보는 자동 승인하지
+      않고 conditional(추가 확인 필요)로 처리한다.
+
+  pexels.com:
+    tier: final_asset_allowed
+    api_required: true
+    direct_automation: true
+    notes: >
+      공식 API만 사용. Optional Provider. Attribution/Provider 메타데이터를
+      유지하고 API rate limit을 관리한다.
+
+  pinterest.com:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "이미지 다운로드/최종 결과물 삽입 금지. 사용자 제공 URL 또는 허용된 Search Tool의 공개 URL/메타데이터만 기록."
+
+  behance.net:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "이미지 다운로드/최종 결과물 삽입 금지. 사용자 제공 URL 또는 허용된 Search Tool의 공개 URL/메타데이터만 기록."
+
+  notefolio.net:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "이미지 다운로드/최종 결과물 삽입 금지. 사용자 제공 URL 또는 허용된 Search Tool의 공개 URL/메타데이터만 기록."
+
+  # --- AUTORUN_01 (2026-09-30) Research 대상 — 공개 페이지 텍스트 관찰 전용 ---
+  # 이미지 다운로드/저장/삽입, bulk crawling 금지. 페이지 구조·라벨 등 텍스트만 기록한다.
+  sema.seoul.go.kr:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "AUTORUN_01 리디자인 대상(Current Site Audit). 공개 페이지 텍스트/구조 관찰만. 로그인·예약·폼 제출 금지."
+  mmca.go.kr:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Product UX Reference(텍스트 관찰만)."
+  leeumhoam.org:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Product UX Reference 후보(텍스트 관찰만)."
+  tate.org.uk:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Product UX Reference(텍스트 관찰만)."
+  whitney.org:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction Reference(텍스트 관찰만)."
+  stedelijk.nl:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction Reference(텍스트 관찰만)."
+  # --- AUTORUN_01 STEP 06 (2026-09-30) Art Direction Reference — 텍스트 관찰 전용 ---
+  pentagram.com:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction case study(텍스트 관찰만)."
+  walkerart.org:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction case study(텍스트 관찰만)."
+  thonik.nl:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction case study(텍스트 관찰만)."
+  magazine.beattitude.kr:
+    tier: reference_only
+    api_required: false
+    direct_automation: false
+    notes: "Art Direction 기사(텍스트 관찰만)."
+
+  google_image_results:
+    tier: blocked
+    notes: "검색 결과 썸네일을 Asset으로 채택하지 않는다. 원본 출처를 찾았다면 그 출처 자체의 등급을 따른다."
+
+  unknown:
+    tier: blocked
+    notes: "정책에 명시되지 않은 모든 도메인의 기본값. 새 출처가 필요하면 이 파일에 먼저 등록한 뒤 사용한다."

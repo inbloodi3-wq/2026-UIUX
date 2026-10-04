@@ -1,0 +1,420 @@
+- generic [active] [ref=f41e1]:
+  - generic [ref=f41e3]:
+    - generic [ref=f41e4]:
+      - button "Skip to Main Content" [ref=f41e5] [cursor=pointer]
+      - link "Accessibility Statement" [ref=f41e6] [cursor=pointer]:
+        - /url: /us/en-us/customer-service/ada-accessibility-statement/
+      - generic [ref=f41e9] [cursor=pointer]:
+        - generic [ref=f41e10]:
+          - generic [ref=f41e11]:
+            - paragraph [ref=f41e12]: Save this fall with teacher & student discounts.
+            - link "Learn More" [ref=f41e13]:
+              - /url: /us/en-us/customer-service/discount-programs/
+          - button "Expand header banner" [ref=f41e14]
+        - generic [ref=f41e18]:
+          - link "Store Locator" [ref=f41e19]:
+            - /url: /us/en-us/stores/
+            - paragraph [ref=f41e20]: Store Locator
+          - link "OneASICS Benefits" [ref=f41e21]:
+            - /url: /us/en-us/oneasics-home/
+            - paragraph [ref=f41e22]: OneASICS Benefits
+          - link [ref=f41e23]:
+            - /url: https://www.asics.com/us/en-us/?utm_source=extole&utm_medium=email&utm_campaign=sitefooter&_gl=1*2hy1p2*_gcl_au*MjAxNzE0MDg4Mi4xNzYxMzA3NzUy*_ga*MTQ3MzIyNTM0MS4xNzYxMzA3NzUz*_ga_YGVM1D8ER1*czE3NjEzMDc3NTIkbzEkZzAkdDE3NjEzMDc3NTIkajYwJGwwJGgxODY0MzMxOTk1&channel=LINK&extole_labels=refer-a-friend&promotable_code=sitefooter&extole_source=sitefooter&extole_zone_name=share_experience
+            - paragraph [ref=f41e24]: Refer a friend
+          - link [ref=f41e25]:
+            - /url: https://asics.attn.tv/p/eJ8/landing-page
+            - paragraph [ref=f41e26]: Get on the list
+      - generic [ref=f41e29]:
+        - generic [ref=f41e30]:
+          - link "Navigate to Home" [ref=f41e31] [cursor=pointer]:
+            - /url: /us/en-us/
+          - navigation "Main" [ref=f41e35]:
+            - list [ref=f41e37]:
+              - listitem [ref=f41e38]:
+                - button "Men" [ref=f41e39] [cursor=pointer]
+              - listitem [ref=f41e40]:
+                - button "Women" [ref=f41e41] [cursor=pointer]
+              - listitem [ref=f41e42]:
+                - button "Kids" [ref=f41e43] [cursor=pointer]
+              - listitem [ref=f41e44]:
+                - button "Sports" [ref=f41e45] [cursor=pointer]
+              - listitem [ref=f41e46]:
+                - button "Sportstyle" [ref=f41e47] [cursor=pointer]
+              - listitem [ref=f41e48]:
+                - link "Road Tested" [ref=f41e49] [cursor=pointer]:
+                  - /url: /us/en-us/road-tested-footwear/c/aa51131262/
+        - generic [ref=f41e51]:
+          - button "Search" [ref=f41e55] [cursor=pointer]
+          - link "My Account" [ref=f41e61] [cursor=pointer]:
+            - /url: /us/en-us/
+            - generic [ref=f41e62]: "1"
+          - link "Cart" [ref=f41e70] [cursor=pointer]:
+            - /url: /us/en-us/cart/
+    - main [ref=f41e75]:
+      - generic [ref=f41e77]:
+        - link "ASICS Rise and Shine Collection Shoes Shop Now" [ref=f41e84] [cursor=pointer]:
+          - generic [ref=f41e85]:
+            - img "ASICS Rise and Shine Collection Shoes Shop Now" [ref=f41e88]
+            - generic [ref=f41e92]:
+              - heading [level=2] [ref=f41e96]:
+                - paragraph [ref=f41e97]: RISE & SHINE™ Collection
+              - generic [ref=f41e99]:
+                - paragraph [ref=f41e100]: Bright colors inspired by sunrise, featuring running bestsellers
+                - paragraph [ref=f41e101]:
+                  - text: and the all-new
+                  - strong [ref=f41e102]: SONICBLAST™ 2
+                  - text: shoe.
+              - link "Shop Now" [ref=f41e105]:
+                - /url: /us/en-us/rise-and-shine/c/aa90000043/
+        - region [ref=f41e114]:
+          - generic [ref=f41e116]:
+            - group [ref=f41e117]
+            - group [ref=f41e127]
+            - group [ref=f41e137]
+            - group [ref=f41e147]
+            - group [ref=f41e157]
+            - group [ref=f41e167]
+            - group [ref=f41e177]
+            - group [ref=f41e187]
+        - link "ASICS Asia Open Tennis Shop Now" [ref=f41e204] [cursor=pointer]:
+          - generic [ref=f41e205]:
+            - img "ASICS Asia Open Tennis Shop Now" [ref=f41e208]
+            - generic [ref=f41e212]:
+              - heading [level=2] [ref=f41e216]:
+                - paragraph [ref=f41e217]: New colors for the court
+              - paragraph [ref=f41e220]: Explore bestselling tennis shoes and apparel in fresh shades for fall.
+              - link "Shop Now" [ref=f41e223]:
+                - /url: /us/en-us/tennis/c/aa40200000/
+        - generic [ref=f41e230]:
+          - generic [ref=f41e231]:
+            - link [ref=f41e232] [cursor=pointer]:
+              - /url: /us/en-us/gore-tex/c/aa90000015/
+              - img "ASICS GORETEX Trail Running Shoes Shop Now" [ref=f41e234]
+            - generic [ref=f41e236]:
+              - paragraph [ref=f41e237]: NEW ARRIVALS
+              - heading "Rainy skies? Stay dry with GORE-TEX™ technology." [level=3] [ref=f41e238]
+          - region [ref=f41e240]:
+            - generic [ref=f41e243]:
+              - group [ref=f41e244]
+              - group [ref=f41e258]
+            - button "Previous slide" [disabled]
+            - button "Next slide" [ref=f41e272] [cursor=pointer]
+        - link "ASICS Sportstyle Shoes Shop Now" [ref=f41e284] [cursor=pointer]:
+          - generic [ref=f41e285]:
+            - img "ASICS Sportstyle Shoes Shop Now" [ref=f41e288]
+            - generic [ref=f41e292]:
+              - heading [level=2] [ref=f41e296]:
+                - paragraph [ref=f41e297]: The latest Sportstyle
+              - paragraph [ref=f41e300]: New designs, fresh colors, and kids’ sizes for back-to-school.
+              - generic [ref=f41e301]:
+                - link "Shop Women's" [ref=f41e303]:
+                  - /url: /us/en-us/sportstyle-new-arrivals/c/aa90000023/?prefn1=c_productGender&prefv1=Women
+                - link "Shop Men’s" [ref=f41e306]:
+                  - /url: /us/en-us/sportstyle-new-arrivals/c/aa90000023/?prefn1=c_productGender&prefv1=Men
+                - link "Shop Kids’" [ref=f41e309]:
+                  - /url: /us/en-us/sportstyle-new-arrivals/c/aa90000023/?prefn1=c_productGender&prefv1=Kids
+        - generic [ref=f41e317]:
+          - link [ref=f41e318] [cursor=pointer]:
+            - /url: /us/en-us/nimbus-mirai/c/aa50123700/
+            - generic [ref=f41e319]:
+              - img "ASICS NIMBUS MIRAI 2 Shoes Coming Soon" [ref=f41e321]
+              - generic [ref=f41e323]:
+                - paragraph [ref=f41e324]: NIMBUS MIRAI™ 2
+                - paragraph [ref=f41e327]: Designed to be returned and recycled through our partner, TerraCycle. Available 10/1.
+          - link [ref=f41e332] [cursor=pointer]:
+            - /url: /us/en-us/gel-slowcush/c/aa50123315/
+            - generic [ref=f41e333]:
+              - img "ASICS Slow Cush Shoes Coming Soon" [ref=f41e335]
+              - generic [ref=f41e337]:
+                - paragraph [ref=f41e338]: GEL-SLOWCUSH™
+                - paragraph [ref=f41e341]: Extra-plush cushioning for easy miles. Available 10/1.
+        - generic [ref=f41e351]:
+          - generic "ASICS NAGINO Shoes Shop Now" [ref=f41e357]
+          - generic [ref=f41e361]:
+            - heading [level=2] [ref=f41e365]:
+              - paragraph [ref=f41e366]: For her every move
+            - paragraph [ref=f41e369]: Meet the BLOOMSTRIDE™ shoe, an all-new design crafted for women’s movement. Pair it with NAGINO™ Collection apparel for head-to-toe comfort.
+            - generic [ref=f41e370]:
+              - link "Shop BLOOMSTRIDE™" [ref=f41e372] [cursor=pointer]:
+                - /url: /us/en-us/bloomstride/c/aa50142000/
+              - link "Shop NAGINO™ Collection" [ref=f41e375] [cursor=pointer]:
+                - /url: /us/en-us/nagino-collection/c/aa90000008/
+        - generic [ref=f41e383]:
+          - link [ref=f41e384] [cursor=pointer]:
+            - /url: /us/en-us/gel-nimbus-28/p/ANA_1013A228-001.html
+            - generic [ref=f41e385]:
+              - img "ASICS GEL-NIMBUS 28 Day of the Dead Shoes Shop Now" [ref=f41e387]
+              - generic [ref=f41e389]:
+                - paragraph [ref=f41e390]: GEL-NIMBUS® 28 LIMITED EDITION
+                - paragraph [ref=f41e393]: Bold designs inspired by the Day of the Dead
+          - link [ref=f41e398] [cursor=pointer]:
+            - /url: /us/en-us/lite-show/c/aa50107000/
+            - generic [ref=f41e399]:
+              - img "ASICS LITE-SHOW Collection SHOES Shop Now" [ref=f41e401]
+              - generic [ref=f41e403]:
+                - paragraph [ref=f41e404]: LITE-SHOW™ COLLECTION
+                - paragraph [ref=f41e407]: Reflective details for more visible runs
+        - generic [ref=f41e417]:
+          - generic [ref=f41e418]:
+            - link [ref=f41e419] [cursor=pointer]:
+              - /url: /us/en-us/login/?onsite_feature=login-split-banner-exclusives
+              - img "ASICS OneASICS Member Exclusive Shoes Shop Now" [ref=f41e421]
+            - generic [ref=f41e422]:
+              - heading "Explore styles only available for OneASICS members" [level=3] [ref=f41e424]
+              - link "Join for Free" [ref=f41e426] [cursor=pointer]:
+                - /url: /us/en-us/login/?onsite_feature=login-split-banner-exclusives
+          - region [ref=f41e428]:
+            - generic [ref=f41e431]:
+              - group [ref=f41e432]
+              - group [ref=f41e446]
+            - button "Previous slide" [disabled]
+            - button "Next slide" [ref=f41e460] [cursor=pointer]
+        - generic [ref=f41e471]:
+          - generic [ref=f41e472]:
+            - generic [ref=f41e473]:
+              - img "Refer a Friend Rewards" [ref=f41e476]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph: Earn $10 off $75+ when you refer a friend to ASICS. Terms apply.
+                  - generic:
+                    - link "Learn More":
+                      - /url: https://share.asics.com/oasitecta
+            - heading "Refer a Friend Rewards" [level=3] [ref=f41e478]
+          - generic [ref=f41e479]:
+            - generic [ref=f41e480]:
+              - img "Discount Programs" [ref=f41e483]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph: Available for doctors, teachers, military service members and more.
+                  - generic:
+                    - link "Learn More":
+                      - /url: https://www.asics.com/us/en-us/customer-service/discount-programs/
+            - heading "ASICS Discount Programs" [level=3] [ref=f41e485]
+          - generic [ref=f41e486]:
+            - generic [ref=f41e487]:
+              - img "The ASICS App" [ref=f41e490]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph: Shop from anywhere and get notified when new styles are released.
+                  - generic:
+                    - link "Learn More":
+                      - /url: https://www.asics.com/us/en-us/asics-app/
+            - heading "The ASICS App" [level=3] [ref=f41e492]
+    - contentinfo [ref=f41e494]:
+      - generic [ref=f41e495]:
+        - generic [ref=f41e497]:
+          - generic [ref=f41e498]:
+            - generic [ref=f41e499]:
+              - paragraph [ref=f41e500]: Sign Up for Email & Text
+              - paragraph [ref=f41e501]: Be the first to hear about new products, exclusive events and online offers
+              - link "Sign Up" [ref=f41e502] [cursor=pointer]:
+                - /url: https://asics.attn.tv/p/eJ8/landing-page
+            - generic [ref=f41e504]:
+              - paragraph [ref=f41e505]: Connect With Us
+              - generic [ref=f41e506]:
+                - link "Facebook" [ref=f41e507] [cursor=pointer]:
+                  - /url: https://web.facebook.com/ASICS
+                - link "X (Twitter)" [ref=f41e510] [cursor=pointer]:
+                  - /url: https://x.com/ASICSamerica
+                - link "Instagram" [ref=f41e514] [cursor=pointer]:
+                  - /url: https://www.instagram.com/asics/?hl=en
+                - link "YouTube" [ref=f41e519] [cursor=pointer]:
+                  - /url: https://www.youtube.com/asicsglobal
+                - link "LinkedIn" [ref=f41e523] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/company/asics-america/
+          - generic [ref=f41e527]:
+            - heading "Customer Service" [level=3] [ref=f41e528]
+            - list [ref=f41e529]:
+              - listitem [ref=f41e530]:
+                - link "Contact ASICS" [ref=f41e531] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/help-center/
+              - listitem [ref=f41e532]:
+                - link "Store Locator" [ref=f41e533] [cursor=pointer]:
+                  - /url: /us/en-us/stores/
+              - listitem [ref=f41e534]:
+                - link "Returns" [ref=f41e535] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/return-policy/
+              - listitem [ref=f41e536]:
+                - link "Shipping" [ref=f41e537] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/shipping/
+              - listitem [ref=f41e538]:
+                - link "Track Your Order" [ref=f41e539] [cursor=pointer]:
+                  - /url: /us/en-us/ordersearch/
+              - listitem [ref=f41e540]:
+                - link "Give Back Box" [ref=f41e541] [cursor=pointer]:
+                  - /url: /us/en-us/give-back-box/
+              - listitem [ref=f41e542]:
+                - link "Warranty Form" [ref=f41e543] [cursor=pointer]:
+                  - /url: /us/en-us/warranty-form/
+              - listitem [ref=f41e544]:
+                - link "FAQ" [ref=f41e545] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/faq/
+              - listitem [ref=f41e546]:
+                - link "Promotional Terms" [ref=f41e547] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/promotional-terms/
+              - listitem [ref=f41e548]:
+                - link "2026 Team Catalog" [ref=f41e549] [cursor=pointer]:
+                  - /url: https://www.asics.com/on/demandware.static/-/Sites-asics-us-Library/default/ANA_SS26_TEAM_ppt.pdf
+              - listitem [ref=f41e550]:
+                - link "In-Store and Curbside Pickup" [ref=f41e551] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/store-pick-up/bopis-cs/
+              - listitem [ref=f41e552]:
+                - link "Consumer Alert" [ref=f41e553] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/consumer-alert/
+              - listitem [ref=f41e554]:
+                - link "Amazon Authorized Retailers" [ref=f41e555] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/amazon-authorized-retailers/
+          - generic [ref=f41e557]:
+            - heading "Gift Cards" [level=3] [ref=f41e558]
+            - list [ref=f41e559]:
+              - listitem [ref=f41e560]:
+                - link "Shop Gift Cards" [ref=f41e561] [cursor=pointer]:
+                  - /url: /us/en-us/asics-digital-gift-card/p/ANA_ZGCD98002-450.html
+              - listitem [ref=f41e562]:
+                - link "Check Gift Card Balance" [ref=f41e563] [cursor=pointer]:
+                  - /url: /us/en-us/checkbalance/
+              - listitem [ref=f41e564]:
+                - link "Gift Card FAQ" [ref=f41e565] [cursor=pointer]:
+                  - /url: /us/en-us/asics-gift-cards/
+            - heading "Sizing Guides" [level=3] [ref=f41e566]
+            - list [ref=f41e567]:
+              - listitem [ref=f41e568]:
+                - link "ASICS Size Guide" [ref=f41e569] [cursor=pointer]:
+                  - /url: /us/en-us/aligned-size-charts/
+              - listitem [ref=f41e570]:
+                - link "Pronation Guide" [ref=f41e571] [cursor=pointer]:
+                  - /url: /us/en-us/shoe-pronation-guide/
+            - heading "Resources" [level=3] [ref=f41e572]
+            - list [ref=f41e573]:
+              - listitem [ref=f41e574]:
+                - link "Blog" [ref=f41e575] [cursor=pointer]:
+                  - /url: /us/en-us/blog/
+              - listitem [ref=f41e576]:
+                - link "ASICS App" [ref=f41e577] [cursor=pointer]:
+                  - /url: /us/en-us/asics-app/
+          - generic [ref=f41e579]:
+            - heading "Corporate Info" [level=3] [ref=f41e580]
+            - list [ref=f41e581]:
+              - listitem [ref=f41e582]:
+                - link "About ASICS" [ref=f41e583] [cursor=pointer]:
+                  - /url: https://www.asics.com/us/en-us/mk/about-us
+              - listitem [ref=f41e584]:
+                - link "Corporate Responsibility" [ref=f41e585] [cursor=pointer]:
+                  - /url: https://corp.asics.com/en/csr?_gl=1*1rqe4eo*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE1OTIkajIwJGwwJGg0NzU1OTUwNDc.&_ga=2.210130323.765256858.1750079646-1456233170.1749739998&_gac=1.90909160.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e586]:
+                - link "CA Notices/Privacy Rights" [ref=f41e587] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/california-laws?_gl=1*b5lgdg*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE2MTckajYwJGwwJGg0NzU1OTUwNDc.&_ga=2.215399185.765256858.1750079646-1456233170.1749739998&_gac=1.124341880.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e588]:
+                - link "CA Supply Chains Act" [ref=f41e589] [cursor=pointer]:
+                  - /url: https://www.asics.com/on/demandware.static/-/Sites-asics-us-Library/default/2025.05.14%20Final%20ASICS%20Modern%20Slavery%20Statement%202024.pdf
+              - listitem [ref=f41e590]:
+                - link "Cookie Policy" [ref=f41e591] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/cookie-policy?_gl=1*d91rh3*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE2MzAkajQ3JGwwJGg0NzU1OTUwNDc.&_ga=2.215399185.765256858.1750079646-1456233170.1749739998&_gac=1.124341880.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e592]:
+                - link "Intellectual Property" [ref=f41e593] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/terms-and-conditions#terms-6
+              - listitem [ref=f41e594]:
+                - link "Accessibility Statement" [ref=f41e595] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/ada-accessibility-statement/
+              - listitem [ref=f41e596]:
+                - link "Manage Cookie Preferences" [ref=f41e597] [cursor=pointer]:
+                  - /url: /us/en-us/?cookiePref=true
+              - listitem [ref=f41e598]:
+                - link "Privacy Policy" [ref=f41e599] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/privacy-policy?_gl=1*g7wg4*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE2NjUkajEyJGwwJGg0NzU1OTUwNDc.&_ga=2.41901348.765256858.1750079646-1456233170.1749739998&_gac=1.162064974.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e600]:
+                - link "A.I. Terms of Use" [ref=f41e601] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/ai-terms-of-use?_gl=1*jv9d2v*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE2ODckajYwJGwwJGg0NzU1OTUwNDc.&_ga=2.41901348.765256858.1750079646-1456233170.1749739998&_gac=1.162064974.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e602]:
+                - link "Sustainability" [ref=f41e603] [cursor=pointer]:
+                  - /url: https://www.asics.com/us/en-us/mk/sustainability
+              - listitem [ref=f41e604]:
+                - link "Terms & Conditions of Use" [ref=f41e605] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/terms-and-conditions?_gl=1*n9r9ks*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE3MDIkajQ1JGwwJGg0NzU1OTUwNDc.&_ga=2.41901348.765256858.1750079646-1456233170.1749739998&_gac=1.162064974.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e606]:
+                - link "Terms of Sale" [ref=f41e607] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/terms-of-sale?_gl=1*1se0x2y*_gcl_aw*R0NMLjE3NDk3MzkzOTUuQ2p3S0NBanc5YW5DQmhBV0Vpd0FxQkotYzVuaVBkOEtGdXJNNFlCaVJIUlpGRzJxbkE2OS1OeEc4VUJBam11eE1aekxRUkdQY3VZWlFSb0NIUFlRQXZEX0J3RQ..*_gcl_au*MTYzOTYzNzgzMi4xNzQ5NDc5MTgw*_ga*MTQ1NjIzMzE3MC4xNzQ5NzM5OTk4*_ga_YGVM1D8ER1*czE3NTAzMzU4ODEkbzkkZzEkdDE3NTAzNDE3MDgkajM5JGwwJGg0NzU1OTUwNDc.&_ga=2.41901348.765256858.1750079646-1456233170.1749739998&_gac=1.162064974.1749739388.CjwKCAjw9anCBhAWEiwAqBJ-c5niPd8KFurM4YBiRHRZFG2qnA69-NxG8UBAjmuxMZzLQRGPcuYZQRoCHPYQAvD_BwE
+              - listitem [ref=f41e608]:
+                - link "Careers" [ref=f41e609] [cursor=pointer]:
+                  - /url: https://uscareers.asics.com/
+              - listitem [ref=f41e610]:
+                - link "Donation Partners" [ref=f41e611] [cursor=pointer]:
+                  - /url: /us/en-us/asics-donation-partners/
+              - listitem [ref=f41e612]:
+                - link "SMS Terms" [ref=f41e613] [cursor=pointer]:
+                  - /url: http://attn.tv/asics/smsterms.html
+              - listitem [ref=f41e614]:
+                - link "Referral Program Terms" [ref=f41e615] [cursor=pointer]:
+                  - /url: https://share.asics.com/zone/terms?journey.campaign_id=7508756074316182381&_gl=1*ca12hj*_gcl_aw*R0NMLjE3NTUxMTYwMTUuRUFJYUlRb2JDaE1Ja1lDMHFvR2ZqZ01WM0hWSEFSMDB2amd4RUFBWUFTQUFFZ0pFcFBEX0J3RQ..*_gcl_au*NTUxNjc0MDk0LjE3NTQ2NjUzOTI.*_ga*MTU4MjM3ODY0Ny4xNzUyNTE3NzM2*_ga_YGVM1D8ER1*czE3NTUxOTU0NjAkbzM1JGcxJHQxNzU1MTk1Njc3JGozNSRsMSRoOTg2OTMxMTcy&_ga=2.230529183.225888782.1755090366-1582378647.1752517736&_gac=1.44902416.1755116013.EAIaIQobChMIkYC0qoGfjgMV3HVHAR00vjgxEAAYASAAEgJEpPD_BwE
+          - generic [ref=f41e617]:
+            - heading "OneASICS™ Membership" [level=3] [ref=f41e618]
+            - list [ref=f41e619]:
+              - listitem [ref=f41e620]:
+                - link "About OneASICS™" [ref=f41e621] [cursor=pointer]:
+                  - /url: /us/en-us/oneasics-home/
+              - listitem [ref=f41e622]:
+                - link "Join For Free" [ref=f41e623] [cursor=pointer]:
+                  - /url: /us/en-us/login/?onsite_feature=login-content-footer
+              - listitem [ref=f41e624]:
+                - link "Sign In" [ref=f41e625] [cursor=pointer]:
+                  - /url: /us/en-us/login/?onsite_feature=login-content-footer
+              - listitem [ref=f41e626]:
+                - link "ASICS Running Club" [ref=f41e627] [cursor=pointer]:
+                  - /url: /us/en-us/asics-run-club/
+              - listitem [ref=f41e628]:
+                - link "OneASICS™ FAQ" [ref=f41e629] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/faq-oneasics/
+              - listitem [ref=f41e630]:
+                - link "Terms and Conditions" [ref=f41e631] [cursor=pointer]:
+                  - /url: https://legal.asics.com/en-us/legal/oneasics-terms-and-conditions
+              - listitem [ref=f41e632]:
+                - link "Discount Programs" [ref=f41e633] [cursor=pointer]:
+                  - /url: /us/en-us/customer-service/discount-programs/
+              - listitem [ref=f41e634]:
+                - link "Refer & Earn $25" [ref=f41e635] [cursor=pointer]:
+                  - /url: https://share.asics.com/sitefooter
+        - generic [ref=f41e636]:
+          - generic [ref=f41e637]:
+            - button [ref=f41e638] [cursor=pointer]:
+              - paragraph [ref=f41e643]: United States
+            - link [ref=f41e644] [cursor=pointer]:
+              - /url: https://legal.asics.com/en-us/legal/privacy-policy
+              - paragraph [ref=f41e645]: Privacy Policy
+            - link [ref=f41e646] [cursor=pointer]:
+              - /url: https://legal.asics.com/en-us/legal/terms-and-conditions
+              - paragraph [ref=f41e647]: Terms & Conditions
+            - link [ref=f41e648] [cursor=pointer]:
+              - /url: https://legal.asics.com/en-us/legal/cookie-policy
+              - paragraph [ref=f41e649]: Cookie Policy
+          - paragraph [ref=f41e650]: © 2026 ASICS America Corporation. All Rights Reserved.
+    - region "Notifications (F8)":
+      - list
+  - button "Edit" [ref=f41e651]
+  - region "Your Cookie Settings" [ref=f41e657]:
+    - dialog "Privacy" [ref=f41e658]:
+      - generic [ref=f41e659]:
+        - generic [ref=f41e661]:
+          - text: COOKIES – YOUR PRIVACY, YOUR CHOICE We use cookies, pixels, and other tools, including third party tools, for analytics, marketing, and targeted advertising, as well as to operate and improve our sites and services, protect security, prevent fraud, and enable social media, chat, personalization, and other online features. These tools enable us and third parties to record user sessions and interactions with our sites and other online services, and to collect activity and user data, such as IP address, referring URL, browsing and search history, and online communications. We use this information to analyze and improve performance, understand usage and preferences, personalize content and experiences, and deliver and measure the performance of targeted content and ads, including across third party sites and services. To review and change your preferences for certain types of cookies used on this site, click ‘Manage Cookie Preferences.’ Otherwise, click ‘OK’ to proceed without changing your preferences for this site.
+          - generic [ref=f41e662]:
+            - text: By clicking ‘OK’ or ‘Manage Cookie Preferences,’ or otherwise using our site and online services, you acknowledge and agree to our
+            - link "PRIVACY POLICY," [ref=f41e663] [cursor=pointer]:
+              - /url: https://www.asics.com/us/en-us/privacy-policy.html
+            - link "COOKIE POLICY," [ref=f41e664] [cursor=pointer]:
+              - /url: https://www.asics.com/us/en-us/cookie-policy.html
+            - text: and
+            - link "TERMS & CONDITIONS" [ref=f41e665] [cursor=pointer]:
+              - /url: https://legal.asics.com/en-us/legal/terms-and-conditions
+            - text: ", which apply to your use of our sites and online services."
+        - generic [ref=f41e667]:
+          - button "Manage Cookie Preferences" [ref=f41e668] [cursor=pointer]
+          - button "OK" [ref=f41e670] [cursor=pointer]
+  - textbox

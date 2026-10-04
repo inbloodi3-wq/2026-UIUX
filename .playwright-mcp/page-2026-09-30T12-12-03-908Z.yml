@@ -1,0 +1,978 @@
+- generic [active] [ref=f14e1]:
+  - list [ref=f14e3]:
+    - listitem [ref=f14e4]:
+      - link "본문 바로가기" [ref=f14e5] [cursor=pointer]:
+        - /url: "#sub_cont"
+    - listitem [ref=f14e6]:
+      - link "주메뉴 바로가기" [ref=f14e7] [cursor=pointer]:
+        - /url: "#gnb"
+    - listitem [ref=f14e8]:
+      - link "하단영역 바로가기" [ref=f14e9] [cursor=pointer]:
+        - /url: "#footer"
+  - generic [ref=f14e10]:
+    - generic [ref=f14e13]:
+      - list [ref=f14e14]:
+        - group "1 / 1" [ref=f14e15]:
+          - generic [ref=f14e16]: "[ 속보 2025.07.18 ]"
+          - link "한국환경공단 사칭 스미싱 문자 주의 안내" [ref=f14e17] [cursor=pointer]:
+            - /url: https://www.airkorea.or.kr/web/board/1/1099/?pMENU_NO=143
+        - group "1 / 1" [ref=f14e19]:
+          - generic [ref=f14e20]: "[ 속보 2025.07.18 ]"
+          - link "한국환경공단 사칭 스미싱 문자 주의 안내" [ref=f14e21] [cursor=pointer]:
+            - /url: https://www.airkorea.or.kr/web/board/1/1099/?pMENU_NO=143
+        - group "1 / 1" [ref=f14e23]:
+          - generic [ref=f14e24]: "[ 속보 2025.07.18 ]"
+          - link "한국환경공단 사칭 스미싱 문자 주의 안내" [ref=f14e25] [cursor=pointer]:
+            - /url: https://www.airkorea.or.kr/web/board/1/1099/?pMENU_NO=143
+      - generic [ref=f14e27]:
+        - button "Next slide" [ref=f14e28] [cursor=pointer]:
+          - generic [ref=f14e29]: 이전내용 보기
+        - button "내용 정지" [ref=f14e30] [cursor=pointer]
+        - button "Previous slide" [ref=f14e32] [cursor=pointer]:
+          - generic [ref=f14e33]: 다음내용 보기
+    - banner [ref=f14e34]:
+      - generic [ref=f14e35]:
+        - heading [level=1] [ref=f14e36]:
+          - link [ref=f14e37] [cursor=pointer]:
+            - /url: /web
+            - img "Air korea" [ref=f14e38]
+        - list [ref=f14e40]:
+          - listitem [ref=f14e41]:
+            - link "에어코리아란" [ref=f14e42] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=90
+          - listitem [ref=f14e43]:
+            - link "실시간 자료조회" [ref=f14e44] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=95
+          - listitem [ref=f14e45]:
+            - link "대기정보 예보 / 경보" [ref=f14e46] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=112
+          - listitem [ref=f14e47]:
+            - link "통계정보" [ref=f14e48] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=122
+          - listitem [ref=f14e49]:
+            - link "배움터" [ref=f14e50] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=128
+          - listitem [ref=f14e51]:
+            - link "고객지원" [ref=f14e52] [cursor=pointer]:
+              - /url: /web/link/?pMENU_NO=142
+        - generic [ref=f14e53]:
+          - list [ref=f14e54]:
+            - listitem [ref=f14e55]:
+              - link "KR" [ref=f14e56] [cursor=pointer]:
+                - /url: /web
+            - listitem [ref=f14e57]:
+              - link "EN" [ref=f14e58] [cursor=pointer]:
+                - /url: /eng
+          - button "통합검색 열기" [ref=f14e59] [cursor=pointer]
+    - generic [ref=f14e61]:
+      - list [ref=f14e63]:
+        - listitem [ref=f14e64]:
+          - link "홈으로 이동" [ref=f14e65] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=f14e66]:
+          - link "대기정보 예보 / 경보" [ref=f14e67] [cursor=pointer]:
+            - /url: /web/link/?pMENU_NO=112
+        - listitem [ref=f14e68]:
+          - link "오늘/내일/모레 대기정보" [ref=f14e69] [cursor=pointer]:
+            - /url: /web/link/?pMENU_NO=113
+      - generic [ref=f14e71]:
+        - generic [ref=f14e72]:
+          - heading "대기정보 예보 / 경보" [level=2] [ref=f14e73]
+          - list [ref=f14e74]:
+            - listitem [ref=f14e75]:
+              - link "오늘/내일/모레 대기정보" [ref=f14e76] [cursor=pointer]:
+                - /url: /web/dustForecast?pMENU_NO=113
+            - listitem [ref=f14e77]:
+              - link "초미세먼지 주간예보" [ref=f14e78] [cursor=pointer]:
+                - /url: /web/dustForecastWeek?pMENU_NO=193
+            - listitem [ref=f14e79]:
+              - link "초미세먼지 계절전망" [ref=f14e80] [cursor=pointer]:
+                - /url: /web/link/?pMENU_NO=213
+            - listitem [ref=f14e81]:
+              - link "대기오염경보 발령 내역" [ref=f14e82] [cursor=pointer]:
+                - /url: /web/link/?pMENU_NO=114
+            - listitem [ref=f14e83]:
+              - link "미세먼지 재난 위기경보 발령현황" [ref=f14e84] [cursor=pointer]:
+                - /url: /web/link/?pMENU_NO=225
+            - listitem [ref=f14e85]:
+              - link "황사 발생현황" [ref=f14e86] [cursor=pointer]:
+                - /url: /web/link/?pMENU_NO=117
+            - listitem [ref=f14e87]:
+              - link "국민 행동요령" [ref=f14e88] [cursor=pointer]:
+                - /url: /web/link/?pMENU_NO=121
+            - listitem [ref=f14e89]:
+              - link "무더위쉼터" [ref=f14e90] [cursor=pointer]:
+                - /url: /web/ptcDustShelter/13/?pMENU_NO=229
+        - generic [ref=f14e92]:
+          - strong [ref=f14e93]: 오늘/내일/모레 대기정보
+          - generic [ref=f14e95]:
+            - strong [ref=f14e96]:
+              - text: 대기질(미세먼지, 오존) 예보 2026년 09월 30일 17시 발표자료(국립환경과학원 대기질통합예보센터)
+              - button "지난자료조회" [ref=f14e97] [cursor=pointer]
+            - list [ref=f14e99]:
+              - listitem [ref=f14e100]: 기후에너지환경부는 대기오염으로 인한 국민 건강 피해를 최소화 하기 위해 대기오염 농도를 예보하고 있습니다. 시시각각으로 변하는 대기질 상황을 전달하기 위해 매일 4회(오전 5시, 오전 11시, 오후5시(17시), 오후11시(23시)) 대기오염 농도 등급을 예측하여 알려드리고 있습니다. 또한, 대기오염 농도 전망과 모델예측 결과, 행동요령을 안내하고 있으니 참고바랍니다.
+              - listitem [ref=f14e101]:
+                - text: 황사 영향시에는 기상청 누리집 '날씨누리'의 황사예측모델 결과(기상청-황사모델예측)를 참고하시기 바랍니다.
+                - link "바로가기" [ref=f14e102] [cursor=pointer]:
+                  - /url: https://www.weather.go.kr/w/dust/model-prediction.do
+              - listitem [ref=f14e103]:
+                - strong [ref=f14e104]: 오존예보는 매년 4월1일부터 10월31일까지 발표합니다.
+          - generic [ref=f14e105]:
+            - strong [ref=f14e106]: 대기질 농도 전망
+            - list [ref=f14e107]:
+              - listitem [ref=f14e108]: 한반도 대기질 예측모델결과
+            - table "측정자료 수치의 표" [ref=f14e110]:
+              - caption: 측정자료 수치의 표
+              - rowgroup [ref=f14e115]:
+                - row [ref=f14e116]:
+                  - columnheader "PM-10" [ref=f14e117]
+                  - columnheader "PM-2.5" [ref=f14e118]
+                  - columnheader [ref=f14e119]:
+                    - text: O
+                    - subscript [ref=f14e120]: "3"
+              - rowgroup [ref=f14e121]:
+                - row [ref=f14e122]:
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e123]:
+                    - generic [ref=f14e124]:
+                      - link [ref=f14e125] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e128]:
+                        - generic [ref=f14e129]:
+                          - text: "18"
+                          - emphasis [ref=f14e130]: 9월 30일
+                        - generic [ref=f14e131]:
+                          - text: "0"
+                          - emphasis [ref=f14e132]: 10월 1일
+                        - generic [ref=f14e133]: "6"
+                        - generic [ref=f14e134]: "12"
+                        - generic [ref=f14e135]: "18"
+                        - generic [ref=f14e136]:
+                          - text: "0"
+                          - emphasis [ref=f14e137]: 10월 2일
+                        - generic [ref=f14e138]: "6"
+                        - generic [ref=f14e139]: "12"
+                        - generic [ref=f14e140]: "18"
+                        - generic [ref=f14e141]: "23"
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e142]:
+                    - generic [ref=f14e143]:
+                      - link [ref=f14e144] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e147]:
+                        - generic [ref=f14e148]:
+                          - text: "18"
+                          - emphasis [ref=f14e149]: 9월 30일
+                        - generic [ref=f14e150]:
+                          - text: "0"
+                          - emphasis [ref=f14e151]: 10월 1일
+                        - generic [ref=f14e152]: "6"
+                        - generic [ref=f14e153]: "12"
+                        - generic [ref=f14e154]: "18"
+                        - generic [ref=f14e155]:
+                          - text: "0"
+                          - emphasis [ref=f14e156]: 10월 2일
+                        - generic [ref=f14e157]: "6"
+                        - generic [ref=f14e158]: "12"
+                        - generic [ref=f14e159]: "18"
+                        - generic [ref=f14e160]: "23"
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e161]:
+                    - generic [ref=f14e162]:
+                      - link [ref=f14e163] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e166]:
+                        - generic [ref=f14e167]:
+                          - text: "18"
+                          - emphasis [ref=f14e168]: 9월 30일
+                        - generic [ref=f14e169]:
+                          - text: "0"
+                          - emphasis [ref=f14e170]: 10월 1일
+                        - generic [ref=f14e171]: "6"
+                        - generic [ref=f14e172]: "12"
+                        - generic [ref=f14e173]: "18"
+                        - generic [ref=f14e174]:
+                          - text: "0"
+                          - emphasis [ref=f14e175]: 10월 2일
+                        - generic [ref=f14e176]: "6"
+                        - generic [ref=f14e177]: "12"
+                        - generic [ref=f14e178]: "18"
+                        - generic [ref=f14e179]: "23"
+                - row [ref=f14e180]:
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e181]:
+                    - generic [ref=f14e182]:
+                      - link [ref=f14e183] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e186]:
+                        - generic [ref=f14e187]:
+                          - text: "18"
+                          - emphasis [ref=f14e188]: 9월 30일
+                        - generic [ref=f14e189]:
+                          - text: "0"
+                          - emphasis [ref=f14e190]: 10월 1일
+                        - generic [ref=f14e191]: "6"
+                        - generic [ref=f14e192]: "12"
+                        - generic [ref=f14e193]: "18"
+                        - generic [ref=f14e194]:
+                          - text: "0"
+                          - emphasis [ref=f14e195]: 10월 2일
+                        - generic [ref=f14e196]: "6"
+                        - generic [ref=f14e197]: "12"
+                        - generic [ref=f14e198]: "18"
+                        - generic [ref=f14e199]: "23"
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e200]:
+                    - generic [ref=f14e201]:
+                      - link [ref=f14e202] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e205]:
+                        - generic [ref=f14e206]:
+                          - text: "18"
+                          - emphasis [ref=f14e207]: 9월 30일
+                        - generic [ref=f14e208]:
+                          - text: "0"
+                          - emphasis [ref=f14e209]: 10월 1일
+                        - generic [ref=f14e210]: "6"
+                        - generic [ref=f14e211]: "12"
+                        - generic [ref=f14e212]: "18"
+                        - generic [ref=f14e213]:
+                          - text: "0"
+                          - emphasis [ref=f14e214]: 10월 2일
+                        - generic [ref=f14e215]: "6"
+                        - generic [ref=f14e216]: "12"
+                        - generic [ref=f14e217]: "18"
+                        - generic [ref=f14e218]: "23"
+                  - cell "18 9월 30일 0 10월 1일 6 12 18 0 10월 2일 6 12 18 23" [ref=f14e219]:
+                    - generic [ref=f14e220]:
+                      - link [ref=f14e221] [cursor=pointer]:
+                        - /url: "###"
+                      - generic [ref=f14e224]:
+                        - generic [ref=f14e225]:
+                          - text: "18"
+                          - emphasis [ref=f14e226]: 9월 30일
+                        - generic [ref=f14e227]:
+                          - text: "0"
+                          - emphasis [ref=f14e228]: 10월 1일
+                        - generic [ref=f14e229]: "6"
+                        - generic [ref=f14e230]: "12"
+                        - generic [ref=f14e231]: "18"
+                        - generic [ref=f14e232]:
+                          - text: "0"
+                          - emphasis [ref=f14e233]: 10월 2일
+                        - generic [ref=f14e234]: "6"
+                        - generic [ref=f14e235]: "12"
+                        - generic [ref=f14e236]: "18"
+                        - generic [ref=f14e237]: "23"
+            - paragraph [ref=f14e238]: ※ PM-2.5측정장비가 적은 일부지역의 경우 PM-2.5평균이 PM-10평균보다 높을 수 있음.
+          - generic [ref=f14e239]:
+            - strong [ref=f14e240]: 미세먼지 농도 전망
+            - generic [ref=f14e241]: 오늘 [ 09월30일 ]
+            - generic [ref=f14e243]:
+              - strong [ref=f14e244]: 예보등급
+              - paragraph [ref=f14e245]: ○ 전 권역이 '좋음'∼'보통'으로 예상됩니다.
+              - table "오늘의 전국 미세먼지 예보" [ref=f14e247]:
+                - caption: 오늘의 전국 미세먼지 예보
+                - rowgroup [ref=f14e269]:
+                  - row [ref=f14e270]:
+                    - columnheader "구분" [ref=f14e271]
+                    - columnheader "서울" [ref=f14e272]
+                    - columnheader "인천" [ref=f14e273]
+                    - columnheader "경기" [ref=f14e274]
+                    - columnheader "강원" [ref=f14e275]
+                    - columnheader "대전" [ref=f14e276]
+                    - columnheader "세종" [ref=f14e277]
+                    - columnheader "충북" [ref=f14e278]
+                    - columnheader "충남" [ref=f14e279]
+                    - columnheader "전북" [ref=f14e280]
+                    - columnheader "전남광주" [ref=f14e281]
+                    - columnheader "부산" [ref=f14e282]
+                    - columnheader "대구" [ref=f14e283]
+                    - columnheader "울산" [ref=f14e284]
+                    - columnheader "경북" [ref=f14e285]
+                    - columnheader "경남" [ref=f14e286]
+                    - columnheader "제주" [ref=f14e287]
+                  - row [ref=f14e288]:
+                    - columnheader "북부" [ref=f14e289]
+                    - columnheader "남부" [ref=f14e290]
+                    - columnheader "영서" [ref=f14e291]
+                    - columnheader "영동" [ref=f14e292]
+                    - columnheader "전남" [ref=f14e293]
+                    - columnheader "광주" [ref=f14e294]
+                - rowgroup [ref=f14e295]:
+                  - row [ref=f14e296]:
+                    - rowheader "미세먼지" [ref=f14e297]
+                    - cell "보통" [ref=f14e298]
+                    - cell "좋음" [ref=f14e299]
+                    - cell "좋음" [ref=f14e300]
+                    - cell "보통" [ref=f14e301]
+                    - cell "좋음" [ref=f14e302]
+                    - cell "좋음" [ref=f14e303]
+                    - cell "좋음" [ref=f14e304]
+                    - cell "좋음" [ref=f14e305]
+                    - cell "좋음" [ref=f14e306]
+                    - cell "좋음" [ref=f14e307]
+                    - cell "보통" [ref=f14e308]
+                    - cell "좋음" [ref=f14e309]
+                    - cell "좋음" [ref=f14e310]
+                    - cell "좋음" [ref=f14e311]
+                    - cell "좋음" [ref=f14e312]
+                    - cell "좋음" [ref=f14e313]
+                    - cell "좋음" [ref=f14e314]
+                    - cell "좋음" [ref=f14e315]
+                    - cell "좋음" [ref=f14e316]
+                  - row [ref=f14e317]:
+                    - rowheader "PM-10" [ref=f14e318]
+                    - cell "좋음" [ref=f14e319]
+                    - cell "좋음" [ref=f14e320]
+                    - cell "좋음" [ref=f14e321]
+                    - cell "좋음" [ref=f14e322]
+                    - cell "좋음" [ref=f14e323]
+                    - cell "좋음" [ref=f14e324]
+                    - cell "좋음" [ref=f14e325]
+                    - cell "좋음" [ref=f14e326]
+                    - cell "좋음" [ref=f14e327]
+                    - cell "좋음" [ref=f14e328]
+                    - cell "좋음" [ref=f14e329]
+                    - cell "좋음" [ref=f14e330]
+                    - cell "좋음" [ref=f14e331]
+                    - cell "좋음" [ref=f14e332]
+                    - cell "좋음" [ref=f14e333]
+                    - cell "좋음" [ref=f14e334]
+                    - cell "좋음" [ref=f14e335]
+                    - cell "좋음" [ref=f14e336]
+                    - cell "좋음" [ref=f14e337]
+                  - row [ref=f14e338]:
+                    - rowheader "PM-2.5" [ref=f14e339]
+                    - cell "보통" [ref=f14e340]
+                    - cell "좋음" [ref=f14e341]
+                    - cell "좋음" [ref=f14e342]
+                    - cell "보통" [ref=f14e343]
+                    - cell "좋음" [ref=f14e344]
+                    - cell "좋음" [ref=f14e345]
+                    - cell "좋음" [ref=f14e346]
+                    - cell "좋음" [ref=f14e347]
+                    - cell "좋음" [ref=f14e348]
+                    - cell "좋음" [ref=f14e349]
+                    - cell "보통" [ref=f14e350]
+                    - cell "좋음" [ref=f14e351]
+                    - cell "좋음" [ref=f14e352]
+                    - cell "좋음" [ref=f14e353]
+                    - cell "좋음" [ref=f14e354]
+                    - cell "좋음" [ref=f14e355]
+                    - cell "좋음" [ref=f14e356]
+                    - cell "좋음" [ref=f14e357]
+                    - cell "좋음" [ref=f14e358]
+                  - row [ref=f14e359]:
+                    - rowheader "(50㎍/㎥ 초과)" [ref=f14e360]: (50㎍/㎥초과)
+                    - cell "-" [ref=f14e361]
+                    - cell "-" [ref=f14e362]
+                    - cell "-" [ref=f14e363]
+                    - cell "-" [ref=f14e364]
+                    - cell "-" [ref=f14e365]
+                    - cell "-" [ref=f14e366]
+                    - cell "-" [ref=f14e367]
+                    - cell "-" [ref=f14e368]
+                    - cell "-" [ref=f14e369]
+                    - cell "-" [ref=f14e370]
+                    - cell "-" [ref=f14e371]
+                    - cell "-" [ref=f14e372]
+                    - cell "-" [ref=f14e373]
+                    - cell "-" [ref=f14e374]
+                    - cell "-" [ref=f14e375]
+                    - cell "-" [ref=f14e376]
+                    - cell "-" [ref=f14e377]
+                    - cell "-" [ref=f14e378]
+                    - cell "-" [ref=f14e379]
+              - paragraph [ref=f14e380]: "* 미세먼지 예보 등급은 일평균(1시~24시) 농도를 기준으로 PM-10과 PM-2.5 중 높은 등급으로 발표됩니다."
+              - paragraph [ref=f14e381]: "※ 초미세먼지 50㎍/㎥초과여부 : 고농도 예보 조기제공을 목적으로 '비상저감조치 발령 기준' 중 하나인 50㎍/㎥ 초과의 농도 수준이 예상되는 지역을 의미합니다."
+              - strong [ref=f14e382]: 원인분석
+              - paragraph [ref=f14e383]: ○ 일부 서쪽 지역은 오전까지 대기 정체 및 기류 수렴으로 국내 발생 미세먼지가 축적되어 농도가 증가하였고, 오후부터 원활한 대기 확산으로 농도가 감소하여 일평균 농도는 '보통'으로 예상됩니다.
+          - generic [ref=f14e384]:
+            - generic [ref=f14e385]: 내일 [ 10월01일 ]
+            - generic [ref=f14e387]:
+              - strong [ref=f14e388]: 예보등급
+              - paragraph [ref=f14e389]: ○ 전 권역이 '좋음'으로 예상됩니다.
+              - paragraph
+              - table "내일 전국 미세먼지 예보" [ref=f14e391]:
+                - caption: 내일 전국 미세먼지 예보
+                - rowgroup [ref=f14e413]:
+                  - row [ref=f14e414]:
+                    - columnheader "구분" [ref=f14e415]
+                    - columnheader "서울" [ref=f14e416]
+                    - columnheader "인천" [ref=f14e417]
+                    - columnheader "경기" [ref=f14e418]
+                    - columnheader "강원" [ref=f14e419]
+                    - columnheader "대전" [ref=f14e420]
+                    - columnheader "세종" [ref=f14e421]
+                    - columnheader "충북" [ref=f14e422]
+                    - columnheader "충남" [ref=f14e423]
+                    - columnheader "전북" [ref=f14e424]
+                    - columnheader "전남광주" [ref=f14e425]
+                    - columnheader "부산" [ref=f14e426]
+                    - columnheader "대구" [ref=f14e427]
+                    - columnheader "울산" [ref=f14e428]
+                    - columnheader "경북" [ref=f14e429]
+                    - columnheader "경남" [ref=f14e430]
+                    - columnheader "제주" [ref=f14e431]
+                  - row [ref=f14e432]:
+                    - columnheader "북부" [ref=f14e433]
+                    - columnheader "남부" [ref=f14e434]
+                    - columnheader "영서" [ref=f14e435]
+                    - columnheader "영동" [ref=f14e436]
+                    - columnheader "전남" [ref=f14e437]
+                    - columnheader "광주" [ref=f14e438]
+                - rowgroup [ref=f14e439]:
+                  - row [ref=f14e440]:
+                    - rowheader "미세먼지" [ref=f14e441]
+                    - cell "좋음" [ref=f14e442]
+                    - cell "좋음" [ref=f14e443]
+                    - cell "좋음" [ref=f14e444]
+                    - cell "좋음" [ref=f14e445]
+                    - cell "좋음" [ref=f14e446]
+                    - cell "좋음" [ref=f14e447]
+                    - cell "좋음" [ref=f14e448]
+                    - cell "좋음" [ref=f14e449]
+                    - cell "좋음" [ref=f14e450]
+                    - cell "좋음" [ref=f14e451]
+                    - cell "좋음" [ref=f14e452]
+                    - cell "좋음" [ref=f14e453]
+                    - cell "좋음" [ref=f14e454]
+                    - cell "좋음" [ref=f14e455]
+                    - cell "좋음" [ref=f14e456]
+                    - cell "좋음" [ref=f14e457]
+                    - cell "좋음" [ref=f14e458]
+                    - cell "좋음" [ref=f14e459]
+                    - cell "좋음" [ref=f14e460]
+                  - row [ref=f14e461]:
+                    - rowheader "PM-10" [ref=f14e462]
+                    - cell "좋음" [ref=f14e463]
+                    - cell "좋음" [ref=f14e464]
+                    - cell "좋음" [ref=f14e465]
+                    - cell "좋음" [ref=f14e466]
+                    - cell "좋음" [ref=f14e467]
+                    - cell "좋음" [ref=f14e468]
+                    - cell "좋음" [ref=f14e469]
+                    - cell "좋음" [ref=f14e470]
+                    - cell "좋음" [ref=f14e471]
+                    - cell "좋음" [ref=f14e472]
+                    - cell "좋음" [ref=f14e473]
+                    - cell "좋음" [ref=f14e474]
+                    - cell "좋음" [ref=f14e475]
+                    - cell "좋음" [ref=f14e476]
+                    - cell "좋음" [ref=f14e477]
+                    - cell "좋음" [ref=f14e478]
+                    - cell "좋음" [ref=f14e479]
+                    - cell "좋음" [ref=f14e480]
+                    - cell "좋음" [ref=f14e481]
+                  - row [ref=f14e482]:
+                    - rowheader "PM-2.5" [ref=f14e483]
+                    - cell "좋음" [ref=f14e484]
+                    - cell "좋음" [ref=f14e485]
+                    - cell "좋음" [ref=f14e486]
+                    - cell "좋음" [ref=f14e487]
+                    - cell "좋음" [ref=f14e488]
+                    - cell "좋음" [ref=f14e489]
+                    - cell "좋음" [ref=f14e490]
+                    - cell "좋음" [ref=f14e491]
+                    - cell "좋음" [ref=f14e492]
+                    - cell "좋음" [ref=f14e493]
+                    - cell "좋음" [ref=f14e494]
+                    - cell "좋음" [ref=f14e495]
+                    - cell "좋음" [ref=f14e496]
+                    - cell "좋음" [ref=f14e497]
+                    - cell "좋음" [ref=f14e498]
+                    - cell "좋음" [ref=f14e499]
+                    - cell "좋음" [ref=f14e500]
+                    - cell "좋음" [ref=f14e501]
+                    - cell "좋음" [ref=f14e502]
+                  - row [ref=f14e503]:
+                    - rowheader "(50㎍/㎥ 초과)" [ref=f14e504]: (50㎍/㎥초과)
+                    - cell "-" [ref=f14e505]
+                    - cell "-" [ref=f14e506]
+                    - cell "-" [ref=f14e507]
+                    - cell "-" [ref=f14e508]
+                    - cell "-" [ref=f14e509]
+                    - cell "-" [ref=f14e510]
+                    - cell "-" [ref=f14e511]
+                    - cell "-" [ref=f14e512]
+                    - cell "-" [ref=f14e513]
+                    - cell "-" [ref=f14e514]
+                    - cell "-" [ref=f14e515]
+                    - cell "-" [ref=f14e516]
+                    - cell "-" [ref=f14e517]
+                    - cell "-" [ref=f14e518]
+                    - cell "-" [ref=f14e519]
+                    - cell "-" [ref=f14e520]
+                    - cell "-" [ref=f14e521]
+                    - cell "-" [ref=f14e522]
+                    - cell "-" [ref=f14e523]
+              - paragraph [ref=f14e524]: "* 미세먼지 예보 등급은 일평균(1시~24시) 농도를 기준으로 PM-10과 PM-2.5 중 높은 등급으로 발표됩니다."
+              - paragraph [ref=f14e525]: "※ 초미세먼지 50㎍/㎥초과여부 : 고농도 예보 조기제공을 목적으로 '비상저감조치 발령 기준' 중 하나인 50㎍/㎥ 초과의 농도 수준이 예상되는 지역을 의미합니다."
+              - strong [ref=f14e526]: 원인분석
+              - paragraph [ref=f14e527]: ○ 원활한 대기 확산으로 대기질이 청정할 것으로 예상됩니다. 다만, 일부 서쪽 지역에서 늦은 밤부터 '보통' 수준의 국외 미세먼지가 유입될 것으로 예상됩니다.
+          - generic [ref=f14e528]:
+            - generic [ref=f14e529]: 모레 [ 10월02일 ]
+            - generic [ref=f14e531]:
+              - strong [ref=f14e532]: 예보등급
+              - paragraph [ref=f14e533]: ○ 전 권역이 '좋음'∼'보통'으로 예상됩니다.
+              - table "모레 전국 미세먼지 예보" [ref=f14e535]:
+                - caption: 모레 전국 미세먼지 예보
+                - rowgroup [ref=f14e557]:
+                  - row [ref=f14e558]:
+                    - columnheader "구분" [ref=f14e559]
+                    - columnheader "서울" [ref=f14e560]
+                    - columnheader "인천" [ref=f14e561]
+                    - columnheader "경기" [ref=f14e562]
+                    - columnheader "강원" [ref=f14e563]
+                    - columnheader "대전" [ref=f14e564]
+                    - columnheader "세종" [ref=f14e565]
+                    - columnheader "충북" [ref=f14e566]
+                    - columnheader "충남" [ref=f14e567]
+                    - columnheader "전북" [ref=f14e568]
+                    - columnheader "전남광주" [ref=f14e569]
+                    - columnheader "부산" [ref=f14e570]
+                    - columnheader "대구" [ref=f14e571]
+                    - columnheader "울산" [ref=f14e572]
+                    - columnheader "경북" [ref=f14e573]
+                    - columnheader "경남" [ref=f14e574]
+                    - columnheader "제주" [ref=f14e575]
+                  - row [ref=f14e576]:
+                    - columnheader "북부" [ref=f14e577]
+                    - columnheader "남부" [ref=f14e578]
+                    - columnheader "영서" [ref=f14e579]
+                    - columnheader "영동" [ref=f14e580]
+                    - columnheader "전남" [ref=f14e581]
+                    - columnheader "광주" [ref=f14e582]
+                - rowgroup [ref=f14e583]:
+                  - row [ref=f14e584]:
+                    - rowheader "미세먼지" [ref=f14e585]
+                    - cell "좋음" [ref=f14e586]
+                    - cell "보통" [ref=f14e587]
+                    - cell "좋음" [ref=f14e588]
+                    - cell "좋음" [ref=f14e589]
+                    - cell "좋음" [ref=f14e590]
+                    - cell "좋음" [ref=f14e591]
+                    - cell "보통" [ref=f14e592]
+                    - cell "보통" [ref=f14e593]
+                    - cell "좋음" [ref=f14e594]
+                    - cell "보통" [ref=f14e595]
+                    - cell "보통" [ref=f14e596]
+                    - cell "좋음" [ref=f14e597]
+                    - cell "좋음" [ref=f14e598]
+                    - cell "좋음" [ref=f14e599]
+                    - cell "좋음" [ref=f14e600]
+                    - cell "좋음" [ref=f14e601]
+                    - cell "좋음" [ref=f14e602]
+                    - cell "좋음" [ref=f14e603]
+                    - cell "좋음" [ref=f14e604]
+                  - row [ref=f14e605]:
+                    - rowheader "PM-10" [ref=f14e606]
+                    - cell "좋음" [ref=f14e607]
+                    - cell "보통" [ref=f14e608]
+                    - cell "좋음" [ref=f14e609]
+                    - cell "좋음" [ref=f14e610]
+                    - cell "좋음" [ref=f14e611]
+                    - cell "좋음" [ref=f14e612]
+                    - cell "보통" [ref=f14e613]
+                    - cell "보통" [ref=f14e614]
+                    - cell "좋음" [ref=f14e615]
+                    - cell "보통" [ref=f14e616]
+                    - cell "보통" [ref=f14e617]
+                    - cell "좋음" [ref=f14e618]
+                    - cell "좋음" [ref=f14e619]
+                    - cell "좋음" [ref=f14e620]
+                    - cell "좋음" [ref=f14e621]
+                    - cell "좋음" [ref=f14e622]
+                    - cell "좋음" [ref=f14e623]
+                    - cell "좋음" [ref=f14e624]
+                    - cell "좋음" [ref=f14e625]
+                  - row [ref=f14e626]:
+                    - rowheader "PM-2.5" [ref=f14e627]
+                    - cell "좋음" [ref=f14e628]
+                    - cell "좋음" [ref=f14e629]
+                    - cell "좋음" [ref=f14e630]
+                    - cell "좋음" [ref=f14e631]
+                    - cell "좋음" [ref=f14e632]
+                    - cell "좋음" [ref=f14e633]
+                    - cell "좋음" [ref=f14e634]
+                    - cell "좋음" [ref=f14e635]
+                    - cell "좋음" [ref=f14e636]
+                    - cell "좋음" [ref=f14e637]
+                    - cell "좋음" [ref=f14e638]
+                    - cell "좋음" [ref=f14e639]
+                    - cell "좋음" [ref=f14e640]
+                    - cell "좋음" [ref=f14e641]
+                    - cell "좋음" [ref=f14e642]
+                    - cell "좋음" [ref=f14e643]
+                    - cell "좋음" [ref=f14e644]
+                    - cell "좋음" [ref=f14e645]
+                    - cell "좋음" [ref=f14e646]
+                  - row [ref=f14e647]:
+                    - rowheader "(50㎍/㎥ 초과)" [ref=f14e648]: (50㎍/㎥초과)
+                    - cell "-" [ref=f14e649]
+                    - cell "-" [ref=f14e650]
+                    - cell "-" [ref=f14e651]
+                    - cell "-" [ref=f14e652]
+                    - cell "-" [ref=f14e653]
+                    - cell "-" [ref=f14e654]
+                    - cell "-" [ref=f14e655]
+                    - cell "-" [ref=f14e656]
+                    - cell "-" [ref=f14e657]
+                    - cell "-" [ref=f14e658]
+                    - cell "-" [ref=f14e659]
+                    - cell "-" [ref=f14e660]
+                    - cell "-" [ref=f14e661]
+                    - cell "-" [ref=f14e662]
+                    - cell "-" [ref=f14e663]
+                    - cell "-" [ref=f14e664]
+                    - cell "-" [ref=f14e665]
+                    - cell "-" [ref=f14e666]
+                    - cell "-" [ref=f14e667]
+              - paragraph [ref=f14e668]: ※ 모레 예보는 변동성이 있을 수 있으니 유의하시기 바랍니다.
+              - paragraph [ref=f14e669]: "※ 초미세먼지 50㎍/㎥초과여부 : 고농도 예보 조기제공을 목적으로 '비상저감조치 발령 기준' 중 하나인 50㎍/㎥ 초과의 농도 수준이 예상되는 지역을 의미합니다."
+              - strong [ref=f14e670]: 원인분석
+              - paragraph [ref=f14e671]: 일부 서쪽 지역에서 전일 밤부터 북서 기류를 따라 '보통' 수준의 국외 미세먼지가 유입되어 일평균 농도는 '보통'으로 예상됩니다.
+          - generic [ref=f14e672]:
+            - strong [ref=f14e673]: 오존 농도 전망
+            - generic [ref=f14e674]: 오늘 [ 09월30일 ]
+            - generic [ref=f14e676]:
+              - strong [ref=f14e677]: 오존정보
+              - paragraph [ref=f14e678]: ○ 경기북부·경기남부는 저녁에도 오존 농도가 '나쁨'으로 예상됩니다.
+              - paragraph [ref=f14e679]: ※ 오존 당일 예보등급은 05시, 11시에만 발표되며, 특이사항 발생 시 17시에 오존 정보 형태로 발표됩니다.
+          - generic [ref=f14e680]:
+            - generic [ref=f14e681]: 내일 [ 10월01일 ]
+            - generic [ref=f14e683]:
+              - strong [ref=f14e684]: 예보등급
+              - paragraph [ref=f14e685]: ○ 전 권역이 '보통'으로 예상됩니다.
+              - paragraph
+              - table "내일 전국 오존 예보" [ref=f14e687]:
+                - caption: 내일 전국 오존 예보
+                - rowgroup [ref=f14e709]:
+                  - row [ref=f14e710]:
+                    - columnheader "구분" [ref=f14e711]
+                    - columnheader "서울" [ref=f14e712]
+                    - columnheader "인천" [ref=f14e713]
+                    - columnheader "경기" [ref=f14e714]
+                    - columnheader "강원" [ref=f14e715]
+                    - columnheader "대전" [ref=f14e716]
+                    - columnheader "세종" [ref=f14e717]
+                    - columnheader "충북" [ref=f14e718]
+                    - columnheader "충남" [ref=f14e719]
+                    - columnheader "전북" [ref=f14e720]
+                    - columnheader "전남광주" [ref=f14e721]
+                    - columnheader "부산" [ref=f14e722]
+                    - columnheader "대구" [ref=f14e723]
+                    - columnheader "울산" [ref=f14e724]
+                    - columnheader "경북" [ref=f14e725]
+                    - columnheader "경남" [ref=f14e726]
+                    - columnheader "제주" [ref=f14e727]
+                  - row [ref=f14e728]:
+                    - columnheader "북부" [ref=f14e729]
+                    - columnheader "남부" [ref=f14e730]
+                    - columnheader "영서" [ref=f14e731]
+                    - columnheader "영동" [ref=f14e732]
+                    - columnheader "전남" [ref=f14e733]
+                    - columnheader "광주" [ref=f14e734]
+                - rowgroup [ref=f14e735]:
+                  - row [ref=f14e736]:
+                    - rowheader [ref=f14e737]:
+                      - text: O
+                      - subscript [ref=f14e738]: "3"
+                    - cell "보통" [ref=f14e739]
+                    - cell "보통" [ref=f14e740]
+                    - cell "보통" [ref=f14e741]
+                    - cell "보통" [ref=f14e742]
+                    - cell "보통" [ref=f14e743]
+                    - cell "보통" [ref=f14e744]
+                    - cell "보통" [ref=f14e745]
+                    - cell "보통" [ref=f14e746]
+                    - cell "보통" [ref=f14e747]
+                    - cell "보통" [ref=f14e748]
+                    - cell "보통" [ref=f14e749]
+                    - cell "보통" [ref=f14e750]
+                    - cell "보통" [ref=f14e751]
+                    - cell "보통" [ref=f14e752]
+                    - cell "보통" [ref=f14e753]
+                    - cell "보통" [ref=f14e754]
+                    - cell "보통" [ref=f14e755]
+                    - cell "보통" [ref=f14e756]
+                    - cell "보통" [ref=f14e757]
+              - strong [ref=f14e758]: 원인분석
+              - paragraph [ref=f14e759]: ○ 고농도 오존 생성에 유리한 조건이 형성되지 않아 농도가 높지 않을 것으로 예상됩니다.
+          - generic [ref=f14e760]:
+            - generic [ref=f14e761]: 모레 [ 10월02일 ]
+            - generic [ref=f14e763]:
+              - strong [ref=f14e764]: 예보등급
+              - paragraph [ref=f14e765]: ○ 전 권역이 '보통'으로 예상됩니다.
+              - table "모레 전국 오존 예보" [ref=f14e767]:
+                - caption: 모레 전국 오존 예보
+                - rowgroup [ref=f14e789]:
+                  - row [ref=f14e790]:
+                    - columnheader "구분" [ref=f14e791]
+                    - columnheader "서울" [ref=f14e792]
+                    - columnheader "인천" [ref=f14e793]
+                    - columnheader "경기" [ref=f14e794]
+                    - columnheader "강원" [ref=f14e795]
+                    - columnheader "대전" [ref=f14e796]
+                    - columnheader "세종" [ref=f14e797]
+                    - columnheader "충북" [ref=f14e798]
+                    - columnheader "충남" [ref=f14e799]
+                    - columnheader "전북" [ref=f14e800]
+                    - columnheader "전남광주" [ref=f14e801]
+                    - columnheader "부산" [ref=f14e802]
+                    - columnheader "대구" [ref=f14e803]
+                    - columnheader "울산" [ref=f14e804]
+                    - columnheader "경북" [ref=f14e805]
+                    - columnheader "경남" [ref=f14e806]
+                    - columnheader "제주" [ref=f14e807]
+                  - row [ref=f14e808]:
+                    - columnheader "북부" [ref=f14e809]
+                    - columnheader "남부" [ref=f14e810]
+                    - columnheader "영서" [ref=f14e811]
+                    - columnheader "영동" [ref=f14e812]
+                    - columnheader "전남" [ref=f14e813]
+                    - columnheader "광주" [ref=f14e814]
+                - rowgroup [ref=f14e815]:
+                  - row [ref=f14e816]:
+                    - cell [ref=f14e817]:
+                      - text: O
+                      - subscript [ref=f14e818]: "3"
+                    - cell "보통" [ref=f14e819]
+                    - cell "보통" [ref=f14e820]
+                    - cell "보통" [ref=f14e821]
+                    - cell "보통" [ref=f14e822]
+                    - cell "보통" [ref=f14e823]
+                    - cell "보통" [ref=f14e824]
+                    - cell "보통" [ref=f14e825]
+                    - cell "보통" [ref=f14e826]
+                    - cell "보통" [ref=f14e827]
+                    - cell "보통" [ref=f14e828]
+                    - cell "보통" [ref=f14e829]
+                    - cell "보통" [ref=f14e830]
+                    - cell "보통" [ref=f14e831]
+                    - cell "보통" [ref=f14e832]
+                    - cell "보통" [ref=f14e833]
+                    - cell "보통" [ref=f14e834]
+                    - cell "보통" [ref=f14e835]
+                    - cell "보통" [ref=f14e836]
+                    - cell "보통" [ref=f14e837]
+              - strong [ref=f14e838]: 원인분석
+              - paragraph [ref=f14e839]: ○ 고농도 오존 생성에 유리한 조건이 형성되지 않아 농도가 높지 않을 것으로 예상됩니다.
+          - generic [ref=f14e840]:
+            - strong [ref=f14e841]: 모델예측 결과
+            - list [ref=f14e842]:
+              - listitem [ref=f14e843]: 미세먼지
+            - table "오늘, 내일의 전국 미세먼지 예측모델 결과" [ref=f14e845]:
+              - caption: 오늘, 내일의 전국 미세먼지 예측모델 결과
+              - rowgroup [ref=f14e852]:
+                - row [ref=f14e853]:
+                  - columnheader "구분" [ref=f14e854]
+                  - columnheader "06:00 KST" [ref=f14e855]
+                  - columnheader "12:00 KST" [ref=f14e856]
+                  - columnheader "18:00 KST" [ref=f14e857]
+              - rowgroup [ref=f14e858]:
+                - row [ref=f14e859]:
+                  - rowheader "내일 [ 10월01일 ]" [ref=f14e860]
+                  - cell "PM-10" [ref=f14e861]
+                  - cell [ref=f14e862]:
+                    - img "06:00 KST PM-10 예측모델" [ref=f14e863]
+                  - cell [ref=f14e864]:
+                    - img "12:00 KST PM-10 예측모델" [ref=f14e865]
+                  - cell [ref=f14e866]:
+                    - img "18:00 KST PM-10 예측모델" [ref=f14e867]
+                - row [ref=f14e868]:
+                  - cell "PM-2.5" [ref=f14e869]
+                  - cell [ref=f14e870]:
+                    - img "06:00 KST PM-2.5 예측모델" [ref=f14e871]
+                  - cell [ref=f14e872]:
+                    - img "12:00 KST PM-2.5예측모델" [ref=f14e873]
+                  - cell [ref=f14e874]:
+                    - img "18:00 KST PM-2.5예측모델" [ref=f14e875]
+            - table "오늘, 내일의 전국 미세먼지 예측모델 결과" [ref=f14e877]:
+              - caption: 오늘, 내일의 전국 미세먼지 예측모델 결과
+              - rowgroup [ref=f14e884]:
+                - row [ref=f14e885]:
+                  - columnheader "구분" [ref=f14e886]
+                  - columnheader "06:00 KST" [ref=f14e887]
+                  - columnheader "12:00 KST" [ref=f14e888]
+                  - columnheader "18:00 KST" [ref=f14e889]
+              - rowgroup [ref=f14e890]:
+                - row [ref=f14e891]:
+                  - rowheader "모레 [ 10월02일 ]" [ref=f14e892]
+                  - cell "PM-10" [ref=f14e893]
+                  - cell [ref=f14e894]:
+                    - img "06:00 KST PM-10 예측모델" [ref=f14e895]
+                  - cell [ref=f14e896]:
+                    - img "12:00 KST PM-10 예측모델" [ref=f14e897]
+                  - cell [ref=f14e898]:
+                    - img "18:00 KST PM-10 예측모델" [ref=f14e899]
+                - row [ref=f14e900]:
+                  - cell "PM-2.5" [ref=f14e901]
+                  - cell [ref=f14e902]:
+                    - img "06:00 KST PM-2.5 예측모델" [ref=f14e903]
+                  - cell [ref=f14e904]:
+                    - img "12:00 KST PM-2.5 예측모델" [ref=f14e905]
+                  - cell [ref=f14e906]:
+                    - img "18:00 KST PM-2.5 예측모델" [ref=f14e907]
+            - paragraph [ref=f14e908]: ※ 모델 예측 결과는 실제 관측값이 아니며 불확도를 가진 예측값으로 예보결과와 다를 수 있습니다.
+          - generic [ref=f14e909]:
+            - strong [ref=f14e910]: 모델예측 결과
+            - list [ref=f14e911]:
+              - listitem [ref=f14e912]: 오존
+            - table "오늘, 내일의 전국 미세먼지 예측모델 결과" [ref=f14e914]:
+              - caption: 오늘, 내일의 전국 미세먼지 예측모델 결과
+              - rowgroup [ref=f14e921]:
+                - row [ref=f14e922]:
+                  - columnheader "구분" [ref=f14e923]
+                  - columnheader "12:00 KST" [ref=f14e924]
+                  - columnheader "15:00 KST" [ref=f14e925]
+                  - columnheader "18:00 KST" [ref=f14e926]
+              - rowgroup [ref=f14e927]:
+                - row [ref=f14e928]:
+                  - rowheader "내일 [ 10월01일 ]" [ref=f14e929]
+                  - cell [ref=f14e930]:
+                    - text: O
+                    - subscript [ref=f14e931]: "3"
+                  - cell [ref=f14e932]:
+                    - img "12:00 KST O₃ 예측모델" [ref=f14e933]
+                  - cell [ref=f14e934]:
+                    - img "15:00 KST O₃ 예측모델" [ref=f14e935]
+                  - cell [ref=f14e936]:
+                    - img "18:00 KST O₃ 예측모델" [ref=f14e937]
+                - row [ref=f14e938]:
+                  - rowheader "모레 [ 10월02일 ]" [ref=f14e939]
+                  - cell [ref=f14e940]:
+                    - text: O
+                    - subscript [ref=f14e941]: "3"
+                  - cell [ref=f14e942]:
+                    - img "12:00 KST O₃ 예측모델" [ref=f14e943]
+                  - cell [ref=f14e944]:
+                    - img "12:00 KST O₃ 예측모델" [ref=f14e945]
+                  - cell [ref=f14e946]:
+                    - img "12:00 KST O₃ 예측모델" [ref=f14e947]
+            - paragraph [ref=f14e948]: ※ 모델 예측 결과는 실제 관측값이 아니며 불확도를 가진 예측값으로 예보결과와 다를 수 있습니다.
+          - generic [ref=f14e949]:
+            - strong [ref=f14e950]: 예보등급 및 행동요령
+            - table "예보등급 및 행동요령의 표" [ref=f14e952]:
+              - caption: 예보등급 및 행동요령의 표
+              - rowgroup [ref=f14e960]:
+                - row [ref=f14e961]:
+                  - columnheader "예보구간" [ref=f14e962]
+                  - columnheader "등급" [ref=f14e963]
+                - row [ref=f14e964]:
+                  - columnheader "좋음" [ref=f14e965]
+                  - columnheader "보통" [ref=f14e966]
+                  - columnheader "나쁨" [ref=f14e967]
+                  - columnheader "매우나쁨" [ref=f14e968]
+              - rowgroup [ref=f14e969]:
+                - row [ref=f14e970]:
+                  - rowheader "예측농도 (㎍/㎥,1일)" [ref=f14e971]: 예측농도(㎍/㎥,1일)
+                  - cell "PM-10" [ref=f14e972]
+                  - cell "0-30" [ref=f14e973]
+                  - cell "31-80" [ref=f14e974]
+                  - cell "81-150" [ref=f14e975]
+                  - cell "150 초과" [ref=f14e976]
+                - row [ref=f14e977]:
+                  - cell "PM-2.5" [ref=f14e978]
+                  - cell "0-15" [ref=f14e979]
+                  - cell "16-35" [ref=f14e980]
+                  - cell "36-75" [ref=f14e981]
+                  - cell "75 초과" [ref=f14e982]
+                - row [ref=f14e983]:
+                  - rowheader "예측농도 (ppm, 1시간)" [ref=f14e984]: 예측농도(ppm, 1시간)
+                  - cell [ref=f14e985]:
+                    - text: O
+                    - subscript [ref=f14e986]: "3"
+                  - cell "0-0.0300" [ref=f14e987]
+                  - cell "0.0301-0.0900" [ref=f14e988]
+                  - cell "0.0901-0.1500" [ref=f14e989]
+                  - cell "0.1500 초과" [ref=f14e990]
+                - row [ref=f14e991]:
+                  - rowheader "행동요령 (미세먼지)" [ref=f14e992]: 행동요령(미세먼지)
+                  - cell "민감군" [ref=f14e993]
+                  - cell [ref=f14e994]
+                  - cell "실외활동 시 특별히 행동에 제약은 없으나 몸 상태에 따라 유의하여 활동" [ref=f14e995]
+                  - cell "장시간 또는 무리한 실외 활동 제한, 특히 천식환자는 실외활동 시 흡입기를 더 자주 사용할 필요가 있음" [ref=f14e996]
+                  - cell "가급적 실내활동만 하고 실외 활동 시 의사와 상의" [ref=f14e997]
+                - row [ref=f14e998]:
+                  - cell "일반인" [ref=f14e999]
+                  - cell [ref=f14e1000]
+                  - cell [ref=f14e1001]
+                  - cell "장시간 또는 무리한 실외 활동 제한, 특히 눈이 아프거나, 기침이나 목의 통증으로 불편한 사람은 실외 활동을 피해야 함" [ref=f14e1002]
+                  - cell "장시간 또는 무리한 실외 활동 제한, 기침이나 목의 통증 등이 있는 사람은 실외활동을 피해야 함" [ref=f14e1003]
+                - row [ref=f14e1004]:
+                  - rowheader "행동요령 (오존)" [ref=f14e1005]: 행동요령(오존)
+                  - cell "민감군" [ref=f14e1006]
+                  - cell [ref=f14e1007]
+                  - cell "실외 활동 시 특별히 행동에 제약을 받을 필요는 없지만 몸 상태에 따라 유의하여 활동" [ref=f14e1008]
+                  - cell "장시간 또는 무리한 실외활동 제한" [ref=f14e1009]
+                  - cell "가급적 실내활동" [ref=f14e1010]
+                - row [ref=f14e1011]:
+                  - cell "일반인" [ref=f14e1012]
+                  - cell [ref=f14e1013]
+                  - cell [ref=f14e1014]
+                  - cell "장시간 또는 무리한 실외활동 제한 특히 눈이 아픈 사람은 실외활동을 피해야 함" [ref=f14e1015]
+                  - cell "실외활동을 제한하고 실내생활 권고" [ref=f14e1016]
+            - paragraph [ref=f14e1017]: "※ 민감군 : 어린이, 노인, 천식같은 폐질환 또는 심장질환자"
+          - generic [ref=f14e1018]:
+            - strong [ref=f14e1019]: 건강 생활 수칙
+            - generic [ref=f14e1020]:
+              - generic [ref=f14e1021]: 미세먼지 높은 날 건강 생활 수칙
+              - list [ref=f14e1022]:
+                - listitem [ref=f14e1023]:
+                  - generic [ref=f14e1024]: 오랜 실외 활동을 자제하고,특히 어린이, 노약자, 호흡기 및 심폐질환자는가급적 실외활동 자제
+                - listitem [ref=f14e1025]:
+                  - generic [ref=f14e1026]: 학교나 유치원에서는 체육활동 시실내수업으로 대체 권고
+                - listitem [ref=f14e1027]:
+                  - generic [ref=f14e1028]: 실외활동 시에는마스크, 보호안경, 모자 등 착용
+                - listitem [ref=f14e1029]:
+                  - generic [ref=f14e1030]: 창문을 닫고,빨래는 실내에서 건조
+                - listitem [ref=f14e1031]:
+                  - generic [ref=f14e1032]: 세면을 자주하고,흐르는 물에 코를 자주 세척
+                - listitem [ref=f14e1033]:
+                  - generic [ref=f14e1034]: 가급적 대중교통을 이용하고,야외 바비큐 등 자제
+            - generic [ref=f14e1035]:
+              - generic [ref=f14e1036]: 오존 높은 날 건강 생활 수칙
+              - list [ref=f14e1037]:
+                - listitem [ref=f14e1038]:
+                  - generic [ref=f14e1039]: 주민 실외활동 및과격운동 자제
+                - listitem [ref=f14e1040]:
+                  - generic [ref=f14e1041]: 어린이, 노약자, 호흡기 환자, 심장질환자의실외활동 자제
+                - listitem [ref=f14e1042]:
+                  - generic [ref=f14e1043]: 학교나 유치원에서는실외수업 자제
+                - listitem [ref=f14e1044]:
+                  - generic [ref=f14e1045]: 스프레이 사용,페인트칠, 시너 사용 억제
+                - listitem [ref=f14e1046]:
+                  - generic [ref=f14e1047]: 노천 소각 금지
+            - paragraph [ref=f14e1048]: "※ 문의: 기상콜센터 (131)"
+    - generic [ref=f14e1049]:
+      - generic [ref=f14e1051]:
+        - generic [ref=f14e1052]:
+          - link "개인정보처리방침" [ref=f14e1053] [cursor=pointer]:
+            - /url: https://www.keco.or.kr/web/lay1/S1T6C1348/contents.do
+          - link "저작권 정책" [ref=f14e1054] [cursor=pointer]:
+            - /url: https://www.keco.or.kr/web/lay1/S1T6C1349/contents.do
+          - link "이메일무단수집거부" [ref=f14e1055] [cursor=pointer]:
+            - /url: https://www.keco.or.kr/web/lay1/S1T6C1350/contents.do
+        - generic [ref=f14e1056]:
+          - button "황사관련 사이트" [ref=f14e1058] [cursor=pointer]
+          - button "국내/국외 관련사이트" [ref=f14e1060] [cursor=pointer]
+      - generic [ref=f14e1062]:
+        - strong [ref=f14e1063]:
+          - img "에어코리아" [ref=f14e1064]
+        - generic [ref=f14e1065]:
+          - generic [ref=f14e1066]:
+            - paragraph [ref=f14e1067]: "실시간 미세먼지 농도 및 예보 관련 문의 : 131 (기상콜센터 유료)"
+            - paragraph [ref=f14e1068]: "대기측정망 및 홈페이지관련 문의 : 032)590-3516 (한국환경공단 대기정책지원부)"
+          - generic [ref=f14e1069]: "[22689] 인천광역시 서해구 환경로 42(오류동 종합환경연구단지)"
+          - generic [ref=f14e1070]: Copyright © 2023 한국환경공단, All rights reserved.
+        - generic [ref=f14e1071]:
+          - link [ref=f14e1072] [cursor=pointer]:
+            - /url: https://www.me.or.kr/
+            - img "환경부" [ref=f14e1073]
+          - link [ref=f14e1074] [cursor=pointer]:
+            - /url: https://www.keco.or.kr/
+            - img "한국환경공단" [ref=f14e1075]
+          - link [ref=f14e1076] [cursor=pointer]:
+            - /url: http://www.wa.or.kr/
+            - img "웹접근성 인증마크" [ref=f14e1077]
+          - link [ref=f14e1078] [cursor=pointer]:
+            - /url: http://www.kogl.or.kr/open/index.do
+            - img "OPEN API 이미지" [ref=f14e1079]
+        - button [ref=f14e1080] [cursor=pointer]

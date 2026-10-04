@@ -1,0 +1,543 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - list:
+      - listitem:
+        - link "본문 바로가기" [ref=e2] [cursor=pointer]:
+          - /url: "#contents"
+      - listitem:
+        - link "전체메뉴 바로가기" [ref=e3] [cursor=pointer]:
+          - /url: "#nav"
+      - listitem:
+        - link "하단 바로가기" [ref=e4] [cursor=pointer]:
+          - /url: "#footer"
+  - generic [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - heading "서울시립미술관 SEOUL MUSEUM OF ART" [level=1] [ref=e8]
+        - generic [ref=e10]:
+          - link [ref=e12] [cursor=pointer]:
+            - /url: /kr/index
+            - img "서울시립미술관 SEOUL MUSEUM OF ART" [ref=e13]
+          - link "메뉴" [ref=e14] [cursor=pointer]:
+            - /url: javascript:;
+      - generic [ref=e15]:
+        - generic [ref=e17]:
+          - heading [level=1] [ref=e18]:
+            - link "전시와 프로그램" [ref=e19] [cursor=pointer]:
+              - /url: javascript:;
+            - text: "《마틴 파 : We Are Martin Parr》 20260716-20261018"
+          - generic [ref=e20]: 2026년 10월 18일까지 서울시립 사진미술관에서 전시합니다.
+        - generic [ref=e22]:
+          - link "URL 주소복사" [ref=e23] [cursor=pointer]:
+            - /url: "#scrap"
+          - link "관심 있어요" [ref=e25] [cursor=pointer]:
+            - /url: javascript:;
+          - 'img "《마틴 파 : We Are Martin Parr》" [ref=e27]'
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: 바로가기
+            - list [ref=e34]:
+              - listitem [ref=e35]:
+                - link "전시 안내" [ref=e36] [cursor=pointer]:
+                  - /url: "#exGuideArea"
+              - listitem [ref=e37]:
+                - link "음성 안내" [ref=e38] [cursor=pointer]:
+                  - /url: "#exAudioGuideArea"
+              - listitem [ref=e39]:
+                - link "주요 작품" [ref=e40] [cursor=pointer]:
+                  - /url: "#magerWorksArea"
+              - listitem [ref=e41]:
+                - link "설치 전경" [ref=e42] [cursor=pointer]:
+                  - /url: "#viewArea"
+              - listitem [ref=e43]:
+                - link "영상 모음" [ref=e44] [cursor=pointer]:
+                  - /url: "#exRelationVideoArea"
+              - listitem [ref=e45]:
+                - link "서울시립 사진미술관" [ref=e46] [cursor=pointer]:
+                  - /url: "#accordion_lnk_org"
+              - listitem [ref=e47]:
+                - link "관련 전시와 프로그램" [ref=e48] [cursor=pointer]:
+                  - /url: "#accordion_lnk_ex"
+              - listitem [ref=e49]:
+                - link "관련 소식" [ref=e50] [cursor=pointer]:
+                  - /url: "#accordion_lnk_notice"
+              - listitem [ref=e51]:
+                - link "관련 출판물" [ref=e52] [cursor=pointer]:
+                  - /url: "#accordion_lnk_publish"
+          - list [ref=e55]:
+            - listitem [ref=e56]:
+              - generic [ref=e57]: 평일(화–금)
+              - generic [ref=e58]: 오전 10시–오후 8시
+            - listitem [ref=e59]:
+              - generic [ref=e60]: 토 · 일 · 공휴일
+              - generic [ref=e61]: 하절기(3–10월), 오전 10시–오후 7시
+            - listitem [ref=e62]:
+              - generic [ref=e64]: 동절기(11–2월), 오전 10시–오후 6시
+            - listitem [ref=e65]:
+              - generic [ref=e66]: 입장시간
+              - generic [ref=e67]: 관람 종료 1시간 전까지 입장
+            - listitem [ref=e68]:
+              - generic [ref=e69]: 휴관일
+              - generic [ref=e70]: 1월1일 , 매주 월요일
+            - listitem [ref=e71]:
+              - generic [ref=e73]: 월요일이 공휴일인 경우 정상 개관(단, 포토라이브러리는 매주 일, 월, 공휴일 휴관)
+        - generic [ref=e75]:
+          - generic [ref=e76]:
+            - generic [ref=e77]: 전시장소
+            - paragraph [ref=e78]: 서울시립 사진미술관 2층 영상홀 서울시립 사진미술관 2층 2전시실 서울시립 사진미술관 2층 1전시실 서울시립 사진미술관 3층 4전시실 서울시립 사진미술관 3층 3전시실
+            - generic [ref=e79]: 전시기간
+            - paragraph [ref=e80]: 2026.07.16~2026.10.18
+            - generic [ref=e81]: 관람료
+            - paragraph [ref=e82]: 무료
+            - generic [ref=e83]: 도슨트안내
+            - paragraph [ref=e84]: 매일 11시, 13시, 15시 운영 / 1월 1일, 추석, 설 연휴에는 운영하지 않습니다.
+          - generic [ref=e85]:
+            - generic [ref=e86]: 전시부문
+            - paragraph [ref=e87]: 사진, 영상 등
+            - generic [ref=e88]: 전시장르
+            - paragraph [ref=e89]: 기획,국제,대외협력
+            - generic [ref=e90]: 참여작가
+            - paragraph [ref=e91]: 마틴 파
+            - generic [ref=e92]: 작품수
+            - paragraph [ref=e93]: 사진 약 500점, 사진책 90권
+          - generic [ref=e94]:
+            - generic [ref=e95]: 주최 및 후원
+            - paragraph [ref=e96]: "서울시립미술관 (협력: 매그넘 포토스, 마틴파재단), 가구 협력 파트너 알로소"
+            - generic [ref=e97]: 전시문의
+            - paragraph [ref=e98]: 손현정 02-2124-7617
+            - generic [ref=e99]: 관람문의
+            - paragraph [ref=e100]: 안내데스크 02-2124-7600
+        - generic [ref=e101]:
+          - generic [ref=e102]: 전시 안내
+          - generic [ref=e105]:
+            - paragraph
+            - paragraph [ref=e106]:
+              - text: 오늘날 우리가 광고 이미지나 SNS, 관광 스냅사진에서 매일 마주하는 강렬한 색채와 밀착된 시선은 더 이상 낯설지 않습니다. 세계적인 사진가 마틴 파(1952–2025)는 바로 이러한 동시대
+              - link "시각문화" [ref=e107] [cursor=pointer]:
+                - /url: https://sema.seoul.go.kr/semaaa/front/sissorus/search.do?menuId=18&paramTsId=79
+              - text: 의 감각을 수십 년간 집요하게 포착해 왔습니다. 그가 특유의 유머와 관찰력으로 남긴 사진들은 우리의 삶과 문화를 읽어내는 하나의 거대한 풍경이 되어 우리 곁에 숨 쉬고 있습니다. 이러한 작가의 발자취를 기리는
+              - strong [ref=e108]: "《마틴 파: We Are Martin Parr》"
+              - text: 는 작가 사후 아시아에서 처음 열리는 대규모 회고전입니다. 이번 전시에서는 초기 작업부터 말년에 이르는 14개 시리즈와 500여 점의 작품을 선보이며, 그가 출판한 총 90권의 사진집을 함께 소개합니다. 특히 1990년대 후반부터 2000년대 초반까지 한국을 방문하며 촬영한 남한과 북한 관련 작업 역시 이번 자리에서 함께 만나볼 수 있습니다.
+            - paragraph [ref=e109]:
+              - text: 세계적인 사진가 그룹 매그넘 포토스(Magnum Photos)*의 작가로 활동한 마틴 파는 지난 수십 년간 현대 사회의 일상과 시각문화를 가장 집요하게 관찰해 온 사진가입니다. 그는 여가와 소비가 이루어지는 전 세계의 관광지와
+              - link "스포츠" [ref=e110] [cursor=pointer]:
+                - /url: http://sema.seoul.go.kr/kr/knowledge_research/collection/collection_detail?artSeq=WORK_0000004978
+              - text: 경기장, 패스트푸드점과 활기 넘치는 거리에서 사람들이 이미지를 통해 스스로를 드러내는 방식을 꾸준히 기록해 왔습니다. 특히 1980년대 이후 확장된 소비문화와 대중관광의 풍경은 그의 작업을 이루는 중요한 배경이 되었습니다. 그의 사진을 단순히 소비사회를 비판하거나 풍자하는 이미지로만 이해하기에는 충분하지 않습니다. 그의 시선은 대상과 거리를 두기보다 오히려 그 세계 가까이로 들어갑니다. 과장된 색채와 밀도 높은 화면, 무심히 지나칠 법한 순간들에 머무는 작가의 시선은 익숙한 일상을 낯설게 바라보게 만듭니다. 이 친근한 세계 속 인물들은 특별한 사건의 주인공이 아닙니다. 선글라스를 끼고 휴가를 즐기는 사람들, 마트의 쇼핑객, 혹은 음식을 먹거나 사진을 찍는 우리 주변의 평범한 이웃들입니다. 마틴 파는 이렇듯 대수롭지 않은 장면 안에서 오늘날 우리가 지닌 욕망과 취향, 소비와 행동 방식을 예리하게 포착해 냅니다. 이미지를 통해 스스로를 꾸미고 기록하며 기억하는 삶의 풍경이 특유의 유머러스한 관찰을 통해 비로소 선명하게 드러나는 것입니다.
+            - paragraph [ref=e111]: 오늘날처럼 인공지능이 매끄럽고 균질한 이미지를 빠르게 생산해내는 시대에 그의 사진은 오히려 사진이라는 매체의 물질성과 현장성을 다시 떠올리게 합니다. 그는 정제된 아름다움보다 우연한 순간과 넘쳐나는 일상의 풍경, 어딘가 어색하고 불완전한 장면들에 주목합니다. 그렇기에 그의 사진은 특정 시대를 기록하는 데 머물지 않고, 동시대 시각문화 속에서 우리가 무엇을 보고 어떻게 바라보는지를 다시 질문하게 만듭니다. 이번 전시는 마틴 파가 오랜 세월 고수해 온 ‘솔직하게 정면으로 마주하는 보기의 방식’을 따라가 보고자 합니다. 그의 사진을 특정한 메시지에 가두기보다, 대상과 깊이 동화되어 유쾌하게 번져 나가는 시선 그 자체에 주목합니다. 지나치게 가까운 거리에서 포착된 인물들과 강렬한 색채로 가득한 사물들은 오늘날 우리의 모습과 고스란히 겹쳐집니다. 소비하고 즐기며, 이미지를 통해 끊임없이 자신을 드러내는 존재로서의 우리 말입니다. 그리고 묻습니다. 우리는 그들을 바라보고 있는 것일까요. 아니면 이미 그 장면 안에 함께 서 있는 것일까요.
+            - paragraph
+            - paragraph [ref=e112]: "*매그넘 포토스(Magnum Photos)는 1947년 설립된 국제 사진가 그룹이자 사진 에이전시로, 현대 다큐멘터리 사진의 흐름을 이끌어온 대표적인 사진가 집단입니다."
+        - generic [ref=e113]:
+          - button "음성 안내 확장됨" [ref=e115] [cursor=pointer]:
+            - text: 음성 안내
+            - generic: 확장됨
+          - generic [ref=e116]:
+            - 'link "《마틴 파 : We Are Martin Parr》 오늘날 광고 이미지나 SNS, 관광 스냅사진에서 매일 발견하는 강렬한 색채와 가까운 시선은 더 이상 우리에게 낯설지 않습니다. 세계적인 사진가 그룹 매그넘 포토스(Magnum Photos)*의 소속 작가이자 현대 사진의 거장인 마틴 파(1952？2025)는 전 세계 관광지, 경기장, 패스트푸드점과 거리를 다니며 우리 시대의 시각문화와 소비상, 관광의 풍경을 집요하고 재치있게 기록해 왔습니다. 작가 사후 아시아에서 처음 열리는 대규모 회고전 《마틴 파: We Are Martin Parr》는, 초기 작업부터 말년에 이르는 14개 시리즈와 500여 점의 작품, 그리고 90..." [ref=e118] [cursor=pointer]':
+              - /url: javascript:;
+              - generic [ref=e123]:
+                - strong [ref=e124]: "《마틴 파 : We Are Martin Parr》"
+                - generic [ref=e125]: "오늘날 광고 이미지나 SNS, 관광 스냅사진에서 매일 발견하는 강렬한 색채와 가까운 시선은 더 이상 우리에게 낯설지 않습니다. 세계적인 사진가 그룹 매그넘 포토스(Magnum Photos)*의 소속 작가이자 현대 사진의 거장인 마틴 파(1952？2025)는 전 세계 관광지, 경기장, 패스트푸드점과 거리를 다니며 우리 시대의 시각문화와 소비상, 관광의 풍경을 집요하고 재치있게 기록해 왔습니다. 작가 사후 아시아에서 처음 열리는 대규모 회고전 《마틴 파: We Are Martin Parr》는, 초기 작업부터 말년에 이르는 14개 시리즈와 500여 점의 작품, 그리고 90..."
+            - link "〈작은 세계(Small World)〉 〈작은 세계(Small World)〉는 마틴 파가 1980년대부터 전 세계의 관광 현상을 기록한 작업입니다. 작가는 유명 관광지를 찾은 사람들의 모습과 그들이 소비하는 풍경을 포착하며, 현대 관광문화의 이면을 보여줍니다. 서로 다른 문화를 경험하기 위해 떠난 여행은 역설적으로 각 지역의 고유한 특징을 비슷한 방식으로 소비하게 만들고, 결국 전 세계를 하나의 획일적인 관광 공간으로 변화시키기도 합니다. 마틴 파는 이러한 현상을 특유의 유머와 아이러니가 담긴 시선으로 기록했습니다. 사진 속 관광객들은 풍요로운 소비문화를 즐기는 사람들처럼 보이지만, 동시에 끊임없이 새로운..." [ref=e127] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e132]:
+                - strong [ref=e133]: 〈작은 세계(Small World)〉
+                - generic [ref=e134]: 〈작은 세계(Small World)〉는 마틴 파가 1980년대부터 전 세계의 관광 현상을 기록한 작업입니다. 작가는 유명 관광지를 찾은 사람들의 모습과 그들이 소비하는 풍경을 포착하며, 현대 관광문화의 이면을 보여줍니다. 서로 다른 문화를 경험하기 위해 떠난 여행은 역설적으로 각 지역의 고유한 특징을 비슷한 방식으로 소비하게 만들고, 결국 전 세계를 하나의 획일적인 관광 공간으로 변화시키기도 합니다. 마틴 파는 이러한 현상을 특유의 유머와 아이러니가 담긴 시선으로 기록했습니다. 사진 속 관광객들은 풍요로운 소비문화를 즐기는 사람들처럼 보이지만, 동시에 끊임없이 새로운...
+            - link "〈아크로폴리스, 아테네, 그리스〉, 1991 〈작은 세계(Small World)〉 시리즈 중 하나인 〈아크로폴리스〉는 1991년 마틴 파가 그리스 아테네의 고대 신전을 배경으로 단체 기념사진을 촬영하는 관광객의 모습을 담은 사진입니다. 낯선 해외 관광지에서의 장면임에도 불구하고, 유명 명소 앞에 보여 사진을 남기는 모습은 대표적인 한국 관광객들의 기념사진 촬영 현장과 닮아 우리에게도 익숙하게 느껴집니다. 이처럼 마틴 파는 관광이 전세계적으로 유사한 행동과 풍경을 만들어내는 과정을 유머러스하게 포착했습니다. 사진 속 아주머니 옷에 ‘효(孝)’라는 한자가 보이시나요? 아마도 사진 속 인물들은 효도관광으로 아테네를 ..." [ref=e136] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e141]:
+                - strong [ref=e142]: 〈아크로폴리스, 아테네, 그리스〉, 1991
+                - generic [ref=e143]: 〈작은 세계(Small World)〉 시리즈 중 하나인 〈아크로폴리스〉는 1991년 마틴 파가 그리스 아테네의 고대 신전을 배경으로 단체 기념사진을 촬영하는 관광객의 모습을 담은 사진입니다. 낯선 해외 관광지에서의 장면임에도 불구하고, 유명 명소 앞에 보여 사진을 남기는 모습은 대표적인 한국 관광객들의 기념사진 촬영 현장과 닮아 우리에게도 익숙하게 느껴집니다. 이처럼 마틴 파는 관광이 전세계적으로 유사한 행동과 풍경을 만들어내는 과정을 유머러스하게 포착했습니다. 사진 속 아주머니 옷에 ‘효(孝)’라는 한자가 보이시나요? 아마도 사진 속 인물들은 효도관광으로 아테네를 ...
+            - link "〈이스태블리시먼트(Establishment)〉 ‘이스태블리시먼트(Establishment)’는 권력기관이나 기성 제도를 뜻하는 용어입니다. 이 연작은 마틴 파가 2010년부터 2016년까지 영국 사회의 상류층과 기성 엘리트 집단의 일상과 의례를 기록한 작업입니다. 사진에는 정부 기관의 연회, 옥스퍼드 대학을 비롯한 학계 행사, 왕실 행사와 군사 퍼레이드, 그리고 사교 클럽의 모임 등 영국 사회를 대표하는 제도권의 공식 행사와 일상의 장면들이 담겨 있습니다. 마틴 파는 특유의 플래시 사용과 근접 촬영, 강렬한 색채 대비를 통해 인물들의 표정과 복식, 그리고 그들을 둘러싼 환경을 더욱 선명하게 부각시켰습니다. 이를 ..." [ref=e145] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e150]:
+                - strong [ref=e151]: 〈이스태블리시먼트(Establishment)〉
+                - generic [ref=e152]: ‘이스태블리시먼트(Establishment)’는 권력기관이나 기성 제도를 뜻하는 용어입니다. 이 연작은 마틴 파가 2010년부터 2016년까지 영국 사회의 상류층과 기성 엘리트 집단의 일상과 의례를 기록한 작업입니다. 사진에는 정부 기관의 연회, 옥스퍼드 대학을 비롯한 학계 행사, 왕실 행사와 군사 퍼레이드, 그리고 사교 클럽의 모임 등 영국 사회를 대표하는 제도권의 공식 행사와 일상의 장면들이 담겨 있습니다. 마틴 파는 특유의 플래시 사용과 근접 촬영, 강렬한 색채 대비를 통해 인물들의 표정과 복식, 그리고 그들을 둘러싼 환경을 더욱 선명하게 부각시켰습니다. 이를 ...
+            - link "〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사〉 2014 ‘이스태블리시먼트’ 시리즈 가운데 하늘색 모자와 정장을 갖춰 입은 여왕의 뒷모습 사진을 살펴보겠습니다. 이 사진에서 여왕은 뒷모습만 보이는 반면, 그녀를 둘러싼 관중들의 모습은 정면으로 선명하게 포착됩니다. 수십 명의 사람들이 일제히 스마트폰을 들어 그 모습을 촬영하고 있는데, 모두가 왕실 인물을 바라보기보다 사진으로 남기는 데 집중하고 있습니다. 이러한 장면은 특별한 역사적 순간이라기보다, 오늘날 권위와 유명세가 이미지로 소비되는 방식을 보여주는 하나의 풍경처럼 보입니다. 이처럼 작가는 왕실이라는 전통적 권위가 사진으로 소비되는 모습을 아이러니하게 보여줍니다." [ref=e154] [cursor=pointer]:
+              - /url: javascript:;
+              - generic [ref=e159]:
+                - strong [ref=e160]: 〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사〉 2014
+                - generic [ref=e161]: ‘이스태블리시먼트’ 시리즈 가운데 하늘색 모자와 정장을 갖춰 입은 여왕의 뒷모습 사진을 살펴보겠습니다. 이 사진에서 여왕은 뒷모습만 보이는 반면, 그녀를 둘러싼 관중들의 모습은 정면으로 선명하게 포착됩니다. 수십 명의 사람들이 일제히 스마트폰을 들어 그 모습을 촬영하고 있는데, 모두가 왕실 인물을 바라보기보다 사진으로 남기는 데 집중하고 있습니다. 이러한 장면은 특별한 역사적 순간이라기보다, 오늘날 권위와 유명세가 이미지로 소비되는 방식을 보여주는 하나의 풍경처럼 보입니다. 이처럼 작가는 왕실이라는 전통적 권위가 사진으로 소비되는 모습을 아이러니하게 보여줍니다.
+          - link "모두 보기 (19)" [ref=e164] [cursor=pointer]:
+            - /url: javascript:getAudioGuideList(10000);
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - button "주요 작품 확장됨" [ref=e168] [cursor=pointer]:
+              - text: 주요 작품
+              - generic: 확장됨
+            - link "슬라이드 보기" [ref=e170] [cursor=pointer]:
+              - /url: javascript:;
+          - generic [ref=e172]:
+            - generic [ref=e173]:
+              - link "〈아크로폴리스, 아테네, 그리스〉, 1991 〈아크로폴리스, 아테네, 그리스〉, 1991 마틴 파 The Acropolis, Athens, Greece, 1991 ⓒ Martin Parr / Magnum Photos" [ref=e175] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈아크로폴리스, 아테네, 그리스〉, 1991" [ref=e177]
+                - generic [ref=e178]: 〈아크로폴리스, 아테네, 그리스〉, 1991 마틴 파 The Acropolis, Athens, Greece, 1991 ⓒ Martin Parr / Magnum Photos
+              - link "〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사, 런던, 영국〉, 2014 〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사, 런던, 영국〉, 2014 마틴 파 The Queen visiting the Drapers' Livery Hall. The Drapers' Livery's 650th Anniversary, City of London, England, 2014 ⓒ Martin Parr / Magnum Photos" [ref=e180] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사, 런던, 영국〉, 2014" [ref=e182]
+                - generic [ref=e183]: 〈드레이퍼스 리버리 홀을 방문한 여왕, 드레이퍼스 리버리 650주년 기념행사, 런던, 영국〉, 2014 마틴 파 The Queen visiting the Drapers' Livery Hall. The Drapers' Livery's 650th Anniversary, City of London, England, 2014 ⓒ Martin Parr / Magnum Photos
+              - link "〈뉴브라이턴, 영국〉, 1983-85 〈뉴브라이턴, 영국〉, 1983-85 마틴 파 New Brighton, England, 1983-85 ⓒ Martin Parr / Magnum Photos" [ref=e185] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈뉴브라이턴, 영국〉, 1983-85" [ref=e187]
+                - generic [ref=e188]: 〈뉴브라이턴, 영국〉, 1983-85 마틴 파 New Brighton, England, 1983-85 ⓒ Martin Parr / Magnum Photos
+              - link "〈보수당 파티 '한여름 밤의 광란', 영국〉, 1988 〈보수당 파티 '한여름 밤의 광란', 영국〉, 1988 마틴 파 Conservative 'midsummer madness' party, England, 1988 ⓒ Martin Parr / Magnum Photos" [ref=e190] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈보수당 파티 '한여름 밤의 광란', 영국〉, 1988" [ref=e192]
+                - generic [ref=e193]: 〈보수당 파티 '한여름 밤의 광란', 영국〉, 1988 마틴 파 Conservative 'midsummer madness' party, England, 1988 ⓒ Martin Parr / Magnum Photos
+              - link "〈스케그니스, 영국〉, 1992 〈스케그니스, 영국〉, 1992 마틴 파 Skegness, England, 1992 ⓒ Martin Parr / Magnum Photos" [ref=e195] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈스케그니스, 영국〉, 1992" [ref=e197]
+                - generic [ref=e198]: 〈스케그니스, 영국〉, 1992 마틴 파 Skegness, England, 1992 ⓒ Martin Parr / Magnum Photos
+              - link "〈베니돔, 스페인〉, 1997 〈베니돔, 스페인〉, 1997 마틴 파 Benidorm, Spain, 1997 ⓒ Martin Parr / Magnum Photos" [ref=e200] [cursor=pointer]:
+                - /url: javascript:;
+                - img "〈베니돔, 스페인〉, 1997" [ref=e202]
+                - generic [ref=e203]: 〈베니돔, 스페인〉, 1997 마틴 파 Benidorm, Spain, 1997 ⓒ Martin Parr / Magnum Photos
+            - link "모두 보기 (14)" [ref=e206] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=e207]:
+          - generic [ref=e208]:
+            - button "설치 전경 확장됨" [ref=e210] [cursor=pointer]:
+              - text: 설치 전경
+              - generic: 확장됨
+            - link "슬라이드 보기" [ref=e212] [cursor=pointer]:
+              - /url: javascript:;
+          - generic [ref=e214]:
+            - generic [ref=e215]:
+              - link [ref=e217] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_1" [ref=e219]'
+              - link [ref=e221] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_2" [ref=e223]'
+              - link [ref=e225] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_3" [ref=e227]'
+              - link [ref=e229] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_4" [ref=e231]'
+              - link [ref=e233] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_5" [ref=e235]'
+              - link [ref=e237] [cursor=pointer]:
+                - /url: javascript:;
+                - 'img "《마틴 파: We Are Martin Parr》전시 전경, 서울시립 사진미술관, 2026. [사진: 지니 프로젝트, 서울시립 사진미술관 제공]_6" [ref=e239]'
+            - link "모두 보기 (22)" [ref=e242] [cursor=pointer]:
+              - /url: javascript:;
+        - generic [ref=e243]:
+          - button "영상 모음 확장됨" [ref=e245] [cursor=pointer]:
+            - text: 영상 모음
+            - generic: 확장됨
+          - generic [ref=e250]:
+            - iframe [ref=e252]:
+              - generic [ref=f1e1]:
+                - generic "YouTube 동영상 플레이어" [ref=f1e3]
+                - generic [ref=f1e5]:
+                  - generic:
+                    - generic:
+                      - generic [ref=f1e6] [cursor=pointer]
+                      - button "동영상 재생" [ref=f1e10] [cursor=pointer]
+                      - button "재생 컨트롤 숨기기" [ref=f1e12] [cursor=pointer]
+                      - generic [ref=f1e14]:
+                        - generic [ref=f1e19]:
+                          - generic [ref=f1e20]:
+                            - 'link "Seoul Museum of Art |《마틴 파 : 𝗪𝗲 𝗔𝗿𝗲 𝗠𝗮𝗿𝘁𝗶𝗻 𝗣𝗮𝗿𝗿》모두의 마틴 파 Everyone''s Martin Parr" [ref=f1e21] [cursor=pointer]':
+                              - /url: https://www.youtube.com/watch?v=k2tZNpbXORc
+                            - link "서울시립미술관" [ref=f1e22] [cursor=pointer]:
+                              - /url: /channel/UC4CIotqM68CV_GpdfGLoQ8A
+                          - generic [ref=f1e24]:
+                            - button [ref=f1e25] [cursor=pointer]
+                            - generic [ref=f1e27]:
+                              - generic: 서울시립미술관
+                              - generic: 구독자 1.81만명
+                        - generic [ref=f1e28]:
+                          - button "공유" [ref=f1e31] [cursor=pointer]
+                          - link "YouTube에서 보기" [ref=f1e42] [cursor=pointer]:
+                            - /url: https://www.youtube.com/watch?v=k2tZNpbXORc
+                            - generic [ref=f1e43]: "다음에서 보기:"
+            - generic [ref=e254]:
+              - generic: 동영상의 자막
+              - text: "〈모두의 마틴 파〉는 2026년 7월 16일부터 2026년 10월 18일까지 서울시립 사진미술관에서 열린《마틴 파: We Are Martin Parr》과 연계하여 제작되었습니다 인터뷰 참여자 리디아 캐슨 | 빅토리아 앤 앨버트 뮤지엄 큐레이터 안드레아 홀스헤르 | 매그넘 포토스 글로벌 컬쳐 디렉터 제니 스미스, 샬롯 킹, 루이즈 리틀 | 마틴파 재단 리 슐만 | 사진가, 감독 손현정 | 서울시립 사진미술관 학예연구사 Everyone's Martin Parr was produced in conjunction with Martin Parr: We Are Martin Parr held at the Photo SeMA from July 16 to October 18, 2026 Interviewees Lydia Caston | Curator, Victoria and Albert Museum Andrea Holzherr | Global Cultural Director, Magnum Photos Jenni Smith, Charlotte King, and Louis Little | Martin Parr Foundation Lee Shulman | Photographer and Filmmaker Hyunjung Son | Curator, Photo SeMA 영상 | 지니 프로젝트 자막 번역 | 이지샘 Video Production | Genie Project Subtitles translated by Ezisam 협력 | 매그넘 포토스, 마틴파 재단 In collaboration with Magnum Photos, Martin Parr Foundation 영상에 사용된 모든 사진의 저작권은 ⓒ Martin Parr / Magnum Photos 에 있습니다. ⓒ 2026 서울시립 사진미술관 이 영상은 저작권자의 서면 허가 없이 무단 전재할 수 없습니다. All images are copyrighted by ⓒ Martin Parr / Magnum Photos ⓒ 2026 Photo SeMA Unauthorized reproduction of this video is prohibited without prior written consent of the copyright holder."
+        - generic [ref=e255]:
+          - button "서울시립 사진미술관 확장됨" [ref=e257] [cursor=pointer]:
+            - text: 서울시립 사진미술관
+            - generic: 확장됨
+          - generic [ref=e258]:
+            - img "서울시립 사진미술관" [ref=e262]
+            - list [ref=e265]:
+              - listitem [ref=e266]:
+                - generic [ref=e267]: 평일(화–금)
+                - generic [ref=e268]: 오전 10시–오후 8시
+              - listitem [ref=e269]:
+                - generic [ref=e270]: 토 · 일 · 공휴일
+              - listitem [ref=e271]:
+                - generic [ref=e272]: – 하절기(3–10월)
+                - generic [ref=e273]: 오전 10시–오후7시
+              - listitem [ref=e274]:
+                - generic [ref=e275]: – 동절기(11–2월)
+                - generic [ref=e276]: 오전 10시–오후 6시
+              - listitem [ref=e277]:
+                - generic [ref=e278]: 휴관
+                - generic [ref=e279]: 1월1일 , 매주 월요일
+              - listitem [ref=e280]:
+                - generic [ref=e282]: 월요일이 공휴일인 경우 정상 개관(단, 포토라이브러리는 매주 일, 월, 공휴일 휴관)
+              - listitem [ref=e283]:
+                - generic [ref=e284]: 입장시간
+                - generic [ref=e285]: 관람 종료 1시간 전까지 입장
+              - listitem [ref=e286]:
+                - generic [ref=e287]: 관람료
+                - generic [ref=e288]: 무료
+              - listitem [ref=e289]:
+                - generic [ref=e290]: 주소
+                - generic [ref=e291]: 우편번호 01411 서울 도봉구 마들로13길 68 (창동)
+              - listitem [ref=e292]:
+                - generic [ref=e293]: 대표번호
+                - link "02–2124–7600" [ref=e295] [cursor=pointer]:
+                  - /url: tel:02-2124-7600
+          - generic [ref=e296]:
+            - paragraph [ref=e297]: 국내 최초 사진 특화 공립미술관으로 문을 연 서울시립 사진미술관은 사진 매체가 지닌 창조성에 주목하며 사진예술과 문화 전반을 아우릅니다. 도봉구 창동에 자리한 이곳은 한국 사진의 역사와 더불어 동시대 사진의 다양한 양상과 미래를 연구하고, 주요 작품과 자료를 수집·보존합니다. 연중 진행되는 전시와 프로그램을 통해 사진 중심의 실험적이고 창의적인 시도를 소개하는 본 미술관은 누구나 사진의 예술적 가치를 경험하며 이해를 확장하고 이를 매개로 각자의 관심과 생각을 나누는 공간을 지향합니다.
+            - link "자세히" [ref=e300] [cursor=pointer]:
+              - /url: /kr/visit/photosema
+        - generic [ref=e301]:
+          - button "관련 전시와 프로그램 확장됨" [ref=e303] [cursor=pointer]:
+            - text: 관련 전시와 프로그램
+            - generic: 확장됨
+          - 'link "《마틴 파: We Are Martin Parr》 전시 연계 세미나 〈왜 마틴 파인가?〉 《마틴 파: We Are Martin Parr》 전시 연계 세미나 〈왜 마틴 파인가?〉 문화행사 서울시립 사진미술관 2026/07/18~2026/07/18 종료" [ref=e306] [cursor=pointer]':
+            - /url: /kr/whatson/event/detail?evtNo=1560136
+            - 'img "《마틴 파: We Are Martin Parr》 전시 연계 세미나 〈왜 마틴 파인가?〉" [ref=e308]'
+            - generic [ref=e309]:
+              - strong [ref=e310]: "《마틴 파: We Are Martin Parr》 전시 연계 세미나 〈왜 마틴 파인가?〉"
+              - generic [ref=e311]: 문화행사
+              - text: 서울시립 사진미술관 2026/07/18~2026/07/18 종료
+          - link "모든 전시와 프로그램" [ref=e315] [cursor=pointer]:
+            - /url: /kr/whatson/landing
+        - generic [ref=e316]:
+          - button "관련 소식 확장됨" [ref=e318] [cursor=pointer]:
+            - text: 관련 소식
+            - generic: 확장됨
+          - generic [ref=e319]:
+            - generic [ref=e321]:
+              - link "서울시립 사진미술관 운영 안내 (7.7-7.15)" [ref=e323] [cursor=pointer]:
+                - /url: /kr/bbs/610221/getBbsDetail?bbsNo=1560994
+              - generic [ref=e324]: 공지사항
+              - generic [ref=e325]: 2026.07.03
+            - generic [ref=e327]:
+              - link "서울시립 사진미술관 운영 안내 (6.15~7.5.)" [ref=e329] [cursor=pointer]:
+                - /url: /kr/bbs/610221/getBbsDetail?bbsNo=1552207
+              - generic [ref=e330]: 공지사항
+              - generic [ref=e331]: 2026.06.15
+            - generic [ref=e333]:
+              - link "서울시립 사진미술관 운영 안내 (3.18~4.8.)" [ref=e335] [cursor=pointer]:
+                - /url: /kr/bbs/610221/getBbsDetail?bbsNo=1512690
+              - generic [ref=e336]: 공지사항
+              - generic [ref=e337]: 2026.03.18
+            - generic [ref=e339]:
+              - link "서울시립 사진미술관 운영 안내 (10.15.-11.25)" [ref=e341] [cursor=pointer]:
+                - /url: /kr/bbs/610221/getBbsDetail?bbsNo=1456885
+              - generic [ref=e342]: 공지사항
+              - generic [ref=e343]: 2025.10.15
+            - generic [ref=e345]:
+              - link "서울시립 사진미술관 『포토세마2015-2025』 발간 안내 (*웹북 다운로드 가능)" [ref=e347] [cursor=pointer]:
+                - /url: /kr/bbs/610221/getBbsDetail?bbsNo=1425346
+              - generic [ref=e348]: 공지사항
+              - generic [ref=e349]: 2025.07.03
+            - generic [ref=e351]:
+              - link "서울시립 사진미술관, 국제세미나 <사진의 자리> 개최" [ref=e353] [cursor=pointer]:
+                - /url: /kr/bbs/611333/getBbsDetail?bbsNo=1314878
+              - generic [ref=e354]: 보도자료
+              - generic [ref=e355]: 2024.08.12
+            - link "뉴스와 공지" [ref=e358] [cursor=pointer]:
+              - /url: /kr/sema/news/landing
+        - generic [ref=e359]:
+          - button "관련 출판물 확장됨" [ref=e361] [cursor=pointer]:
+            - text: 관련 출판물
+            - generic: 확장됨
+          - generic [ref=e362]:
+            - link [ref=e364] [cursor=pointer]:
+              - /url: /kr/knowledge_research/publish_detail?museumDataNo=1582313
+              - 'img "《마틴 파 : We Are Martin Parr》 리플릿 Leaflet Martin Parr: We Are Martin Parr (KR/EN)" [ref=e366]'
+              - generic [ref=e367]:
+                - strong [ref=e368]: "《마틴 파 : We Are Martin Parr》 리플릿 Leaflet Martin Parr: We Are Martin Parr (KR/EN)"
+                - text: 전시 리플릿
+            - link [ref=e370] [cursor=pointer]:
+              - /url: /kr/knowledge_research/publish_detail?museumDataNo=1582294
+              - 'img "『마틴 파: We Are Martin Parr』" [ref=e372]'
+              - generic [ref=e373]:
+                - strong [ref=e374]: "『마틴 파: We Are Martin Parr』"
+                - text: 전시 도록
+    - generic [ref=e376]:
+      - link [ref=e379] [cursor=pointer]:
+        - /url: /kr/index
+        - img "서울시립미술관 SEOUL MUSEUM OF ART" [ref=e380]
+      - list [ref=e382]:
+        - listitem [ref=e383]:
+          - link "미술관 소개" [ref=e384] [cursor=pointer]:
+            - /url: /kr/sema/landing
+        - listitem [ref=e385]:
+          - link "뉴스와 공지" [ref=e386] [cursor=pointer]:
+            - /url: /kr/sema/news/landing
+        - listitem [ref=e387]:
+          - link "지원과 양성" [ref=e388] [cursor=pointer]:
+            - /url: /kr/support/landing
+        - listitem [ref=e389]:
+          - link "시설대관" [ref=e390] [cursor=pointer]:
+            - /url: /kr/sema/rental/info
+        - listitem [ref=e391]:
+          - link "후원회 SeMA人[in]" [ref=e392] [cursor=pointer]:
+            - /url: /kr/sema/sema_in
+        - listitem [ref=e393]:
+          - link "기증자 전당" [ref=e394] [cursor=pointer]:
+            - /url: /kr/knowledge_research/donorhall
+      - list [ref=e396]:
+        - listitem [ref=e397]:
+          - link "응답소" [ref=e398] [cursor=pointer]:
+            - /url: https://eungdapso.seoul.go.kr/
+        - listitem [ref=e399]:
+          - link "SeMA 뉴스레터" [ref=e400] [cursor=pointer]:
+            - /url: /kr/sema/newsletters/list
+        - listitem [ref=e401]:
+          - link "도슨팅앱 다운로드" [ref=e402] [cursor=pointer]:
+            - /url: /kr/sema/app_download
+      - generic [ref=e403]:
+        - link "자주 묻는 질문" [ref=e405] [cursor=pointer]:
+          - /url: /kr/sema/faq/list
+        - list [ref=e406]:
+          - listitem [ref=e407]:
+            - text: ·
+            - link "전시실에서 사진 촬영이 가능한가요?" [ref=e408] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=173584#0173584
+          - listitem [ref=e409]:
+            - text: ·
+            - link "시립미술관에서 발간한 전시 관련 도서 및 도록은 어디서 구매하나요?" [ref=e410] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=309862#0309862
+          - listitem [ref=e411]:
+            - text: ·
+            - link "소장품의 수집은 어떻게 이루어지나요?" [ref=e412] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=173747#0173747
+          - listitem [ref=e413]:
+            - text: ·
+            - link "서울시립 미술아카이브는 어떤곳인가요?" [ref=e414] [cursor=pointer]:
+              - /url: /kr/sema/faq/list?search=1161779#01161779
+      - generic [ref=e415]: 사이트맵SITE MAP
+      - generic [ref=e416]:
+        - link "전시" [ref=e418] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=FROM_TODAY
+        - list [ref=e419]:
+          - listitem [ref=e420]:
+            - link "현재전시" [ref=e421] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=FROM_TODAY
+          - listitem [ref=e422]:
+            - link "예정전시" [ref=e423] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=PLAN_DAY
+          - listitem [ref=e424]:
+            - link "과거전시" [ref=e425] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EX&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=PAST_DAY
+      - generic [ref=e426]:
+        - link "교육·이벤트" [ref=e428] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY
+        - list [ref=e429]:
+          - listitem [ref=e430]:
+            - link "모두" [ref=e431] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY
+          - listitem [ref=e432]:
+            - link "어린이" [ref=e433] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT05
+          - listitem [ref=e434]:
+            - link "청소년" [ref=e435] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT06
+          - listitem [ref=e436]:
+            - link "성인" [ref=e437] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EC&whatChoice1=N&whatChoice3=N&whatChoice4=N&whatChoice5=N&whenType=ALL_DAY&targetList=EDT07
+      - generic [ref=e438]:
+        - link "소장품과 미술연구" [ref=e440] [cursor=pointer]:
+          - /url: /kr/knowledge_research/landing
+        - list [ref=e441]:
+          - listitem [ref=e442]:
+            - link "SeMA 소장품" [ref=e443] [cursor=pointer]:
+              - /url: /kr/knowledge_research/collection/landing
+          - listitem [ref=e444]:
+            - link "미술아카이브" [ref=e445] [cursor=pointer]:
+              - /url: https://sema.seoul.go.kr/semaaa
+          - listitem [ref=e446]:
+            - link "모두의 연구실 '코랄'" [ref=e447] [cursor=pointer]:
+              - /url: http://semacoral.org/
+          - listitem [ref=e448]:
+            - link "SeMA 도서와 자료" [ref=e449] [cursor=pointer]:
+              - /url: /kr/knowledge_research/book/list
+      - generic [ref=e450]:
+        - link "서울미디어시티비엔날레" [ref=e452] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EB&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=Y&whatChoice5=N&whenType=ALL_DAY
+        - list [ref=e453]:
+          - listitem [ref=e454]:
+            - link "모두" [ref=e455] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EB&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=Y&whatChoice5=N&whenType=ALL_DAY
+          - listitem [ref=e456]:
+            - link "SMB 웹시스템" [ref=e457] [cursor=pointer]:
+              - /url: https://mediacityseoul.kr/ko/today
+      - generic [ref=e458]:
+        - link "서울사진축제" [ref=e460] [cursor=pointer]:
+          - /url: /kr/whatson/landing?whatsonMenuDivList=EO&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=Y&whenType=ALL_DAY
+        - list [ref=e461]:
+          - listitem [ref=e462]:
+            - link "모두" [ref=e463] [cursor=pointer]:
+              - /url: /kr/whatson/landing?whatsonMenuDivList=EO&whatChoice1=N&whatChoice2=N&whatChoice3=N&whatChoice4=N&whatChoice5=Y&whenType=ALL_DAY
+      - generic [ref=e464]:
+        - generic [ref=e465]: 방문하기
+        - list [ref=e466]:
+          - listitem [ref=e467]:
+            - link "접근성 안내" [ref=e468] [cursor=pointer]:
+              - /url: /kr/visit/webaccess
+          - listitem [ref=e469]:
+            - link "서소문본관" [ref=e470] [cursor=pointer]:
+              - /url: /kr/visit/seosomun
+          - listitem [ref=e471]:
+            - link "북서울미술관" [ref=e472] [cursor=pointer]:
+              - /url: /kr/visit/bukseoul
+          - listitem [ref=e473]:
+            - link "서서울미술관" [ref=e474] [cursor=pointer]:
+              - /url: /kr/visit/seoseoul
+          - listitem [ref=e475]:
+            - link "미술아카이브" [ref=e476] [cursor=pointer]:
+              - /url: /kr/visit/art_archive
+          - listitem [ref=e477]:
+            - link "사진미술관" [ref=e478] [cursor=pointer]:
+              - /url: /kr/visit/photosema
+          - listitem [ref=e479]:
+            - link "남서울미술관" [ref=e480] [cursor=pointer]:
+              - /url: /kr/visit/namseoul
+          - listitem [ref=e481]:
+            - link "난지미술창작스튜디오" [ref=e482] [cursor=pointer]:
+              - /url: /kr/visit/nanji_residency
+          - listitem [ref=e483]:
+            - link "백남준을 기억하는 집" [ref=e484] [cursor=pointer]:
+              - /url: /kr/visit/nam_june_paik_house
+          - listitem [ref=e485]:
+            - link "전시해설" [ref=e486] [cursor=pointer]:
+              - /url: /kr/visit/excmmntry
+      - generic [ref=e487]:
+        - link "서울시립미술관 공식 페이스북" [ref=e488] [cursor=pointer]:
+          - /url: https://www.facebook.com/SeoulMuseumofArt.kr
+        - link "서울시립미술관 공식 트위터" [ref=e489] [cursor=pointer]:
+          - /url: https://twitter.com/SeoulSema
+        - link "서울시립미술관 공식 인스타그램" [ref=e490] [cursor=pointer]:
+          - /url: https://www.instagram.com/seoulmuseumofart/
+        - link "서울시립미술관 공식 유튜브" [ref=e491] [cursor=pointer]:
+          - /url: https://www.youtube.com/user/SeoulMuseumofArt
+        - link "서울시립미술관 공식 카카오 채널" [ref=e492] [cursor=pointer]:
+          - /url: https://pf.kakao.com/_QgRPn
+        - link "서울시립미술관 공식 네이버 블로그" [ref=e493] [cursor=pointer]:
+          - /url: https://blog.naver.com/semaofficial
+      - paragraph [ref=e495]:
+        - text: 서울 중구 덕수궁길 61 (대표자) 최은주, (사업자등록번호) 101-83-02866 (대표번호) 02–2124–8800 , 02–120 (직원찾기)
+        - link "직원 및 연락처" [ref=e496] [cursor=pointer]:
+          - /url: https://sema.seoul.go.kr/kr/sema/landing#orgArea
+      - list [ref=e498]:
+        - listitem [ref=e499]:
+          - link "개인정보처리방침" [ref=e500] [cursor=pointer]:
+            - /url: /kr/sema/privacy
+        - listitem [ref=e501]:
+          - link "이메일무단수집거부" [ref=e502] [cursor=pointer]:
+            - /url: /kr/sema/email_refuse
+      - generic [ref=e504]:
+        - link "과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2026.2.22 ~ 2027.2.21" [ref=e505] [cursor=pointer]:
+          - /url: http://webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110&npp=9&skey=1&sval=%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%AF%B8%EC%88%A0%EA%B4%80
+        - link "서울책방" [ref=e506] [cursor=pointer]:
+          - /url: https://store.seoul.go.kr/cp/index.html

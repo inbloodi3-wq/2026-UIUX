@@ -1,0 +1,817 @@
+{
+  "schema_version": 2,
+  "project_id": "AUTORUN_01",
+  "config_file": "config/experiments/autonomous-run-01.yaml",
+  "current_stage": "done",
+  "stage_status": "COMPLETE",
+  "last_completed_stage": "export_qa",
+  "autonomy_mode": "guided",
+  "execution_mode": "supervised_test",
+  "target_file": {
+    "reference": "4IjbcMoAkTyWkoacnVAmNe",
+    "working": "4IjbcMoAkTyWkoacnVAmNe",
+    "same_file_mode": true
+  },
+  "target_page": {
+    "id": "1716:2382",
+    "name": "자동화",
+    "verified_at": "2026-09-30",
+    "verified_by": "get_metadata(nodeId=1716:2382)"
+  },
+  "frozen_scopes": [
+    {
+      "type": "FROZEN_REFERENCE",
+      "page": "1716:2382",
+      "match": "node_id_and_all_descendants",
+      "node_ids": [
+        "1880:4717",
+        "1880:4721",
+        "1880:4723",
+        "1880:4727",
+        "1880:4731",
+        "1880:4735",
+        "1880:4738",
+        "1880:4749",
+        "1880:4763",
+        "1880:4774",
+        "1880:4788",
+        "1880:4799",
+        "1880:4804",
+        "1880:4810",
+        "1880:4816",
+        "1880:4819",
+        "1880:4829",
+        "1880:4843",
+        "1880:4848",
+        "1880:4862",
+        "1880:4873",
+        "1880:4889",
+        "1880:4912",
+        "1880:4925",
+        "1880:4941",
+        "1880:4954",
+        "1880:4968",
+        "1880:4985",
+        "1880:4992",
+        "1880:5006",
+        "1880:5019",
+        "1880:5029",
+        "1880:5036",
+        "1880:5046",
+        "1880:5059",
+        "1880:5066",
+        "1880:5070",
+        "1880:5075",
+        "1880:5088",
+        "1880:5105",
+        "1880:5112",
+        "1880:5122"
+      ],
+      "count": 42,
+      "inventory": "1920x1080 Standard Slide Frames, 모두 name='Frame' — 이름이 아니라 Node ID로 식별. y=-2515 20개, y=-1195 20개, y=125 2개",
+      "forbidden": [
+        "modify",
+        "delete",
+        "move",
+        "rename",
+        "edit_text",
+        "edit_children",
+        "duplicate_as_template"
+      ],
+      "allowed": [
+        "read_metadata",
+        "render",
+        "read_styles_for_grammar"
+      ],
+      "enforcement": "POLICY_ONLY",
+      "enforcement_note": "Agent 행동 규칙이며 Figma Tool 접근 제어가 아니다. use_figma는 파일 전체에 쓸 수 있다.",
+      "registered_at": "2026-09-30"
+    }
+  ],
+  "editable_scopes": [
+    {
+      "node_id": "1889:1910",
+      "name": "AUTORUN_01_WORK",
+      "type": "WORKING_ROOT",
+      "match": "node_id_and_all_descendants",
+      "created_at": "2026-09-30",
+      "bounds": {
+        "x": 0,
+        "y": 1685,
+        "w": 1440,
+        "h": 21928
+      },
+      "bounds_verified": "STEP 13 — get_metadata 실측 1440×21928 (이전 기록 10420은 Case Study 추가 전 값)",
+      "note": "Root hug 세로 Auto Layout. 자식: 00_WRITE_TEST 1892:1910, UI 4화면(1892:1911, 1896:1910, 1897:1911, 1898:1910), CaseStudy 1900:1910"
+    }
+  ],
+  "planned_editable_structure": {
+    "root": "AUTORUN_01",
+    "areas": [
+      "01_RESEARCH",
+      "02_VISUAL_DIRECTION",
+      "03_DESKTOP",
+      "04_MOBILE",
+      "05_CASE_STUDY",
+      "06_QA"
+    ],
+    "status": "NOT_CREATED",
+    "rule": "생성 직후 실제 Node ID만 editable_scopes에 등록한다. 계획된 이름만으로는 쓰기 권한이 없다."
+  },
+  "approved_stages": [
+    "project_load"
+  ],
+  "blockers": [],
+  "approval_required": [
+    {
+      "action": "night_run 활성화",
+      "risk_tier": "n/a",
+      "status": "NOT_ALLOWED",
+      "detail": "figma_write_isolation=policy_only(Same File Mode). 무인 Figma 쓰기는 isolated_file 또는 tool_enforced_verified에서만 허용"
+    },
+    {
+      "action": "external_publish",
+      "risk_tier": 3,
+      "status": "NOT_REQUESTED",
+      "detail": "포트폴리오 외부 게시·제출은 사용자 결정 사항"
+    }
+  ],
+  "figma_write": {
+    "tool": "mcp__claude_ai_Figma__use_figma",
+    "verified": true,
+    "status": "SUCCESS",
+    "calls": 19,
+    "failures": 0,
+    "permission_observation": "use_figma 누적 18회(STEP 04: 2, STEP 07: 6 = 읽기 1 + 쓰기 5, STEP 08: 5, STEP 09: 4, STEP 11: 1, STEP 12: 0, STEP 13: 0) 모두 거부·오류 없이 실행. 세션이 auto mode라 사용자 측 프롬프트 표시 여부는 Claude가 관측 불가. use_figma는 allow/ask 미등록 → default 모드에서는 호출마다 승인 요청 예상 (STEP 13 정정: 이전 문구 '2회'는 STEP 04 시점 값)",
+    "scope": "Same File Mode, supervised_test"
+  },
+  "retry_count": 0,
+  "render_checked": true,
+  "qa_status": "PASS",
+  "definition_of_done": "automation-orchestrator.md 'Stop Rule' 14개 조건 전부 PASS",
+  "last_meaningful_change": {
+    "date": "2026-09-30",
+    "summary": "STEP 11: WHY Audit — why-decision-log.md 작성, Case Study 과장·부정확 문구 18건 수정 + S01 선정 이유 추가."
+  },
+  "checkpoint": {
+    "stage": "done",
+    "screen": null,
+    "step": null,
+    "updated_at": "2026-09-30",
+    "resume_hint": "AUTORUN_01 CLOSED(STEP 14). 재개 시 orchestrator 'Resume Integrity Check'를 먼저 수행. Export는 Figma에서 1900:1910만 수동. 외부 게시·제출은 사용자 승인 후.",
+    "integrity_checked_at": "2026-09-30 (STEP 13)"
+  },
+  "updated_at": "2026-09-30",
+  "source": {
+    "role": "reference",
+    "file_key": "4IjbcMoAkTyWkoacnVAmNe",
+    "page_id": "1716:2382",
+    "usage": "grammar_only",
+    "access": "read_only",
+    "frame_count_verified": 42,
+    "verified_at": "2026-09-30"
+  },
+  "target": {
+    "role": "working_target",
+    "file_key": "4IjbcMoAkTyWkoacnVAmNe",
+    "page_id": "1716:2382",
+    "working_root": "AUTORUN_01_WORK",
+    "working_root_node_id": "1889:1910",
+    "working_zone": {
+      "frozen_bbox": {
+        "x_min": 0,
+        "x_max": 42960,
+        "y_min": -2515,
+        "y_max": 1205
+      },
+      "observed_gap": 240,
+      "root_origin": {
+        "x": 0,
+        "y": 1685
+      },
+      "rule": "Working Root와 모든 자손의 절대 경계 y ≥ 1685"
+    },
+    "purpose": "design_execution",
+    "status": "SCREENS_AND_CASE_STUDY_CREATED"
+  },
+  "foundation_grammar": {
+    "status": "EXTRACTED",
+    "path": "experiments/autonomous-run-01/design-system/foundation-grammar.md",
+    "evidence": "get_metadata 42 frames(geometry) + get_variable_defs 11 frames(text styles)",
+    "open_items": [
+      "letterSpacing 단위 미검증",
+      "Layer↔Style 대응 추론값",
+      "31개 Frame 스타일 표본 외"
+    ]
+  },
+  "stage_log": [
+    {
+      "stage": "project_load",
+      "status": "COMPLETE",
+      "at": "2026-09-30"
+    },
+    {
+      "stage": "master_grammar_calibration",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Open items는 Semantic Gate 미차단(측정 근거 기반 Range 기록 완료)"
+    },
+    {
+      "stage": "current_site_research",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "mode": "AUTONOMOUS_RESEARCH_TEST"
+    },
+    {
+      "stage": "ux_competitor_research",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Group A 4건"
+    },
+    {
+      "stage": "art_direction_research",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Group B 6건(원문 확인 5, 검색요약 1). STEP 06에서 보강"
+    },
+    {
+      "stage": "portfolio_gap_analysis",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "ux-strategy.md Portfolio Differentiation"
+    },
+    {
+      "stage": "visual_direction",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Line of S 선택, Self Review FAIL 1 -> Fix 1 -> PASS"
+    },
+    {
+      "stage": "design_system",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "design-tokens.md (제안값, Figma 폰트 가용성 STEP 07 확인)"
+    },
+    {
+      "stage": "asset_artwork_strategy",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "외부 이미지 0건, Cover Artwork 자체 생성 벡터"
+    },
+    {
+      "stage": "secondary_screens",
+      "status": "BLOCKED",
+      "at": "2026-09-30",
+      "note": "precondition FAIL — Master Screen 없음, 제작 시작하지 않음"
+    },
+    {
+      "stage": "master_screen",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "c-exhibitions.desktop 1892:1911 CREATED/RENDERED/QA_PASS"
+    },
+    {
+      "stage": "secondary_screens",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "Desktop Detail / Mobile List / Mobile Detail QA_PASS, Master refinement 1 pass"
+    },
+    {
+      "stage": "responsive",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "viewports 1440/390 × 목록·상세 4화면"
+    },
+    {
+      "stage": "case_study",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "AUTORUN_01_CaseStudy 1900:1910, 8 sections, QA_PASS"
+    },
+    {
+      "stage": "final_compression",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "중복 2건 압축(S01 역할, S03 결과)"
+    },
+    {
+      "stage": "export_qa",
+      "status": "COMPLETE",
+      "at": "2026-09-30",
+      "note": "외부 이미지 0건, 출처·비공식 고지 확인. Final Rights Audit: 외부 Asset 없음"
+    }
+  ],
+  "same_file_mode": {
+    "enabled": true,
+    "decided_by": "user",
+    "decided_at": "2026-09-30",
+    "note": "별도 Sandbox 파일 없이 Reference와 같은 파일·Page에서 Node 단위 Scope 분리. 프롬프트 수준 분리이며 Tool-level 격리 아님."
+  },
+  "bootstrap": {
+    "status": "COMPLETE",
+    "allowed_action": "대상 Page 1716:2382에 최상위 Frame 'AUTORUN_01_WORK' 1개만 working_zone 안에 생성",
+    "precondition": [
+      "get_metadata로 frozen 42개와 bbox 재확인",
+      "사용자 지켜보는 supervised_test",
+      "use_figma 승인"
+    ],
+    "after": "Node ID를 target.working_root_node_id와 editable_scopes에 기록",
+    "completed_at": "2026-09-30",
+    "result": {
+      "root_node_id": "1889:1910",
+      "created_node_ids": [
+        "1889:1910",
+        "1889:1911",
+        "1889:1912",
+        "1889:1913",
+        "1889:1914",
+        "1889:1915",
+        "1889:1916"
+      ],
+      "origin_matches_plan": true
+    }
+  },
+  "protection_qa": {
+    "method": "쓰기 세션 전후 get_metadata(1716:2382) 비교: frozen ID 집합, 각 Frame name/x/y/width/height, 하위 Node ID 목록",
+    "on_mismatch": "쓰기 중단 → blockers 기록 → 사용자 보고(자동 복구 금지)",
+    "last_baseline": {
+      "at": "2026-09-30",
+      "frozen_count": 42,
+      "nodes": 451,
+      "geom": "d33dced9",
+      "ext": "cc532167",
+      "fingerprint_scope": "geom: id,type,name,x,y,w,h,parent,text / ext: visible,opacity,fills,strokes,strokeWeight,fontName,fontSize,lineHeight,letterSpacing,textStyleId",
+      "not_compared": "effects, constraints, blendMode, rotation, auto-layout 속성, component 속성"
+    },
+    "history": [
+      {
+        "at": "2026-09-30",
+        "call": "bootstrap create",
+        "pre": "6826c98b",
+        "post": "6826c98b",
+        "result": "UNCHANGED"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "targeted fix header itemSpacing 12→16",
+        "pre": "6826c98b",
+        "post": "6826c98b",
+        "result": "UNCHANGED"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "independent get_metadata(page)",
+        "result": "42 frozen frames same id/name/position/size + 1 new root 1889:1910"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "STEP 07 build 1/2 + 2/2 + fix x3 (5 write calls)",
+        "pre": "d33dced9/cc532167",
+        "post": "d33dced9/cc532167",
+        "result": "UNCHANGED (비교 범위 내)"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "STEP 08 write calls x5 (refinement, detail, detail-fix+mobile list, mobile-fix+mobile detail, tag align)",
+        "pre": "d33dced9/cc532167",
+        "post": "d33dced9/cc532167",
+        "result": "UNCHANGED (비교 범위 내)"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "STEP 09 write calls x4 (build 1-3, final micro fix)",
+        "pre": "d33dced9/cc532167",
+        "post": "d33dced9/cc532167",
+        "result": "UNCHANGED (비교 범위 내)"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "STEP 11 WHY copy edit x1",
+        "pre": "d33dced9/cc532167",
+        "post": "d33dced9/cc532167",
+        "result": "UNCHANGED (비교 범위 내)"
+      },
+      {
+        "at": "2026-09-30",
+        "call": "STEP 14 Case Study S05 text edit x1 (1901:1940, 1901:1944, 1901:1952)",
+        "pre": "692555fc (451 nodes)",
+        "post": "692555fc (451 nodes)",
+        "result": "UNCHANGED (비교 범위 내)",
+        "note": "이번 호출에서 새로 작성한 FNV fingerprint(id,type,name,geometry,parent,visible,opacity,fills,strokes,text,font)라 기존 d33dced9와 해시 값은 직접 비교 불가. Frozen 42개 존재·Node 수 451은 baseline과 일치"
+      }
+    ]
+  },
+  "self_review": {
+    "screen": "AUTORUN_01_WORK test",
+    "passes": 2,
+    "targeted_fix": 1,
+    "issues": [
+      {
+        "issue": "title→subtitle 간격 12 < Foundation Safety Line 4(16–24)",
+        "fix": "header itemSpacing 16",
+        "result": "PASS"
+      }
+    ],
+    "checks": {
+      "typography": "PASS (40/20 = 2.0×, LH 1.2/1.4)",
+      "alignment": "PASS (공통 좌측선 48, 우측 752)",
+      "spacing": "PASS (padding 48, 16/40)",
+      "overflow": "PASS (clip 없음)"
+    }
+  },
+  "research": {
+    "mode": "AUTONOMOUS_RESEARCH_TEST",
+    "target_service": "서울시립미술관 SeMA",
+    "target_url": "https://sema.seoul.go.kr/",
+    "url_verified": true,
+    "core_flow": "전시 탐색 → 목록 비교 → 상세 정보 확인",
+    "pain_points": [
+      "P1 목록→상세 링크가 URL 아님(javascript:; + POST)",
+      "P2 필터 상태·결과 불일치, 정렬 컨트롤 미확인(접힌 필터 패널 내부 미확인)·상태 라벨 부재",
+      "P3 모바일 스캔 비용(카드 ~500px × 12)"
+    ],
+    "audience_evidence": "hypothesis",
+    "user_approval_requests": 0,
+    "policy_changes": [
+      "legal/source-policy.yaml: 10개 도메인 reference_only 등록(텍스트 관찰 전용) — STEP 05: sema.seoul.go.kr, www.mmca.go.kr, www.leeumhoam.org, www.tate.org.uk, whitney.org, www.stedelijk.nl / STEP 06: www.pentagram.com, www.walkerart.org, thonik.nl, magazine.beattitude.kr (STEP 13 정정: 이전 기록 '6개')"
+    ],
+    "open_items": [
+      "뒤로가기 상태 유지 미확인",
+      "Art Direction Reference 보강 필요"
+    ]
+  },
+  "visual_direction": {
+    "name": "Line of S",
+    "self_review": {
+      "passes": 1,
+      "fixes": 1,
+      "result": "PASS",
+      "fixed": "accent/status-new vermilion <-> 서소문본관 색 충돌 제거"
+    },
+    "user_questions": 0
+  },
+  "open_checks": [],
+  "screens": {
+    "c-exhibitions.desktop": {
+      "frame_name": "AUTORUN_01_Desktop_Exhibitions",
+      "node_id": "1892:1911",
+      "parent": "1889:1910",
+      "size": [
+        1440,
+        2893
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "locked": true,
+      "lock_note": "Master Screen. STEP 08에서 오류가 없으면 수정하지 않는다(수정 시 영향 화면 재Render).",
+      "sections": {
+        "nav": "1892:1912",
+        "subnav": "1892:1924",
+        "intro": "1892:1931",
+        "line_of_s": "1892:1936",
+        "filters": "1892:1957",
+        "summary": "1892:1981",
+        "results": "1893:1910",
+        "footer": "1893:2074"
+      },
+      "data": "SeMA 공개 현재전시 1페이지 12건(2026-09-30 확인), 종료일 오름차순. 커버는 자체 생성 콘셉트 아트워크(외부 이미지 0건)",
+      "fonts": "Noto Sans KR Black/Bold/Medium/Regular (Pretendard 플러그인 목록 0건 확인)",
+      "qa": {
+        "structural_pass": 1,
+        "visual_qa_pass": 1,
+        "targeted_fix_pass": 1,
+        "targeted_fix_write_calls": 3,
+        "targeted_fix_note": "1회의 Fix Pass를 3번의 쓰기로 완료: (1) keep-all 줄바꿈·Station 라벨·태그 외곽선 수정 (2) 스크립트 오류 보정 — intro eyebrow 원복, L자 선 식별 (3) 벡터 경로 원점 정규화로 L자 선 재배치",
+        "issues_fixed": [
+          "한글 어절 중간 줄바꿈(카드 제목 7건, Station 라벨 2건 = 9건; STEP 11 정정 — 이전 기록 '8건'. 같은 호출의 intro eyebrow 오변경은 원복되어 건수 제외)",
+          "L자 선 조각이 커버 고지 문구 뒤를 지남(5건)",
+          "해외 순회 태그 외곽선으로 2px 높이 불일치"
+        ],
+        "checks": {
+          "visual_direction": "PASS",
+          "color_system": "PASS",
+          "artwork": "PASS",
+          "typography": "PASS",
+          "exhibition_info": "PASS",
+          "venue_navigation": "PASS",
+          "filter_visibility": "PASS",
+          "alignment_spacing": "PASS",
+          "overflow_clipping": "PASS",
+          "reference_protection": "PASS"
+        }
+      },
+      "refinement": {
+        "at": "2026-09-30",
+        "pass": 1,
+        "change": "12개 커버에 Composition Family 4종(F1 Horizon, F2 Descent, F3 Rise, F4 Macro Arc)을 라틴 방진으로 배정. 선 두께 10/18/36, 위치, 타이포 위치(하단좌/상단좌/상단우)만 변경. 새 모티프 없음",
+        "stations": "점검 결과 실제 문제 없음, 변경 없음",
+        "result": "PASS"
+      }
+    },
+    "c-exhibition-detail.desktop": {
+      "frame_name": "AUTORUN_01_Desktop_ExhibitionDetail",
+      "node_id": "1896:1910",
+      "size": [
+        1440,
+        2128
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "content": "《마틴 파 : We Are Martin Parr》 exNo 1553791 — 기간·장소·관람시간·휴관일·관람료·소개 첫 두 문장만 사용. STEP 14: Playwright로 공식 상세 페이지를 직접 열어 7개 항목 대조 → VERIFIED [V] (장소는 층별 요약, 휴관일 부가 조건 생략). 이전 등급 [W]",
+      "passes": {
+        "structural": 1,
+        "visual_qa": 1,
+        "micro_fix": 1,
+        "global_consistency_fix": 1
+      },
+      "fixes": [
+        "Display 제목 영문 구 분리 방지(We / Are → We Are)",
+        "푸터 문구 어절 단위 줄바꿈",
+        "(전역) 태그 행 세로 중앙 정렬 — 외곽선 태그 2px 차이"
+      ],
+      "locked": true
+    },
+    "c-exhibitions.mobile": {
+      "frame_name": "AUTORUN_01_Mobile_Exhibitions",
+      "node_id": "1897:1911",
+      "size": [
+        390,
+        1941
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "structure": "compact nav → 전시(56)+탭 → 가로 스크롤 Station Bar(9개, 라벨 12/어절 줄바꿈) → 필터/정렬 행 → compact 목록(썸네일 72×90 Family 미니 커버, 행 113) → 더 보기 → 푸터",
+      "density": "목록 시작 y≈349(필터 행 수정 후, 고지문 포함), 행 113px → 390×844 첫 화면 약 4.4건(계산값, STEP 11 정정: 이전 기록 4.5). 목표 5건 미달. 현행 약 1.7건은 844÷카드 높이 단순 계산",
+      "passes": {
+        "structural": 1,
+        "visual_qa": 1,
+        "micro_fix": 1
+      },
+      "fixes": [
+        "필터 행 spacer 기본 높이 100 → 1 (행 122 → 60px)"
+      ],
+      "locked": true
+    },
+    "c-exhibition-detail.mobile": {
+      "frame_name": "AUTORUN_01_Mobile_ExhibitionDetail",
+      "node_id": "1898:1910",
+      "size": [
+        390,
+        2048
+      ],
+      "status": "QA_PASS",
+      "created": true,
+      "rendered": true,
+      "structure": "top bar(← 목록/SeMA/공유) → 태그+Display 제목 → 기간·장소·요금 요약(첫 화면 y≤388) → 1:1 F3 커버 → 소개 발췌 → Line L → 관람정보 카드 → 목록으로 돌아가기 → 푸터",
+      "plan_deviation": "ui-application-plan의 '제목→커버→사실' 순서를 '제목→핵심 사실 요약→커버'로 변경 — 4줄 Display 제목 아래 커버가 오면 기간·장소가 첫 화면 밖으로 밀림",
+      "passes": {
+        "structural": 1,
+        "visual_qa": 1,
+        "micro_fix": 1
+      },
+      "fixes": [
+        "태그 행 세로 중앙 정렬"
+      ],
+      "locked": true
+    }
+  },
+  "resolved_blockers": [
+    {
+      "stage": "secondary_screens",
+      "type": "precondition",
+      "resolved_at": "2026-09-30",
+      "by": "STEP 07 Master Screen 1892:1911 QA_PASS"
+    }
+  ],
+  "global_consistency": {
+    "at": "2026-09-30",
+    "result": "PASS",
+    "checked": "4개 화면 Render 나란히 비교: 색·Line/Station·타이포·태그/칩·F3 Family 일치"
+  },
+  "case_study": {
+    "frame_name": "AUTORUN_01_CaseStudy",
+    "node_id": "1900:1910",
+    "parent": "1889:1910",
+    "size": [
+      1440,
+      11268
+    ],
+    "status": "QA_PASS",
+    "sections": 8,
+    "section_nodes": {
+      "01 Overview": "1900:1912",
+      "02 AS-IS & Problem": "1900:1948",
+      "03 UX Strategy": "1900:1978",
+      "04 Visual Direction": "1900:2021",
+      "05 Design Development": "1901:1911",
+      "06 Desktop (List)": "1901:1954",
+      "06 Desktop (Detail)": "1901:1972",
+      "07 Mobile": "1902:1911",
+      "08 Outcome & Reflection": "1902:1934",
+      "Footer · attribution": "1902:1950"
+    },
+    "presentation_modes": {
+      "01": "SHOWCASE",
+      "02": "EVIDENCE(text: code/figures)",
+      "03": "SYNTHESIS(diagram)",
+      "04": "SYNTHESIS",
+      "05": "DECISION",
+      "06": "SHOWCASE+DECISION",
+      "07": "SHOWCASE+DECISION",
+      "08": "SYNTHESIS"
+    },
+    "renders_used": [
+      {
+        "src": "1893:1913",
+        "what": "F1 cover"
+      },
+      {
+        "src": "1893:1928",
+        "what": "F2 cover"
+      },
+      {
+        "src": "1893:1943",
+        "what": "F3 cover"
+      },
+      {
+        "src": "1893:1955",
+        "what": "F4 cover"
+      },
+      {
+        "src": "1892:1911",
+        "crop": "y0-1372",
+        "what": "Venue Navigation + Exhibition Comparison"
+      },
+      {
+        "src": "1896:1910",
+        "crop": "y0-1640",
+        "what": "Exhibition Identity + Visitor Information"
+      },
+      {
+        "src": "1897:1911",
+        "crop": "y0-844 (1x)",
+        "what": "Compact Discovery"
+      },
+      {
+        "src": "1898:1910",
+        "crop": "y0-844 (1x)",
+        "what": "Information Priority"
+      }
+    ],
+    "asset_note": "모든 이미지 fill은 이 파일의 AUTORUN_01 화면을 exportAsync(PNG, 1x)한 internal render(provider: internal_generated 성격). 외부 이미지 0건. SeMA 사이트 이미지는 저장·사용하지 않음(AS-IS 근거는 텍스트).",
+    "qa": {
+      "structural_pass": 1,
+      "visual_qa_pass": 1,
+      "final_micro_fix_pass": 1,
+      "fixes": [
+        "S01 선-제목 간격 확보(+40)",
+        "Station/swatch 라벨 어절 줄바꿈(난지·백남준)",
+        "S01 역할 구분 압축(08과 중복)",
+        "S03 '실제 UI 반영'을 06·07 참조로 압축(중복)",
+        "S02·S08 카드 높이 통일",
+        "S06 목록 crop 1420→1372(2행 잘림 제거)",
+        "S08 항목 구분 기호"
+      ],
+      "checks": {
+        "narrative": "PASS",
+        "research_evidence": "PASS",
+        "problem_decision_result": "PASS",
+        "typography": "PASS",
+        "editorial_rhythm": "PASS",
+        "image_crop": "PASS",
+        "visual_consistency": "PASS",
+        "duplication": "PASS",
+        "overflow": "PASS",
+        "brand_asset_attribution": "PASS",
+        "final_ui_coverage": "PASS",
+        "scanability": "PASS"
+      }
+    },
+    "export": "READY — Figma 프레임 1900:1910(1440×11268, STEP 13 실측 정정) PNG/PDF export 가능. 외부 게시·제출은 하지 않음(사용자 승인 필요, Tier 3)."
+  },
+  "definition_of_done_result": {
+    "at": "2026-09-30",
+    "status": "COMPLETE (supervised)",
+    "not_claimed": [
+      "사용성 개선 효과(테스트 미실시)",
+      "무인 Night Run",
+      "SeMA 공식 브랜드 적합성"
+    ]
+  },
+  "approval_metrics": {
+    "scope": "AUTORUN_01 STEP 04–13 (2026-09-30), Claude 측 기록 기준",
+    "TOOL_CALLS": {
+      "cumulative": {
+        "use_figma": 19,
+        "use_figma_by_step": {
+          "STEP_04": 2,
+          "STEP_07": 6,
+          "STEP_08": 5,
+          "STEP_09": 4,
+          "STEP_11": 1,
+          "STEP_12": 0,
+          "STEP_13": 0,
+          "STEP_14": 1
+        },
+        "other_tools": "UNKNOWN — WebFetch·Bash·Edit/Write·Playwright·Figma 읽기의 세션 누적 개수는 State에 기록하지 않았음"
+      },
+      "current_stage": {
+        "stage": "STEP 13 State Reconciliation",
+        "use_figma": 0,
+        "WebFetch": 0,
+        "get_screenshot": 15,
+        "note": "Figma 쓰기 0. Read·Grep·Edit·Bash(grep, sha256sum) 개수는 최종 보고에 기록"
+      }
+    },
+    "PERMISSION_REQUESTS": "UNKNOWN (Claude는 승인 창을 관측할 수 없음)",
+    "USER_REPORTED_APPROVALS": "약 10회 (사용자 보고)",
+    "AUTO_APPROVED_ACTIONS": "allow 규칙 해당 호출: Figma get_metadata/get_screenshot/get_variable_defs, WebSearch, Edit(automation/**) 등 — 개수 미집계",
+    "DENIED_ACTIONS": 0,
+    "UNKNOWN_EVENTS": "allow 규칙 밖 호출(use_figma 18 — STEP 13 정정: 이전 17은 STEP 11 호출 미반영, WebFetch 약 18, Bash 다수, experiments/·config/experiments/·legal/·.claude/ 편집, Playwright 5)은 auto 모드 분류기 또는 사용자 승인으로 처리됨 — 어느 호출이 승인 창을 띄웠는지는 확인 불가",
+    "updated_at": "2026-09-30"
+  },
+  "why_audit": {
+    "at": "2026-09-30",
+    "log": "experiments/autonomous-run-01/research/why-decision-log.md",
+    "results": {
+      "project_selection": "REVISED",
+      "problem_definition": "REVISED",
+      "ux_decisions": "REVISED",
+      "visual_direction": "PASS",
+      "color_system": "REVISED",
+      "artwork_system": "REVISED",
+      "responsive": "REVISED"
+    },
+    "case_study_edits": {
+      "write_calls": 1,
+      "texts_replaced": 18,
+      "texts_added": 2,
+      "added_nodes": [
+        "1905:1911",
+        "1905:1912"
+      ],
+      "render_qa": "PASS",
+      "fix_passes": 0
+    }
+  },
+  "step13_reconciliation": {
+    "at": "2026-09-30",
+    "mismatches_fixed": [
+      "editable_scopes[0].bounds.h 10420 → 21928 (get_metadata 실측)",
+      "case_study.export 1440×11190 → 1440×11268 (get_metadata 실측)",
+      "config working_target.status MASTER_SCREEN_CREATED → SCREENS_AND_CASE_STUDY_CREATED, state target.status ROOT_CREATED → 동일",
+      "figma_write.permission_observation '2회' → 누적 18회(단계별 내역)",
+      "research.policy_changes 6개 → 10개 도메인",
+      "approval_metrics.UNKNOWN_EVENTS use_figma 17 → 18"
+    ],
+    "provenance": {
+      "D2": "RESOLVED — Playwright 스냅샷 원본에 정렬 요소 없음 [V], 접힌 필터 패널 내부 미확인 [U]. audit §5 P2 '정렬 없음' → '확인되지 않음'",
+      "D3": "RELABELED — '어디서' 필터 축, MMCA 장소 버튼 [V]→[W]",
+      "D4": "RELABELED — Tate·Whitney [V]→[W] (ux-strategy.md [F]→[W] 동일 정정)",
+      "D5": "RELABELED — 공식 상세 정보 [V]→[W]. 원 HTML 대조 미실시 → 미해결",
+      "D6": "RELABELED — Walker·Whitney Art Direction [V]→[W] (같은 기준 적용)",
+      "D10": "UNVERIFIED — 근거는 STEP 07 use_figma 반환값(세션 기록)뿐, 저장소에 raw log 없음"
+    },
+    "visual_qa": {
+      "method": "get_screenshot(enableBase64Response=true, maxDimension) → 이미지 직접 열람",
+      "screenshot_direct_image": "SUPPORTED",
+      "targets": "UI 4화면(1892:1911, 1896:1910, 1897:1911, 1898:1910) + Case Study 10블록(S01–S08, S06 2블록, Footer)",
+      "result": "PASS",
+      "observations": [
+        "S06 상세 crop은 패널 하단을 의도적으로 자름(renders_used crop y0-1640)",
+        "S04 swatch '백남준을 기억하는 집' 라벨은 어절 경계에서 줄바꿈"
+      ],
+      "fixes": 0
+    },
+    "figma_modified": false,
+    "remaining_open": [
+      "D5 공식 전시 정보 원 페이지 대조(사람 확인 필요) → STEP 14 RESOLVED",
+      "D10 수정 건수 재검증 불가(UNVERIFIED)"
+    ]
+  },
+  "step14_closure": {
+    "at": "2026-09-30",
+    "d5_source_verification": {
+      "result": "PASS",
+      "method": "Playwright browser_navigate + 접근성 스냅샷(렌더링된 원문). WebFetch 미사용, 로그인·입력 없음",
+      "url": "https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1553791",
+      "verified_items": ["전시명", "기간", "장소(층별 요약)", "관람시간", "휴관일(부가 조건 생략)", "관람료", "소개문 첫 두 문장(글자 일치)"],
+      "mismatches": 0
+    },
+    "d10": "UNVERIFIED 유지. Case Study S05의 재검증 불가 수치 3개를 숫자 없는 설명으로 변경",
+    "figma_write": {
+      "calls": 1,
+      "scope": "Case Study 1900:1910 내부 텍스트 3개(1901:1940, 1901:1944, 1901:1952)만",
+      "precheck": "page 1716:2382, 조상 체인에 1889:1910·1900:1910 포함, frozen 조상 없음",
+      "frozen_fingerprint": "pre=post 692555fc, 451 nodes",
+      "render_after": "1901:1936 get_screenshot 확인 PASS",
+      "ui_screens_modified": false
+    },
+    "case_study_check": "WHY SeMA·문제 근거·Line of S·색 기능·Artwork 변주·반응형·구현 수준 구분·출처·비공식 고지 — 기존 문구 유지(STEP 12 Phase D·STEP 13 Visual QA 기록 + 이번 S05·Footer 확인)",
+    "export": "MANUAL_REQUIRED — MCP에 PDF/PNG 내보내기 도구 없음(Figma 쪽). 외부 게시·제출 안 함",
+    "status": "CLOSED"
+  }
+}

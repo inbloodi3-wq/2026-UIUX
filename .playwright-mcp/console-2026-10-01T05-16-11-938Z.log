@@ -1,0 +1,62 @@
+[    1699ms] [LOG] 2026-07-06 20:11 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:881
+[    1700ms] [LOG] 20261001141613 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1303
+[    1708ms] [LOG] Debugging 0 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1805
+[    1708ms] [LOG] PC Device Width: 1440 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:3218
+[    1757ms] Unexpected string
+[    2138ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/p/AKR_112630203-101:0
+[    2138ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/p/AKR_112630203-101:0
+[    2138ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/p/AKR_112630203-101:0
+[    2139ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.asics.co.kr/data/skin/asics/images/design/tab_arr.png:0
+[    2164ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92
+[    2201ms] [LOG] %c IF %c A %c DO %c B %c 이프두 %c 마케팅 자동화 & 온사이트 마케팅 서비스 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold font-weight: bold;background-color:#313235;color:#ffffff;background: linear-gradient(91.59deg, #107BF9 -0.96%, #E20A65 99.96%);border-radius:3px;padding:8px; @ https://script.ifdo.co.kr/jfullscript.js:0
+[    2269ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    2333ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    2936ms] [LOG] ✅ Edge 브라우저 여부: false @ https://widgets.cre.ma/asics.co.kr/v2/init.js:76
+[    2936ms] [LOG] ✅ PC여부: true @ https://widgets.cre.ma/asics.co.kr/v2/init.js:77
+[    2936ms] [LOG] ✅ 상품 상세 페이지 여부: true @ https://widgets.cre.ma/asics.co.kr/v2/init.js:78
+[    2936ms] [LOG] ❌ window.fromCrema 객체가 존재하지 않습니다. @ https://widgets.cre.ma/asics.co.kr/v2/init.js:81
+[    3696ms] [LOG] 1 {value: 2026-10-01, metadata: Object} @ LIVEVC.js:209
+[    3696ms] [LOG] 세션에 오늘 날짜가 있음. 캠페인 노출 중단 @ LIVEVC.js:213
+[    3701ms] [LOG] %c[Input Check] 추천 상품 ID 목록: 22249, 21906, 22593, 22595, 22582, 22281, 22594, 19685, 21910, 22581, 22723, 22105 color: blue; background: #eee; @ PCVer.js:472
+[    3701ms] [LOG] %c[Recs Check] 총 12개 상품 검증 시작 (재고+노출) color: blue; @ PCVer.js:509
+[    3703ms] [LOG] [Mobile Check] 총 8개 상품 검증 시작 color: blue @ Mobile.js:363
+[    3706ms] [LOG] PC API 바디 값 {"goods_seq":"22566","category_code":"002000110001"} @ LIVE.js:345
+[    6271ms] [LOG] 현재 전달된 전체 응답: {19685: look, 21906: look, 21910: look, 22105: look, 22249: look, 22281: look, 22581: look, 22582: look, 22593: look, 22594: look, 22595: look, 22723: look} @ PCVer.js:534
+[    6271ms] [LOG] 상품ID: 22249 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 21906 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22593 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22595 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22582 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22281 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22594 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 19685 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 21910 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22581 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22723 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6271ms] [LOG] 상품ID: 22105 -> API 응답값: look (✅ 통과) @ PCVer.js:537
+[    6272ms] [LOG] %c[Result] 최종 노출 상품: 12개 color: green; font-weight: bold; @ PCVer.js:565
+[    6278ms] [LOG] [Mobile Result] Valid: 8 / Original: 8 @ Mobile.js:411
+[    6407ms] [LOG] 추천 상품 호출(미정제): {goods_seq: 22566, category_code: 002000110001, results: Array(100)} @ LIVE.js:358
+[    6865ms] [LOG] 품절 상태 데이터: [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ LIVE.js:503
+[    6866ms] [LOG] 최종 리스트 [Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object, Object] @ LIVE.js:523
+[    7794ms] [LOG] API 전송 조건 불충족: prevUserId/referrer/memberSeq 값 확인 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1746
+[    7794ms] [LOG] PrevUserId: 166c7f7dfa50570f @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1747
+[    7794ms] [LOG] Referrer:  @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1748
+[    7794ms] [LOG] ReferrerMatched: false @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1749
+[    7794ms] [LOG] MemberSeq:  @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1750
+[    7794ms] [LOG] WaitedMs: 5178 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1751
+[    7889ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7890ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7891ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7891ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7899ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7899ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7901ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7904ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7904ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7905ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7908ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7912ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7912ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7914ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688
+[    7915ms] [LOG] {"status":"ok","message":"데이터 저장 완료"} @ LIVE.js:688

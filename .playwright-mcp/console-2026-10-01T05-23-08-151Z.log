@@ -1,0 +1,3 @@
+[     684ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[     692ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[     696ms] [WARNING] [Meta Pixel] - Duplicate Pixel ID: 205152720593290. @ https://connect.facebook.net/en_US/fbevents.js:203

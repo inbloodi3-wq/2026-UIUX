@@ -1,0 +1,907 @@
+- generic [active] [ref=f17e1]:
+  - generic [ref=f17e3]:
+    - generic [ref=f17e4]:
+      - generic [ref=f17e5]: "01"
+      - generic [ref=f17e6]: OVERVIEW / WHY PROJECT
+      - generic [ref=f17e7]: EXPLANATION
+    - heading "지도 데이터가 앞서는 첫 화면에서, ‘우리 동네 지금’을 먼저 보여 주기" [level=1] [ref=f17e8]: 지도 데이터가 앞서는 첫 화면에서,‘우리 동네 지금’을 먼저 보여 주기
+    - paragraph [ref=f17e9]: 기상청 날씨누리 홈의 정보 우선순위를 다시 설계한 비공식 리디자인 콘셉트입니다. 실제 화면에서 확인한 지점 39곳의 날씨 상태와 기온을 그대로 쓰고, 새로 만든 날씨 기호(Glyph) 체계로 보여 줍니다.
+    - generic [ref=f17e10]:
+      - generic [ref=f17e11]:
+        - generic [ref=f17e12]: Why 날씨누리
+        - paragraph [ref=f17e13]: 이번 야간 자동 실행에서 쓸 수 있던 자료 가운데, 직접 관찰한 근거가 있는 새 후보는 날씨누리 홈 하나였습니다.
+        - paragraph [ref=f17e14]: 홈의 정보 우선순위 문제를 두 화면으로 다룰 수 있고, 실제 관측값 39개로 화면을 채울 수 있습니다.
+      - generic [ref=f17e15]:
+        - generic [ref=f17e16]: 검토했지만 고르지 않은 후보
+        - paragraph [ref=f17e17]: 서울자전거 따릉이 — 홈에 지도와 버튼만 있어 문제를 정의할 텍스트 근거가 부족(BLOCKED).
+        - paragraph [ref=f17e18]: 미술관 사이트들 — 이전 프로젝트(SeMA)와 같은 영역이어서 제외.
+      - generic [ref=f17e19]:
+        - generic [ref=f17e20]: Scope · Role · Tools
+        - paragraph [ref=f17e21]: 우리 동네 지금 · 전국 지금 × Desktop 1440 / Mobile 390. HTML · CSS · 인라인 SVG.
+        - paragraph [ref=f17e22]: AI(Claude Code)가 사용자 부재 중 조사·설계·제작·자가 검수를 수행. 디자이너는 목표와 안전 조건을 정했습니다.
+    - paragraph [ref=f17e23]: "한계: 에어코리아 프로젝트와 같은 공공 환경 정보 영역입니다. 이번에는 ‘기준 구분’이 아니라 ‘첫 화면의 정보 우선순위’에 초점을 맞췄습니다."
+  - generic [ref=f17e25]:
+    - generic [ref=f17e26]:
+      - generic [ref=f17e27]: "02"
+      - generic [ref=f17e28]: RESEARCH & PROBLEMS
+      - generic [ref=f17e29]: EVIDENCE
+    - heading "홈 한 페이지, 접근성 트리에서 확인한 세 가지" [level=2] [ref=f17e30]
+    - paragraph [ref=f17e31]: 근거는 2026-09-30에 저장한 날씨누리 홈의 접근성 스냅샷 하나입니다(데스크톱, 클릭·입력 없음). 인터뷰·사용성 테스트는 하지 않았고, ‘어려움’은 모두 가설입니다.
+    - generic [ref=f17e32]:
+      - generic [ref=f17e33]:
+        - heading "P1. 지역은 보이지만, 그 지역의 날씨 요약이 보이지 않는다" [level=3] [ref=f17e34]
+        - generic [ref=f17e35]:
+          - generic [ref=f17e36]:
+            - generic [ref=f17e37]: Observed fact
+            - paragraph [ref=f17e38]: "기본 지역과 관심지역 기능이 본문 맨 앞에 있지만, 그 지역의 현재 날씨·기온·예보 요약 텍스트는 트리에서 확인되지 않습니다. 서울 값은 지도 안 지점 목록(“서울: 구름많음” 22.1)으로만 읽힙니다."
+          - generic [ref=f17e39]:
+            - generic [ref=f17e40]: Possible difficulty
+            - paragraph [ref=f17e41]: ‘우리 동네 지금’을 알려면 지도에서 가까운 지점을 찾아야 할 수 있습니다.
+          - generic [ref=f17e42]:
+            - generic [ref=f17e43]: Design response
+            - paragraph [ref=f17e44]: 첫 화면 맨 위에 지역 요약(기호·상태·기온·갱신 시각)을 두고, 지도는 보조 진입점으로 내립니다.
+        - paragraph [ref=f17e45]: 지도 위에 시각적으로만 그려진 요약이 있을 수 있습니다. 스크린샷은 확인하지 않았습니다.
+      - generic [ref=f17e46]:
+        - heading "P2. 지도 데이터가 순서상 먼저 오고, 값 표기에 오류가 보인다" [level=3] [ref=f17e47]
+        - generic [ref=f17e48]:
+          - generic [ref=f17e49]:
+            - generic [ref=f17e50]: Observed fact
+            - paragraph [ref=f17e51]: 지도 레이어 링크 9개, 해상 지점 32개, 지점 39개가 지도 이후 콘텐츠보다 앞에 있습니다. ‘지도 건너뛰기’ 링크는 제공됩니다. 한 해상 지점의 풍속이 “NaN m/s”로 표시됩니다.
+          - generic [ref=f17e52]:
+            - generic [ref=f17e53]: Possible difficulty
+            - paragraph [ref=f17e54]: 지도를 쓰지 않는 사용자도 많은 항목을 지나야 할 수 있고, “NaN”은 이해하기 어려운 값입니다.
+          - generic [ref=f17e55]:
+            - generic [ref=f17e56]: Design response
+            - paragraph [ref=f17e57]: ‘전국 지금’을 권역별 기호 목록(텍스트 우선)으로 만들고, 값이 없거나 잘못된 경우는 ‘자료 없음’ 상태로 통일합니다.
+        - paragraph [ref=f17e58]: 권역 분류(6개)는 이 프로젝트의 분류입니다. 해상 지점은 이번 범위에서 제외했습니다.
+      - generic [ref=f17e59]:
+        - heading "P3. 지도 경험이 두 갈래로 안내된다" [level=3] [ref=f17e60]
+        - generic [ref=f17e61]:
+          - generic [ref=f17e62]:
+            - generic [ref=f17e63]: Observed fact
+            - paragraph [ref=f17e64]: 첫 진입 공지가 별도 페이지의 ‘새로운 날씨지도’를 안내하고, 같은 홈 본문에는 기존 지도와 ‘날씨지도 새창열기’가 따로 있습니다.
+          - generic [ref=f17e65]:
+            - generic [ref=f17e66]: Possible difficulty
+            - paragraph [ref=f17e67]: 어느 지도를 써야 하는지 헷갈리고, 공지가 첫 화면 콘텐츠와 경쟁할 수 있습니다.
+          - generic [ref=f17e68]:
+            - generic [ref=f17e69]: Design response
+            - paragraph [ref=f17e70]: 공지는 가리지 않는 한 줄 배너로, 지도 진입은 ‘지도로 보기’ 하나로 모읍니다.
+        - paragraph [ref=f17e71]: 공지가 실제로 화면을 얼마나 가리는지는 확인하지 못했습니다.
+  - generic [ref=f17e73]:
+    - generic [ref=f17e74]:
+      - generic [ref=f17e75]: "03"
+      - generic [ref=f17e76]: UX STRATEGY
+      - generic [ref=f17e77]: EXPLANATION
+    - heading "지도보다 문장, 전국보다 우리 동네" [level=2] [ref=f17e78]
+    - generic [ref=f17e79]:
+      - generic [ref=f17e80]:
+        - generic [ref=f17e81]: Step 1 · P1
+        - heading "우리 동네 지금" [level=3] [ref=f17e82]
+        - paragraph [ref=f17e83]: 지역 · 기호와 상태 텍스트 · 기온 · 갱신 시각을 한 블록에.
+      - generic [ref=f17e84]:
+        - generic [ref=f17e85]: Step 2 · P1
+        - heading "인접 지점" [level=3] [ref=f17e86]
+        - paragraph [ref=f17e87]: 같은 시각의 인천·수원·춘천 값을 카드 3개로.
+      - generic [ref=f17e88]:
+        - generic [ref=f17e89]: Step 3 · P2
+        - heading "전국 지금" [level=3] [ref=f17e90]
+        - paragraph [ref=f17e91]: 39곳을 권역 6개 목록으로. 상태 분포를 실제 개수 막대로.
+      - generic [ref=f17e92]:
+        - generic [ref=f17e93]: Step 4 · P3
+        - heading "지도는 한 곳으로" [level=3] [ref=f17e94]
+        - paragraph [ref=f17e95]: 공지는 한 줄 배너, 지도는 ‘지도로 보기’ 하나.
+    - generic [ref=f17e96]:
+      - generic [ref=f17e97]:
+        - generic [ref=f17e98]: 수치를 만들지 않는다
+        - paragraph [ref=f17e99]: 시간별 예보는 수집하지 않았기 때문에, 화면에서는 ‘데이터 미수집’ 상태로 보여 줍니다. 빈 상태도 하나의 UI 상태로 설계했습니다.
+      - generic [ref=f17e100]:
+        - generic [ref=f17e101]: 기호만으로 말하지 않는다
+        - paragraph [ref=f17e102]: 모든 기호 옆에 원 사이트의 상태 문구(맑음 · 구름많음 · 흐림 · 약한비단속)를 그대로 붙였습니다.
+  - generic [ref=f17e104]:
+    - generic [ref=f17e105]:
+      - generic [ref=f17e106]: "04"
+      - generic [ref=f17e107]: VISUAL DIRECTION
+      - generic [ref=f17e108]: EXPLANATION
+    - heading "Sky Glyphs — 기호로 읽는 하늘" [level=2] [ref=f17e109]
+    - paragraph [ref=f17e110]: 세 방향을 서비스 연관 · UX 근거 · 차별성 · 제작 가능성으로 비교했습니다.
+    - generic [ref=f17e111]:
+      - generic [ref=f17e112]:
+        - generic [ref=f17e113]: 선택
+        - heading "A. Sky Glyphs" [level=3] [ref=f17e114]
+        - paragraph [ref=f17e115]: 원 사이트가 이미 지점마다 날씨 기호와 상태 문구를 씁니다. 그 체계를 더 읽기 쉬운 기하 기호로 바꾸고, 39곳의 실제 상태값을 그대로 표현합니다.
+      - generic [ref=f17e116]:
+        - generic [ref=f17e117]: 기각
+        - heading "B. Almanac" [level=3] [ref=f17e118]
+        - paragraph [ref=f17e119]: 신문 기상란 같은 세리프 편집. 표는 읽기 좋지만 ‘한눈 요약’에 약하고, 에디토리얼 계열이 이전 프로젝트와 일부 겹칩니다.
+      - generic [ref=f17e120]:
+        - generic [ref=f17e121]: 기각
+        - heading "C. Hour Ribbon" [level=3] [ref=f17e122]
+        - paragraph [ref=f17e123]: 24시간 띠 그래프. 시간별 수치를 수집하지 않아 실제 데이터로 채울 수 없고, 선 그래픽이 이전 프로젝트와 겹칩니다.
+    - generic [ref=f17e124]:
+      - generic [ref=f17e125]:
+        - generic [ref=f17e126]: Glyph system
+        - generic [ref=f17e127]:
+          - generic [ref=f17e128]: 맑음
+          - generic [ref=f17e131]: 구름많음
+          - generic [ref=f17e134]: 흐림
+          - generic [ref=f17e137]: 약한비단속
+          - generic [ref=f17e140]: 자료 없음
+        - paragraph [ref=f17e143]: 상태마다 기호 1개, 크기만 바뀝니다(16 · 24 · 40 · 120). 공식 기상 기호가 아니라 이 프로젝트에서 새로 그린 제안입니다.
+      - generic [ref=f17e144]:
+        - generic [ref=f17e145]: Typography — aesthetic proposal
+        - paragraph [ref=f17e146]: 22.1℃
+        - paragraph [ref=f17e147]: 구름많음 · Gothic A1
+        - paragraph [ref=f17e148]: 숫자는 Space Grotesk, 한글은 Gothic A1. 근거 없는 미감 선택이라 AESTHETIC PROPOSAL로 기록했습니다. 웹 서체가 없으면 시스템 서체로 표시됩니다.
+  - generic [ref=f17e150]:
+    - generic [ref=f17e151]:
+      - generic [ref=f17e152]: "05"
+      - generic [ref=f17e153]: DESIGN SYSTEM
+      - generic [ref=f17e154]: EVIDENCE
+    - heading "밤의 히어로와 종이색 본문" [level=2] [ref=f17e155]
+    - paragraph [ref=f17e156]: "관측값의 갱신 시각이 21:00이어서, 첫 화면 히어로를 밤색으로 정했습니다. 기호 색은 그래픽 대비 3 : 1 이상으로만 쓰고, 글자 색으로는 쓰지 않습니다. 대비는 수동 계산한 근사값입니다."
+    - generic [ref=f17e158]:
+      - generic [ref=f17e159]:
+        - text: "sky-night #10203F"
+        - generic [ref=f17e161]: "흰 글자 ≈ 15 : 1"
+      - generic [ref=f17e162]:
+        - text: "paper #F6F4EE"
+        - generic [ref=f17e164]: "ink ≈ 16 : 1"
+      - generic [ref=f17e165]:
+        - text: "glyph-sun #B87400"
+        - generic [ref=f17e167]: "그래픽 ≈ 3.4 : 1"
+      - generic [ref=f17e168]:
+        - text: "glyph-cloud #6B7A90"
+        - generic [ref=f17e170]: "그래픽 ≈ 4.0 : 1"
+      - generic [ref=f17e171]:
+        - text: "glyph-rain #1F5FD6"
+        - generic [ref=f17e173]: "≈ 5.2 : 1"
+      - generic [ref=f17e174]:
+        - text: "accent #1F4FD1"
+        - generic [ref=f17e176]: "링크 ≈ 5.5 : 1"
+    - generic [ref=f17e177]:
+      - generic [ref=f17e178]: Components
+      - table [ref=f17e179]:
+        - rowgroup [ref=f17e180]:
+          - row [ref=f17e181]:
+            - columnheader "이름" [ref=f17e182]
+            - columnheader "역할" [ref=f17e183]
+            - columnheader "문제" [ref=f17e184]
+          - row [ref=f17e185]:
+            - cell "now-hero" [ref=f17e186]
+            - cell "지역 · 기호 · 기온 · 상태 · 갱신 시각 · 특보 칩" [ref=f17e187]
+            - cell "P1" [ref=f17e188]
+          - row [ref=f17e189]:
+            - cell "station-card / station-row" [ref=f17e190]
+            - cell "기호 + 지점 + 상태 텍스트 + 기온" [ref=f17e191]
+            - cell "P1 · P2" [ref=f17e192]
+          - row [ref=f17e193]:
+            - cell "dist-bar" [ref=f17e194]
+            - cell "상태별 실제 개수 막대 + 범례" [ref=f17e195]
+            - cell "P2" [ref=f17e196]
+          - row [ref=f17e197]:
+            - cell "empty-module" [ref=f17e198]
+            - cell "수집하지 않은 데이터를 수치 없이 표시" [ref=f17e199]
+            - cell "—" [ref=f17e200]
+          - row [ref=f17e201]:
+            - cell "notice-inline · link-card" [ref=f17e202]
+            - cell "공지 한 줄 · 지도 단일 진입" [ref=f17e203]
+            - cell "P3" [ref=f17e204]
+  - generic [ref=f17e206]:
+    - generic [ref=f17e207]:
+      - generic [ref=f17e208]: "06"
+      - generic [ref=f17e209]: DESKTOP EXPERIENCE
+      - generic [ref=f17e210]: SHOWCASE
+    - heading "Desktop 1440 — 실제 HTML 화면" [level=2] [ref=f17e211]
+    - paragraph [ref=f17e212]:
+      - text: 아래 프레임은 이미지가 아니라
+      - code [ref=f17e213]: ui/pages/
+      - text: 의 실제 페이지를 1440 폭으로 불러와 화면 폭에 맞게 축소한 것입니다(프레임 안에서 스크롤 가능).
+    - heading "A. 우리 동네 지금" [level=3] [ref=f17e214]
+    - iframe [ref=f17e216]:
+      - generic [ref=f18e1]:
+        - link "본문 바로가기" [ref=f18e2] [cursor=pointer]:
+          - /url: "#main"
+        - banner [ref=f18e3]:
+          - generic [ref=f18e4]:
+            - generic [ref=f18e5]:
+              - text: 날씨누리
+              - generic [ref=f18e6]: 리디자인 콘셉트 · 비공식
+            - navigation "주 메뉴" [ref=f18e7]:
+              - link "우리 동네 지금" [ref=f18e8] [cursor=pointer]:
+                - /url: now.html
+              - link "전국 지금" [ref=f18e9] [cursor=pointer]:
+                - /url: nation.html
+              - link "특보·예보" [ref=f18e10] [cursor=pointer]:
+                - /url: "#"
+              - link "지도로 보기" [ref=f18e11] [cursor=pointer]:
+                - /url: "#"
+        - note [ref=f18e12]:
+          - generic [ref=f18e13]:
+            - generic [ref=f18e14]:
+              - text: 새로운 날씨지도가 나왔습니다.
+              - link "지도로 보기" [ref=f18e15] [cursor=pointer]:
+                - /url: "#"
+              - text: 에서 바로 열 수 있습니다.
+            - button "공지 닫기" [ref=f18e16] [cursor=pointer]: 닫기 ✕
+        - main [ref=f18e17]:
+          - generic [ref=f18e20]:
+            - generic [ref=f18e21]:
+              - generic [ref=f18e22]: 우리 동네
+              - heading "서울" [level=1] [ref=f18e23]
+              - button "위치 변경" [ref=f18e24]
+              - button "관심지역" [ref=f18e25]
+            - generic [ref=f18e26]:
+              - generic [ref=f18e27]: "22.1"
+              - generic [ref=f18e28]: ℃
+            - generic [ref=f18e29]: 구름많음
+            - paragraph [ref=f18e32]: 09.30(수) 21:00 갱신 · 날씨지도 표시값 · 서울 지점
+            - generic [ref=f18e33]: 전국특보 없음
+          - generic [ref=f18e37]:
+            - region [ref=f18e38]:
+              - heading "수도권·인접 지점" [level=2] [ref=f18e39]
+              - paragraph [ref=f18e40]: 같은 시각(09.30 21:00) 날씨지도 표시값
+              - generic [ref=f18e41]:
+                - generic [ref=f18e42]:
+                  - generic [ref=f18e45]:
+                    - generic [ref=f18e46]: 인천
+                    - generic [ref=f18e47]: 구름많음
+                  - generic [ref=f18e48]: 21.8°
+                - generic [ref=f18e49]:
+                  - generic [ref=f18e52]:
+                    - generic [ref=f18e53]: 수원
+                    - generic [ref=f18e54]: 맑음
+                  - generic [ref=f18e55]: 21.0°
+                - generic [ref=f18e56]:
+                  - generic [ref=f18e59]:
+                    - generic [ref=f18e60]: 춘천
+                    - generic [ref=f18e61]: 흐림
+                  - generic [ref=f18e62]: 18.3°
+            - region [ref=f18e63]:
+              - heading "시간별 예보" [level=2] [ref=f18e64]
+              - generic [ref=f18e65]:
+                - generic [ref=f18e69]:
+                  - strong [ref=f18e70]: 이 시안에는 시간별 예보 수치가 없습니다
+                  - paragraph [ref=f18e71]: 조사에서 시간별 예보 값을 수집하지 않아, 수치를 만들어 넣지 않았습니다. 이 시안 구조에서는 이 자리에 시간 순서대로 기호·기온·강수 정보를 넣도록 설계했습니다.
+                - generic [aria-hidden] [ref=f18e72]:
+                  - generic [ref=f18e73]: —
+                  - generic [ref=f18e74]: —
+                  - generic [ref=f18e75]: —
+                  - generic [ref=f18e76]: —
+                  - generic [ref=f18e77]: —
+                  - generic [ref=f18e78]: —
+                  - generic [ref=f18e79]: —
+                  - generic [ref=f18e80]: —
+            - region [ref=f18e81]:
+              - heading "다음에 볼 것" [level=2] [ref=f18e82]
+              - paragraph [ref=f18e83]: 지도는 하나의 진입점으로 모았습니다
+              - generic [ref=f18e84]:
+                - generic [ref=f18e86]: 전국특보 없음
+                - generic [ref=f18e87]: 홈 상단 표시 기준
+              - generic [ref=f18e88]:
+                - link [ref=f18e89] [cursor=pointer]:
+                  - /url: nation.html
+                  - strong [ref=f18e90]: 전국 지금 →
+                  - text: 39개 지점을 권역별로 보기
+                - link [ref=f18e91] [cursor=pointer]:
+                  - /url: "#"
+                  - strong [ref=f18e92]: 지도로 보기 →
+                  - text: 레이어(강수·바람·기온)는 지도 안에서 선택
+                - link [ref=f18e93] [cursor=pointer]:
+                  - /url: "#"
+                  - strong [ref=f18e94]: 대기질 예·경보 →
+                  - text: 에어코리아로 연결(원 사이트 링크)
+        - contentinfo [ref=f18e95]:
+          - generic [ref=f18e96]:
+            - strong [ref=f18e97]: 비공식 개인 포트폴리오 · AUTORUN_03
+            - text: 기상청 날씨누리의 공식 서비스가 아닙니다. 기온·날씨 상태·특보 표시는 2026-09-30 날씨누리 홈(21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 공지 문구는 원 공지를 줄여 쓴 리디자인 문안입니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다.
+    - generic [ref=f17e217]:
+      - generic [ref=f17e218]:
+        - generic [ref=f17e219]: P1 → 지역 요약 먼저
+        - text: 서울 · 22.1℃ · 구름많음을 기호와 문장으로 맨 위에.
+      - generic [ref=f17e220]:
+        - generic [ref=f17e221]: 빈 상태를 정직하게
+        - text: 시간별 예보는 수치 없이 ‘미수집’ 상태로.
+      - generic [ref=f17e222]:
+        - generic [ref=f17e223]: P3 → 지도 진입 하나
+        - text: 공지는 한 줄, 지도는 ‘지도로 보기’ 하나.
+    - heading "B. 전국 지금" [level=3] [ref=f17e224]
+    - iframe [ref=f17e226]:
+      - generic [ref=f19e1]:
+        - link "본문 바로가기" [ref=f19e2] [cursor=pointer]:
+          - /url: "#main"
+        - banner [ref=f19e3]:
+          - generic [ref=f19e4]:
+            - generic [ref=f19e5]:
+              - text: 날씨누리
+              - generic [ref=f19e6]: 리디자인 콘셉트 · 비공식
+            - navigation "주 메뉴" [ref=f19e7]:
+              - link "우리 동네 지금" [ref=f19e8] [cursor=pointer]:
+                - /url: now.html
+              - link "전국 지금" [ref=f19e9] [cursor=pointer]:
+                - /url: nation.html
+              - link "특보·예보" [ref=f19e10] [cursor=pointer]:
+                - /url: "#"
+              - link "지도로 보기" [ref=f19e11] [cursor=pointer]:
+                - /url: "#"
+        - main [ref=f19e12]:
+          - generic [ref=f19e13]:
+            - heading "전국 지금" [level=1] [ref=f19e14]
+            - paragraph [ref=f19e15]: 09.30(수) 21:00 갱신 · 지점 39곳 · 날씨지도 표시값
+            - generic [ref=f19e16]: 전국특보 없음
+          - region [ref=f19e17]:
+            - heading "지금 하늘 상태 · 39곳" [level=2] [ref=f19e18]
+            - img "맑음 28곳, 구름많음 9곳, 흐림 1곳, 약한비단속 1곳" [ref=f19e19]
+            - generic [ref=f19e24]:
+              - generic [ref=f19e25]:
+                - text: 맑음
+                - generic [ref=f19e28]: "28"
+              - generic [ref=f19e29]:
+                - text: 구름많음
+                - generic [ref=f19e32]: "9"
+              - generic [ref=f19e33]:
+                - text: 흐림
+                - generic [ref=f19e36]: "1"
+              - generic [ref=f19e37]:
+                - text: 약한비단속
+                - generic [ref=f19e40]: "1"
+              - generic [ref=f19e41]: 자료 없음 표기(이번 39곳에는 없음)
+          - generic [ref=f19e44]:
+            - region [ref=f19e45]:
+              - heading "수도권 4곳" [level=3] [ref=f19e46]:
+                - text: 수도권
+                - generic [ref=f19e47]: 4곳
+              - list [ref=f19e48]:
+                - listitem [ref=f19e49]:
+                  - generic [ref=f19e52]: 서울
+                  - generic [ref=f19e53]: 구름많음
+                  - generic [ref=f19e54]: 22.1°
+                - listitem [ref=f19e55]:
+                  - generic [ref=f19e58]: 인천
+                  - generic [ref=f19e59]: 구름많음
+                  - generic [ref=f19e60]: 21.8°
+                - listitem [ref=f19e61]:
+                  - generic [ref=f19e64]: 수원
+                  - generic [ref=f19e65]: 맑음
+                  - generic [ref=f19e66]: 21.0°
+                - listitem [ref=f19e67]:
+                  - generic [ref=f19e70]: 백령도
+                  - generic [ref=f19e71]: 맑음
+                  - generic [ref=f19e72]: 18.1°
+            - region [ref=f19e73]:
+              - heading "강원 4곳" [level=3] [ref=f19e74]:
+                - text: 강원
+                - generic [ref=f19e75]: 4곳
+              - list [ref=f19e76]:
+                - listitem [ref=f19e77]:
+                  - generic [ref=f19e80]: 춘천
+                  - generic [ref=f19e81]: 흐림
+                  - generic [ref=f19e82]: 18.3°
+                - listitem [ref=f19e83]:
+                  - generic [ref=f19e86]: 북춘천
+                  - generic [ref=f19e87]: 약한비단속
+                  - generic [ref=f19e88]: 17.9°
+                - listitem [ref=f19e89]:
+                  - generic [ref=f19e92]: 강릉
+                  - generic [ref=f19e93]: 맑음
+                  - generic [ref=f19e94]: 24.3°
+                - listitem [ref=f19e95]:
+                  - generic [ref=f19e98]: 북강릉
+                  - generic [ref=f19e99]: 맑음
+                  - generic [ref=f19e100]: 22.9°
+            - region [ref=f19e101]:
+              - heading "충청 3곳" [level=3] [ref=f19e102]:
+                - text: 충청
+                - generic [ref=f19e103]: 3곳
+              - list [ref=f19e104]:
+                - listitem [ref=f19e105]:
+                  - generic [ref=f19e108]: 대전
+                  - generic [ref=f19e109]: 맑음
+                  - generic [ref=f19e110]: 21.0°
+                - listitem [ref=f19e111]:
+                  - generic [ref=f19e114]: 청주
+                  - generic [ref=f19e115]: 맑음
+                  - generic [ref=f19e116]: 21.7°
+                - listitem [ref=f19e117]:
+                  - generic [ref=f19e120]: 홍성
+                  - generic [ref=f19e121]: 구름많음
+                  - generic [ref=f19e122]: 19.3°
+            - region [ref=f19e123]:
+              - heading "전라 14곳" [level=3] [ref=f19e124]:
+                - text: 전라
+                - generic [ref=f19e125]: 14곳
+              - list [ref=f19e126]:
+                - listitem [ref=f19e127]:
+                  - generic [ref=f19e130]: 광주
+                  - generic [ref=f19e131]: 맑음
+                  - generic [ref=f19e132]: 22.1°
+                - listitem [ref=f19e133]:
+                  - generic [ref=f19e136]: 전주
+                  - generic [ref=f19e137]: 맑음
+                  - generic [ref=f19e138]: 20.6°
+                - listitem [ref=f19e139]:
+                  - generic [ref=f19e142]: 목포
+                  - generic [ref=f19e143]: 맑음
+                  - generic [ref=f19e144]: 21.7°
+                - listitem [ref=f19e145]:
+                  - generic [ref=f19e148]: 여수
+                  - generic [ref=f19e149]: 맑음
+                  - generic [ref=f19e150]: 23.0°
+                - listitem [ref=f19e151]:
+                  - generic [ref=f19e154]: 순천
+                  - generic [ref=f19e155]: 맑음
+                  - generic [ref=f19e156]: 18.8°
+                - listitem [ref=f19e157]:
+                  - generic [ref=f19e160]: 완도
+                  - generic [ref=f19e161]: 구름많음
+                  - generic [ref=f19e162]: 22.1°
+                - listitem [ref=f19e163]:
+                  - generic [ref=f19e166]: 해남
+                  - generic [ref=f19e167]: 구름많음
+                  - generic [ref=f19e168]: 22.1°
+                - listitem [ref=f19e169]:
+                  - generic [ref=f19e172]: 장흥
+                  - generic [ref=f19e173]: 구름많음
+                  - generic [ref=f19e174]: 22.3°
+                - listitem [ref=f19e175]:
+                  - generic [ref=f19e178]: 강진군
+                  - generic [ref=f19e179]: 구름많음
+                  - generic [ref=f19e180]: 22.5°
+                - listitem [ref=f19e181]:
+                  - generic [ref=f19e184]: 보성군
+                  - generic [ref=f19e185]: 맑음
+                  - generic [ref=f19e186]: 22.0°
+                - listitem [ref=f19e187]:
+                  - generic [ref=f19e190]: 고흥
+                  - generic [ref=f19e191]: 맑음
+                  - generic [ref=f19e192]: 22.5°
+                - listitem [ref=f19e193]:
+                  - generic [ref=f19e196]: 진도군
+                  - generic [ref=f19e197]: 구름많음
+                  - generic [ref=f19e198]: 21.4°
+                - listitem [ref=f19e199]:
+                  - generic [ref=f19e202]: 광양시
+                  - generic [ref=f19e203]: 맑음
+                  - generic [ref=f19e204]: 21.6°
+                - listitem [ref=f19e205]:
+                  - generic [ref=f19e208]: 흑산도
+                  - generic [ref=f19e209]: 구름많음
+                  - generic [ref=f19e210]: 19.7°
+            - region [ref=f19e211]:
+              - heading "경상 10곳" [level=3] [ref=f19e212]:
+                - text: 경상
+                - generic [ref=f19e213]: 10곳
+              - list [ref=f19e214]:
+                - listitem [ref=f19e215]:
+                  - generic [ref=f19e218]: 부산
+                  - generic [ref=f19e219]: 맑음
+                  - generic [ref=f19e220]: 22.4°
+                - listitem [ref=f19e221]:
+                  - generic [ref=f19e224]: 대구
+                  - generic [ref=f19e225]: 맑음
+                  - generic [ref=f19e226]: 23.1°
+                - listitem [ref=f19e227]:
+                  - generic [ref=f19e230]: 울산
+                  - generic [ref=f19e231]: 맑음
+                  - generic [ref=f19e232]: 20.2°
+                - listitem [ref=f19e233]:
+                  - generic [ref=f19e236]: 창원
+                  - generic [ref=f19e237]: 맑음
+                  - generic [ref=f19e238]: 21.1°
+                - listitem [ref=f19e239]:
+                  - generic [ref=f19e242]: 포항
+                  - generic [ref=f19e243]: 맑음
+                  - generic [ref=f19e244]: 23.4°
+                - listitem [ref=f19e245]:
+                  - generic [ref=f19e248]: 안동
+                  - generic [ref=f19e249]: 맑음
+                  - generic [ref=f19e250]: 20.5°
+                - listitem [ref=f19e251]:
+                  - generic [ref=f19e254]: 통영
+                  - generic [ref=f19e255]: 맑음
+                  - generic [ref=f19e256]: 21.2°
+                - listitem [ref=f19e257]:
+                  - generic [ref=f19e260]: 거제
+                  - generic [ref=f19e261]: 맑음
+                  - generic [ref=f19e262]: 20.5°
+                - listitem [ref=f19e263]:
+                  - generic [ref=f19e266]: 남해
+                  - generic [ref=f19e267]: 맑음
+                  - generic [ref=f19e268]: 20.5°
+                - listitem [ref=f19e269]:
+                  - generic [ref=f19e272]: 울릉도
+                  - generic [ref=f19e273]: 맑음
+                  - generic [ref=f19e274]: 21.4°
+            - region [ref=f19e275]:
+              - heading "제주 4곳" [level=3] [ref=f19e276]:
+                - text: 제주
+                - generic [ref=f19e277]: 4곳
+              - list [ref=f19e278]:
+                - listitem [ref=f19e279]:
+                  - generic [ref=f19e282]: 제주
+                  - generic [ref=f19e283]: 맑음
+                  - generic [ref=f19e284]: 23.3°
+                - listitem [ref=f19e285]:
+                  - generic [ref=f19e288]: 서귀포
+                  - generic [ref=f19e289]: 맑음
+                  - generic [ref=f19e290]: 23.6°
+                - listitem [ref=f19e291]:
+                  - generic [ref=f19e294]: 성산
+                  - generic [ref=f19e295]: 맑음
+                  - generic [ref=f19e296]: 21.1°
+                - listitem [ref=f19e297]:
+                  - generic [ref=f19e300]: 고산
+                  - generic [ref=f19e301]: 맑음
+                  - generic [ref=f19e302]: 23.0°
+          - paragraph [ref=f19e303]: 권역 분류는 이 시안의 분류입니다. 원 화면의 해상 관측 지점(32곳)은 이번 범위에서 제외했습니다. 지도는 상단 ‘지도로 보기’ 하나로 들어갑니다.
+        - contentinfo [ref=f19e304]:
+          - generic [ref=f19e305]:
+            - strong [ref=f19e306]: 비공식 개인 포트폴리오 · AUTORUN_03
+            - text: 기상청 날씨누리의 공식 서비스가 아닙니다. 39개 지점의 날씨 상태와 기온은 2026-09-30 날씨누리 홈 날씨지도(21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다.
+    - generic [ref=f17e227]:
+      - generic [ref=f17e228]:
+        - generic [ref=f17e229]: 실제 개수 막대
+        - text: 맑음 28 · 구름많음 9 · 흐림 1 · 약한비단속 1.
+      - generic [ref=f17e230]:
+        - generic [ref=f17e231]: 권역별 목록
+        - text: 39곳을 지도 없이 훑기. 기호마다 상태 문구 병기.
+      - generic [ref=f17e232]:
+        - generic [ref=f17e233]: ‘자료 없음’ 정의
+        - text: NaN 같은 내부 값을 노출하지 않는 상태 기호.
+  - generic [ref=f17e235]:
+    - generic [ref=f17e236]:
+      - generic [ref=f17e237]: "07"
+      - generic [ref=f17e238]: MOBILE EXPERIENCE
+      - generic [ref=f17e239]: SHOWCASE
+    - heading "Mobile 390 — 같은 순서, 한 줄로" [level=2] [ref=f17e240]
+    - paragraph [ref=f17e241]: 같은 페이지가 600px 이하에서 세로 스택으로 바뀝니다. 메뉴는 버튼으로 접고, 히어로 기호를 줄이며, 권역 카드는 한 줄로 쌓습니다. 모바일 원 화면은 조사하지 않았으므로, 이 구조는 근거가 아닌 제안입니다.
+    - generic [ref=f17e242]:
+      - generic [ref=f17e243]:
+        - iframe [ref=f17e244]:
+          - generic [ref=f20e1]:
+            - link "본문 바로가기" [ref=f20e2] [cursor=pointer]:
+              - /url: "#main"
+            - banner [ref=f20e3]:
+              - generic [ref=f20e4]:
+                - generic [ref=f20e5]:
+                  - text: 날씨누리
+                  - generic [ref=f20e6]: 리디자인 콘셉트 · 비공식
+                - button "메뉴" [ref=f20e7]
+            - note [ref=f20e8]:
+              - generic [ref=f20e9]:
+                - generic [ref=f20e10]:
+                  - text: 새로운 날씨지도가 나왔습니다.
+                  - link "지도로 보기" [ref=f20e11] [cursor=pointer]:
+                    - /url: "#"
+                  - text: 에서 바로 열 수 있습니다.
+                - button "공지 닫기" [ref=f20e12] [cursor=pointer]: 닫기 ✕
+            - main [ref=f20e13]:
+              - generic [ref=f20e16]:
+                - generic [ref=f20e17]:
+                  - generic [ref=f20e18]: 우리 동네
+                  - heading "서울" [level=1] [ref=f20e19]
+                  - button "위치 변경" [ref=f20e20]
+                  - button "관심지역" [ref=f20e21]
+                - generic [ref=f20e22]:
+                  - generic [ref=f20e23]: "22.1"
+                  - generic [ref=f20e24]: ℃
+                - generic [ref=f20e25]: 구름많음
+                - paragraph [ref=f20e28]: 09.30(수) 21:00 갱신 · 날씨지도 표시값 · 서울 지점
+                - generic [ref=f20e29]: 전국특보 없음
+              - generic [ref=f20e33]:
+                - region [ref=f20e34]:
+                  - heading "수도권·인접 지점" [level=2] [ref=f20e35]
+                  - paragraph [ref=f20e36]: 같은 시각(09.30 21:00) 날씨지도 표시값
+                  - generic [ref=f20e37]:
+                    - generic [ref=f20e38]:
+                      - generic [ref=f20e41]:
+                        - generic [ref=f20e42]: 인천
+                        - generic [ref=f20e43]: 구름많음
+                      - generic [ref=f20e44]: 21.8°
+                    - generic [ref=f20e45]:
+                      - generic [ref=f20e48]:
+                        - generic [ref=f20e49]: 수원
+                        - generic [ref=f20e50]: 맑음
+                      - generic [ref=f20e51]: 21.0°
+                    - generic [ref=f20e52]:
+                      - generic [ref=f20e55]:
+                        - generic [ref=f20e56]: 춘천
+                        - generic [ref=f20e57]: 흐림
+                      - generic [ref=f20e58]: 18.3°
+                - region [ref=f20e59]:
+                  - heading "시간별 예보" [level=2] [ref=f20e60]
+                  - generic [ref=f20e61]:
+                    - generic [ref=f20e65]:
+                      - strong [ref=f20e66]: 이 시안에는 시간별 예보 수치가 없습니다
+                      - paragraph [ref=f20e67]: 조사에서 시간별 예보 값을 수집하지 않아, 수치를 만들어 넣지 않았습니다. 이 시안 구조에서는 이 자리에 시간 순서대로 기호·기온·강수 정보를 넣도록 설계했습니다.
+                    - generic [aria-hidden] [ref=f20e68]:
+                      - generic [ref=f20e69]: —
+                      - generic [ref=f20e70]: —
+                      - generic [ref=f20e71]: —
+                      - generic [ref=f20e72]: —
+                      - generic [ref=f20e73]: —
+                      - generic [ref=f20e74]: —
+                      - generic [ref=f20e75]: —
+                      - generic [ref=f20e76]: —
+                - region [ref=f20e77]:
+                  - heading "다음에 볼 것" [level=2] [ref=f20e78]
+                  - paragraph [ref=f20e79]: 지도는 하나의 진입점으로 모았습니다
+                  - generic [ref=f20e80]:
+                    - generic [ref=f20e82]: 전국특보 없음
+                    - generic [ref=f20e83]: 홈 상단 표시 기준
+                  - generic [ref=f20e84]:
+                    - link [ref=f20e85] [cursor=pointer]:
+                      - /url: nation.html
+                      - strong [ref=f20e86]: 전국 지금 →
+                      - text: 39개 지점을 권역별로 보기
+                    - link [ref=f20e87] [cursor=pointer]:
+                      - /url: "#"
+                      - strong [ref=f20e88]: 지도로 보기 →
+                      - text: 레이어(강수·바람·기온)는 지도 안에서 선택
+                    - link [ref=f20e89] [cursor=pointer]:
+                      - /url: "#"
+                      - strong [ref=f20e90]: 대기질 예·경보 →
+                      - text: 에어코리아로 연결(원 사이트 링크)
+            - contentinfo [ref=f20e91]:
+              - generic [ref=f20e92]:
+                - strong [ref=f20e93]: 비공식 개인 포트폴리오 · AUTORUN_03
+                - text: 기상청 날씨누리의 공식 서비스가 아닙니다. 기온·날씨 상태·특보 표시는 2026-09-30 날씨누리 홈(21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 공지 문구는 원 공지를 줄여 쓴 리디자인 문안입니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다.
+        - paragraph [ref=f17e245]: A. 우리 동네 지금 — 지역 · 기온 · 상태가 첫 화면에.
+      - generic [ref=f17e246]:
+        - iframe [ref=f17e247]:
+          - generic [ref=f21e1]:
+            - link "본문 바로가기" [ref=f21e2] [cursor=pointer]:
+              - /url: "#main"
+            - banner [ref=f21e3]:
+              - generic [ref=f21e4]:
+                - generic [ref=f21e5]:
+                  - text: 날씨누리
+                  - generic [ref=f21e6]: 리디자인 콘셉트 · 비공식
+                - button "메뉴" [ref=f21e7]
+            - main [ref=f21e8]:
+              - generic [ref=f21e9]:
+                - heading "전국 지금" [level=1] [ref=f21e10]
+                - paragraph [ref=f21e11]: 09.30(수) 21:00 갱신 · 지점 39곳 · 날씨지도 표시값
+                - generic [ref=f21e12]: 전국특보 없음
+              - region [ref=f21e13]:
+                - heading "지금 하늘 상태 · 39곳" [level=2] [ref=f21e14]
+                - img "맑음 28곳, 구름많음 9곳, 흐림 1곳, 약한비단속 1곳" [ref=f21e15]
+                - generic [ref=f21e20]:
+                  - generic [ref=f21e21]:
+                    - text: 맑음
+                    - generic [ref=f21e24]: "28"
+                  - generic [ref=f21e25]:
+                    - text: 구름많음
+                    - generic [ref=f21e28]: "9"
+                  - generic [ref=f21e29]:
+                    - text: 흐림
+                    - generic [ref=f21e32]: "1"
+                  - generic [ref=f21e33]:
+                    - text: 약한비단속
+                    - generic [ref=f21e36]: "1"
+                  - generic [ref=f21e37]: 자료 없음 표기(이번 39곳에는 없음)
+              - generic [ref=f21e40]:
+                - region [ref=f21e41]:
+                  - heading "수도권 4곳" [level=3] [ref=f21e42]:
+                    - text: 수도권
+                    - generic [ref=f21e43]: 4곳
+                  - list [ref=f21e44]:
+                    - listitem [ref=f21e45]:
+                      - generic [ref=f21e48]: 서울
+                      - generic [ref=f21e49]: 구름많음
+                      - generic [ref=f21e50]: 22.1°
+                    - listitem [ref=f21e51]:
+                      - generic [ref=f21e54]: 인천
+                      - generic [ref=f21e55]: 구름많음
+                      - generic [ref=f21e56]: 21.8°
+                    - listitem [ref=f21e57]:
+                      - generic [ref=f21e60]: 수원
+                      - generic [ref=f21e61]: 맑음
+                      - generic [ref=f21e62]: 21.0°
+                    - listitem [ref=f21e63]:
+                      - generic [ref=f21e66]: 백령도
+                      - generic [ref=f21e67]: 맑음
+                      - generic [ref=f21e68]: 18.1°
+                - region [ref=f21e69]:
+                  - heading "강원 4곳" [level=3] [ref=f21e70]:
+                    - text: 강원
+                    - generic [ref=f21e71]: 4곳
+                  - list [ref=f21e72]:
+                    - listitem [ref=f21e73]:
+                      - generic [ref=f21e76]: 춘천
+                      - generic [ref=f21e77]: 흐림
+                      - generic [ref=f21e78]: 18.3°
+                    - listitem [ref=f21e79]:
+                      - generic [ref=f21e82]: 북춘천
+                      - generic [ref=f21e83]: 약한비단속
+                      - generic [ref=f21e84]: 17.9°
+                    - listitem [ref=f21e85]:
+                      - generic [ref=f21e88]: 강릉
+                      - generic [ref=f21e89]: 맑음
+                      - generic [ref=f21e90]: 24.3°
+                    - listitem [ref=f21e91]:
+                      - generic [ref=f21e94]: 북강릉
+                      - generic [ref=f21e95]: 맑음
+                      - generic [ref=f21e96]: 22.9°
+                - region [ref=f21e97]:
+                  - heading "충청 3곳" [level=3] [ref=f21e98]:
+                    - text: 충청
+                    - generic [ref=f21e99]: 3곳
+                  - list [ref=f21e100]:
+                    - listitem [ref=f21e101]:
+                      - generic [ref=f21e104]: 대전
+                      - generic [ref=f21e105]: 맑음
+                      - generic [ref=f21e106]: 21.0°
+                    - listitem [ref=f21e107]:
+                      - generic [ref=f21e110]: 청주
+                      - generic [ref=f21e111]: 맑음
+                      - generic [ref=f21e112]: 21.7°
+                    - listitem [ref=f21e113]:
+                      - generic [ref=f21e116]: 홍성
+                      - generic [ref=f21e117]: 구름많음
+                      - generic [ref=f21e118]: 19.3°
+                - region [ref=f21e119]:
+                  - heading "전라 14곳" [level=3] [ref=f21e120]:
+                    - text: 전라
+                    - generic [ref=f21e121]: 14곳
+                  - list [ref=f21e122]:
+                    - listitem [ref=f21e123]:
+                      - generic [ref=f21e126]: 광주
+                      - generic [ref=f21e127]: 맑음
+                      - generic [ref=f21e128]: 22.1°
+                    - listitem [ref=f21e129]:
+                      - generic [ref=f21e132]: 전주
+                      - generic [ref=f21e133]: 맑음
+                      - generic [ref=f21e134]: 20.6°
+                    - listitem [ref=f21e135]:
+                      - generic [ref=f21e138]: 목포
+                      - generic [ref=f21e139]: 맑음
+                      - generic [ref=f21e140]: 21.7°
+                    - listitem [ref=f21e141]:
+                      - generic [ref=f21e144]: 여수
+                      - generic [ref=f21e145]: 맑음
+                      - generic [ref=f21e146]: 23.0°
+                    - listitem [ref=f21e147]:
+                      - generic [ref=f21e150]: 순천
+                      - generic [ref=f21e151]: 맑음
+                      - generic [ref=f21e152]: 18.8°
+                    - listitem [ref=f21e153]:
+                      - generic [ref=f21e156]: 완도
+                      - generic [ref=f21e157]: 구름많음
+                      - generic [ref=f21e158]: 22.1°
+                    - listitem [ref=f21e159]:
+                      - generic [ref=f21e162]: 해남
+                      - generic [ref=f21e163]: 구름많음
+                      - generic [ref=f21e164]: 22.1°
+                    - listitem [ref=f21e165]:
+                      - generic [ref=f21e168]: 장흥
+                      - generic [ref=f21e169]: 구름많음
+                      - generic [ref=f21e170]: 22.3°
+                    - listitem [ref=f21e171]:
+                      - generic [ref=f21e174]: 강진군
+                      - generic [ref=f21e175]: 구름많음
+                      - generic [ref=f21e176]: 22.5°
+                    - listitem [ref=f21e177]:
+                      - generic [ref=f21e180]: 보성군
+                      - generic [ref=f21e181]: 맑음
+                      - generic [ref=f21e182]: 22.0°
+                    - listitem [ref=f21e183]:
+                      - generic [ref=f21e186]: 고흥
+                      - generic [ref=f21e187]: 맑음
+                      - generic [ref=f21e188]: 22.5°
+                    - listitem [ref=f21e189]:
+                      - generic [ref=f21e192]: 진도군
+                      - generic [ref=f21e193]: 구름많음
+                      - generic [ref=f21e194]: 21.4°
+                    - listitem [ref=f21e195]:
+                      - generic [ref=f21e198]: 광양시
+                      - generic [ref=f21e199]: 맑음
+                      - generic [ref=f21e200]: 21.6°
+                    - listitem [ref=f21e201]:
+                      - generic [ref=f21e204]: 흑산도
+                      - generic [ref=f21e205]: 구름많음
+                      - generic [ref=f21e206]: 19.7°
+                - region [ref=f21e207]:
+                  - heading "경상 10곳" [level=3] [ref=f21e208]:
+                    - text: 경상
+                    - generic [ref=f21e209]: 10곳
+                  - list [ref=f21e210]:
+                    - listitem [ref=f21e211]:
+                      - generic [ref=f21e214]: 부산
+                      - generic [ref=f21e215]: 맑음
+                      - generic [ref=f21e216]: 22.4°
+                    - listitem [ref=f21e217]:
+                      - generic [ref=f21e220]: 대구
+                      - generic [ref=f21e221]: 맑음
+                      - generic [ref=f21e222]: 23.1°
+                    - listitem [ref=f21e223]:
+                      - generic [ref=f21e226]: 울산
+                      - generic [ref=f21e227]: 맑음
+                      - generic [ref=f21e228]: 20.2°
+                    - listitem [ref=f21e229]:
+                      - generic [ref=f21e232]: 창원
+                      - generic [ref=f21e233]: 맑음
+                      - generic [ref=f21e234]: 21.1°
+                    - listitem [ref=f21e235]:
+                      - generic [ref=f21e238]: 포항
+                      - generic [ref=f21e239]: 맑음
+                      - generic [ref=f21e240]: 23.4°
+                    - listitem [ref=f21e241]:
+                      - generic [ref=f21e244]: 안동
+                      - generic [ref=f21e245]: 맑음
+                      - generic [ref=f21e246]: 20.5°
+                    - listitem [ref=f21e247]:
+                      - generic [ref=f21e250]: 통영
+                      - generic [ref=f21e251]: 맑음
+                      - generic [ref=f21e252]: 21.2°
+                    - listitem [ref=f21e253]:
+                      - generic [ref=f21e256]: 거제
+                      - generic [ref=f21e257]: 맑음
+                      - generic [ref=f21e258]: 20.5°
+                    - listitem [ref=f21e259]:
+                      - generic [ref=f21e262]: 남해
+                      - generic [ref=f21e263]: 맑음
+                      - generic [ref=f21e264]: 20.5°
+                    - listitem [ref=f21e265]:
+                      - generic [ref=f21e268]: 울릉도
+                      - generic [ref=f21e269]: 맑음
+                      - generic [ref=f21e270]: 21.4°
+                - region [ref=f21e271]:
+                  - heading "제주 4곳" [level=3] [ref=f21e272]:
+                    - text: 제주
+                    - generic [ref=f21e273]: 4곳
+                  - list [ref=f21e274]:
+                    - listitem [ref=f21e275]:
+                      - generic [ref=f21e278]: 제주
+                      - generic [ref=f21e279]: 맑음
+                      - generic [ref=f21e280]: 23.3°
+                    - listitem [ref=f21e281]:
+                      - generic [ref=f21e284]: 서귀포
+                      - generic [ref=f21e285]: 맑음
+                      - generic [ref=f21e286]: 23.6°
+                    - listitem [ref=f21e287]:
+                      - generic [ref=f21e290]: 성산
+                      - generic [ref=f21e291]: 맑음
+                      - generic [ref=f21e292]: 21.1°
+                    - listitem [ref=f21e293]:
+                      - generic [ref=f21e296]: 고산
+                      - generic [ref=f21e297]: 맑음
+                      - generic [ref=f21e298]: 23.0°
+              - paragraph [ref=f21e299]: 권역 분류는 이 시안의 분류입니다. 원 화면의 해상 관측 지점(32곳)은 이번 범위에서 제외했습니다. 지도는 상단 ‘지도로 보기’ 하나로 들어갑니다.
+            - contentinfo [ref=f21e300]:
+              - generic [ref=f21e301]:
+                - strong [ref=f21e302]: 비공식 개인 포트폴리오 · AUTORUN_03
+                - text: 기상청 날씨누리의 공식 서비스가 아닙니다. 39개 지점의 날씨 상태와 기온은 2026-09-30 날씨누리 홈 날씨지도(21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다.
+        - paragraph [ref=f17e248]: B. 전국 지금 — 분포 막대 다음에 권역 목록.
+  - generic [ref=f17e250]:
+    - generic [ref=f17e251]:
+      - generic [ref=f17e252]: "08"
+      - generic [ref=f17e253]: OUTCOME & LIMITATIONS
+      - generic [ref=f17e254]: REFLECTION
+    - heading "만든 것과 확인하지 못한 것" [level=2] [ref=f17e255]
+    - generic [ref=f17e256]:
+      - generic [ref=f17e257]:
+        - generic [ref=f17e258]: Outcome
+        - list [ref=f17e259]:
+          - listitem [ref=f17e260]: 반응형 HTML 페이지 2개 → 화면 4개(Desktop·Mobile)
+          - listitem [ref=f17e261]: Glyph 5종, 토큰 CSS, 디자인 시스템 문서
+          - listitem [ref=f17e262]: WHY 기록 W1–W8, 조사 기록 3개
+      - generic [ref=f17e263]:
+        - generic [ref=f17e264]: Self QA
+        - list [ref=f17e265]:
+          - listitem [ref=f17e266]: "야간: 정적 코드 검수 2회, 수정 7건(렌더 도구 미허용)"
+          - listitem [ref=f17e267]: "다음 날 감독 세션: 로컬 서버에서 브라우저 Render 검수 — 1440·390 화면 4개와 이 문서를 실제 이미지로 확인, 수정 3건"
+          - listitem [ref=f17e268]: 수정 기록은 night-run-report 참고
+      - generic [ref=f17e269]:
+        - generic [ref=f17e270]: Limitations
+        - list [ref=f17e271]:
+          - listitem [ref=f17e272]: 사용자 인터뷰·테스트 없음
+          - listitem [ref=f17e273]: 근거는 홈 1페이지의 접근성 트리뿐 — 시각 화면·모바일·상세 예보 미조사
+          - listitem [ref=f17e274]: 시간별 예보 수치 없음(미수집 상태로 표시)
+          - listitem [ref=f17e275]: 대비는 수동 계산 근사값
+    - generic [ref=f17e276]:
+      - generic [ref=f17e277]: AI-assisted
+      - paragraph [ref=f17e278]: 서비스 선정, 문제 정의, 방향 선택, 화면 제작, 검수는 AI가 사용자 부재 중 자율적으로 수행했습니다. 중간 디자인 승인은 없었습니다. 성과 지표(KPI)는 측정하지 않았고 제시하지 않습니다.
+  - contentinfo [ref=f17e279]:
+    - generic [ref=f17e280]:
+      - strong [ref=f17e281]: 비공식 개인 포트폴리오 · AUTORUN_03
+      - text: "기상청 날씨누리의 공식 서비스나 디자인이 아닙니다. 지점 39곳의 날씨 상태·기온과 ‘전국특보 없음’은 2026-09-30 날씨누리 홈(지도 21:00 갱신 표시)에서 확인한 값이며 실시간으로 연동되지 않습니다. 기호·색·서체는 리디자인 제안이고, 기상청 로고·지도·기호 이미지는 사용하지 않았습니다. 서체: Gothic A1, Space Grotesk(Google Fonts, 오프라인 시 시스템 서체)."

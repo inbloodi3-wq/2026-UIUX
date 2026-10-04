@@ -1,0 +1,7 @@
+[    1338ms] Uncaught TypeError: Cannot read properties of undefined (reading 'TenantFeatures')
+    at <anonymous> (https://cdn.cookielaw.org/scripttemplates/202606.1.0/otBannerSdk.js:6:562401)
+    at <anonymous> (https://cdn.cookielaw.org/scripttemplates/202606.1.0/otBannerSdk.js:6:572521)
+[    1901ms] [LOG] GTM Piano Analytics Tag Template - Set consent mode -  essential @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    1902ms] [LOG] GTM Piano Analytics Tag Template - Send event -  click.action {click: Geolocalisation Popin, click_chapter1: Open, product_id: undefined, product: undefined, product_category1: undefined} @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    1904ms] [LOG] GTM Piano Analytics Tag Template - Send event -  page.display {page_type: home-page, page: home:home, page_sub_type: undefined, page_category: home, site_language: en} @ https://www.salomon.com/_next/static/immutable/chunks/3l307xw1ldqy0.js:9
+[    3955ms] [ERROR] The path of the provided scope ('/_/service_worker') is not under the max scope allowed ('/_/service_worker/69f0/'). Adjust the scope, move the Service Worker script, or use the Service-Worker-Allowed HTTP header to allow the scope. @ :0

@@ -1,0 +1,45 @@
+/* AUTORUN_03 · Sky Glyphs — design tokens (proposal, not an official KMA identity) */
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap');
+
+:root {
+  /* color */
+  --sky-night: #10203F;
+  --sky-night-2: #1A2D52;
+  --paper: #F6F4EE;
+  --card: #FFFFFF;
+  --ink: #0E1726;
+  --ink-2: #4A5568;
+  --line: #DCD8CE;
+  --on-night: #FFFFFF;
+  --on-night-2: #B9C3D6;
+  --glyph-sun: #B87400;
+  --glyph-sun-night: #FFC233;
+  --glyph-cloud: #6B7A90;
+  --glyph-cloud-night: #C9D3E3;
+  --glyph-overcast: #46505F;
+  --glyph-rain: #1F5FD6;
+  --accent: #1F4FD1;
+
+  /* type */
+  --font-kr: 'Gothic A1', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-num: 'Space Grotesk', system-ui, sans-serif;
+  --fs-12: 12px; --fs-14: 14px; --fs-16: 16px; --fs-18: 18px; --fs-20: 20px;
+  --fs-24: 24px; --fs-32: 32px; --fs-40: 40px; --fs-48: 48px;
+  --fs-display: 96px; --fs-display-m: 72px;
+
+  /* space */
+  --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-20: 20px; --s-24: 24px;
+  --s-32: 32px; --s-40: 40px; --s-48: 48px; --s-64: 64px; --s-96: 96px;
+
+  /* shape */
+  --r-8: 8px; --r-16: 16px; --r-24: 24px;
+  --page-max: 1440px; --gutter-d: 96px; --gutter-m: 20px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: var(--font-kr); color: var(--ink); background: var(--paper); line-height: 1.5; word-break: keep-all; overflow-wrap: break-word; }
+.num { font-family: var(--font-num); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+a { color: var(--accent); }
+.glyph { display: inline-block; flex: none; }

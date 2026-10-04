@@ -1,0 +1,71 @@
+{
+  "project_id": "AUTORUN_03",
+  "mode": "SAFE_NIGHT_RUN",
+  "started_at": "2026-10-01",
+  "current_phase": "CLOSED",
+  "status": "CLOSED",
+  "status_reason": "Morning Render QA PASS(수정 3건). Research는 PARTIAL로 유지(홈 1페이지 스냅샷). Portfolio 후보 판단: TEST_ONLY",
+  "morning_render_qa": {
+    "at": "2026-10-01",
+    "method": "127.0.0.1:8765 정적 서버(검수 후 종료) + Playwright 1440/390 캡처",
+    "result": "PASS",
+    "fixes": ["Mobile A 공지 닫기 버튼 줄바꿈", "Case Study S01 제목 인용구 분리", "Case Study S08 Self QA 문구 사실 갱신"],
+    "fonts_loaded": true,
+    "horizontal_overflow": "none (1440, 390)"
+  },
+  "additional_payment_authorized": false,
+  "automatic_retry": false,
+  "resume_required": false,
+  "tool_policy": {
+    "used": ["Read", "Grep", "Glob", "Write/Edit (experiments/** allowlist)", "Bash(sha256sum *) / Bash(git status *) allowlist"],
+    "not_used": ["Figma (0 calls)", "Playwright (allowlist 밖)", "WebFetch 새 도메인", "Bash 일반 명령(python 등)", "Permission 변경"]
+  },
+  "completed_tasks": [
+    "INITIALIZATION",
+    "SERVICE_SELECTION — 기상청 날씨누리(비공식 리디자인), 따릉이 BLOCKED",
+    "UX_RESEARCH — P1–P3 (PARTIAL)",
+    "VISUAL_DIRECTION — Sky Glyphs",
+    "WHY_LOG — W1–W8 + IMPLEMENTED RESULT",
+    "DESIGN_SYSTEM — tokens.css, design-system.md, glyph 5종",
+    "DESKTOP_UI — 2 screens",
+    "MOBILE_UI — 2 screens",
+    "CASE_STUDY — case-study.html 8 sections",
+    "SELF_QA — static pass 2회, 수정 7건",
+    "FINAL_REPORT — night-run-report.md"
+  ],
+  "created_files": [
+    "experiments/autonomous-run-03/state.json",
+    "experiments/autonomous-run-03/night-run-report.md",
+    "experiments/autonomous-run-03/research/service-selection.md",
+    "experiments/autonomous-run-03/research/ux-research.md",
+    "experiments/autonomous-run-03/research/source-log.md",
+    "experiments/autonomous-run-03/visual-direction.md",
+    "experiments/autonomous-run-03/why-decision-log.md",
+    "experiments/autonomous-run-03/design-system/tokens.css",
+    "experiments/autonomous-run-03/design-system/design-system.md",
+    "experiments/autonomous-run-03/ui/pages/now.html",
+    "experiments/autonomous-run-03/ui/pages/nation.html",
+    "experiments/autonomous-run-03/ui/screens/desktop-a-now.html",
+    "experiments/autonomous-run-03/ui/screens/desktop-b-nation.html",
+    "experiments/autonomous-run-03/ui/screens/mobile-a-now.html",
+    "experiments/autonomous-run-03/ui/screens/mobile-b-nation.html",
+    "experiments/autonomous-run-03/case-study.html"
+  ],
+  "qa_status": {
+    "static_passes": 2,
+    "fixes": 7,
+    "research_self_correction": "상태 분포 27/10 → 28/9 (재계수)",
+    "visual_render": "UNVERIFIED",
+    "contrast": "PARTIAL — 수동 계산 근사값"
+  },
+  "blockers": [
+    { "item": "Render 기반 Visual QA", "status": "BLOCKED", "reason": "렌더링 도구가 사전 허용 목록 밖" },
+    { "item": "새 후보 도메인 조사", "status": "BLOCKED", "reason": "새 도메인 접근은 승인 필요 — 기존 스냅샷만 사용" }
+  ],
+  "protection": {
+    "figma_modified": false,
+    "other_projects_modified": false,
+    "tj_media_sha256": "match (absolute-path recheck)"
+  },
+  "next_resume_point": "사용자 아침 확인: 브라우저 렌더 확인 → (승인 시) Playwright 로컬 렌더 QA Pass 3"
+}

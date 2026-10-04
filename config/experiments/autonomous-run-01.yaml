@@ -1,0 +1,153 @@
+# Experiment Project Config — AUTORUN_01
+# Schema: config/project-template.yaml 기준. TJ MEDIA 기록(config/project.yaml)과 분리된 실험용 Config다.
+# 사용자가 AUTORUN_01을 지정한 작업에서만 활성 Config로 사용한다(CLAUDE.md "시작할 때 항상 먼저 한다").
+# 비어 있는 값은 아직 정해지지 않은 것이며 Agent가 추정해 채우지 않는다(Level 3).
+
+project:
+  id: "AUTORUN_01"            # 사용자 지정 ID(템플릿의 kebab-case 권장과 다름 — 사용자 요구 우선). 파일/디렉터리명은 autonomous-run-01
+  name: "Autonomous Design System V2 — Run 01"
+  url: "https://sema.seoul.go.kr/"   # 2026-09-30 AUTONOMOUS_RESEARCH_TEST에서 선정·접근 확인
+  target_service: "서울시립미술관 SeMA (Seoul Museum of Art)"
+  industry: "Culture / Exhibition / Experience Discovery"
+  type: "Experimental Web Redesign"
+  description: "Autonomous Design System V2의 Foundation Grammar / Expressive Direction / Self-QA 루프를 검증하는 실험 프로젝트."
+
+portfolio:
+  purpose: "Autonomous Design System V2 검증 및 포트폴리오 다양화 실험"
+  deadline_or_scope: "전시 탐색 → 목록 비교 → 상세 정보 확인 1개 흐름. 전시 목록·전시 상세 2화면 × Desktop 1440 / Mobile 390. 예약·결제·로그인·교육 신청 제외"
+
+goals:
+  - "8개 분관에 흩어진 전시를 한 곳에서 탐색·비교하고 상세 정보를 확인하는 경험을 개선한다('지금 어디서 무엇을 볼지'를 적은 단계로 결정)"
+audiences:   # 가설 — 인터뷰/행동 데이터 없음. 근거: 공개 사이트의 필터 구조(어디서/언제/누가)
+  - id: weekend-visitor
+    name: "주말·여가 관람을 계획하는 서울 거주 성인 관람객"
+    evidence: hypothesis
+    core_tasks: ["현재 전시 탐색", "분관·기간 비교", "관람 정보 확인"]
+  - id: family-visitor
+    name: "아이와 함께 방문하는 가족 관람객"
+    evidence: hypothesis
+    core_tasks: ["대상 연령에 맞는 전시 찾기", "관람 정보 확인"]
+primary_user_tasks:
+  - "현재 전시 탐색(분관·기간 기준)"
+  - "목록에서 전시 비교"
+  - "상세에서 기간·장소·관람시간·요금 확인"
+
+information_architecture:
+  segment_separation_required: false
+  segments: []
+
+screen_id_policy:
+  prefixes: {}                # 비움 → naming-convention.md 기본값 {domain}-{screen}
+
+viewports:
+  desktop: 1440
+  tablet: null
+  mobile: 390
+
+figma:
+  # SAME FILE MODE (2026-09-30 사용자 확정 작업 환경 제약): 별도 Sandbox 파일 없이 Reference와 같은 파일·같은 Page에서 작업한다.
+  # Scope는 Node 단위로 분리한다(.claude/rules/figma-workflow.md "Same File Mode"). 프롬프트 수준 분리이며 Tool-level 격리가 아니다.
+  file_key: "4IjbcMoAkTyWkoacnVAmNe"   # = working_target.file_key
+  working_target:
+    file_key: "4IjbcMoAkTyWkoacnVAmNe"
+    page_id: "1716:2382"
+    working_root: "AUTORUN_01_WORK"
+    working_root_node_id: "1889:1910"  # 2026-09-30 STEP 04 Bootstrap으로 생성(800×450, x=0 y=1685). 이후 Bootstrap 재실행 금지
+    working_zone:             # 2026-09-30 get_metadata 실측 기반 계산(Bootstrap 직전 재계산)
+      frozen_bbox: { x_min: 0, x_max: 42960, y_min: -2515, y_max: 1205 }   # 42 Frames 전체 경계
+      observed_gap: 240       # Frame 간 가로/세로 간격 실측(2160-1920, 1320-1080)
+      root_origin: { x: 0, y: 1685 }   # x = frozen x_min, y = frozen y_max + 2 × observed_gap
+      rule: "Working Root와 모든 자손의 절대 경계 y ≥ 1685 (frozen_bbox와 교차 불가)"
+    purpose: design_execution
+    status: SCREENS_AND_CASE_STUDY_CREATED   # STEP 13 정정(get_metadata 실측): UI 4화면 1892:1911·1896:1910·1897:1911·1898:1910 + Case Study 1900:1910, Root 1440×21928. 01_RESEARCH~06_QA 영역은 미생성
+  reference:
+    file_key: "4IjbcMoAkTyWkoacnVAmNe"
+    page_id: "1716:2382"      # Page "자동화" (2026-09-30 get_metadata로 직접 조회 확인)
+    usage: grammar_only
+    access: read_only
+  final_section: "AUTORUN_01_WORK"   # = working_target.working_root, 생성됨 1889:1910 (STEP 13 정정: 이전 주석 '미생성')
+  work_areas: ["01_RESEARCH", "02_VISUAL_DIRECTION", "03_DESKTOP", "04_MOBILE", "05_CASE_STUDY", "06_QA"]   # AUTORUN_01_WORK 내부, 미생성
+  design_system_section: ""
+
+design_constraints: []
+ux_requirements: []
+project_asset_restrictions:
+  - "실제 전시 작품 이미지·전시 포스터·설치 전경 사진"
+  - "SeMA 공식 로고/MI 원본 파일(텍스트 워드마크로 대체)"
+  - "작가·인물 사진"
+reference_preferences: []     # 비워 둠 → Reference Researcher가 Group A/B를 직접 조사(2026-09-30 수행)
+
+automation:
+  autonomy_mode: guided       # 초기값. 상향은 사용자 결정
+  user_approval_budget: 3
+  max_polish_passes: 3
+  master_reference_page: "1716:2382"
+  master_reference_usage: grammar_only
+  reference_protection: frozen_existing_frames
+  working_scope: new_frames_only
+  execution_mode: supervised_test
+  figma_write_isolation: policy_only  # Same File Mode. Node 단위 정책 분리만 존재 → supervised_test 전용, unattended Night Run 금지
+  state_file: automation/experiments/autonomous-run-01-state.json
+
+paths:                        # TJ MEDIA 문서(research/, design-system/ 등)를 덮어쓰지 않기 위한 분리 경로(아직 생성하지 않음)
+  research: experiments/autonomous-run-01/research
+  references: experiments/autonomous-run-01/references
+  ia: experiments/autonomous-run-01/ia
+  design_system: experiments/autonomous-run-01/design-system
+  figma: experiments/autonomous-run-01/figma
+
+portfolio_context:
+  existing_visual_signatures:   # 사용자 제공(2026-09-30)
+    - "AIDORA: Quiet Luxury / Minimal Branding"
+    - "TJ MEDIA: Search-first / Photography-led / Clean Editorial UI"
+  desired_portfolio_gap:
+    - "strong color"
+    - "artwork"
+    - "expressive typography"
+    - "distinctive composition"
+    - "visual storytelling"
+
+visual_expression:            # 2026-09-30 Visual Director 확정(auto -> 결정값). 근거: design-system/visual-direction.md 5장
+  style_bias: expressive
+  color_intensity: high
+  artwork_intensity: medium
+  composition_experimentation: medium
+  typography_expressiveness: high
+  imagery_dominance: medium
+  motion_intensity: low
+
+status: complete   # 2026-09-30 supervised_test 완료(Case Study 1900:1910)
+
+research:                     # AUTONOMOUS_RESEARCH_TEST 산출물 (2026-09-30)
+  selected_scope: "전시 탐색 → 목록 비교 → 상세 정보 확인"
+  screens_planned: ["c-exhibitions (목록)", "c-exhibition-detail (상세)"]
+  candidates_reviewed: ["sema.seoul.go.kr (선정)", "mmca.go.kr (보류: 목록 스크립트 렌더링)", "leeumhoam.org (제외: 관문 페이지)"]
+  outputs:
+    - experiments/autonomous-run-01/research/current-site-audit.md
+    - experiments/autonomous-run-01/research/ux-strategy.md
+    - experiments/autonomous-run-01/research/source-log.md
+    - experiments/autonomous-run-01/references/reference-index.jsonl
+  sources:
+    - https://sema.seoul.go.kr/kr/whatson/landing?whatsonMenuDivList=EX&whenType=FROM_TODAY
+    - https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1553791
+    - https://sema.seoul.go.kr/kr/sema/landing
+    - https://www.tate.org.uk/whats-on
+    - https://whitney.org/exhibitions
+    - https://whitney.org/about/new-identity
+    - https://www.mmca.go.kr/
+    - https://www.stedelijk.nl/en
+
+visual_direction:
+  status: SELECTED            # Visual Director 자율 선택(전략 분기 없음, 사용자 질문 0회)
+  selected_at: "2026-09-30"
+  name: "Line of S — 잇는 선"
+  concept: "한 줄의 선이 서울의 여덟 미술관을 잇는다 — 선은 정체성(S)이자 길찾기(분관 필터)"
+  candidates: ["A. Line of S (선택)", "B. 《 》 Poster Editorial (보조 장치로 흡수)", "C. Venue Glyphs (기각: 분관별 신규 식별자 = MI 변경)"]
+  palette_note: "리디자인 제안 팔레트 — SeMA 공식 브랜드 컬러 아님(공식 컬러 미확인)"
+  master_screen: "c-exhibitions.desktop"
+  documents:
+    - experiments/autonomous-run-01/design-system/visual-direction.md
+    - experiments/autonomous-run-01/design-system/artwork-system.md
+    - experiments/autonomous-run-01/design-system/design-tokens.md
+    - experiments/autonomous-run-01/design-system/ui-application-plan.md
+    - experiments/autonomous-run-01/references/reference-analysis.md

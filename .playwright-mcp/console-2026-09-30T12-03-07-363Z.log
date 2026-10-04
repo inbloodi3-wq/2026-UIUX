@@ -1,0 +1,2 @@
+[    1110ms] [LOG] currentOS : nomobile @ https://sema.seoul.go.kr/resources/js/app.script.js?time_stamp:63
+[    1892ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0

@@ -1,0 +1,125 @@
+# Experiment Project Config — AUTORUN_02
+# Schema: config/project-template.yaml / autonomous-run-01.yaml 기준. TJ MEDIA(config/project.yaml)·AUTORUN_01과 분리된 실험용 Config다.
+# 사용자가 AUTORUN_02를 지정한 작업에서만 활성 Config로 사용한다.
+
+project:
+  id: "AUTORUN_02"
+  name: "Autonomous Design System V2.1 — Run 02"
+  url: "https://www.airkorea.or.kr/web/"   # 2026-09-30 AUTONOMOUS_SAFE_RUN에서 자율 선정·접근 확인
+  target_service: "에어코리아 (한국환경공단 대기환경정보)"
+  industry: "Public Data / Environment / Health Information"
+  type: "Experimental Web Redesign"
+  description: "One-shot 자율 기획: 서비스 선정 → UX 전략 → Visual Direction → UI 제작 계획. Figma 제작은 supervised 세션에서 별도 진행."
+
+portfolio:
+  purpose: "신입 UI/UX 포트폴리오 — 공공 데이터 서비스 리디자인"
+  deadline_or_scope: "우리 동네 지금 → 오늘·내일 예보 → 행동 판단 1개 흐름. 홈·예보 2화면 × Desktop 1440 / Mobile 390. 알림 신청·로그인·챗봇·지도 재설계 제외"
+
+goals:
+  - "사용자가 우리 동네 대기질을 보고 '지금·오늘·내일 밖에서 활동해도 되는지'를 한 번에 판단하도록 돕는다"
+audiences:   # 가설 — 인터뷰/행동 데이터 없음
+  - id: daily-checker
+    name: "출근·운동·외출 전 확인하는 일반 성인"
+    evidence: hypothesis
+    core_tasks: ["현재 대기질 확인", "오늘·내일 예보 확인", "외출 판단"]
+  - id: caregiver
+    name: "아이·노약자 보호자"
+    evidence: hypothesis
+    core_tasks: ["현재 대기질 확인", "행동요령 확인"]
+primary_user_tasks:
+  - "내 지역의 현재 대기질 확인"
+  - "오늘·내일·모레 예보 비교"
+  - "행동 판단(외출·운동·환기)"
+
+information_architecture:
+  segment_separation_required: false
+  segments: []
+
+screen_id_policy:
+  prefixes: {}                # 기본값 {domain}-{screen}
+
+viewports:
+  desktop: 1440
+  tablet: null
+  mobile: 390
+
+figma:
+  # 2026-09-30 사용자 지정: 기존 파일·Page "자동화" 사용(Same File Mode, 새 파일/Page 생성 금지). AUTORUN_01 규칙 동일 적용.
+  file_key: "4IjbcMoAkTyWkoacnVAmNe"
+  working_target:
+    file_key: "4IjbcMoAkTyWkoacnVAmNe"
+    page_id: "1716:2382"
+    working_root: "AUTORUN_02_WORK"
+    working_root_node_id: "1915:1910"   # 2026-09-30 생성, x 2160 y 1685, 4380×2270(실측). 기존 Frame과 겹침 없음
+    working_zone:
+      rule: "x ≥ 1920(AUTORUN_01_WORK 우측 + 480), y ≥ 1685(Frozen y_max 1205 + 480). 사전 검사에서 모든 page 최상위 Frame과 비교"
+    purpose: design_execution
+    status: SCREENS_AND_CASE_STUDY_CREATED   # 4화면 + Case Study 1922:1910(1440×14543). Root 6060×14543
+  reference:
+    file_key: "4IjbcMoAkTyWkoacnVAmNe"
+    page_id: "1716:2382"
+    usage: grammar_only
+    access: read_only
+
+design_constraints: []
+ux_requirements:
+  - "모바일 첫 화면(390×844)에 통합 판단 + 3항목 수치 + 기준 시각"
+  - "측정 시각과 예보 발표 시각을 레이블로 구분"
+  - "등급은 색만으로 전달하지 않음(등급명·수치·밀도 병기)"
+project_asset_restrictions:
+  - "에어코리아·환경부·한국환경공단 로고/CI/캐릭터 원본(텍스트 워드마크로 대체)"
+  - "에어코리아 지도 타일·예측모델 이미지·배너 이미지"
+  - "외부 사진·일러스트(Artwork는 데이터 기반 자체 생성 벡터만)"
+reference_preferences: []
+
+automation:
+  autonomy_mode: guided
+  user_approval_budget: 3
+  max_polish_passes: 3
+  master_reference_page: "1716:2382"
+  master_reference_usage: grammar_only
+  reference_protection: frozen_existing_frames
+  working_scope: new_frames_only
+  execution_mode: supervised_test
+  figma_write_isolation: policy_only   # 대상 파일 확정 전 기본값. isolated_file 확정 시 갱신
+  state_file: automation/experiments/autonomous-run-02-state.json
+
+paths:
+  research: experiments/autonomous-run-02/research
+  references: experiments/autonomous-run-02/references   # 이번 실행에서 미생성(외부 레퍼런스 조사 생략)
+  ia: experiments/autonomous-run-02/ia
+  design_system: experiments/autonomous-run-02/design-system
+  figma: experiments/autonomous-run-02/figma
+
+portfolio_context:
+  existing_visual_signatures:
+    - "AIDORA: Quiet Luxury / Minimal Branding"
+    - "TJ MEDIA: Search-first / Photography-led / Clean Editorial UI"
+    - "SeMA (AUTORUN_01): Line of S / 8색 분관 코딩 / 《 》 대형 타이포"
+  desired_portfolio_gap:
+    - "generative data artwork"
+    - "information design"
+    - "data-driven color"
+
+visual_expression:            # 2026-09-30 Visual Director 자율 결정. 근거: design-system/visual-direction.md
+  style_bias: expressive
+  color_intensity: medium     # 등급 전달 전용
+  artwork_intensity: high     # Particle Field
+  composition_experimentation: medium
+  typography_expressiveness: medium   # 수치 Display 중심
+  imagery_dominance: none
+  motion_intensity: low
+
+status: closed   # 2026-09-30 Final Review 완료. Case Study 1922:1910
+
+visual_direction:
+  status: SELECTED
+  selected_at: "2026-09-30"
+  name: "Particle Count — 입자로 보는 공기"
+  candidates: ["A. Sky Register (기각)", "B. Particle Count (선택)", "C. Civic Signal (기각, 행동 우선 카피만 흡수)"]
+  master_screen: "c-air-now.desktop"
+  documents:
+    - experiments/autonomous-run-02/design-system/visual-direction.md
+    - experiments/autonomous-run-02/ia/ui-production-plan.md
+    - experiments/autonomous-run-02/figma/screen-registry.md
+    - experiments/autonomous-run-02/research/why-decision-log.md

@@ -1,0 +1,6 @@
+[    3309ms] [WARNING] Failed to decode downloaded font: https://www.tjmedia.com/resources/front/css/fonts/TJ-M/TJJoyofsingingM.woff2 @ https://www.tjmedia.com/song/accompaniment:0
+[    3309ms] [WARNING] OTS parsing error: invalid sfntVersion: -2147356393 @ https://www.tjmedia.com/song/accompaniment:0
+[    3309ms] [WARNING] Failed to decode downloaded font: https://www.tjmedia.com/resources/front/css/fonts/TJ-B/TJJoyofsingingB.woff2 @ https://www.tjmedia.com/song/accompaniment:0
+[    3309ms] [WARNING] OTS parsing error: invalid sfntVersion: -2147368169 @ https://www.tjmedia.com/song/accompaniment:0
+[    3583ms] [WARNING] Failed to decode downloaded font: https://www.tjmedia.com/resources/front/css/fonts/TJ-L/TJJoyofsingingL.woff2 @ https://www.tjmedia.com/song/accompaniment:0
+[    3584ms] [WARNING] OTS parsing error: invalid sfntVersion: -2147356905 @ https://www.tjmedia.com/song/accompaniment:0

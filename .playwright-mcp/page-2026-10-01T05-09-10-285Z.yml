@@ -1,0 +1,22 @@
+- generic [active] [ref=f490e1]:
+  - iframe
+  - iframe
+  - generic:
+    - generic:
+      - generic:
+        - iframe: <head></head><body></body>
+  - generic:
+    - generic:
+      - generic:
+        - generic:
+          - button "아식스코리아 상담 버튼" [ref=f490e3]
+          - dialog [ref=f490e9]:
+            - heading "Channel Talk pop-up" [level=2] [ref=f490e10]
+            - generic [ref=f490e11]:
+              - button "도움이 필요하시면 버튼을 눌러주세요! 몇 분 내 답변 받으실 수 있어요" [ref=f490e12] [cursor=pointer]:
+                - generic [ref=f490e13]:
+                  - generic [ref=f490e14]: 도움이 필요하시면 버튼을 눌러주세요!
+                  - generic [ref=f490e15]: 몇 분 내 답변 받으실 수 있어요
+              - generic [ref=f490e19]:
+                - generic [ref=f490e20]: 닫기
+                - button [ref=f490e21] [cursor=pointer]

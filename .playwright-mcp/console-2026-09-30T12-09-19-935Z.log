@@ -1,0 +1,3 @@
+[    1619ms] [LOG] api connected for g log !! @ https://www.weather.go.kr/w/resources/js/UserScriptConf.js:28
+[    1658ms] [LOG] {readyState: 4, getResponseHeader: , getAllResponseHeaders: , setRequestHeader: , overrideMimeType: } @ https://www.weather.go.kr/w/resources/js/app-2021/typhoon-info.js?ver=202607091110:116
+[    2543ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ :0

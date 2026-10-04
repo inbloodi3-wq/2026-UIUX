@@ -1,0 +1,102 @@
+{
+  "project_id": "tj-media-redesign",
+  "project_phase": "v2_visual_redesign",
+  "current_stage": "main_desktop_v2_production",
+  "stage_status": "NOT_STARTED",
+  "last_completed_stage": "pre_production_sync",
+  "next_stage": "main_desktop_v2_production",
+  "next_agent": "figma-designer",
+  "next_skill": "figma-sync",
+  "v2_status": {
+    "scope_freeze": "COMPLETE",
+    "visual_direction": "COMPLETE_APPROVED",
+    "reference_research": "COMPLETE",
+    "asset_requirement": "COMPLETE_SPEC_READY",
+    "pre_production_sync": "COMPLETE",
+    "final_direction": "Night Stage 70 / Data Rhythm 30",
+    "excluded_direction": "Sound Motion",
+    "production_stop_rule": "01_Main_Desktop_V2가 Visual QA를 통과하기 전에는 Latest Songs / Music Chart 제작으로 넘어가지 않는다.",
+    "next_production_target": "01_Main_Desktop_V2",
+    "documents": {
+      "visual_direction": "output/visual-direction/TJ_MEDIA_VISUAL_DIRECTION_V2.md",
+      "reference_direction": "output/visual-direction/TJ_MEDIA_REFERENCE_DIRECTION.md",
+      "production_blueprint": "output/production/TJ_MEDIA_V2_PRODUCTION_BLUEPRINT.md"
+    },
+    "synced_authoritative_docs": [
+      "config/project.yaml",
+      "ia/sitemap-redesign.md",
+      "ia/user-flows.md",
+      "design-system/visual-language.md",
+      "design-system/colors.md",
+      "design-system/components.md"
+    ]
+  },
+  "v1_summary": {
+    "status": "COMPLETE",
+    "final_rights_audit_verdict": "PASS",
+    "ready_for_export": true,
+    "final_ui": [
+      "01_Main_Desktop_Final",
+      "02_Search_Desktop_Final",
+      "03_Main_Mobile_Final",
+      "04_Search_Mobile_Final"
+    ],
+    "note": "V1 Final UI 4종 + Portfolio Case Study는 2026-09-17 Final Rights Audit(PASS)까지 완료됨. V2는 이 V1 산출물을 폐기하지 않고 그 위에 Visual Redesign을 적용한다. V1 Final UI 원본은 이번 Pre-Production Sync 단계에서 수정하지 않았다."
+  },
+  "blocked_reason": "블로킹 없음. V2 Pre-Production Sync(Scope Freeze, IA Sync, Visual System, Design System Sync, Asset Production Spec, Main Desktop V2 Production Blueprint)가 2026-09-17 모두 완료되어 다음 실행에서 바로 01_Main_Desktop_V2 Figma 제작을 시작할 수 있다. 이번 단계에서 Figma는 수정하지 않았다.",
+  "updated_at": "2026-09-17",
+  "schema_version": 2,
+  "autonomy_mode": "autonomous",
+  "approved_stages": [
+    "scope_freeze",
+    "visual_direction",
+    "reference_research",
+    "asset_requirement",
+    "pre_production_sync"
+  ],
+  "frozen_scopes": [
+    {
+      "target": "c-home.desktop.v2",
+      "figma_node_id": "1353:2727",
+      "reason": "2026-09-18 승인 및 LOCK (figma/screen-registry.md)"
+    },
+    {
+      "target": "V1 Final UI 4종",
+      "figma_node_id": [
+        "1256:1458",
+        "1256:1645",
+        "1256:1735",
+        "1256:1918"
+      ],
+      "reason": "V1 COMPLETE, Before 비교용 보존"
+    },
+    {
+      "target": "portfolio-case-study.desktop",
+      "figma_node_id": "1271:1727",
+      "reason": "V1 Final Rights Audit PASS 산출물 — destructive replacement는 Level 3"
+    },
+    {
+      "target": "master_reference_page",
+      "figma_node_id": null,
+      "reason": "Master Design Grammar Reference(READ ONLY). config/project.yaml의 automation.master_reference_page로 지정"
+    }
+  ],
+  "current_edit_scope": null,
+  "approval_required": [],
+  "blocker": null,
+  "retry_count": 0,
+  "render_checked": false,
+  "qa_status": "NOT_STARTED",
+  "definition_of_done": "automation-orchestrator.md 'Stop Rule' 14개 조건 전부 PASS",
+  "last_meaningful_change": {
+    "date": "2026-09-30",
+    "summary": "Automation Core를 Autonomous Design System V2로 리팩터링(프로젝트 데이터/Figma 변경 없음). pipeline-state에 V2 필드 추가, 기존 필드 유지."
+  },
+  "checkpoint": {
+    "stage": "main_desktop_v2_production",
+    "screen": null,
+    "step": null,
+    "updated_at": "2026-09-30",
+    "resume_hint": "NEEDS_SYNC: current_stage(main_desktop_v2_production)는 2026-09-17 기록이다. figma/screen-registry.md에는 이후 c-home.desktop.v2 LOCK 및 V2 Draft 화면들이 등록되어 있으므로 Resume 전 registry 기준으로 current_stage/qa_status를 재판정한다. frozen_scopes는 수정하지 않는다."
+  }
+}

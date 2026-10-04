@@ -1,0 +1,228 @@
+- generic [ref=f1e2]:
+  - banner:
+    - generic [ref=f1e3]:
+      - link "새창으로 이동" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=f1e7]:
+        - listitem [ref=f1e8]:
+          - link "소개" [ref=f1e9] [cursor=pointer]:
+            - /url: /introduce/tjmedia
+        - listitem [ref=f1e10]:
+          - link "스토리" [ref=f1e11] [cursor=pointer]:
+            - /url: /story/story_list
+        - listitem [ref=f1e12]:
+          - link "제품" [ref=f1e13] [cursor=pointer]:
+            - /url: /product/product_list?cate_cd=G01&cate_sub_cd=G0101
+        - listitem [ref=f1e14]:
+          - link "반주곡" [ref=f1e15] [cursor=pointer]:
+            - /url: /song/recent_song
+        - listitem [ref=f1e16]:
+          - link "차트" [ref=f1e17] [cursor=pointer]:
+            - /url: /chart/top100
+        - listitem [ref=f1e18]:
+          - link "노래방" [ref=f1e19] [cursor=pointer]:
+            - /url: /musicroom/song_room
+        - listitem [ref=f1e20]:
+          - link "고객지원" [ref=f1e21] [cursor=pointer]:
+            - /url: /support/faq
+      - link [ref=f1e23] [cursor=pointer]:
+        - /url: /sitemap
+  - generic [ref=f1e25]:
+    - generic [ref=f1e26]:
+      - heading "최신곡" [level=2] [ref=f1e28]
+      - generic [ref=f1e29]:
+        - list [ref=f1e30]:
+          - listitem [ref=f1e31]
+          - listitem [ref=f1e33]
+          - listitem [ref=f1e34]
+          - listitem [ref=f1e35]
+          - listitem [ref=f1e37]
+          - listitem [ref=f1e39]
+        - list [ref=f1e41]:
+          - listitem [ref=f1e42]
+          - listitem [ref=f1e43]
+          - listitem [ref=f1e44]
+          - listitem [ref=f1e45]
+          - listitem [ref=f1e47]
+          - listitem [ref=f1e49]
+        - list [ref=f1e51]:
+          - listitem [ref=f1e52]
+          - listitem [ref=f1e54]
+          - listitem [ref=f1e55]
+          - listitem [ref=f1e56]
+          - listitem [ref=f1e58]
+          - listitem [ref=f1e60]
+        - list [ref=f1e62]:
+          - listitem [ref=f1e63]
+          - listitem [ref=f1e64]
+          - listitem [ref=f1e65]
+          - listitem [ref=f1e66]
+          - listitem [ref=f1e68]
+          - listitem [ref=f1e70]
+        - list [ref=f1e72]:
+          - listitem [ref=f1e73]
+          - listitem [ref=f1e75]
+          - listitem [ref=f1e76]
+          - listitem [ref=f1e77]
+          - listitem [ref=f1e79]
+          - listitem [ref=f1e81]
+        - list [ref=f1e83]:
+          - listitem [ref=f1e84]
+          - listitem [ref=f1e85]
+          - listitem [ref=f1e86]
+          - listitem [ref=f1e87]
+          - listitem [ref=f1e89]
+          - listitem [ref=f1e91]
+      - list [ref=f1e94]
+    - generic [ref=f1e95]:
+      - paragraph [ref=f1e97]: 2026년 9월
+      - list [ref=f1e98]:
+        - listitem [ref=f1e99]:
+          - list [ref=f1e100]:
+            - listitem [ref=f1e101]: 곡 번호
+            - listitem [ref=f1e102]: 앨범아트
+            - listitem [ref=f1e103]: 곡 제목
+            - listitem [ref=f1e104]: 가수
+    - generic [ref=f1e105]:
+      - button [ref=f1e106] [cursor=pointer]
+      - list [ref=f1e107]:
+        - listitem [ref=f1e108]:
+          - link "반주곡 검색" [ref=f1e109] [cursor=pointer]:
+            - /url: /song/accompaniment
+        - listitem [ref=f1e111]:
+          - link "1:1문의" [ref=f1e112] [cursor=pointer]:
+            - /url: /support/inquire_apply
+        - listitem [ref=f1e114]:
+          - link "가정용반주기 신곡업데이트" [ref=f1e115] [cursor=pointer]:
+            - /url: https://newsong.tjmedia.com/
+        - listitem [ref=f1e117]:
+          - link "TJ글꼴 다운로드" [ref=f1e118] [cursor=pointer]:
+            - /url: /introduce/font
+        - listitem [ref=f1e120]:
+          - link "일본애니송북" [ref=f1e121] [cursor=pointer]:
+            - /url: /support/poster?cate_cd=P06
+        - listitem [ref=f1e123]:
+          - link "채용안내" [ref=f1e124] [cursor=pointer]:
+            - /url: /support/recruit_info
+        - listitem [ref=f1e126]:
+          - link "( ) TOP" [ref=f1e127] [cursor=pointer]:
+            - /url: ""
+            - text: ( )
+            - generic [ref=f1e129]: TOP
+    - list [ref=f1e131]:
+      - listitem [ref=f1e132]:
+        - link [ref=f1e133] [cursor=pointer]:
+          - /url: /
+      - listitem [ref=f1e134]:
+        - link "반주곡" [ref=f1e136] [cursor=pointer]:
+          - /url: /song/recent_song
+      - listitem [ref=f1e137]:
+        - link "최신곡":
+          - /url: /song/recent_song
+  - contentinfo [ref=f1e139]:
+    - generic:
+      - link:
+        - /url: ""
+    - generic [ref=f1e140]:
+      - list [ref=f1e142]:
+        - listitem [ref=f1e143]:
+          - list [ref=f1e144]:
+            - listitem [ref=f1e145]:
+              - button "채용" [ref=f1e146] [cursor=pointer]
+            - listitem [ref=f1e149]
+            - listitem [ref=f1e151]:
+              - link "비즈니스제안" [ref=f1e152] [cursor=pointer]:
+                - /url: /support/business_apply
+            - listitem [ref=f1e153]
+            - listitem [ref=f1e155]:
+              - link "유료곡 등록" [ref=f1e156] [cursor=pointer]:
+                - /url: /support/paidsong
+      - list [ref=f1e158]:
+        - listitem [ref=f1e159]:
+          - generic [ref=f1e160]:
+            - link [ref=f1e161] [cursor=pointer]:
+              - /url: /
+              - img "logo" [ref=f1e162]
+            - list [ref=f1e163]:
+              - listitem [ref=f1e164]:
+                - link "개인정보취급방침" [ref=f1e165] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T01
+              - listitem [ref=f1e166]:
+                - link "내부정보관리규정" [ref=f1e167] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T02
+              - listitem [ref=f1e168]:
+                - link "이메일무단수집거부" [ref=f1e169] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T03
+              - listitem [ref=f1e170]:
+                - link "윤리경영방침" [ref=f1e171] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T04
+              - listitem [ref=f1e172]:
+                - link "부정행위접수" [ref=f1e173] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T05
+            - list [ref=f1e174]:
+              - listitem [ref=f1e175]:
+                - link [ref=f1e176] [cursor=pointer]:
+                  - /url: http://withusent.com
+                  - img "withus" [ref=f1e177]
+              - listitem [ref=f1e178]:
+                - link [ref=f1e179] [cursor=pointer]:
+                  - /url: https://www.ziller.co.kr/Main.tjc?mp=main
+                  - img "TJ커뮤니티" [ref=f1e180]
+              - listitem [ref=f1e181]:
+                - link [ref=f1e182] [cursor=pointer]:
+                  - /url: https://dream.fr
+                  - img "dream" [ref=f1e183]
+              - listitem [ref=f1e184]:
+                - link [ref=f1e185] [cursor=pointer]:
+                  - /url: https://www.realmastermall.com/index.asp
+                  - img "real master2" [ref=f1e186]
+        - listitem [ref=f1e187]:
+          - generic [ref=f1e188]:
+            - heading "TJ미디어㈜" [level=6] [ref=f1e189]
+            - paragraph [ref=f1e190]:
+              - generic [ref=f1e191]: 대표이사 윤나라
+              - generic [ref=f1e192]: 서울특별시 마포구 월드컵북로 434 상암 IT Tower 8층
+              - generic [ref=f1e193]: 사업자등록번호 130-81-44332
+            - paragraph [ref=f1e194]:
+              - generic [ref=f1e195]:
+                - generic [ref=f1e196]: 대표전화 02-3663-4700
+                - generic [ref=f1e197]: 제품및AS문의 1577-5520
+              - generic [ref=f1e198]: 팩스 02-3665-3160
+            - list [ref=f1e199]:
+              - listitem [ref=f1e200]:
+                - link "스마트카드" [ref=f1e201] [cursor=pointer]:
+                  - /url: https://smartcard.tjmedia.com
+              - listitem [ref=f1e202]:
+                - link "대리점멤버십" [ref=f1e203] [cursor=pointer]:
+                  - /url: https://membership.tjmedia.com
+              - listitem [ref=f1e204]:
+                - link "취급점멤버십" [ref=f1e205] [cursor=pointer]:
+                  - /url: https://membership.tjmedia.com
+              - listitem [ref=f1e206]:
+                - link "협력업체" [ref=f1e207] [cursor=pointer]:
+                  - /url: https://scm.tjmedia.com
+              - listitem [ref=f1e208]:
+                - link "가정용반주기 신곡업데이트" [ref=f1e209] [cursor=pointer]:
+                  - /url: https://newsong.tjmedia.com
+              - listitem [ref=f1e210]:
+                - link "사이트맵" [ref=f1e211] [cursor=pointer]:
+                  - /url: /sitemap
+        - listitem [ref=f1e212]:
+          - generic [ref=f1e213]:
+            - list [ref=f1e214]:
+              - listitem [ref=f1e215]:
+                - link [ref=f1e216] [cursor=pointer]:
+                  - /url: https://smartstore.naver.com/tjmediacorp
+              - listitem [ref=f1e217]:
+                - link [ref=f1e218] [cursor=pointer]:
+                  - /url: https://www.youtube.com/user/tjmedia00
+              - listitem [ref=f1e219]:
+                - link [ref=f1e220] [cursor=pointer]:
+                  - /url: https://blog.naver.com/tjmedia00
+              - listitem [ref=f1e221]:
+                - link [ref=f1e222] [cursor=pointer]:
+                  - /url: https://www.facebook.com/alwaysfunTJ
+              - listitem [ref=f1e223]:
+                - link [ref=f1e224] [cursor=pointer]:
+                  - /url: https://www.instagram.com/tjmedia
+            - paragraph [ref=f1e225]: Copyrightⓒ TJ media Allright Reserved.

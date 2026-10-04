@@ -1,0 +1,765 @@
+- generic [active] [ref=f31e1]:
+  - region "Notifications alt+T"
+  - alert [ref=f31e2]: Salomon is committed to achieving Level AA conformance for this website under the Web Content Accessibility Guidelines (WCAG) 2.0, and other applicable accessibility standards. If you are having any issues accessing information on this website, please contact Salomon’s customer service center by telephone at USA +1-833-986-0382.
+  - link "Skip to content" [ref=f31e3] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=f31e6]:
+    - link "Find a store" [ref=f31e11] [cursor=pointer]:
+      - /url: https://stores.salomon.com/?lang=en-us
+    - generic [ref=f31e15]:
+      - link "Get exclusive news" [ref=f31e18] [cursor=pointer]:
+        - /url: /en-us/newsletter
+      - generic [ref=f31e19]: ·
+      - button [ref=f31e20] [cursor=pointer]:
+        - link "Help" [ref=f31e23]:
+          - /url: "#"
+  - banner [ref=f31e24]:
+    - generic [ref=f31e25]:
+      - button "Open menu" [ref=f31e27] [cursor=pointer]:
+        - generic [ref=f31e32]: Menu
+      - link "Home" [ref=f31e37] [cursor=pointer]:
+        - /url: /en-us
+    - navigation "Main menu" [ref=f31e41]:
+      - list [ref=f31e42]:
+        - listitem [ref=f31e43]:
+          - link "New" [ref=f31e44] [cursor=pointer]:
+            - /url: /en-us/c/new
+        - listitem [ref=f31e45]:
+          - link "Featured" [ref=f31e46] [cursor=pointer]:
+            - /url: /en-us/c/new/inspiration
+        - listitem [ref=f31e47]:
+          - link "New Arrivals" [ref=f31e48] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/new/inspiration/new-arrivals
+        - listitem [ref=f31e49]:
+          - link "Best Sellers" [ref=f31e50] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/collection/bestsellers
+        - listitem [ref=f31e51]:
+          - link "Launch Calendar" [ref=f31e52] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/launch-calendar
+        - listitem [ref=f31e53]:
+          - link "Collections" [ref=f31e54] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule
+        - listitem [ref=f31e55]:
+          - link "XT-Winter Story" [ref=f31e56] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/xt-winter-story
+        - listitem [ref=f31e57]:
+          - link "Expedition Pack" [ref=f31e58] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/expedition
+        - listitem [ref=f31e59]:
+          - link "XT-Evo Pack" [ref=f31e60] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/xt-evo
+        - listitem [ref=f31e61]:
+          - link "Kraft Pack" [ref=f31e62] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/kraft
+        - listitem [ref=f31e63]:
+          - link "Alpine Echoes" [ref=f31e64] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/alpine-echoes
+        - listitem [ref=f31e65]:
+          - link "XT-Icons Pack" [ref=f31e66] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/xt-icons-capsule
+        - listitem [ref=f31e67]:
+          - link "Exclusive Pack" [ref=f31e68] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/salomon-exclusive
+        - listitem [ref=f31e69]:
+          - link "Gradient Pack" [ref=f31e70] [cursor=pointer]:
+            - /url: /en-us/c/new/packs-capsule/gradient-pack
+        - listitem [ref=f31e71]:
+          - link "Icons" [ref=f31e72] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/shoes/icons
+        - listitem [ref=f31e73]:
+          - link "XT-6" [ref=f31e74] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/shoes/icons/xt-6
+        - listitem [ref=f31e75]:
+          - link "Speedcross" [ref=f31e76] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/shoes/icons/speedcross
+        - listitem [ref=f31e77]:
+          - link "X Ultra" [ref=f31e78] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/shoes/icons/x-ultra
+        - listitem [ref=f31e79]:
+          - link "XA Pro" [ref=f31e80] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/shoes/icons/xa-pro
+        - listitem [ref=f31e81]:
+          - link "XT-Whisper" [ref=f31e82] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xtwhisper
+        - listitem [ref=f31e83]:
+          - link "XT-4" [ref=f31e84] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xt4
+        - listitem [ref=f31e85]:
+          - link "Shoes" [ref=f31e86] [cursor=pointer]:
+            - /url: /en-us/c/shoes
+        - listitem [ref=f31e87]:
+          - link "Men" [ref=f31e88] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes
+        - listitem [ref=f31e89]:
+          - link "Sportstyle" [ref=f31e90] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/sportstyle
+        - listitem [ref=f31e91]:
+          - link "Road Running" [ref=f31e92] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/running-shoes
+        - listitem [ref=f31e93]:
+          - link "Gravel Running" [ref=f31e94] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/gravel-running
+        - listitem [ref=f31e95]:
+          - link "Trail Running" [ref=f31e96] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/trail-running-shoes
+        - listitem [ref=f31e97]:
+          - link "Hiking" [ref=f31e98] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/hiking-shoes
+        - listitem [ref=f31e99]:
+          - link "Sandals & Watershoes" [ref=f31e100] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/sandals-water-shoes
+        - listitem [ref=f31e101]:
+          - link "Forces" [ref=f31e102] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/men/shoes/forces
+        - listitem [ref=f31e103]:
+          - link "Women" [ref=f31e104] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes
+        - listitem [ref=f31e105]:
+          - link "Sportstyle" [ref=f31e106] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/sportstyle
+        - listitem [ref=f31e107]:
+          - link "Road Running" [ref=f31e108] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/running-shoes
+        - listitem [ref=f31e109]:
+          - link "Gravel Running" [ref=f31e110] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/gravel-running
+        - listitem [ref=f31e111]:
+          - link "Trail Running" [ref=f31e112] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/trail-running-shoes
+        - listitem [ref=f31e113]:
+          - link "Hiking" [ref=f31e114] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/hiking-shoes
+        - listitem [ref=f31e115]:
+          - link "Sandals & Watershoes" [ref=f31e116] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/sandals-water-shoes
+        - listitem [ref=f31e117]:
+          - link "Forces" [ref=f31e118] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/women/shoes/forces
+        - listitem [ref=f31e119]:
+          - link "Sportstyle" [ref=f31e120] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/sports/sportstyle
+        - listitem [ref=f31e121]:
+          - link "Sneakers" [ref=f31e122] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/sports/sportstyle/sneakers
+        - listitem [ref=f31e123]:
+          - link "Advanced" [ref=f31e124] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/sports/sportstyle/advanced
+        - listitem [ref=f31e125]:
+          - link "Intersections" [ref=f31e126] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/c/sports/sportstyle/intersection
+        - listitem [ref=f31e127]:
+          - link "Icons" [ref=f31e128] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons
+        - listitem [ref=f31e129]:
+          - link "XT-6" [ref=f31e130] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xt-6
+        - listitem [ref=f31e131]:
+          - link "Speedcross" [ref=f31e132] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/speedcross
+        - listitem [ref=f31e133]:
+          - link "X Ultra" [ref=f31e134] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/x-ultra
+        - listitem [ref=f31e135]:
+          - link "XA Pro" [ref=f31e136] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xa-pro
+        - listitem [ref=f31e137]:
+          - link "XT-Whisper" [ref=f31e138] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xtwhisper
+        - listitem [ref=f31e139]:
+          - link "XT-4" [ref=f31e140] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/xt4
+        - listitem [ref=f31e141]:
+          - link "ACS" [ref=f31e142] [cursor=pointer]:
+            - /url: /en-us/c/shoes/icons/acs
+        - listitem [ref=f31e143]:
+          - link "Men" [ref=f31e144] [cursor=pointer]:
+            - /url: /en-us/c/men
+        - listitem [ref=f31e145]:
+          - link "Shoes" [ref=f31e146] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes
+        - listitem [ref=f31e147]:
+          - link "Sportstyle" [ref=f31e148] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/sportstyle
+        - listitem [ref=f31e149]:
+          - link "Road Running" [ref=f31e150] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/running-shoes
+        - listitem [ref=f31e151]:
+          - link "Gravel Running" [ref=f31e152] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/gravel-running
+        - listitem [ref=f31e153]:
+          - link "Trail Running" [ref=f31e154] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/trail-running-shoes
+        - listitem [ref=f31e155]:
+          - link "Hiking" [ref=f31e156] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/hiking-shoes
+        - listitem [ref=f31e157]:
+          - link "Sandals & Watershoes" [ref=f31e158] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/sandals-water-shoes
+        - listitem [ref=f31e159]:
+          - link "Slip-ons & Clogs" [ref=f31e160] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/clogs-slip-on
+        - listitem [ref=f31e161]:
+          - link "Forces" [ref=f31e162] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/forces
+        - listitem [ref=f31e163]:
+          - link "Winter Shoes" [ref=f31e164] [cursor=pointer]:
+            - /url: /en-us/c/men/shoes/winter-shoes
+        - listitem [ref=f31e165]:
+          - link "Clothing" [ref=f31e166] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing
+        - listitem [ref=f31e167]:
+          - link "T-Shirts & Base Layers" [ref=f31e168] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/t-shirt-baselayer
+        - listitem [ref=f31e169]:
+          - link "Shorts" [ref=f31e170] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/shorts
+        - listitem [ref=f31e171]:
+          - link "Pants & Tights" [ref=f31e172] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/pants-and-tights
+        - listitem [ref=f31e173]:
+          - link "Fleeces & Midlayers" [ref=f31e174] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/midlayers
+        - listitem [ref=f31e175]:
+          - link "Jackets & Down Jackets" [ref=f31e176] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/jackets
+        - listitem [ref=f31e177]:
+          - link "Snow Jackets" [ref=f31e178] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/ski-jackets
+        - listitem [ref=f31e179]:
+          - link "Snow Pants" [ref=f31e180] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/ski-pants
+        - listitem [ref=f31e181]:
+          - link "Sportstyle" [ref=f31e182] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/sportstyle
+        - listitem [ref=f31e183]:
+          - link "Shorts" [ref=f31e184] [cursor=pointer]:
+            - /url: /en-us/c/men/clothing/shorts
+        - listitem [ref=f31e185]:
+          - link "Bags & Packs" [ref=f31e186] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs
+        - listitem [ref=f31e187]:
+          - link "Running Packs & Belts" [ref=f31e188] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs/running-packs-and-belts
+        - listitem [ref=f31e189]:
+          - link "Backpacks" [ref=f31e190] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs/backpacks
+        - listitem [ref=f31e191]:
+          - link "Flasks & Reservoirs" [ref=f31e192] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs/flasks-and-reservoirs
+        - listitem [ref=f31e193]:
+          - link "Travel & Everyday Bags" [ref=f31e194] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs/sports-and-equipment-bags
+        - listitem [ref=f31e195]:
+          - link "Ski & Boot Bags" [ref=f31e196] [cursor=pointer]:
+            - /url: /en-us/c/men/bags-packs/ski-and-equipment-bags
+        - listitem [ref=f31e197]:
+          - link "Accessories" [ref=f31e198] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories
+        - listitem [ref=f31e199]:
+          - link "Socks" [ref=f31e200] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/socks
+        - listitem [ref=f31e201]:
+          - link "Headwear" [ref=f31e202] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/headwear
+        - listitem [ref=f31e203]:
+          - link "Gloves" [ref=f31e204] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/gloves
+        - listitem [ref=f31e205]:
+          - link "Walking Poles" [ref=f31e206] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/walking-poles
+        - listitem [ref=f31e207]:
+          - link "Spare Parts" [ref=f31e208] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/spare-parts
+        - listitem [ref=f31e209]:
+          - link "Sunglasses" [ref=f31e210] [cursor=pointer]:
+            - /url: /en-us/c/men/accessories/sunglasses
+        - listitem [ref=f31e211]:
+          - link "Equipment" [ref=f31e212] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment
+        - listitem [ref=f31e213]:
+          - link "Skiing" [ref=f31e214] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment/skiing
+        - listitem [ref=f31e215]:
+          - link "Cross-Country Skiing" [ref=f31e216] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment/cross-country
+        - listitem [ref=f31e217]:
+          - link "Snowboarding" [ref=f31e218] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment/snowboard
+        - listitem [ref=f31e219]:
+          - link "Goggles & Lenses" [ref=f31e220] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment/goggles
+        - listitem [ref=f31e221]:
+          - link "Helmets" [ref=f31e222] [cursor=pointer]:
+            - /url: /en-us/c/men/winter-equipment/helmets
+        - listitem [ref=f31e223]:
+          - link "Women" [ref=f31e224] [cursor=pointer]:
+            - /url: /en-us/c/women
+        - listitem [ref=f31e225]:
+          - link "Shoes" [ref=f31e226] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes
+        - listitem [ref=f31e227]:
+          - link "Sportstyle" [ref=f31e228] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/sportstyle
+        - listitem [ref=f31e229]:
+          - link "Road Running" [ref=f31e230] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/running-shoes
+        - listitem [ref=f31e231]:
+          - link "Gravel Running" [ref=f31e232] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/gravel-running
+        - listitem [ref=f31e233]:
+          - link "Trail Running" [ref=f31e234] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/trail-running-shoes
+        - listitem [ref=f31e235]:
+          - link "Hiking" [ref=f31e236] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/hiking-shoes
+        - listitem [ref=f31e237]:
+          - link "Sandals & Watershoes" [ref=f31e238] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/sandals-water-shoes
+        - listitem [ref=f31e239]:
+          - link "Slip-ons & Clogs" [ref=f31e240] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/clogs-slip-on
+        - listitem [ref=f31e241]:
+          - link "Forces" [ref=f31e242] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/forces
+        - listitem [ref=f31e243]:
+          - link "Winter Shoes" [ref=f31e244] [cursor=pointer]:
+            - /url: /en-us/c/women/shoes/winter-shoes
+        - listitem [ref=f31e245]:
+          - link "Clothing" [ref=f31e246] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing
+        - listitem [ref=f31e247]:
+          - link "Sports Bras" [ref=f31e248] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/sports-bras
+        - listitem [ref=f31e249]:
+          - link "T-Shirts & Base Layers" [ref=f31e250] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/t-shirt-baselayer
+        - listitem [ref=f31e251]:
+          - link "Shorts" [ref=f31e252] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/shorts
+        - listitem [ref=f31e253]:
+          - link "Pants & Tights" [ref=f31e254] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/pants-and-tights
+        - listitem [ref=f31e255]:
+          - link "Fleeces & Midlayers" [ref=f31e256] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/midlayers
+        - listitem [ref=f31e257]:
+          - link "Jackets & Down Jackets" [ref=f31e258] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/jackets
+        - listitem [ref=f31e259]:
+          - link "Snow Jackets" [ref=f31e260] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/ski-jackets
+        - listitem [ref=f31e261]:
+          - link "Snow Pants" [ref=f31e262] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/ski-pants
+        - listitem [ref=f31e263]:
+          - link "Sportstyle" [ref=f31e264] [cursor=pointer]:
+            - /url: /en-us/c/women/clothing/sportstyle
+        - listitem [ref=f31e265]:
+          - link "Bags & Packs" [ref=f31e266] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs
+        - listitem [ref=f31e267]:
+          - link "Running Bags & Belts" [ref=f31e268] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs/running-packs-and-belts
+        - listitem [ref=f31e269]:
+          - link "Backpacks" [ref=f31e270] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs/backpacks
+        - listitem [ref=f31e271]:
+          - link "Flasks & Reservoirs" [ref=f31e272] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs/flasks-and-reservoirs
+        - listitem [ref=f31e273]:
+          - link "Travel & Everyday Bags" [ref=f31e274] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs/travel-and-sports-bags
+        - listitem [ref=f31e275]:
+          - link "Ski & Boot Bags" [ref=f31e276] [cursor=pointer]:
+            - /url: /en-us/c/women/bags-packs/ski-and-equipment-bags
+        - listitem [ref=f31e277]:
+          - link "Accessories" [ref=f31e278] [cursor=pointer]:
+            - /url: /en-us/c/women/accessories
+        - listitem [ref=f31e279]:
+          - link "Socks" [ref=f31e280] [cursor=pointer]:
+            - /url: /en-us/c/women/accessories/socks
+        - listitem [ref=f31e281]:
+          - link "Headwear" [ref=f31e282] [cursor=pointer]:
+            - /url: /en-us/c/women/accessories/headwear
+        - listitem [ref=f31e283]:
+          - link "Gloves" [ref=f31e284] [cursor=pointer]:
+            - /url: /en-us/c/women/accessories/gloves
+        - listitem [ref=f31e285]:
+          - link "Spare Parts" [ref=f31e286] [cursor=pointer]:
+            - /url: /en-us/c/women/accessories/spare-parts
+        - listitem [ref=f31e287]:
+          - link "Equipment" [ref=f31e288] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment
+        - listitem [ref=f31e289]:
+          - link "Skiing" [ref=f31e290] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment/skiing
+        - listitem [ref=f31e291]:
+          - link "Cross-Country Skiing" [ref=f31e292] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment/cross-country
+        - listitem [ref=f31e293]:
+          - link "Snowboarding" [ref=f31e294] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment/snowboard
+        - listitem [ref=f31e295]:
+          - link "Goggles & Lenses" [ref=f31e296] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment/goggles
+        - listitem [ref=f31e297]:
+          - link "Helmets" [ref=f31e298] [cursor=pointer]:
+            - /url: /en-us/c/women/winter-equipment/helmets
+        - listitem [ref=f31e299]:
+          - link "Kids" [ref=f31e300] [cursor=pointer]:
+            - /url: /en-us/c/kids
+        - listitem [ref=f31e301]:
+          - link "Shoes" [ref=f31e302] [cursor=pointer]:
+            - /url: /en-us/c/kids/shoes
+        - listitem [ref=f31e303]:
+          - link "Hiking" [ref=f31e304] [cursor=pointer]:
+            - /url: /en-us/c/kids/shoes/hiking-shoes
+        - listitem [ref=f31e305]:
+          - link "Skiing" [ref=f31e306] [cursor=pointer]:
+            - /url: /en-us/c/kids/alpine-equipment
+        - listitem [ref=f31e307]:
+          - link "Helmets & Goggles" [ref=f31e308] [cursor=pointer]:
+            - /url: /en-us/c/kids/alpine-equipment/goggles-and-protection
+        - listitem [ref=f31e309]:
+          - link "Poles" [ref=f31e310] [cursor=pointer]:
+            - /url: /en-us/c/kids/alpine-equipment/poles
+        - listitem [ref=f31e311]:
+          - link "Skis" [ref=f31e312] [cursor=pointer]:
+            - /url: /en-us/c/kids/alpine-equipment/skis
+        - listitem [ref=f31e313]:
+          - link "Boots" [ref=f31e314] [cursor=pointer]:
+            - /url: /en-us/c/kids/alpine-equipment/boots
+        - listitem [ref=f31e315]:
+          - link "Snowboarding" [ref=f31e316] [cursor=pointer]:
+            - /url: /en-us/c/kids/snowboard-equipment
+        - listitem [ref=f31e317]:
+          - link "Boards" [ref=f31e318] [cursor=pointer]:
+            - /url: /en-us/c/kids/snowboard-equipment/boards
+        - listitem [ref=f31e319]:
+          - link "Boots" [ref=f31e320] [cursor=pointer]:
+            - /url: /en-us/c/kids/snowboard-equipment/boots
+        - listitem [ref=f31e321]:
+          - link "Bindings" [ref=f31e322] [cursor=pointer]:
+            - /url: /en-us/c/kids/snowboard-equipment/bindings
+        - listitem [ref=f31e323]:
+          - link "Cross-Country Skiing" [ref=f31e324] [cursor=pointer]:
+            - /url: /en-us/c/kids/nordic-equipment
+        - listitem [ref=f31e325]:
+          - link "Skis" [ref=f31e326] [cursor=pointer]:
+            - /url: /en-us/c/kids/nordic-equipment/skis
+        - listitem [ref=f31e327]:
+          - link "Boots" [ref=f31e328] [cursor=pointer]:
+            - /url: /en-us/c/kids/nordic-equipment/boots
+        - listitem [ref=f31e329]:
+          - link "Bindings" [ref=f31e330] [cursor=pointer]:
+            - /url: /en-us/c/kids/nordic-equipment/bindings
+        - listitem [ref=f31e331]:
+          - link "Poles" [ref=f31e332] [cursor=pointer]:
+            - /url: /en-us/c/kids/nordic-equipment/poles
+        - listitem [ref=f31e333]:
+          - link "Activities" [ref=f31e334] [cursor=pointer]:
+            - /url: /en-us/c/sports
+        - listitem [ref=f31e335]:
+          - link "Trail Running" [ref=f31e336] [cursor=pointer]:
+            - /url: /en-us/sports/trail-running
+        - listitem [ref=f31e337]:
+          - link "Shoes" [ref=f31e338] [cursor=pointer]:
+            - /url: /en-us/c/sports/trail-running/shoes
+        - listitem [ref=f31e339]:
+          - link "Clothing" [ref=f31e340] [cursor=pointer]:
+            - /url: /en-us/c/sports/trail-running/clothing
+        - listitem [ref=f31e341]:
+          - link "Bags & Belts" [ref=f31e342] [cursor=pointer]:
+            - /url: /en-us/c/sports/trail-running/bags-and-belts
+        - listitem [ref=f31e343]:
+          - link "Accessories" [ref=f31e344] [cursor=pointer]:
+            - /url: /en-us/c/sports/trail-running/accessories
+        - listitem [ref=f31e345]:
+          - link "S/LAB Premium Range" [ref=f31e346] [cursor=pointer]:
+            - /url: /en-us/c/sports/trail-running/s-lab-premium-range
+        - listitem [ref=f31e347]:
+          - link "Gravel Running" [ref=f31e348] [cursor=pointer]:
+            - /url: /en-us/lp/g/gravel-running
+        - listitem [ref=f31e349]:
+          - link "Shoes" [ref=f31e350] [cursor=pointer]:
+            - /url: /en-us/c/sports/gravel-running/shoes
+        - listitem [ref=f31e351]:
+          - link "Clothing" [ref=f31e352] [cursor=pointer]:
+            - /url: /en-us/c/sports/gravel-running/clothing
+        - listitem [ref=f31e353]:
+          - link "Bags & Belts" [ref=f31e354] [cursor=pointer]:
+            - /url: /en-us/c/sports/gravel-running/bags-and-belts
+        - listitem [ref=f31e355]:
+          - link "Flasks & Reservoirs" [ref=f31e356] [cursor=pointer]:
+            - /url: /en-us/c/sports/gravel-running/flasks
+        - listitem [ref=f31e357]:
+          - link "Road Running" [ref=f31e358] [cursor=pointer]:
+            - /url: /en-us/sports/road-running
+        - listitem [ref=f31e359]:
+          - link "Shoes" [ref=f31e360] [cursor=pointer]:
+            - /url: /en-us/c/sports/road-running/shoes
+        - listitem [ref=f31e361]:
+          - link "Clothing" [ref=f31e362] [cursor=pointer]:
+            - /url: /en-us/c/sports/road-running/clothing
+        - listitem [ref=f31e363]:
+          - link "Bags & Belts" [ref=f31e364] [cursor=pointer]:
+            - /url: /en-us/c/sports/road-running/bags-and-belts
+        - listitem [ref=f31e365]:
+          - link "Flasks & Reservoirs" [ref=f31e366] [cursor=pointer]:
+            - /url: /en-us/c/sports/road-running/gourdes
+        - listitem [ref=f31e367]:
+          - link "S/LAB Premium Range" [ref=f31e368] [cursor=pointer]:
+            - /url: /en-us/c/sports/road-running/s-lab-premium-range
+        - listitem [ref=f31e369]:
+          - link "Hiking" [ref=f31e370] [cursor=pointer]:
+            - /url: /en-us/sports/hiking
+        - listitem [ref=f31e371]:
+          - link "Shoes" [ref=f31e372] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/shoes
+        - listitem [ref=f31e373]:
+          - link "Clothing" [ref=f31e374] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/clothing
+        - listitem [ref=f31e375]:
+          - link "Bags & Packs" [ref=f31e376] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/bags-and-packs
+        - listitem [ref=f31e377]:
+          - link "Flasks & Reservoirs" [ref=f31e378] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/gourdes
+        - listitem [ref=f31e379]:
+          - link "Flasks and Accessories" [ref=f31e380] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/accessories
+        - listitem [ref=f31e381]:
+          - link "S/LAB Premium Range" [ref=f31e382] [cursor=pointer]:
+            - /url: /en-us/c/sports/hiking/s-lab-premium-range
+        - listitem [ref=f31e383]:
+          - link "Sportstyle" [ref=f31e384] [cursor=pointer]:
+            - /url: /en-us/sports/sportstyle
+        - listitem [ref=f31e385]:
+          - link "Sneakers" [ref=f31e386] [cursor=pointer]:
+            - /url: /en-us/c/sports/sportstyle/sneakers
+        - listitem [ref=f31e387]:
+          - link "Advanced" [ref=f31e388] [cursor=pointer]:
+            - /url: /en-us/c/sports/sportstyle/advanced
+        - listitem [ref=f31e389]:
+          - link "Intersections" [ref=f31e390] [cursor=pointer]:
+            - /url: /en-us/c/sports/sportstyle/intersection
+        - listitem [ref=f31e391]:
+          - link "Clothing" [ref=f31e392] [cursor=pointer]:
+            - /url: /en-us/c/sports/sportstyle/clothing
+        - listitem [ref=f31e393]:
+          - link "Accessories" [ref=f31e394] [cursor=pointer]:
+            - /url: /en-us/c/sports/sportstyle/accessories
+        - listitem [ref=f31e395]:
+          - link "Skiing" [ref=f31e396] [cursor=pointer]:
+            - /url: /en-us/sports/skiing
+        - listitem [ref=f31e397]:
+          - link "Clothing" [ref=f31e398] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/clothing
+        - listitem [ref=f31e399]:
+          - link "Skis" [ref=f31e400] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/skis
+        - listitem [ref=f31e401]:
+          - link "Boots" [ref=f31e402] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/boots
+        - listitem [ref=f31e403]:
+          - link "Bindings" [ref=f31e404] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/bindings
+        - listitem [ref=f31e405]:
+          - link "Poles" [ref=f31e406] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/poles
+        - listitem [ref=f31e407]:
+          - link "Helmets" [ref=f31e408] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/helmets-and-back-protection
+        - listitem [ref=f31e409]:
+          - link "Bags & luggage" [ref=f31e410] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/bags-luggages
+        - listitem [ref=f31e411]:
+          - link "Goggles & Lenses" [ref=f31e412] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/goggles
+        - listitem [ref=f31e413]:
+          - link "Accessories" [ref=f31e414] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/accessories
+        - listitem [ref=f31e415]:
+          - link "S/LAB Premium Range" [ref=f31e416] [cursor=pointer]:
+            - /url: /en-us/c/sports/alpine-skiing/s-lab-premium-range
+        - listitem [ref=f31e417]:
+          - link "Snowboarding" [ref=f31e418] [cursor=pointer]:
+            - /url: /en-us/sports/snowboarding
+        - listitem [ref=f31e419]:
+          - link "Boards" [ref=f31e420] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/snowboards
+        - listitem [ref=f31e421]:
+          - link "Boots" [ref=f31e422] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/boots
+        - listitem [ref=f31e423]:
+          - link "Bindings" [ref=f31e424] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/bindings
+        - listitem [ref=f31e425]:
+          - link "Helmets" [ref=f31e426] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/helmets-and-back-protection
+        - listitem [ref=f31e427]:
+          - link "Goggles & Lenses" [ref=f31e428] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/goggles
+        - listitem [ref=f31e429]:
+          - link "Clothing" [ref=f31e430] [cursor=pointer]:
+            - /url: /en-us/c/sports/snowboarding/clothing
+        - listitem [ref=f31e431]:
+          - link "Cross-Country Skiing" [ref=f31e432] [cursor=pointer]:
+            - /url: /en-us/sports/cross-country-skiing
+        - listitem [ref=f31e433]:
+          - link "Skis" [ref=f31e434] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/skis
+        - listitem [ref=f31e435]:
+          - link "Boots" [ref=f31e436] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/boots
+        - listitem [ref=f31e437]:
+          - link "Bindings" [ref=f31e438] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/bindings
+        - listitem [ref=f31e439]:
+          - link "Poles" [ref=f31e440] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/poles
+        - listitem [ref=f31e441]:
+          - link "Clothing" [ref=f31e442] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/clothing
+        - listitem [ref=f31e443]:
+          - link "S/LAB Premium Range" [ref=f31e444] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/s-lab-premium-range
+        - listitem [ref=f31e445]:
+          - link "Bags & Belts" [ref=f31e446] [cursor=pointer]:
+            - /url: /en-us/c/sports/cross-country-skiing/bags-and-belts
+        - listitem [ref=f31e447]:
+          - link "Stories & Guides" [ref=f31e448] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/sg
+        - listitem [ref=f31e449]:
+          - link "What Is Gravel Running?" [ref=f31e450] [cursor=pointer]:
+            - /url: /en-us/sg/a/what-is-gravel-running
+        - listitem [ref=f31e451]:
+          - link "How to Choose Gravel Running Shoes" [ref=f31e452] [cursor=pointer]:
+            - /url: /en-us/sg/a/how-to-choose-gravel-running-shoes
+        - listitem [ref=f31e453]:
+          - link "How Often Should I Run?" [ref=f31e454] [cursor=pointer]:
+            - /url: /en-us/sg/a/how-often-should-i-run
+        - listitem [ref=f31e455]:
+          - link "How to Clean Your Hydration Pack" [ref=f31e456] [cursor=pointer]:
+            - /url: /en-us/sg/a/how-to-clean-your-hydration-pack
+        - listitem [ref=f31e457]:
+          - link "Dawn to Dusk – Courtney Dauwalter's Running Collection" [ref=f31e458] [cursor=pointer]:
+            - /url: /en-us/sg/a/dawn-to-dusk-courtney-dauwalter-running-collection
+        - listitem [ref=f31e459]:
+          - link "Starting Your Running Journey as a Beginner" [ref=f31e460] [cursor=pointer]:
+            - /url: /en-us/sg/a/starting-your-running-journey-as-a-beginner
+        - listitem [ref=f31e461]:
+          - 'link "Legends & Rising Stars: Salomon’s 2025 Trail Team" [ref=f31e462] [cursor=pointer]':
+            - /url: /en-us/sg/a/legends-and-rising-stars-salomons-2025-trail-team
+        - listitem [ref=f31e463]:
+          - link "How to Start Running Again After an Injury" [ref=f31e464] [cursor=pointer]:
+            - /url: /en-us/sg/a/how-to-start-running-again-after-an-injury
+        - listitem [ref=f31e465]:
+          - link "Athletes" [ref=f31e466] [cursor=pointer]:
+            - /url: /en-us/athletes
+        - listitem [ref=f31e467]:
+          - link "Courtney Dauwalter" [ref=f31e468] [cursor=pointer]:
+            - /url: /en-us/athlete/courtney-dauwalter
+        - listitem [ref=f31e469]:
+          - link "François D'Haene" [ref=f31e470] [cursor=pointer]:
+            - /url: /en-us/athlete/francois-dhaene
+        - listitem [ref=f31e471]:
+          - link "Marianne Hogan" [ref=f31e472] [cursor=pointer]:
+            - /url: /en-us/athlete/marianne-hogan
+        - listitem [ref=f31e473]:
+          - link "Ryan Sandes" [ref=f31e474] [cursor=pointer]:
+            - /url: /en-us/athlete/ryan-sandes
+        - listitem [ref=f31e475]:
+          - link "Camille Bruyas" [ref=f31e476] [cursor=pointer]:
+            - /url: /en-us/athlete/camille-bruyas
+        - listitem [ref=f31e477]:
+          - link "Thibaut Baronian" [ref=f31e478] [cursor=pointer]:
+            - /url: /en-us/athlete/thibaut-baronian
+        - listitem [ref=f31e479]:
+          - link "About Salomon" [ref=f31e480] [cursor=pointer]:
+            - /url: /en-us/lp/g/who-we-are
+        - listitem [ref=f31e481]:
+          - link "Gravel Running" [ref=f31e482] [cursor=pointer]:
+            - /url: /en-us/lp/g/gravel-running-old
+        - listitem [ref=f31e483]:
+          - link "Who We Are" [ref=f31e484] [cursor=pointer]:
+            - /url: /en-us/lp/g/who-we-are
+        - listitem [ref=f31e485]:
+          - link "Our Sustainable Commitments" [ref=f31e486] [cursor=pointer]:
+            - /url: /en-us/lp/g/sustainability
+        - listitem [ref=f31e487]:
+          - link "Our Innovations" [ref=f31e488] [cursor=pointer]:
+            - /url: /en-us/lp/g/technologies
+        - listitem [ref=f31e489]:
+          - link "Events" [ref=f31e490] [cursor=pointer]:
+            - /url: /en-us/events
+        - listitem [ref=f31e491]:
+          - link "Salomon TV" [ref=f31e492] [cursor=pointer]:
+            - /url: /en-us/lp/g/salomon-tv
+        - listitem [ref=f31e493]:
+          - link "Icons" [ref=f31e494] [cursor=pointer]:
+            - /url: https://salomon.com/en-us/lp/g/icons
+        - listitem [ref=f31e495]:
+          - link "XT-6" [ref=f31e496] [cursor=pointer]:
+            - /url: https://salomon.com/en-us/lp/g/icons-xt-6
+        - listitem [ref=f31e497]:
+          - link "Speedcross" [ref=f31e498] [cursor=pointer]:
+            - /url: https://salomon.com/en-us/lp/g/icons-speedcross
+        - listitem [ref=f31e499]:
+          - link "XA Pro" [ref=f31e500] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/lp/g/icons-xa-pro
+        - listitem [ref=f31e501]:
+          - link "X Ultra" [ref=f31e502] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/lp/g/icons-x-ultra
+        - listitem [ref=f31e503]:
+          - link "XT-Whisper" [ref=f31e504] [cursor=pointer]:
+            - /url: https://www.salomon.com/en-us/lp/ci/xt-whisper
+  - main [ref=f31e505]:
+    - generic [ref=f31e545]:
+      - 'heading "ACS NEXXT: The Green Star by Feid" [level=2] [ref=f31e546]'
+      - paragraph [ref=f31e547]: The next chapter of Salomon x Feid
+      - link "Learn More" [ref=f31e550] [cursor=pointer]:
+        - /url: /en-us/product/acs-nexxt-the-green-star-by-feid-li1911
+    - generic [ref=f31e717]:
+      - paragraph [ref=f31e718]: Top Categories
+      - generic [ref=f31e720]:
+        - link "Men's Hiking Shoes" [ref=f31e723] [cursor=pointer]:
+          - /url: /en-us/c/men/shoes/hiking-shoes
+        - link "Men's Road Running Shoes" [ref=f31e726] [cursor=pointer]:
+          - /url: /en-us/c/men/shoes/running-shoes
+        - link "Men's Trail Running Shoes" [ref=f31e729] [cursor=pointer]:
+          - /url: /en-us/c/men/shoes/trail-running-shoes
+        - link "Women's Hiking Shoes & Boots" [ref=f31e732] [cursor=pointer]:
+          - /url: /en-us/c/women/shoes/hiking-shoes
+        - link "Women's Road Running Shoes" [ref=f31e735] [cursor=pointer]:
+          - /url: /en-us/c/women/shoes/running-shoes
+        - link "Women's Trail Running Shoes" [ref=f31e738] [cursor=pointer]:
+          - /url: /en-us/c/women/shoes/trail-running-shoes
+        - link "Alpine Ski Boots" [ref=f31e741] [cursor=pointer]:
+          - /url: /en-us/c/sports/alpine-skiing/boots
+        - link "Alpine Skiing Clothing" [ref=f31e744] [cursor=pointer]:
+          - /url: /en-us/c/sports/alpine-skiing/clothing
+        - link "Cross-Country Ski Boots" [ref=f31e747] [cursor=pointer]:
+          - /url: /en-us/c/sports/cross-country-skiing/boots
+        - link "Hiking Bags & Packs" [ref=f31e750] [cursor=pointer]:
+          - /url: /en-us/c/sports/hiking/bags-and-packs
+        - link "Hiking Clothing" [ref=f31e753] [cursor=pointer]:
+          - /url: /en-us/c/sports/hiking/clothing
+        - link "Hiking Shoes" [ref=f31e756] [cursor=pointer]:
+          - /url: /en-us/c/sports/hiking/shoes
+        - link "Road Running Bags & Belts" [ref=f31e759] [cursor=pointer]:
+          - /url: /en-us/c/sports/road-running/bags-and-belts
+        - link "Road Running Clothing" [ref=f31e762] [cursor=pointer]:
+          - /url: /en-us/c/sports/road-running/clothing
+        - link "Road Running Shoes" [ref=f31e765] [cursor=pointer]:
+          - /url: /en-us/c/sports/road-running/shoes
+        - link "Snowboard Boots" [ref=f31e768] [cursor=pointer]:
+          - /url: /en-us/c/sports/snowboarding/boots
+        - link "Snowboards" [ref=f31e771] [cursor=pointer]:
+          - /url: /en-us/c/sports/snowboarding/snowboards
+        - link "Trail Running Vests & Packs" [ref=f31e774] [cursor=pointer]:
+          - /url: /en-us/c/sports/trail-running/bags-and-belts/vests-and-packs
+        - link "Trail Running Clothing" [ref=f31e777] [cursor=pointer]:
+          - /url: /en-us/c/sports/trail-running/clothing
+        - link "Trail Running Shoes" [ref=f31e780] [cursor=pointer]:
+          - /url: /en-us/c/sports/trail-running/shoes

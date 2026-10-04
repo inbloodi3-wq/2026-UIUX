@@ -1,0 +1,22 @@
+[    2481ms] [LOG] 2026-07-06 20:11 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:881
+[    2481ms] [LOG] 20261001142049 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1303
+[    2485ms] [LOG] Debugging 0 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1805
+[    2485ms] [LOG] Mobile Device Width: 390 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1968
+[    2650ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/c/m-running-shoes:0
+[    2650ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/c/m-running-shoes:0
+[    2650ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://goo.gl/9p2vKq) %o @ https://www.asics.co.kr/c/m-running-shoes:0
+[    2677ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92
+[    2718ms] [LOG] %c IF %c A %c DO %c B %c 이프두 %c 마케팅 자동화 & 온사이트 마케팅 서비스 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold;background-color:#313235;color:#ffffff; font-weight: bold;background-color:#313235;color:#ffffff;color:#ffc400 font-weight: bold font-weight: bold;background-color:#313235;color:#ffffff;background: linear-gradient(91.59deg, #107BF9 -0.96%, #E20A65 99.96%);border-radius:3px;padding:8px; @ https://script.ifdo.co.kr/jfullscript.js:0
+[    2792ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    2886ms] [WARNING] [Meta Pixel] - Invalid parameter format for currency. Please refer https://developers.facebook.com/docs/meta-pixel/reference/ for valid parameter specifications. @ https://connect.facebook.net/en_US/fbevents.js:203
+[    3430ms] [LOG] ✅ Edge 브라우저 여부: false @ https://widgets.cre.ma/asics.co.kr/v2/init.js:76
+[    3431ms] [LOG] ✅ PC여부: true @ https://widgets.cre.ma/asics.co.kr/v2/init.js:77
+[    3431ms] [LOG] ✅ 상품 상세 페이지 여부: false @ https://widgets.cre.ma/asics.co.kr/v2/init.js:78
+[    3431ms] [LOG] ❌ window.fromCrema 객체가 존재하지 않습니다. @ https://widgets.cre.ma/asics.co.kr/v2/init.js:81
+[    8287ms] [LOG] API 전송 조건 불충족: prevUserId/referrer/memberSeq 값 확인 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1746
+[    8287ms] [LOG] PrevUserId: 166c7f7dfa50570f @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1747
+[    8287ms] [LOG] Referrer:  @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1748
+[    8287ms] [LOG] ReferrerMatched: false @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1749
+[    8287ms] [LOG] MemberSeq:  @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1750
+[    8287ms] [LOG] WaitedMs: 5178 @ https://cdn.evgnet.com/beacon/j55653z555563j2e3wa3d3n3w091568796/asics/scripts/evergage.min.js:1751
+[   20714ms] [LOG] this.retval.getReqType() 5003 @ https://www.asics.co.kr/vendor/netfunnel/netfunnel.js?v=2.3.12:92

@@ -1,0 +1,435 @@
+- generic [ref=e2]:
+  - banner:
+    - generic [ref=e3]:
+      - link "새창으로 이동" [ref=e5] [cursor=pointer]:
+        - /url: /
+      - list [ref=e7]:
+        - listitem [ref=e8]:
+          - link "소개" [ref=e9] [cursor=pointer]:
+            - /url: /introduce/tjmedia
+        - listitem [ref=e10]:
+          - link "스토리" [ref=e11] [cursor=pointer]:
+            - /url: /story/story_list
+        - listitem [ref=e12]:
+          - link "제품" [ref=e13] [cursor=pointer]:
+            - /url: /product/product_list?cate_cd=G01&cate_sub_cd=G0101
+        - listitem [ref=e14]:
+          - link "반주곡" [ref=e15] [cursor=pointer]:
+            - /url: /song/recent_song
+        - listitem [ref=e16]:
+          - link "차트" [ref=e17] [cursor=pointer]:
+            - /url: /chart/top100
+        - listitem [ref=e18]:
+          - link "노래방" [ref=e19] [cursor=pointer]:
+            - /url: /musicroom/song_room
+        - listitem [ref=e20]:
+          - link "고객지원" [ref=e21] [cursor=pointer]:
+            - /url: /support/faq
+      - link [ref=e23] [cursor=pointer]:
+        - /url: /sitemap
+  - generic [ref=e25]:
+    - main [ref=e26]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - list [ref=e30]:
+            - listitem [ref=e31]
+            - listitem [ref=e33]:
+              - img "251212_신제품(3시리즈)_메인배너_1920x1080.png" [ref=e34]
+            - listitem [ref=e35]:
+              - img "PC메인배너_1920x1080_B2 Plus,K2 Plus.jpg" [ref=e36]
+            - listitem [ref=e37]:
+              - img "251212_신제품(앰프)_메인배너_1920x1080.png" [ref=e38]
+            - listitem [ref=e39]:
+              - img "251212_신제품(TMW-80)_메인배너_1920x1080.png" [ref=e40]
+            - listitem [ref=e41]
+            - listitem [ref=e43]:
+              - img "251212_신제품(3시리즈)_메인배너_1920x1080.png" [ref=e44]
+          - generic [ref=e48]:
+            - generic [ref=e49] [cursor=pointer]
+            - generic [ref=e50] [cursor=pointer]
+        - strong [ref=e53]:
+          - generic [ref=e54]: S
+          - generic [ref=e55]: C
+          - generic [ref=e56]: R
+          - generic [ref=e57]: O
+          - generic [ref=e58]: L
+          - generic [ref=e59]: L
+          - img "scroll-ico" [ref=e61]
+      - generic [ref=e66]:
+        - heading "노래방 문화의 시작, TJ" [level=4]
+        - paragraph: 일상의 스트레스를 잊고 가족, 친구, 연인과 함께 즐거움을 나누며 추억을 쌓는 특별한 공간 - 노래방, 그 시작에는 TJ가 있었습니다
+      - generic [ref=e70]:
+        - generic:
+          - img "노래방 문화의 시작, TJ"
+        - generic [ref=e71]:
+          - heading "노래방의 대중화를 이룬 TJ" [level=4]
+          - paragraph: 가수가 된 듯 노래를 부르는 새로운 패러다임을 만들고 남녀노소 누구나 즐길 수 있는 대중적 놀이 문화로 자리잡은 노래방, 그 여정에 TJ가 함께했습니다
+      - generic [ref=e75]:
+        - heading "노래방의 미래, TJ가 만들어갑니다" [level=3]: 노래방의 미래,TJ가 만들어갑니다
+        - paragraph: 노래 실력을 닦고 가수의 꿈을 키우는 공간이자 세계를 사로잡은 K-POP 아이돌을 탄생시킨 초석이 된 노래방, 그 미래를 TJ가 함께 만들어갑니다
+      - generic [ref=e76]:
+        - list [ref=e77]:
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+          - listitem
+        - generic [ref=e78]:
+          - generic [ref=e81]:
+            - heading "즐거움을 향한 도전" [level=4]:
+              - generic: 즐거움을
+              - generic: 향한 도전
+          - list [ref=e83]:
+            - listitem [ref=e84]:
+              - generic [ref=e85]:
+                - img "temp" [ref=e87]
+                - generic [ref=e90]:
+                  - paragraph [ref=e91]: "1981"
+                  - paragraph [ref=e92]: TJ의 시작, 태진음향 설립
+            - listitem [ref=e93]:
+              - generic [ref=e94]:
+                - img "temp" [ref=e96]
+                - generic [ref=e99]:
+                  - paragraph [ref=e100]: "1997"
+                  - paragraph [ref=e101]: 업계 유일, 주식 상장
+            - listitem [ref=e102]:
+              - generic [ref=e103]:
+                - img "temp" [ref=e105]
+                - generic [ref=e108]:
+                  - paragraph [ref=e109]: "2002"
+                  - paragraph [ref=e110]: 세계 최초, 인터넷 반주기 출시
+            - listitem [ref=e111]:
+              - generic [ref=e112]:
+                - img "temp" [ref=e114]
+                - generic [ref=e117]:
+                  - paragraph [ref=e118]: "2005"
+                  - paragraph [ref=e119]: TJ미디어로 사명 변경
+            - listitem [ref=e120]:
+              - generic [ref=e121]:
+                - img "temp" [ref=e123]
+                - generic [ref=e126]:
+                  - paragraph [ref=e127]: "2011"
+                  - paragraph [ref=e128]: 세계 3대 음원칩 전문 기업 DREAM 社 인수
+            - listitem [ref=e129]:
+              - generic [ref=e130]:
+                - img "temp" [ref=e132]
+                - generic [ref=e135]:
+                  - paragraph [ref=e136]: "2023"
+                  - paragraph [ref=e137]: 일본 가라오케 1위 '제일흥상'에 160만대 누적 출하 달성
+            - listitem [ref=e138]:
+              - generic [ref=e139]:
+                - img "temp" [ref=e141]
+                - generic [ref=e144]:
+                  - paragraph [ref=e145]: "1981"
+                  - paragraph [ref=e146]: TJ의 시작, 태진음향 설립
+            - listitem [ref=e147]:
+              - generic [ref=e148]:
+                - img "temp" [ref=e150]
+                - generic [ref=e153]:
+                  - paragraph [ref=e154]: "1997"
+                  - paragraph [ref=e155]: 업계 유일, 주식 상장
+            - listitem [ref=e156]:
+              - generic [ref=e157]:
+                - img "temp" [ref=e159]
+                - generic [ref=e162]:
+                  - paragraph [ref=e163]: "2002"
+                  - paragraph [ref=e164]: 세계 최초, 인터넷 반주기 출시
+            - listitem [ref=e165]:
+              - generic [ref=e166]:
+                - img "temp" [ref=e168]
+                - generic [ref=e171]:
+                  - paragraph [ref=e172]: "2005"
+                  - paragraph [ref=e173]: TJ미디어로 사명 변경
+            - listitem [ref=e174]:
+              - generic [ref=e175]:
+                - img "temp" [ref=e177]
+                - generic [ref=e180]:
+                  - paragraph [ref=e181]: "2011"
+                  - paragraph [ref=e182]: 세계 3대 음원칩 전문 기업 DREAM 社 인수
+            - listitem [ref=e183]:
+              - generic [ref=e184]:
+                - img "temp" [ref=e186]
+                - generic [ref=e189]:
+                  - paragraph [ref=e190]: "2023"
+                  - paragraph [ref=e191]: 일본 가라오케 1위 '제일흥상'에 160만대 누적 출하 달성
+            - listitem [ref=e192]:
+              - generic [ref=e193]:
+                - img "temp" [ref=e195]
+                - generic [ref=e198]:
+                  - paragraph [ref=e199]: "1981"
+                  - paragraph [ref=e200]: TJ의 시작, 태진음향 설립
+            - listitem [ref=e201]:
+              - generic [ref=e202]:
+                - img "temp" [ref=e204]
+                - generic [ref=e207]:
+                  - paragraph [ref=e208]: "1997"
+                  - paragraph [ref=e209]: 업계 유일, 주식 상장
+            - listitem [ref=e210]:
+              - generic [ref=e211]:
+                - img "temp" [ref=e213]
+                - generic [ref=e216]:
+                  - paragraph [ref=e217]: "2002"
+                  - paragraph [ref=e218]: 세계 최초, 인터넷 반주기 출시
+            - listitem [ref=e219]:
+              - generic [ref=e220]:
+                - img "temp" [ref=e222]
+                - generic [ref=e225]:
+                  - paragraph [ref=e226]: "2005"
+                  - paragraph [ref=e227]: TJ미디어로 사명 변경
+            - listitem [ref=e228]:
+              - generic [ref=e229]:
+                - img "temp" [ref=e231]
+                - generic [ref=e234]:
+                  - paragraph [ref=e235]: "2011"
+                  - paragraph [ref=e236]: 세계 3대 음원칩 전문 기업 DREAM 社 인수
+            - listitem [ref=e237]:
+              - generic [ref=e238]:
+                - img "temp" [ref=e240]
+                - generic [ref=e243]:
+                  - paragraph [ref=e244]: "2023"
+                  - paragraph [ref=e245]: 일본 가라오케 1위 '제일흥상'에 160만대 누적 출하 달성
+      - generic [ref=e246]:
+        - generic [ref=e247]:
+          - heading "올바른 제품 철학" [level=4]
+          - paragraph: 노래에 푹 빠져드는 음악과 음향, 영상을 위해 TJ는 또 연구하고 또 해냅니다
+        - generic [ref=e248]:
+          - generic:
+            - generic:
+              - list:
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                  - generic:
+                    - img "제목 없는 디자인 (33).png"
+                    - generic:
+                      - paragraph: 노래방 신곡, 왜 이 곡은 수록되고 저 곡은 안 될까?
+                      - link "MORE":
+                        - /url: javascript:void(0);
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                  - generic:
+                    - img "블로그 썸네일 (23).png"
+                    - generic:
+                      - paragraph: "\"저는 노래방 가기 전에 ´OO OO´부터 봐요!\" 10명 중 6명이 고른 기준은?"
+                      - link "MORE":
+                        - /url: javascript:void(0);
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                  - generic:
+                    - img "제목 없는 디자인 (16).png"
+                    - generic:
+                      - paragraph: 57가지 시험, 1,800개 체크리스트... TJ미디어, 품질에 이렇게 진심이라고?
+                      - link "MORE":
+                        - /url: javascript:void(0);
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                  - generic:
+                    - img "제목 없는 디자인 (9).png"
+                    - generic:
+                      - paragraph: 노래방에서 노래가 더 잘 불리는 이유, 바로 ´OO´에 있다!
+                      - link "MORE":
+                        - /url: javascript:void(0);
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                  - generic:
+                    - img "먼슬리 TJ-202606 (1).png"
+                    - generic:
+                      - paragraph: 노래방, 전국 어디서든 대결할 수 있다고?
+                      - link "MORE":
+                        - /url: javascript:void(0);
+          - generic [ref=e250] [cursor=pointer]
+      - generic [ref=e252]:
+        - generic:
+          - heading "경계를 뛰어넘는 기발한 테크닉" [level=3]
+          - paragraph: 노래에 기술과 아이디어를 더해 다양한 즐거움을 선사합니다
+        - generic:
+          - link:
+            - /url: /musicroom/song_room
+          - generic:
+            - paragraph: 즐겨봐! 노래방 핵꿀잼
+            - link "MORE":
+              - /url: /musicroom/song_room
+      - generic [ref=e254]:
+        - generic:
+          - heading "TJ 뉴스룸" [level=4]
+          - link "MORE":
+            - /url: /introduce/newsroom_list
+        - list [ref=e255]:
+          - listitem:
+            - link "TJ미디어, 전문가용 반주기 ‘리얼마스터3’ 출시… 프리미엄 홈·업소 노래시설 패키지도 함께 선보여":
+              - /url: /introduce/newsroom_view?idx=850
+            - paragraph: 2026-09-15
+          - listitem:
+            - link "TJ미디어, 상생으로 K-노래방 성장 이끈다…하반기 대리점 광역협의회 개최":
+              - /url: /introduce/newsroom_view?idx=849
+            - paragraph: 2026-09-10
+          - listitem:
+            - link "“노래방에서 쌓은 사연 모은다”… TJ미디어, 9월 한 달간 ‘모두의 노래방 저마다의 사연’ 캠페인 진행":
+              - /url: /introduce/newsroom_view?idx=848
+            - paragraph: 2026-09-02
+      - generic [ref=e256]:
+        - generic [ref=e258]:
+          - heading "새로운 도약을 향한 진취적인 변화" [level=4] [ref=e259]:
+            - generic [ref=e260]: 새로운 도약을 향한
+            - generic [ref=e261]: 진취적인 변화
+          - paragraph [ref=e262]: 노래하는 즐거움이 담긴 TJ의 새로운 글꼴을 만나보세요
+          - link "TJ 전용 글꼴 보러가기":
+            - /url: /introduce/font
+        - generic:
+          - list:
+            - listitem: 거
+            - listitem: 래
+            - listitem: 노
+            - listitem: 움
+            - listitem: 문
+            - listitem: 즐
+    - list [ref=e264]:
+      - listitem [ref=e265]:
+        - link "( ) TOP" [ref=e266] [cursor=pointer]:
+          - /url: ""
+          - text: ( )
+          - generic [ref=e268]: TOP
+    - list [ref=e270]:
+      - listitem [ref=e271]:
+        - link [ref=e272] [cursor=pointer]:
+          - /url: /
+  - contentinfo [ref=e273]:
+    - generic:
+      - link:
+        - /url: ""
+    - generic [ref=e274]:
+      - list [ref=e276]:
+        - listitem [ref=e277]:
+          - list [ref=e278]:
+            - listitem [ref=e279]:
+              - button "채용" [ref=e280] [cursor=pointer]
+            - listitem [ref=e283]
+            - listitem [ref=e285]:
+              - link "비즈니스제안" [ref=e286] [cursor=pointer]:
+                - /url: /support/business_apply
+            - listitem [ref=e287]
+            - listitem [ref=e289]:
+              - link "유료곡 등록" [ref=e290] [cursor=pointer]:
+                - /url: /support/paidsong
+      - list [ref=e292]:
+        - listitem [ref=e293]:
+          - generic [ref=e294]:
+            - link [ref=e295] [cursor=pointer]:
+              - /url: /
+              - img "logo" [ref=e296]
+            - list [ref=e297]:
+              - listitem [ref=e298]:
+                - link "개인정보취급방침" [ref=e299] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T01
+              - listitem [ref=e300]:
+                - link "내부정보관리규정" [ref=e301] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T02
+              - listitem [ref=e302]:
+                - link "이메일무단수집거부" [ref=e303] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T03
+              - listitem [ref=e304]:
+                - link "윤리경영방침" [ref=e305] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T04
+              - listitem [ref=e306]:
+                - link "부정행위접수" [ref=e307] [cursor=pointer]:
+                  - /url: /terms?cate_cd=T05
+            - list [ref=e308]:
+              - listitem [ref=e309]:
+                - link [ref=e310] [cursor=pointer]:
+                  - /url: http://withusent.com
+                  - img "withus" [ref=e311]
+              - listitem [ref=e312]:
+                - link [ref=e313] [cursor=pointer]:
+                  - /url: https://www.ziller.co.kr/Main.tjc?mp=main
+                  - img "TJ커뮤니티" [ref=e314]
+              - listitem [ref=e315]:
+                - link [ref=e316] [cursor=pointer]:
+                  - /url: https://dream.fr
+                  - img "dream" [ref=e317]
+              - listitem [ref=e318]:
+                - link [ref=e319] [cursor=pointer]:
+                  - /url: https://www.realmastermall.com/index.asp
+                  - img "real master2" [ref=e320]
+        - listitem [ref=e321]:
+          - generic [ref=e322]:
+            - heading "TJ미디어㈜" [level=6] [ref=e323]
+            - paragraph [ref=e324]:
+              - generic [ref=e325]: 대표이사 윤나라
+              - generic [ref=e326]: 서울특별시 마포구 월드컵북로 434 상암 IT Tower 8층
+              - generic [ref=e327]: 사업자등록번호 130-81-44332
+            - paragraph [ref=e328]:
+              - generic [ref=e329]:
+                - generic [ref=e330]: 대표전화 02-3663-4700
+                - generic [ref=e331]: 제품및AS문의 1577-5520
+              - generic [ref=e332]: 팩스 02-3665-3160
+            - list [ref=e333]:
+              - listitem [ref=e334]:
+                - link "스마트카드" [ref=e335] [cursor=pointer]:
+                  - /url: https://smartcard.tjmedia.com
+              - listitem [ref=e336]:
+                - link "대리점멤버십" [ref=e337] [cursor=pointer]:
+                  - /url: https://membership.tjmedia.com
+              - listitem [ref=e338]:
+                - link "취급점멤버십" [ref=e339] [cursor=pointer]:
+                  - /url: https://membership.tjmedia.com
+              - listitem [ref=e340]:
+                - link "협력업체" [ref=e341] [cursor=pointer]:
+                  - /url: https://scm.tjmedia.com
+              - listitem [ref=e342]:
+                - link "가정용반주기 신곡업데이트" [ref=e343] [cursor=pointer]:
+                  - /url: https://newsong.tjmedia.com
+              - listitem [ref=e344]:
+                - link "사이트맵" [ref=e345] [cursor=pointer]:
+                  - /url: /sitemap
+        - listitem [ref=e346]:
+          - generic [ref=e347]:
+            - list [ref=e348]:
+              - listitem [ref=e349]:
+                - link [ref=e350] [cursor=pointer]:
+                  - /url: https://smartstore.naver.com/tjmediacorp
+              - listitem [ref=e351]:
+                - link [ref=e352] [cursor=pointer]:
+                  - /url: https://www.youtube.com/user/tjmedia00
+              - listitem [ref=e353]:
+                - link [ref=e354] [cursor=pointer]:
+                  - /url: https://blog.naver.com/tjmedia00
+              - listitem [ref=e355]:
+                - link [ref=e356] [cursor=pointer]:
+                  - /url: https://www.facebook.com/alwaysfunTJ
+              - listitem [ref=e357]:
+                - link [ref=e358] [cursor=pointer]:
+                  - /url: https://www.instagram.com/tjmedia
+            - paragraph [ref=e359]: Copyrightⓒ TJ media Allright Reserved.
+  - generic [ref=e360]:
+    - list [ref=e362]:
+      - listitem [ref=e375]:
+        - generic [ref=e376]:
+          - generic [ref=e377]:
+            - button [ref=e379] [cursor=pointer]
+            - link [ref=e381] [cursor=pointer]:
+              - /url: https://www.tjmedia.com/support/find_agency
+          - generic [ref=e383]:
+            - generic [ref=e384]:
+              - checkbox "오늘 하루 보지않기" [ref=e385]
+              - generic [ref=e386] [cursor=pointer]: 오늘 하루 보지않기
+            - button "닫기" [ref=e387] [cursor=pointer]
+      - listitem [ref=e388]:
+        - generic [ref=e389]:
+          - generic [ref=e390]:
+            - button [ref=e392] [cursor=pointer]
+            - link [ref=e394] [cursor=pointer]:
+              - /url: https://www.tjmedia.com/musicroom/event_view?tabType=0&idx=252
+          - generic [ref=e396]:
+            - generic [ref=e397]:
+              - checkbox "오늘 하루 보지않기" [ref=e398]
+              - generic [ref=e399] [cursor=pointer]: 오늘 하루 보지않기
+            - button "닫기" [ref=e400] [cursor=pointer]
+    - generic:
+      - list:
+        - listitem
+        - listitem
+        - listitem

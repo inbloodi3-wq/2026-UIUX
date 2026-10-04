@@ -1,0 +1,354 @@
+- generic [active] [ref=f628e1]:
+  - generic [ref=f628e2]:
+    - generic:
+      - link "본문 바로가기":
+        - /url: "#layout_config_body"
+      - link "주메뉴 바로가기":
+        - /url: "#layout_topBar"
+      - link "사이드메뉴 바로가기":
+        - /url: "#layout_side"
+    - generic [ref=f628e3]:
+      - generic [ref=f628e5]:
+        - link [ref=f628e9] [cursor=pointer]:
+          - /url: /board/?id=notice
+          - img "banner" [ref=f628e10]
+        - generic [ref=f628e12] [cursor=pointer]
+      - list [ref=f628e16]:
+        - listitem [ref=f628e17]:
+          - heading [level=1] [ref=f628e18]:
+            - link [ref=f628e19] [cursor=pointer]:
+              - /url: /main/index
+              - img "(주) 아식스코리아" [ref=f628e20]
+          - list [ref=f628e22]:
+            - listitem [ref=f628e23]:
+              - list [ref=f628e25]:
+                - listitem [ref=f628e26]:
+                  - link "Men" [ref=f628e27] [cursor=pointer]:
+                    - /url: /goods/catalog?code=0018
+                - listitem [ref=f628e28]:
+                  - link "Women" [ref=f628e29] [cursor=pointer]:
+                    - /url: /goods/catalog?code=0019
+                - listitem [ref=f628e30]:
+                  - link "Sports" [ref=f628e31] [cursor=pointer]:
+                    - /url: /goods/catalog?code=0020
+                - listitem [ref=f628e32]:
+                  - link "Sportstyle" [ref=f628e33] [cursor=pointer]:
+                    - /url: /goods/catalog?code=0021
+                - listitem [ref=f628e34]:
+                  - link "#RUN" [ref=f628e35] [cursor=pointer]:
+                    - /url: /joincheck/running
+                - listitem [ref=f628e36]:
+                  - link "Launch calendar" [ref=f628e37] [cursor=pointer]:
+                    - /url: /board/?id=spscalendar
+                - listitem [ref=f628e38]:
+                  - link "Outlet" [ref=f628e39] [cursor=pointer]:
+                    - /url: /goods/catalog?code=0025
+        - listitem [ref=f628e40]:
+          - generic [ref=f628e41]:
+            - textbox [ref=f628e42]: 리뷰쓰고 2만 포인트 받기!
+            - button "검색" [ref=f628e43] [cursor=pointer]
+          - list [ref=f628e45]:
+            - listitem [ref=f628e46]:
+              - link [ref=f628e47] [cursor=pointer]:
+                - /url: /member/login
+                - paragraph [ref=f628e48]: 로그인
+              - link [ref=f628e49] [cursor=pointer]:
+                - /url: /member/agreement_gate
+                - paragraph [ref=f628e50]: / 회원가입
+            - listitem [ref=f628e51]:
+              - link [ref=f628e52] [cursor=pointer]:
+                - /url: /service/cs
+                - paragraph [ref=f628e53]: 고객센터
+          - link "장바구니" [ref=f628e54] [cursor=pointer]:
+            - /url: /order/cart
+    - generic [ref=f628e56]:
+      - list [ref=f628e58]:
+        - listitem [ref=f628e59]:
+          - link [ref=f628e60] [cursor=pointer]:
+            - /url: /main
+        - listitem [ref=f628e61]:
+          - link "Men" [ref=f628e63] [cursor=pointer]:
+            - /url: /c/men-total
+        - listitem [ref=f628e64]:
+          - link "신발" [ref=f628e66] [cursor=pointer]:
+            - /url: /c/men_shoes
+        - listitem [ref=f628e67]:
+          - link "러닝화" [ref=f628e69] [cursor=pointer]:
+            - /url: /c/m-running-shoes
+      - generic [ref=f628e70]:
+        - generic [ref=f628e71]:
+          - term [ref=f628e72]:
+            - list [ref=f628e74]:
+              - listitem [ref=f628e75]:
+                - generic [ref=f628e77]:
+                  - img "아식스 공식 온라인스토어,젤 님버스 28" [ref=f628e78]
+                  - button "3D 보기" [ref=f628e79] [cursor=pointer]
+                  - button "이미지 확대 보기 팝업" [ref=f628e80] [cursor=pointer]
+              - listitem [ref=f628e81]:
+                - list [ref=f628e82]:
+                  - listitem [ref=f628e83]:
+                    - link [ref=f628e84] [cursor=pointer]:
+                      - /url: "#"
+                  - listitem [ref=f628e85]:
+                    - list [ref=f628e86]:
+                      - listitem [ref=f628e87]:
+                        - link [ref=f628e88] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e90]:
+                        - link [ref=f628e91] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e93]:
+                        - link [ref=f628e94] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e96]:
+                        - link [ref=f628e97] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e99]:
+                        - link [ref=f628e100] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e102]:
+                        - link [ref=f628e103] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e105]:
+                        - link [ref=f628e106] [cursor=pointer]:
+                          - /url: "#"
+                      - listitem [ref=f628e108]:
+                        - link [ref=f628e109] [cursor=pointer]:
+                          - /url: "#"
+                  - listitem [ref=f628e111]:
+                    - link [ref=f628e112] [cursor=pointer]:
+                      - /url: "#"
+          - definition [ref=f628e115]:
+            - list [ref=f628e117]:
+              - listitem [ref=f628e118]:
+                - generic [ref=f628e119]:
+                  - generic [ref=f628e120]:
+                    - term [ref=f628e121]:
+                      - heading "젤 님버스 28" [level=3] [ref=f628e122]
+                      - paragraph [ref=f628e123]: 남성 신발
+                    - definition [ref=f628e124]:
+                      - link "찜하기 버튼" [ref=f628e125] [cursor=pointer]:
+                        - /url: /mypage/wish_add?seqs[]=22687
+                      - button "공유하기 버튼" [ref=f628e126] [cursor=pointer]
+                  - definition [ref=f628e128]:
+                    - generic [ref=f628e131]:
+                      - strong [ref=f628e133]: 199,000원
+                      - paragraph [ref=f628e134]: "스타일 # 1011C127.102"
+              - listitem [ref=f628e135]:
+                - generic [ref=f628e136]:
+                  - generic [ref=f628e138]:
+                    - term [ref=f628e139]: 쿠폰 및 혜택
+                    - definition [ref=f628e140]:
+                      - button "쿠폰받기" [ref=f628e142] [cursor=pointer]
+                      - generic [ref=f628e143]:
+                        - generic [ref=f628e144]: 카드혜택, 최대 6개월 무이자
+                        - button "자세히보기" [ref=f628e145] [cursor=pointer]
+                  - generic [ref=f628e146]:
+                    - term [ref=f628e147]: 후기
+                    - definition [ref=f628e148]:
+                      - link "개 후기" [ref=f628e149] [cursor=pointer]:
+                        - /url: "!#"
+                  - generic [ref=f628e151]:
+                    - term [ref=f628e152]: 색상
+                    - definition [ref=f628e153]:
+                      - generic [ref=f628e154]:
+                        - text: WHITE/STADIUM ORANGE
+                        - generic [ref=f628e155]:
+                          - link [ref=f628e157] [cursor=pointer]:
+                            - /url: /goods/view?no=21900
+                          - link [ref=f628e159] [cursor=pointer]:
+                            - /url: /goods/view?no=21928
+                          - link [ref=f628e161] [cursor=pointer]:
+                            - /url: /goods/view?no=22687
+              - listitem [ref=f628e162]:
+                - generic [ref=f628e163]:
+                  - generic [ref=f628e164]:
+                    - term [ref=f628e165]: 사이즈
+                    - definition [ref=f628e166]:
+                      - button "사이즈 가이드" [ref=f628e167] [cursor=pointer]
+                      - table [ref=f628e168]:
+                        - rowgroup [ref=f628e169]:
+                          - row [ref=f628e170]:
+                            - cell [ref=f628e171]:
+                              - generic [ref=f628e172]:
+                                - link [ref=f628e173] [cursor=pointer]:
+                                  - /url: "#"
+                                - link "사이즈를 선택해 주세요" [ref=f628e174] [cursor=pointer]:
+                                  - /url: "#"
+                  - list [ref=f628e176]:
+                    - listitem [ref=f628e177]: 총 상품 금액
+                    - listitem [ref=f628e178]:
+                      - generic [ref=f628e179]: 199,000원
+              - listitem [ref=f628e180]:
+                - generic [ref=f628e181]:
+                  - button "장바구니 담기" [ref=f628e182] [cursor=pointer]
+                  - button "바로구매" [ref=f628e183] [cursor=pointer]
+        - generic [ref=f628e184]:
+          - list [ref=f628e187]:
+            - listitem [ref=f628e188]:
+              - link "상품상세설명" [ref=f628e189] [cursor=pointer]:
+                - /url: "!#"
+            - listitem [ref=f628e190]:
+              - link "상품후기" [ref=f628e191] [cursor=pointer]:
+                - /url: "!#"
+          - generic [ref=f628e193]:
+            - generic [ref=f628e194]:
+              - paragraph [ref=f628e196]: 제품 상세 정보
+              - generic [ref=f628e197]:
+                - list [ref=f628e198]:
+                  - listitem [ref=f628e199]: 원산지
+                  - listitem [ref=f628e200]: 베트남
+                - list [ref=f628e201]:
+                  - listitem [ref=f628e202]: 소재
+                  - listitem [ref=f628e203]: 엔지니어드 니트
+                - list [ref=f628e204]:
+                  - listitem [ref=f628e205]: 아웃솔 소재
+                  - listitem [ref=f628e206]: ASICSGRIP AHAR+
+                - list [ref=f628e207]:
+                  - listitem [ref=f628e208]: 미드솔 소재
+                  - listitem [ref=f628e209]: FF BLAST+
+                - list [ref=f628e210]:
+                  - listitem [ref=f628e211]: 무게
+                  - listitem [ref=f628e212]: 281g
+            - button "상품 정보 더보기" [ref=f628e214] [cursor=pointer]
+          - generic [ref=f628e216]:
+            - generic [ref=f628e217]:
+              - paragraph [ref=f628e219] [cursor=pointer]: 제품정보 제공 고시
+              - generic [ref=f628e220]:
+                - generic [ref=f628e221]:
+                  - paragraph [ref=f628e222]: 제조국/수입자
+                  - paragraph [ref=f628e223]: (주) 아식스코리아
+                - generic [ref=f628e224]:
+                  - paragraph [ref=f628e225]: 품질보증기준
+                  - paragraph [ref=f628e226]: 판매일로부터 6개월
+                - generic [ref=f628e227]:
+                  - paragraph [ref=f628e228]: A/S 책임자와 전화번호
+                  - paragraph [ref=f628e229]: "(주) 아식스코리아 고객상담실: (080)929-3535 / (080) 930-3535"
+                - generic [ref=f628e230]:
+                  - paragraph [ref=f628e231]: 제품 취급 시 주의사항
+                  - paragraph [ref=f628e232]: 본 제품은 품질 보증서에 표기된 제품의 용도에 따라 착화해 주시기 바랍니다. 용도 이외의 착화 시 부상위험 및 제품수명의 단축이 올 수 있으므로 용도에 맞는 착화를 권장합니다. 신발의 뒷꿈치를 꺾어 신을 경우 뒷축 보강재가 발 뒷꿈치를 상하게 할 수 있으므로 꺾어신지 마시기 바랍니다. 게임화는 각 경기의 운동 특성에 맞게 제작되었으므로 용도에 맞는 착화를권장합니다. 경기 시에는 신끈을 발에 꼭 맞게 견고하게 매시기 바랍니다.
+            - generic [ref=f628e233]:
+              - paragraph [ref=f628e235] [cursor=pointer]: 배송안내
+              - generic [ref=f628e237]:
+                - paragraph [ref=f628e238]: 구매하신 상품은 우체국 택배를 통해 발송됩니다. 배송비는 기본 3,000원으로, 주문 금액이 5만원 이상일 경우 무료 배송됩니다. 결제일로부터 1~3일 이내에 배송이 시작됩니다.
+                - link "배송안내 자세히보기" [ref=f628e239] [cursor=pointer]:
+                  - /url: /service/shipping
+            - generic [ref=f628e240]:
+              - paragraph [ref=f628e242] [cursor=pointer]: 반품안내
+              - generic [ref=f628e244]:
+                - paragraph [ref=f628e245]: 상품 수령 후 7일 이내에 상품 미훼손 및 미사용 한 경우에만 반품 접수가 가능합니다. 단순 변심으로 인한 반품의 경우 배송비 6,000원이 부과되며, 반품 배송비는 환불 금액에서 차감됩니다. 구매한 상품의 교환은 불가하며, 반품 후 재구매가 가능합니다.
+                - link "반품안내 자세히보기" [ref=f628e246] [cursor=pointer]:
+                  - /url: /service/returns
+          - text: 원 원 원 원 원 원 원 원 원 원 원 원
+          - generic [ref=f628e250]:
+            - paragraph [ref=f628e251]: 상품후기
+            - paragraph [ref=f628e252]: (건)
+    - generic [ref=f628e253]:
+      - link "플로팅" [ref=f628e254] [cursor=pointer]:
+        - /url: "#"
+      - list [ref=f628e257]:
+        - listitem [ref=f628e258]:
+          - list [ref=f628e259]:
+            - listitem [ref=f628e260]:
+              - link [ref=f628e261] [cursor=pointer]:
+                - /url: /main/index
+                - img "(주) 아식스코리아" [ref=f628e262]
+            - listitem [ref=f628e263]:
+              - list [ref=f628e264]:
+                - listitem [ref=f628e265]:
+                  - generic [ref=f628e266]: 고객상담실
+                  - link "080-929-3535" [ref=f628e267] [cursor=pointer]:
+                    - /url: tel:080-929-3535
+                  - link "080-930-3535" [ref=f628e268] [cursor=pointer]:
+                    - /url: tel:080-930-3535
+                - listitem [ref=f628e269]:
+                  - paragraph [ref=f628e270]: "운영시간 : 월-금 AM 10:00-PM 17:00 / 점심시간 : PM 12:00-13:00"
+                  - paragraph [ref=f628e271]: "* 공휴일은 고객상담실 휴무입니다."
+          - list [ref=f628e272]:
+            - listitem [ref=f628e273]:
+              - link [ref=f628e275] [cursor=pointer]:
+                - /url: javascript:go_check();
+              - generic [ref=f628e277]:
+                - text: NHN KCP 구매안전
+                - paragraph [ref=f628e278]: 에스크로 서비스
+            - listitem [ref=f628e279]:
+              - img "isms 인증 마크 이미지" [ref=f628e281]
+              - generic [ref=f628e282]:
+                - term [ref=f628e283]: "[인증범위]"
+                - definition [ref=f628e284]: 온라인쇼핑몰 서비스 운영(asics)
+                - term [ref=f628e285]: "[유효기간]"
+                - definition [ref=f628e286]: 2025-08-21 ~ 2028-08-20
+        - listitem [ref=f628e287]:
+          - list [ref=f628e288]:
+            - listitem [ref=f628e289]:
+              - link "고객센터" [ref=f628e291] [cursor=pointer]:
+                - /url: /service/cs
+              - link "공지사항" [ref=f628e293] [cursor=pointer]:
+                - /url: /board/?id=notice
+              - link "뉴스&이벤트" [ref=f628e295] [cursor=pointer]:
+                - /url: /news_and_event
+              - link "주문조회" [ref=f628e297] [cursor=pointer]:
+                - /url: /mypage/order_catalog
+              - link "FAQ" [ref=f628e299] [cursor=pointer]:
+                - /url: /board/?id=faq
+              - link "사이즈 가이드" [ref=f628e301] [cursor=pointer]:
+                - /url: /service/shoe_size
+            - listitem [ref=f628e302]:
+              - link "회사소개" [ref=f628e304] [cursor=pointer]:
+                - /url: /service/company
+              - link "About ASICS" [ref=f628e306] [cursor=pointer]:
+                - /url: /service/company
+              - link "Sustainability" [ref=f628e308] [cursor=pointer]:
+                - /url: /mk/sustainability
+              - link "Carbon Footprint" [ref=f628e310] [cursor=pointer]:
+                - /url: /mk/sustainability/carbonfootprint
+              - link "Move Her Mind" [ref=f628e312] [cursor=pointer]:
+                - /url: /mk/move-her-mind
+              - link "The World Mental Health Day" [ref=f628e314] [cursor=pointer]:
+                - /url: /mk/soundmindsoundbody/everydayescape
+            - listitem [ref=f628e315]:
+              - link "사이트맵" [ref=f628e317] [cursor=pointer]:
+                - /url: /sitemap
+              - link "매장찾기" [ref=f628e319] [cursor=pointer]:
+                - /url: /store
+        - listitem [ref=f628e320]:
+          - generic [ref=f628e321]:
+            - list [ref=f628e322]:
+              - listitem [ref=f628e323]:
+                - link "이용약관" [ref=f628e325] [cursor=pointer]:
+                  - /url: /service/agreement
+                - link "쿠키규정" [ref=f628e327] [cursor=pointer]:
+                  - /url: /service/cookie
+                - link "개인정보처리방침" [ref=f628e329] [cursor=pointer]:
+                  - /url: /service/privacy
+            - list [ref=f628e330]:
+              - listitem [ref=f628e331]:
+                - link [ref=f628e332] [cursor=pointer]:
+                  - /url: https://www.instagram.com/asicskr/?hl=ko
+                  - img "인스타그램" [ref=f628e333]
+              - listitem [ref=f628e334]:
+                - link [ref=f628e335] [cursor=pointer]:
+                  - /url: https://ko-kr.facebook.com/ASICSKorea/
+                  - img "페이스북" [ref=f628e336]
+              - listitem [ref=f628e337]:
+                - link [ref=f628e338] [cursor=pointer]:
+                  - /url: https://pf.kakao.com/_FsRCC
+                  - img "카카오톡" [ref=f628e339]
+          - list [ref=f628e340]:
+            - listitem [ref=f628e341]: "(주) 아식스코리아 / 대표 : 김원무"
+            - listitem [ref=f628e342]: "주소 : 서울특별시 중구 을지로5길 16 (삼화타워) 14F"
+            - listitem [ref=f628e343]: "대표 전화 : 02-3663-8335 / 고객 상담실 : 080-930-3535"
+            - listitem [ref=f628e344]: "사업자등록번호 : 109-86-10809"
+            - listitem [ref=f628e345]: "통신판매신고번호 : 2018-서울중구-0740"
+            - listitem [ref=f628e346]: "E-mail : customercare-kr@asics.com"
+            - listitem [ref=f628e347]:
+              - link "사업자정보확인" [ref=f628e348] [cursor=pointer]:
+                - /url: javascript:;
+            - listitem [ref=f628e349]: ⓒ 2024 ASICS Korea
+  - iframe
+  - iframe
+  - generic:
+    - generic:
+      - generic:
+        - iframe: <head></head><body></body>
+  - button "아식스코리아 상담 버튼" [ref=f628e351]

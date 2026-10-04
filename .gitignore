@@ -1,0 +1,28 @@
+# Local Claude settings
+.claude/settings.local.json
+
+# API keys / secrets
+.env
+
+# Downloaded/approved external image binaries (tracked via assets/manifest.jsonl, not git)
+assets/original/*
+assets/approved/*
+!assets/original/.gitkeep
+!assets/approved/.gitkeep
+
+# Generated output
+output/*
+!output/.gitkeep
+
+# Logs
+logs/*
+
+# Temporary files
+*.tmp
+*.bak
+~$*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/

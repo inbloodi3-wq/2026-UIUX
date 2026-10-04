@@ -1,0 +1,2 @@
+[     622ms] [WARNING] Highcharts warning: Deprecated member
+ - Highcharts.each: use Array.forEach @ https://www.airkorea.or.kr/js/highcharts/highcharts.js:11
