@@ -1,8 +1,0 @@
-- generic [active] [ref=f545e1]:
-  - iframe
-  - iframe
-  - generic:
-    - generic:
-      - generic:
-        - iframe: <head></head><body></body>
-  - button "아식스코리아 상담 버튼" [ref=f545e3]

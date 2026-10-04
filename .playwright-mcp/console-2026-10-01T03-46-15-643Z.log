@@ -1,3 +1,0 @@
-[     416ms] [ERROR] Failed to load resource: the server responded with a status of 403 () @ https://www.salomon.com/en-us/product/genesis-2-li9180/L49309100:0
-[     802ms] [ERROR] Failed to load resource: net::ERR_CONTENT_DECODING_FAILED @ https://www.salomon.com/2bubKzBv/captcha/captcha.js?a=c&u=2af42930-bd4a-11f1-b4d9-79f04d23ddae&v=2b1eef7e-bd47-11f1-b28b-d9a5d9a3f073&m=0&b=aHR0cHM6Ly93d3cuc2Fsb21vbi5jb20vZW4tdXMvcHJvZHVjdC9nZW5lc2lzLTItbGk5MTgwL0w0OTMwOTEwMA==&h=R0VU:0
-[    1537ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://www.salomon.com/favicon.ico:0

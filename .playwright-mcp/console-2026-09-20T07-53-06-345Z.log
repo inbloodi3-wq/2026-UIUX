@@ -1,4 +1,0 @@
-[     104ms] [WARNING] Failed to decode downloaded font: https://www.tjmedia.com/resources/front/css/fonts/TJ-M/TJJoyofsingingM.woff2 @ https://www.tjmedia.com/song/recent_song:0
-[     104ms] [WARNING] OTS parsing error: invalid sfntVersion: -2147356393 @ https://www.tjmedia.com/song/recent_song:0
-[     104ms] [WARNING] Failed to decode downloaded font: https://www.tjmedia.com/resources/front/css/fonts/TJ-B/TJJoyofsingingB.woff2 @ https://www.tjmedia.com/song/recent_song:0
-[     104ms] [WARNING] OTS parsing error: invalid sfntVersion: -2147368169 @ https://www.tjmedia.com/song/recent_song:0

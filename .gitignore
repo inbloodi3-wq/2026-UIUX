@@ -1,18 +1,30 @@
 # Local Claude settings
 .claude/settings.local.json
 
-# API keys / secrets
+# API keys / secrets (.env.example만 추적)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa*
 
-# Downloaded/approved external image binaries (tracked via assets/manifest.jsonl, not git)
+# Asset 후보/승인 Staging (assets/manifest.jsonl로 추적, 배포본은 docs/assets/에 복사해 추적)
 assets/original/*
 assets/approved/*
 !assets/original/.gitkeep
 !assets/approved/.gitkeep
 
-# Generated output
-output/*
-!output/.gitkeep
+# Browser QA 산출물 / 브라우저 도구 캐시 (Source of Truth 아님)
+qa/screenshots/
+.playwright-mcp/
+
+# Legacy local-only 산출물 (git 미추적, 삭제 금지 — 백업 후 보존)
+archive/legacy-figma-automation/output/*
+!archive/legacy-figma-automation/output/.gitkeep
+
+# 현재 Stack은 package manager를 쓰지 않는다. 실수로 생겨도 추적하지 않는다.
+node_modules/
 
 # Logs
 logs/*
