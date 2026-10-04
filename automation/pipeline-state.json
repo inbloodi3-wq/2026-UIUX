@@ -3,9 +3,9 @@
   "project_id": "personal-portfolio",
   "config_file": "config/project.yaml",
   "mode": "figma_implementation",
-  "current_stage": "project_load",
+  "current_stage": "implementation_plan",
   "stage_status": "BLOCKED",
-  "last_completed_stage": null,
+  "last_completed_stage": "content_asset_mapping",
   "optional_stages": {
     "reference_research": "N/A (figma_implementation)",
     "asset_sourcing": "NOT_STARTED"
@@ -29,24 +29,49 @@
       "method": "기존 Figma connector(claude.ai Figma MCP) — whoami 응답 확인. 새 설치·설정 변경 없음",
       "policy": "READ ONLY. 읽기 도구(get_metadata, get_design_context, get_screenshot, get_variable_defs, whoami)만 allow, 쓰기 도구는 settings.json deny",
       "risk": "계정의 Plan/Seat에 따라 Figma 도구 호출 한도가 낮을 수 있다(확인된 Seat: starter/View 2곳, student/Full 1곳). 대상 파일이 어느 Team에 있는지에 따라 달라지며 실제 한도는 미확인. 한도에 걸리면 재시도하지 않고 Blocker로 보고한다(대체 입력: design_source.local_exports).",
-      "file_read": "UNVERIFIED — 대상 파일 URL이 아직 없어 실제 파일 읽기는 시험하지 않음"
+      "file_read": "VERIFIED 2026-10-04 — get_metadata 2회, get_screenshot 4회, get_design_context 3회, get_variable_defs 1회 성공. 호출 한도에 걸리지 않았다(실제 한도는 여전히 미확인)",
+      "note": "자동화 Page 전체 Metadata는 약 190만 자다. Page 단위로 다시 읽지 말고 design-source/frame-map.md의 Node ID로 Frame·Section 단위로 읽는다"
     }
   },
   "checkpoint": {
-    "stage": "project_load",
+    "stage": "implementation_plan",
     "page": null,
     "section": null,
     "updated_at": "2026-10-04",
-    "resume_hint": "mode는 figma_implementation이다. config/project.yaml의 design_source.reference.url이 비어 있다. 사용자에게 사이트 디자인이 있는 Figma 파일/Page URL을 받은 뒤 design_source_intake(read-design-source Skill, Stage 1)를 시작한다. Design Definition 구간의 산출물은 design-source/(frame-map.md, extracted-tokens.json, implementation-spec.md)와 ia/sitemap.md뿐이며 docs/는 만들지 않는다. docs/는 site_scaffold에서 처음 생성한다. content_ia / visual_direction / visual_system은 실행하지 않는다."
+    "resume_hint": "Figma Intake 완료. 디자인은 웹사이트 화면이 아니라 1920 폭의 긴 포트폴리오 문서(Cover → Profile → Contents → AIDORA → TJ MEDIA → ASICS KOREA)다. design-source/implementation-spec.md의 Design Gap G1(Page 구조·내비게이션), G2(Case Study 구현 방식), G3(Responsive)에 대한 사용자 답을 받은 뒤: (1) ia/sitemap.md의 Page 확정 (2) G2에 따라 Project Page의 calibration 범위 결정 (3) Font 파일과 index Asset(Texture, 프로필 사진)의 권리 확인·확보 (4) site_scaffold. 답을 받기 전에는 docs/를 만들지 않는다."
   },
   "render_checked": false,
   "qa_status": "NOT_STARTED",
   "retry_count": 0,
   "blockers": [
     {
-      "stage": "project_load",
+      "stage": "implementation_plan",
+      "type": "scope",
+      "detail": "Design Gap G1 — Figma에 Page 구분과 사이트 내비게이션이 없다(하나의 긴 문서). Page 분할과 링크 방식 결정 필요",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "implementation_plan",
+      "type": "scope",
+      "detail": "Design Gap G2 — Case Study와 AIDORA 결과 화면(약 43 Section, Text Node 4,100여 개)의 구현 방식 결정 필요. G4(AIDORA 화면이 보여 주는 대상인지 동작하는 Page인지) 포함",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "implementation_plan",
+      "type": "scope",
+      "detail": "Design Gap G3 — Desktop 1920 디자인만 있다. Tablet·Mobile·좁은 Desktop 대응 방식 결정 필요",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "site_scaffold",
+      "type": "rights",
+      "detail": "Font 6종의 라이선스 확인과 woff2 파일 확보 방법, index의 Texture 배경 이미지 출처, 프로필 사진 사용 확인이 필요하다",
+      "since": "2026-10-04"
+    },
+    {
+      "stage": "implementation_plan",
       "type": "content",
-      "detail": "Design Source 위치가 제공되지 않았다. 구현 대상 Figma 파일(또는 Page) URL이 필요하다. archive에 기록된 예전 파일을 대상으로 가정하지 않는다.",
+      "detail": "Content Gap C1(profile 이메일 gmali.com 오탈자 여부), C2(전화번호·생년월일 공개 여부), C4(title/description 문구)",
       "since": "2026-10-04"
     }
   ],
@@ -62,14 +87,14 @@
   "last_deploy": null,
   "last_meaningful_change": {
     "date": "2026-10-04",
-    "summary": "Stage Boundary Fix: Design Definition 구간에서 docs/를 만들지 않도록 수정(figma_calibration → design-source/extracted-tokens.json, visual_system → design-system/token-source.json). docs/css/tokens.css는 site_scaffold에서 Token Source로부터 생성. Figma Node 대응을 ia/sitemap.md에서 design-source/frame-map.md로 분리. 미리 만들어 둔 docs/.nojekyll 제거."
+    "summary": "Figma Design Source Intake: 자동화 > 포트폴리오 > 프로세스 구조 확인, frame-map / extracted-tokens(index + Figma Variable) / implementation-spec / sitemap 작성. viewports.desktop을 Figma Frame 폭 1920으로 변경. Figma 수정 없음, docs/ 생성 없음, Asset 다운로드 없음."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {
-    "design_source_intake": "NOT_STARTED",
-    "figma_calibration": "NOT_STARTED",
-    "content_asset_mapping": "NOT_STARTED",
-    "implementation_plan": "NOT_STARTED",
+    "design_source_intake": "COMPLETE",
+    "figma_calibration": "PARTIAL — index(cover, profile, contents)는 Node 단위로 추출, 프로세스 전체의 Figma Variable/Text Style 추출. Case Study와 AIDORA 결과 화면의 Node 단위 값은 G2 결정 후",
+    "content_asset_mapping": "PARTIAL — Website 구조와 Frame Map 등록 완료, Asset·Font 목록 작성. Page 분할(G1) 미확정, ASICS 문안 미확인(C5)",
+    "implementation_plan": "BLOCKED — Design Gap G1, G2, G3 결정 대기",
     "autonomous_stages": "N/A — env_calibration, content_ia, reference_research, visual_direction, visual_system은 이 mode에서 실행하지 않는다"
   }
 }

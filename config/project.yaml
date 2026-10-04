@@ -13,10 +13,12 @@ project:
 design_source:
   type: figma              # figma | generated
   access: read_only        # figma는 항상 read_only. Figma를 수정하지 않는다
-  status: NOT_CONFIRMED    # NOT_CONFIRMED | CONFIRMED | CALIBRATED | PLAN_READY
+  status: CALIBRATED       # NOT_CONFIRMED | CONFIRMED | CALIBRATED | PLAN_READY — index는 CALIBRATED, Project Page는 Design Gap G2 결정 후. PLAN_READY 아님
   reference:
-    url: ""                # 사용자 제공 필요 — 사이트 디자인이 있는 Figma 파일/Page URL
-    file_key: ""
+    url: "https://www.figma.com/design/4IjbcMoAkTyWkoacnVAmNe/?node-id=1716-2382"   # 2026-10-04 사용자 제공
+    file_key: "4IjbcMoAkTyWkoacnVAmNe"
+    page: "자동화"            # Primary implementation Page (1716:2382)
+    root: "포트폴리오"        # Primary implementation Root (Section 2025:7129). Node 대응은 frame_map 참조
   local_exports: ""        # 선택. Figma 도구를 쓸 수 없을 때 사용자가 내보낸 PNG/PDF 폴더
   # Design Definition 산출물(read-design-source가 생성). docs/는 SITE SCAFFOLD에서 처음 만든다
   frame_map: design-source/frame-map.md              # Website Page/Section ↔ Figma Page/Frame/Node ID
@@ -64,9 +66,9 @@ site:
     max_requests: 30
 
 viewports:                 # Browser QA 기준 폭(px). 세 Viewport 모두 필수. figma mode에서는 intake 때 Figma Frame 폭에 맞춘다
-  desktop: 1440
-  tablet: 768
-  mobile: 390
+  desktop: 1920            # Figma Frame 폭. 2026-10-04 intake에서 맞춤
+  tablet: 768              # Figma에 디자인 없음(Design Gap G3)
+  mobile: 390              # Figma에 디자인 없음(Design Gap G3)
 
 automation:
   autonomy_mode: autonomous     # guided | autonomous
