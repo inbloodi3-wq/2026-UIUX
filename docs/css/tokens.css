@@ -231,7 +231,7 @@
 
   /* Motion — Figma에 없다. Loading → Cover 전환용(사용자 지정 Interaction).
      근거: design-source/implementation-spec.md "Loading Experience" */
-  --duration-loader-out: 500ms;
+  --duration-loader-out: 240ms;
   --duration-reveal: 800ms;
   --delay-reveal: 150ms;      /* Loading 선이 옅어진 뒤에 글자가 나타나기 시작한다 */
   --stagger-reveal: 70ms;

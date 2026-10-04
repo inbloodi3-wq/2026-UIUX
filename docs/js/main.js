@@ -16,9 +16,16 @@
     return;
   }
 
+  // 시간 설정(ms)
+  var FILL_TIME = 1000;    // 준비가 빨리 끝나도 0 → 100은 이 시간에 걸쳐 올라간다
+  var HOLD_TIME = 180;     // 100%를 잠깐 보여 준 뒤 넘어간다
+  var MAX_STEP = 2.5;      // 한 Frame에 올라갈 수 있는 최대 폭(준비가 늦게 끝나도 튀지 않게)
+  var SAFETY_TIME = 7000;  // 무언가 끝나지 않아도 이 시간 뒤에는 넘어간다
+
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var target = 30;   // 여기까지 왔다면 HTML은 다 읽은 상태다
+  var target = 30;   // 실제 준비 상태가 허락하는 진행률. 여기까지 왔다면 HTML은 다 읽은 상태다
   var shown = 0;     // 화면에 보이는 진행률. 줄어들지 않는다.
+  var startTime = null;
 
   // 준비 단계마다 목표 진행률을 올린다
   function raiseTarget(next) {
@@ -43,8 +50,7 @@
     window.addEventListener('load', function () { raiseTarget(100); });
   }
 
-  // 무언가 끝나지 않더라도 4초 뒤에는 넘어간다
-  window.setTimeout(function () { raiseTarget(100); }, 4000);
+  window.setTimeout(function () { raiseTarget(100); }, SAFETY_TIME);
 
   function render() {
     var percent = Math.floor(shown);
@@ -52,17 +58,28 @@
     bar.style.transform = 'scaleX(' + shown / 100 + ')';
   }
 
-  function tick() {
+  // 시간에 따른 진행률: 처음엔 조금 빠르고 끝으로 갈수록 완만해진다(끝에서 멈춘 듯 보이지 않을 정도로만)
+  function timeProgress(elapsed) {
+    var t = Math.min(1, elapsed / FILL_TIME);
+    return (1 - Math.pow(1 - t, 1.5)) * 100;
+  }
+
+  function tick(now) {
+    if (startTime === null) startTime = now;
+
     if (reduceMotion) {
+      // 움직임을 줄이는 환경: 기다리게 하지 않고 준비되는 대로 넘어간다
       shown = target;
     } else {
-      // 목표까지 남은 거리의 일부씩 다가간다. 최소 0.6씩은 움직여 멈춰 보이지 않게 한다.
-      shown = Math.min(target, shown + Math.max(0.6, (target - shown) * 0.08));
+      // 시간이 허락하는 값과 실제 준비 상태가 허락하는 값 중 작은 쪽까지만 올라간다.
+      // 준비가 늦으면 거기서 기다리고, 준비가 빨라도 FILL_TIME보다 빨리 차지 않는다.
+      var allowed = Math.min(timeProgress(now - startTime), target);
+      shown = Math.max(shown, Math.min(allowed, shown + MAX_STEP));
     }
     render();
 
     if (shown >= 100) {
-      finish();
+      window.setTimeout(finish, reduceMotion ? 0 : HOLD_TIME);
     } else {
       window.requestAnimationFrame(tick);
     }
