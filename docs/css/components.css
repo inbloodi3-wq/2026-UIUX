@@ -3,15 +3,18 @@
 /* ---------- Cover ---------- */
 
 /* Cover는 종이 한 장이다. 종이(::before)와 내용이 같은 칸에 겹쳐 놓인다.
-   종이는 Folder 바탕과 같은 질감을 같은 위치에 깔아서, 놓여 있을 때는 겹친 것이 보이지 않는다. */
-.cover {
+   종이는 Folder 바탕과 같은 질감을 같은 위치에 깔아서, 놓여 있을 때는 겹친 것이 보이지 않는다.
+   Contents도 같은 종이를 쓴다. */
+.cover,
+.contents {
   display: grid;
   grid-template: 1fr / minmax(0, 1fr);
   min-height: 100vh;
   min-height: 100svh;
 }
 
-.cover::before {
+.cover::before,
+.contents::before {
   content: "";
   grid-area: 1 / 1;
   /* 종이를 글자와 다른 Layer에 둔다. 같은 Layer에 있으면 Windows에서 글자 가장자리 처리가 달라져,
@@ -564,5 +567,221 @@
 
   .tool-cards {
     flex-wrap: nowrap;
+  }
+}
+
+/* ---------- Contents ----------
+   Profile 아래에 놓인 Sheet다. 종이 바탕은 Cover와 같다(위의 .cover, .contents 참고).
+   1440 이상: Figma 구성 그대로(왼쪽 제목, 오른쪽 Project 3개). 크기는 화면 폭에 비례한다(--px).
+   1440 미만: Figma에 디자인이 없다. 같은 내용을 같은 순서로 쌓고, 크기는 px 그대로 쓴다. 왼쪽 여백은 Cover와 같다. */
+
+.contents__inner {
+  --px: 1px;
+
+  position: relative;
+  grid-area: 1 / 1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-stack-gap-compact) * var(--px));
+  padding: calc(var(--space-contents-block-compact) * var(--px)) var(--sheet-padding-right) calc(var(--space-contents-block-compact) * var(--px)) var(--sheet-padding-left);
+}
+
+.contents__heading {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-heading-gap) * var(--px));
+}
+
+.contents__eyebrow,
+.contents-index__heading {
+  font-size: calc(var(--text-contents-eyebrow-size) * var(--px));
+  font-weight: var(--text-contents-eyebrow-weight);
+  line-height: calc(var(--text-contents-eyebrow-leading-px) * var(--px));
+  letter-spacing: calc(var(--text-contents-eyebrow-tracking) * var(--px));
+  text-transform: uppercase;
+  color: var(--color-contents-label);
+}
+
+.contents__title {
+  font-family: var(--font-script);
+  font-size: calc(var(--text-contents-title-size-mobile) * var(--px));
+  font-weight: var(--text-contents-title-weight);
+  line-height: var(--text-contents-title-leading);
+  letter-spacing: calc(var(--text-contents-title-tracking) / var(--text-contents-title-size) * 1em);
+  color: var(--color-contents-title);
+}
+
+.contents__projects {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-groups-gap) * var(--px));
+  min-width: 0;
+}
+
+/* Project 한 묶음: 제목 줄 + Index */
+.contents-project {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-group-gap) * var(--px));
+}
+
+/* 제목 줄: 번호, 이름, 분야. 좁으면 줄을 바꾼다 */
+.contents-project__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: center;
+  gap: calc(var(--space-contents-head-row-gap-compact) * var(--px)) calc(var(--space-contents-title-gap) * var(--px));
+  padding-bottom: calc(var(--space-contents-head-padding-compact) * var(--px));
+  border-bottom: 1px solid var(--color-contents-rule);
+}
+
+/* 좁은 화면에서는 번호가 한 줄을 차지한다(Project마다 줄 구성이 달라지지 않게) */
+.contents-project__number {
+  flex-basis: 100%;
+  font-size: calc(var(--text-contents-number-size) * var(--px));
+  font-weight: var(--text-contents-number-weight);
+  line-height: calc(var(--text-contents-number-leading-px) * var(--px));
+  letter-spacing: calc(var(--text-contents-number-tracking) * var(--px));
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-contents-number);
+}
+
+.contents-project__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0 calc(var(--space-contents-title-gap) * var(--px));
+}
+
+.contents-project__name {
+  font-size: calc(var(--text-contents-project-size) * var(--px));
+  font-weight: var(--text-contents-project-weight);
+  line-height: calc(var(--text-contents-project-leading-px) * var(--px));
+  white-space: nowrap;
+  color: var(--color-contents-project);
+}
+
+.contents-project__category,
+.contents-project__caption {
+  font-size: calc(var(--text-contents-caption-size) * var(--px));
+  font-weight: var(--text-contents-caption-weight);
+  line-height: calc(var(--text-contents-caption-leading-px) * var(--px));
+  letter-spacing: calc(var(--text-contents-caption-tracking) * var(--px));
+  text-transform: uppercase;
+}
+
+.contents-project__category {
+  color: var(--color-contents-sub);
+}
+
+.contents-project__caption {
+  color: var(--color-contents-label);
+}
+
+.contents-project__index {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-index-gap) * var(--px));
+}
+
+/* Index 4항목. 좁은 화면에서는 두 칸씩 */
+.contents-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: calc(var(--space-contents-index-row-gap-compact) * var(--px)) calc(var(--space-contents-index-gap) * var(--px));
+}
+
+.contents-index__column {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--space-contents-item-gap) * var(--px));
+  min-width: 0;
+}
+
+.contents-index__items {
+  font-size: calc(var(--text-contents-item-size) * var(--px));
+  font-weight: var(--text-contents-item-weight);
+  line-height: calc(var(--text-contents-item-leading-px) * var(--px));
+  letter-spacing: calc(var(--text-contents-item-tracking) * var(--px));
+  text-transform: capitalize;
+  color: var(--color-contents-sub);
+}
+
+.contents-index__items span {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .contents__title {
+    font-size: calc(var(--text-contents-title-size) * var(--px));
+  }
+}
+
+@media (min-width: 1024px) {
+  .contents-index {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* 1440 이상: Figma 구성 */
+@media (min-width: 1440px) {
+  .contents__inner {
+    --px: calc(min(100vw, 1920px) / 1920);
+
+    justify-self: center;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: calc(var(--space-contents-columns-gap) * var(--px));
+    width: calc(var(--layout-contents-inner-width) * var(--px));
+    min-height: calc(var(--layout-contents-inner-height) * var(--px));
+    margin-block: var(--sheet-margin-block);
+    padding: 0;
+  }
+
+  .contents__heading {
+    flex: none;
+    width: calc(var(--layout-contents-left-width) * var(--px));
+  }
+
+  .contents__projects {
+    flex: none;
+    width: calc(var(--layout-contents-right-width) * var(--px));
+  }
+
+  .contents-project__head {
+    flex-wrap: nowrap;
+    align-items: center;
+    height: calc(var(--layout-contents-project-row-height) * var(--px));
+    padding-bottom: 0;
+  }
+
+  .contents-project__number {
+    flex-basis: auto;
+    align-self: center;
+    padding-top: calc(var(--space-contents-number-top) * var(--px));
+    margin-bottom: calc((var(--text-contents-project-leading-px) - var(--text-contents-number-leading-px) - var(--space-contents-number-top)) * var(--px));
+  }
+
+  .contents-project__title {
+    flex-wrap: nowrap;
+  }
+
+  .contents-project__category,
+  .contents-project__caption {
+    white-space: nowrap;
+  }
+
+  .contents-index {
+    display: flex;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .contents-index__column {
+    flex: none;
+    width: calc(var(--layout-contents-index-column-width) * var(--px));
   }
 }

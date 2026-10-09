@@ -98,7 +98,7 @@
   window.requestAnimationFrame(tick);
 })();
 
-// Sheet 전환 (Cover ↔ Profile)
+// Sheet 전환 (Cover ↔ Profile ↔ Contents)
 // Folder 안의 Sheet들은 같은 자리에 겹쳐 있다. 아래로 넘기려는 입력(Wheel, Swipe, 방향키)이 오면
 // 맨 위 Sheet를 꺼내 옆으로 넘겨 두고(.is-extracted), 위로 넘기려는 입력이 오면 다시 놓는다(.is-returned).
 // 움직임 자체는 CSS(layout.css의 sheet-extract / sheet-return)가 맡는다.

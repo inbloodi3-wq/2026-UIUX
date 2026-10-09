@@ -155,7 +155,7 @@ Lorem ipsum, TODO, Sample Text는 `포트폴리오` 안에서 발견되지 않�
 ## 17. Build Order
 1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격. (완료 2026-10-04)
 2. **Master Experience = Loading → index#cover.** (완료 2026-10-04 — 20절)
-3. index#profile (구현 2026-10-04 — 22절. 2026-10-09 사진 없는 구성 + Sheet 전환 — 24절) → index#contents.
+3. index#profile (구현 2026-10-04 — 22절. 2026-10-09 사진 없는 구성 + Sheet 전환 — 24절) → index#contents (구현 2026-10-09 — 25절).
 4. Project Page는 G2 결정 후: aidora → tj-media → asics-korea 순(Contents 순서).
 5. Interaction(링크) → FULL QA.
 
@@ -384,3 +384,66 @@ portfolio-stage
 ### 남은 것 / 확인하지 못한 것
 - 실제 기기의 Touch 관성, Trackpad 관성은 Emulation으로만 확인했다.
 - `main.js`가 `review_threshold_lines`를 넘었다(Loading + Sheet 전환 두 역할). 파일은 나누지 않았다. Contents Sheet를 넣을 때 다시 본다.
+
+## 25. Contents + Profile → Contents (2026-10-09, 사용자 지정)
+### 사용자 결정
+- Cover → Profile의 구현과 Motion은 승인·확정됐다. 값과 방식을 다시 조정하지 않는다(Regression만 고친다).
+- Contents를 세 번째 Sheet로 넣고, Profile → Contents도 같은 방식(lift → extract → reveal)으로 넘긴다. Contents 맨 위에서 위로 넘기면 Profile을 다시 놓는다.
+- Project 항목은 나중에 연결할 수 있는 구조만 준비한다. Project Page, 가짜 Page, 임의 URL은 만들지 않는다.
+
+### Source
+- Figma `2012:9389`(Section `2012:9390`, 안쪽 `2012:9391`). 이번에 Render 1회, Node 단위 Design Context 1회를 읽었다.
+- 참고: 이번에 Metadata를 읽었을 때 `2012:9390`이 하위 Node 없이 반환됐다(Cover의 `2025:7133`도 같다). Design Context와 Render는 정상이고 문안·구조는 지난 Intake의 기록과 같다. 원인은 확인하지 못했다.
+- Project 3의 Node ID는 `2016:7129`–`2016:7151`이다(`frame-map.md`의 Component 표는 대표 Node만 적혀 있다).
+
+### 구현
+- 구조: 왼쪽 제목 묶음(`contents__heading`: Eyebrow, 필기체 제목)과 오른쪽 Project 목록(`contents__projects`). 반복 Component는 `contents-project`(제목 줄 `__head` = 번호 + 이름 + 분야, 그 아래 `__index` = Caption + Index 4항목)와 `contents-index`(`__column` = 제목 + 두 줄).
+- 문안은 Figma 그대로다(Project 3개, 각 Index 4항목). 대문자·Capitalize는 CSS로 표현한다(16절).
+- 종이 바탕은 Cover와 같은 것을 같은 방식으로 쓴다(Texture는 20절의 자체 제작 Tile).
+- Heading 단계: 제목 `h2`, Project 이름 `h3`, Index 제목 `h4`.
+- 각 Project 묶음에 `data-project`(`ia/sitemap.md`의 Page ID)를 달았다. 링크는 아직 없다. Project Page가 생기면 Project 이름을 링크로 감싼다.
+
+### Implementation Judgements
+| 항목 | 판단 | 이유 |
+|---|---|---|
+| 줄 높이 | `--text-contents-*-leading-px`를 쓴다 | Figma는 글줄 높이를 정수로 올림·반올림해 쌓는다. 배수(`-leading`)를 그대로 쓰면 묶음마다 조금씩 어긋나 세 번째 선에서 눈에 보이는 차이가 됐다 |
+| 번호의 세로 위치 | Figma의 "이름 줄 위쪽에서 `--space-contents-number-top`만큼 아래"를 여백 계산으로 옮겼다 | 감싸는 요소를 늘리지 않기 위해 |
+| Font | Outfit Medium(굵기 500)을 추가했다. 사용자 PC 설치본, 기존 Outfit과 같은 출처·OFL(name table 확인) — `assets/manifest.jsonl`의 `font-outfit-500` | Eyebrow와 Index 제목이 Medium이다. 없으면 Browser가 다른 굵기로 대신 그린다 |
+| 1440 이상 | Figma 구성을 화면 폭에 비례해 줄인다(글자 포함) | Profile과 같은 방식. 글자를 줄이지 않으면 Index 4열이 칸에 들어가지 않는다 |
+| 1440 미만 | 제목 묶음 → Project 3개 순으로 쌓는다. 글자 크기는 Figma 값 그대로. 번호가 한 줄, 이름과 분야가 다음 줄(좁으면 분야가 그 아래로). Index는 1024 이상 4칸, 그 미만 2칸 | Figma에 디자인 없음. 순서 유지, 삭제 없음 |
+| 600 미만의 필기체 제목 | `--text-contents-title-size-mobile` | 390 폭에 들어가는 크기 |
+| 좁은 화면의 좌우 여백 | Cover와 같은 값(`--sheet-padding-left/right`) | 띠를 피하고 Cover와 왼쪽 선을 맞춘다 |
+
+### 1920 Figma 대비 (Render에서 실측, px)
+- 모든 요소의 x: 차이 0(한 곳 +1).
+- 구분선 3개, Index 항목 줄: y 차이 0.
+- Project 제목 줄, Caption, Index 제목: y −1. Eyebrow: y −2. 서체의 세로 Metric 처리 차이로 본다(고치지 않음, P3).
+- 필기체 제목: 차이 0.
+
+### Sheet 구조와 상태
+```
+sheet-stack [data-active-sheet = cover | profile | contents]
+  cover     맨 위
+  profile
+  contents  맨 아래(꺼내지 않는다)
+```
+- `main.js`는 Sheet 수에 묶여 있지 않다(`[data-sheet]`를 문서 순서대로 읽는다). 이번에 고친 곳은 `layout.css`의 겹침 순서 한 줄뿐이다.
+- 꺼낸 Sheet는 `.is-extracted`로 남고, 다시 놓으면 `.is-returned`가 된다. DOM에서 지우지 않는다.
+
+### Profile → Contents
+- Cover → Profile과 같은 Keyframe·같은 Token을 쓴다(`sheet-extract`, `sheet-return`). 값은 하나도 바꾸지 않았다.
+- 한 번의 입력으로 한 장만 넘어간다: Wheel은 한 동작(입력이 끊기기 전까지)에 한 번, Touch는 한 번의 Touch에 한 번, Keyboard는 누를 때마다 한 번(누르고 있는 반복 입력은 무시).
+- Sheet 안의 Scroll이 먼저다. 끝(맨 아래 / 맨 위)에서 새로 시작한 입력만 넘긴다.
+
+### 함께 고친 구현 결함
+- Sheet가 Focus를 받은 상태에서 꺼내지면 Focus 선이 Sheet 테두리처럼 보였다(이전 commit에서도 Cover를 다시 놓았다가 꺼낼 때 생겼다). Sheet는 Tab 순서에 없는 요소라 Focus 선을 그리지 않게 했다. 링크·버튼의 Focus 표시는 그대로다.
+
+### Regression (이전 commit과 Frame 비교)
+- Intro: Animation·Transition의 이름·지연·시간·Easing 동일. 멈춘 화면 차이 없음(최대 1 단계). 움직이는 구간은 Folder 외곽선 Antialiasing 수준.
+- Cover → Profile: 시점별 Frame 8장 × 네 폭 모두 차이 없음(최대 1 단계). 시간·들어 올린 값 동일.
+- Profile: 배치 변화 없음.
+
+### 남은 것 / 확인하지 못한 것
+- 실제 기기의 Touch 관성, Trackpad 관성은 Emulation으로만 확인했다.
+- 회색 Label(`--color-contents-label`, `--color-contents-sub`, `--color-contents-number`)과 종이 바탕의 대비는 측정하지 않았다(12절의 확인 항목으로 남아 있다).
+- 1440에서 작은 글자가 Figma보다 작게 보인다(비례 축소의 결과, Profile과 같은 판단).

@@ -78,22 +78,27 @@
   --text-contents-eyebrow-size: 18;
   --text-contents-eyebrow-weight: 500;
   --text-contents-eyebrow-leading: 1.35;
+  --text-contents-eyebrow-leading-px: 24;
   --text-contents-eyebrow-tracking: 0.9;
   --text-contents-project-size: 42;
   --text-contents-project-weight: 400;
   --text-contents-project-leading: 1.35;
+  --text-contents-project-leading-px: 57;
   --text-contents-project-tracking: 0;
   --text-contents-number-size: 16;
   --text-contents-number-weight: 400;
   --text-contents-number-leading: 1.35;
+  --text-contents-number-leading-px: 22;
   --text-contents-number-tracking: 1.28;
   --text-contents-item-size: 16;
   --text-contents-item-weight: 400;
   --text-contents-item-leading: 1.35;
+  --text-contents-item-leading-px: 22;
   --text-contents-item-tracking: 1.28;
   --text-contents-caption-size: 14;
   --text-contents-caption-weight: 400;
   --text-contents-caption-leading: 1.35;
+  --text-contents-caption-leading-px: 19;
   --text-contents-caption-tracking: 1.4;
   --text-profile-name-size: 48;
   --text-profile-name-weight: 700;
@@ -187,6 +192,7 @@
   --space-contents-title-gap: 28;
   --space-contents-index-gap: 20;
   --space-contents-item-gap: 12;
+  --space-contents-number-top: 10;
   --space-profile-columns-gap: 124;
   --space-profile-aside-gap: 36;
   --space-profile-info-gap: 28;
@@ -240,6 +246,14 @@
   --layout-profile-group-min-width: 330;   /* 묶음(Experience 등) 한 칸의 최소 폭. 이보다 좁아지면 한 줄에 하나씩 */
   --space-profile-stack-gap-compact: 48;
   --space-profile-groups-gap-compact: 40;  /* 390 폭: 제목 묶음 높이를 고정하지 않고 줄 높이로 간격을 만든다 */
+
+  /* Contents — 1440 미만에서 쓰는 값(px). 1440 이상은 Figma 구성을 화면 폭에 비례해 쓴다 */
+  --text-contents-title-size-mobile: 64;   /* 필기체 제목이 390 폭에 들어가는 크기 */
+  --space-contents-block-compact: 56;      /* Sheet 위아래 여백 */
+  --space-contents-stack-gap-compact: 40;  /* 제목 묶음과 Project 목록 사이 */
+  --space-contents-head-padding-compact: 16;
+  --space-contents-head-row-gap-compact: 4;
+  --space-contents-index-row-gap-compact: 24;
 
   /* Motion — Figma에 없다. Loading → Folder가 책상에 놓임 → Cover 글자 등장(사용자 지정 Interaction).
      근거: design-source/implementation-spec.md "Cover Entry Motion" */

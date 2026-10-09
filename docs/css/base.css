@@ -35,6 +35,14 @@
 
 @font-face {
   font-family: "Outfit";
+  src: url("../assets/fonts/Outfit-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
   src: url("../assets/fonts/Outfit-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
@@ -90,13 +98,16 @@ body {
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
+ol,
 address {
   margin: 0;
 }
 
-ul {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }

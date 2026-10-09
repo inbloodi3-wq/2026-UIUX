@@ -4,7 +4,7 @@
    portfolio-stage    책상. Folder가 들어오는 동안에만 가장자리에서 보인다.
      portfolio-folder 포트폴리오 파일 한 권. 띠(binding)와 종이가 한 물체로 함께 움직인다.
        binding        왼쪽의 검은 띠(가운데가 튀어나온 모양)
-       sheet-stack    종이 묶음. 위에서부터 Cover, Profile 순으로 겹쳐 있다. 뒤에 다른 Sheet를 넣을 수 있다.
+       sheet-stack    종이 묶음. 위에서부터 Cover, Profile, Contents 순으로 겹쳐 있다.
          sheet        종이 한 장. 위의 장을 꺼내면 아래 장이 드러난다.
 
    --px 는 화면 폭에 맞춰 Stage에서 정한다. 이 안의 모든 크기는 --px 를 곱해 쓴다. */
@@ -86,9 +86,16 @@
   overscroll-behavior: contain;
 }
 
+/* Sheet는 Tab 순서에 없고, 전환 뒤 방향키 Scroll을 위해서만 Focus를 받는다.
+   화면 전체를 두르는 Focus 선은 뜻이 없고 Sheet를 꺼낼 때 테두리처럼 보이므로 그리지 않는다. */
+.sheet:focus {
+  outline: none;
+}
+
 /* 문서에서 앞에 있는 Sheet가 위에 놓인다. Sheet가 늘면 여기에 순서를 더한다. */
-.is-sheets-ready .sheet:nth-child(1) { z-index: 2; }
-.is-sheets-ready .sheet:nth-child(2) { z-index: 1; }
+.is-sheets-ready .sheet:nth-child(1) { z-index: 3; }
+.is-sheets-ready .sheet:nth-child(2) { z-index: 2; }
+.is-sheets-ready .sheet:nth-child(3) { z-index: 1; }
 
 /* Sheet를 꺼낸다: 살짝 들어 올린 뒤(lift) 오른쪽 위로 빼서 옆으로 넘겨 둔다(extract).
    Folder와 띠는 움직이지 않는다. 뒷장은 앞 장이 비켜나면서 드러난다. */
