@@ -97,3 +97,146 @@
 
   window.requestAnimationFrame(tick);
 })();
+
+// Sheet 전환 (Cover ↔ Profile)
+// Folder 안의 Sheet들은 같은 자리에 겹쳐 있다. 아래로 넘기려는 입력(Wheel, Swipe, 방향키)이 오면
+// 맨 위 Sheet를 꺼내 옆으로 넘겨 두고(.is-extracted), 위로 넘기려는 입력이 오면 다시 놓는다(.is-returned).
+// 움직임 자체는 CSS(layout.css의 sheet-extract / sheet-return)가 맡는다.
+// 이 부분이 실행되지 않으면 Sheet들은 위에서 아래로 이어지는 보통 문서로 남는다.
+
+(function () {
+  var root = document.documentElement;
+  var stack = document.querySelector('[data-sheet-stack]');
+  var folder = document.querySelector('.portfolio-folder');
+  if (!stack || !folder) return;
+
+  var sheets = Array.prototype.slice.call(stack.querySelectorAll('[data-sheet]'));   // 위에 놓인 순서
+  if (sheets.length < 2) return;
+
+  var THRESHOLD = 40;      // 이만큼(px) 넘기려는 입력이 쌓이면 전환한다
+  var GESTURE_GAP = 180;   // Wheel 입력이 이 시간(ms) 끊기면 새 동작으로 본다
+  var SAFETY_TIME = 1500;  // animationend가 오지 않아도 이 시간 뒤에는 잠금을 푼다
+
+  var active = 0;          // 지금 보고 있는 Sheet의 순서(activeSheet)
+  var busy = false;        // 전환 중에는 새 전환을 시작하지 않는다
+
+  root.classList.add('is-sheets-ready');
+  stack.setAttribute('data-active-sheet', sheets[active].id);
+
+  // Folder가 책상에 놓이는 동작이 끝나기 전에는 Sheet를 넘기지 않는다
+  function introDone() {
+    if (root.classList.contains('is-loading')) return false;
+    if (!folder.getAnimations) return true;
+    return folder.getAnimations().every(function (animation) { return animation.playState === 'finished'; });
+  }
+
+  function atTop(sheet) {
+    return sheet.scrollTop <= 0;
+  }
+
+  function atBottom(sheet) {
+    return sheet.scrollTop + sheet.clientHeight >= sheet.scrollHeight - 1;
+  }
+
+  // direction: 1 = 다음 Sheet, -1 = 이전 Sheet. 그 방향으로 넘길 수 있는 상태인지
+  function canGo(direction) {
+    if (busy || !introDone()) return false;
+    var next = active + direction;
+    if (next < 0 || next >= sheets.length) return false;
+    return direction > 0 ? atBottom(sheets[active]) : atTop(sheets[active]);
+  }
+
+  function go(direction) {
+    // 다음으로: 지금 Sheet를 꺼낸다. 이전으로: 넘겨 둔 앞 Sheet를 다시 놓는다.
+    var moving = direction > 0 ? sheets[active] : sheets[active - 1];
+    busy = true;
+    active += direction;
+    stack.setAttribute('data-active-sheet', sheets[active].id);
+
+    moving.classList.toggle('is-extracted', direction > 0);
+    moving.classList.toggle('is-returned', direction < 0);
+
+    var timer = window.setTimeout(done, SAFETY_TIME);
+    moving.addEventListener('animationend', onEnd);
+
+    function onEnd(event) {
+      if (event.target === moving) done();
+    }
+
+    function done() {
+      window.clearTimeout(timer);
+      moving.removeEventListener('animationend', onEnd);
+      busy = false;
+      // 방향키로 새 Sheet 안을 Scroll할 수 있게 Focus를 옮긴다
+      sheets[active].focus({ preventScroll: true });
+    }
+  }
+
+  // Wheel: 한 번의 동작이 Sheet의 끝(다음은 맨 아래, 이전은 맨 위)에서 시작했을 때만 넘긴다.
+  // Sheet 안을 Scroll하다가 끝에 닿은 것만으로는 넘어가지 않는다.
+  var wheelSum = 0;
+  var wheelDirection = 0;
+  var wheelTime = 0;
+  var wheelArmed = false;
+
+  stack.addEventListener('wheel', function (event) {
+    if (event.ctrlKey || event.deltaY === 0) return;
+    // 전환 중에는 드러나는 Sheet가 남은 입력으로 미리 Scroll되지 않게 한다
+    if (busy) event.preventDefault();
+    var direction = event.deltaY > 0 ? 1 : -1;
+    var isNewGesture = event.timeStamp - wheelTime > GESTURE_GAP || direction !== wheelDirection;
+    wheelTime = event.timeStamp;
+
+    if (isNewGesture) {
+      wheelSum = 0;
+      wheelDirection = direction;
+      wheelArmed = canGo(direction);
+    }
+    if (!wheelArmed) return;
+
+    wheelSum += Math.abs(event.deltaY) * (event.deltaMode === 1 ? 16 : 1);
+    if (wheelSum >= THRESHOLD) {
+      wheelArmed = false;   // 같은 동작의 남은 입력으로 다시 넘어가지 않는다
+      if (canGo(direction)) go(direction);
+    }
+  }, { passive: false });
+
+  // Touch: 위로 쓸어 올리면 다음, 아래로 쓸어 내리면 이전
+  var touchY = null;
+  var touchCanNext = false;
+  var touchCanPrevious = false;
+
+  stack.addEventListener('touchstart', function (event) {
+    if (event.touches.length !== 1) {
+      touchY = null;
+      return;
+    }
+    touchY = event.touches[0].clientY;
+    touchCanNext = canGo(1);
+    touchCanPrevious = canGo(-1);
+  }, { passive: true });
+
+  stack.addEventListener('touchmove', function (event) {
+    if (busy && event.cancelable) event.preventDefault();
+    if (touchY === null) return;
+    var moved = touchY - event.touches[0].clientY;
+    var direction = moved >= THRESHOLD ? 1 : (moved <= -THRESHOLD ? -1 : 0);
+    if (direction === 0) return;
+    touchY = null;   // 한 번의 Touch로 한 번만
+    if ((direction > 0 ? touchCanNext : touchCanPrevious) && canGo(direction)) go(direction);
+  }, { passive: false });
+
+  // Keyboard
+  var KEY_DIRECTION = { ArrowDown: 1, PageDown: 1, ArrowUp: -1, PageUp: -1 };
+
+  document.addEventListener('keydown', function (event) {
+    if (event.repeat || event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.target.closest && event.target.closest('a, button, input, select, textarea')) return;
+
+    var direction = KEY_DIRECTION[event.key] || (event.key === ' ' ? (event.shiftKey ? -1 : 1) : 0);
+    if (direction === 0 || !canGo(direction)) return;
+
+    event.preventDefault();
+    go(direction);
+  });
+})();

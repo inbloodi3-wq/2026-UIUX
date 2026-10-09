@@ -36,20 +36,14 @@
   "checkpoint": {
     "stage": "section_build",
     "page": "index",
-    "section": "contents (다음) — profile은 사진만 남음",
-    "updated_at": "2026-10-04",
-    "resume_hint": "Cover Entry Motion이 Folder(띠+종이 한 물체)가 책상에 놓이는 방식으로 바뀌었다(layout.css folder-land, 구조: portfolio-stage > loader + portfolio-folder > binding + sheet-stack > cover). Loading은 이제 Stage 색 위에 뜬다. 사용자가 실제 재생을 보고 승인하면 다음으로 간다. 남은 것: 프로필 사진 승인 확인, index#contents. Profile을 sheet-stack 안의 Sheet로 옮기는 것과 Sheet 전환 Motion은 아직 하지 않았다(사용자 지시 대기)."
+    "section": "contents (다음) — profile과 Cover → Profile Sheet 전환 완료",
+    "updated_at": "2026-10-09",
+    "resume_hint": "Profile은 사진 없는 구성으로 sheet-stack 안의 Sheet가 됐다(구조: portfolio-stage > loader + portfolio-folder > binding + sheet-stack[data-active-sheet] > cover + profile). Sheet 전환은 main.js의 두 번째 블록과 layout.css의 sheet-extract / sheet-return. 다음: index#contents를 세 번째 Sheet로 넣고 Profile → Contents 전환(layout.css의 Sheet z-index 순서에 한 줄 추가). 근거: implementation-spec.md 24절."
   },
   "render_checked": true,
-  "qa_status": "Cover Entry Motion(Folder를 가볍게 던져 놓는 동작): 정상 속도 Screencast 녹화로 네 Viewport 확인 — 접근 구간 약 580ms가 Frame으로 구분됨, 빈 책상 Frame 0, 되튐 없음, 멈춘 Cover는 Figma와 0–1px. 사용자의 실제 재생 확인 대기. index#profile은 이전에 구현됨(사진 미적용)",
-  "retry_count": 2,
+  "qa_status": "2026-10-09 Profile + Sheet 전환: 1920 Figma 대비 좌표 차이 0(사진 제외), 1920·1440·768·390에서 Wheel·Keyboard·Touch(Emulation)·Reduced Motion·JS 꺼짐 확인, 가로 Overflow 없음, Intro는 이전 commit과 Timing 동일. 사용자의 실제 재생 확인 대기",
+  "retry_count": 0,
   "blockers": [
-    {
-      "stage": "section_build",
-      "type": "rights",
-      "detail": "프로필 사진: 본인 사진이며 웹 공개를 승인한다는 확인이 필요하다. 확인 전까지 사진 틀만 보인다",
-      "since": "2026-10-04"
-    },
     {
       "stage": "secondary_pages",
       "type": "scope",
@@ -68,8 +62,8 @@
   ],
   "last_deploy": null,
   "last_meaningful_change": {
-    "date": "2026-10-04",
-    "summary": "Cover Entry Motion 조정: 시작 위치를 더 멀리(22vw, -14vh, 3deg, 0.9배), approach 약 580ms, Loading 사라짐과 겹쳐 시작, landing(−4px, +6px, −0.3deg, 1.003배) → settle. 그림자 4단계."
+    "date": "2026-10-09",
+    "summary": "Profile을 사진 없는 구성으로 바꾸고 sheet-stack 안으로 옮겼다. Cover → Profile Sheet 전환(lift → extract → reveal, 되돌리기 포함) 추가. 한 줄 소개 높이 결함 수정."
   },
   "definition_of_done": "automation-orchestrator.md의 Stop Rule 전부 PASS",
   "design_definition": {

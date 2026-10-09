@@ -267,6 +267,20 @@
   --stagger-reveal: 90ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --distance-reveal: 14;
+
+  /* Motion — Sheet 전환(Cover → Profile). Figma에 없다(사용자 지정 Interaction).
+     근거: design-source/implementation-spec.md "Sheet Transition" */
+  --duration-sheet-extract: 780ms;   /* lift 약 140ms(layout.css sheet-extract의 18%) + extract 약 640ms */
+  --duration-sheet-return: 640ms;
+  --ease-sheet-lift: cubic-bezier(0.2, 0.8, 0.3, 1);
+  --ease-sheet-extract: cubic-bezier(0.5, 0, 0.2, 1);   /* 천천히 빼기 시작해서 옆에 내려놓듯 느려진다 */
+  --sheet-lift-y: -8px;              /* 집어 든 높이 */
+  --sheet-lift-scale: 1.003;
+  --sheet-extract-x: 104vw;          /* 뒷장을 가리지 않으려면 화면 폭만큼은 비켜나야 한다 */
+  --sheet-extract-y: -8vh;
+  --sheet-extract-rotate: 2deg;
+  --shadow-sheet-rest: 0 0 0 rgba(0, 0, 0, 0);
+  --shadow-sheet-lifted: 0 18px 44px rgba(0, 0, 0, 0.42);   /* 뒷장 위에 떨어지는 그림자 */
 }
 
 /* 움직임을 줄이도록 설정한 환경: 이동을 없애고 전환을 즉시 끝낸다 */
@@ -279,5 +293,7 @@
     --duration-reveal: 180ms;
     --stagger-reveal: 0ms;
     --distance-reveal: 0;
+    --duration-sheet-extract: 160ms;
+    --duration-sheet-return: 160ms;
   }
 }

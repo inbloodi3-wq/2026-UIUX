@@ -28,7 +28,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 | 순서 | Section ID | 목적 | 콘텐츠 출처 | 우선순위 | Mobile / Tablet / Desktop 비고 |
 |---|---|---|---|---|---|
 | 1 | cover | 표지: 문구, "Portfolio", 이름, 직함 줄, 연도, 이메일, 지역 | Figma Text | P1 | Desktop 디자인만 있음(1920 × 1080 고정 구성) |
-| 2 | profile | 사진, 이름, 이메일, 한 줄 소개, Experience, Career, Tools, Character (생년월일·전화번호는 사용자 결정으로 싣지 않는다) | Figma Text | P1 | 1440 이상: Figma의 좌우 2단 Card. 1440 미만: 같은 순서로 쌓기(디자인 없음) |
+| 2 | profile | 이름, 이메일, 한 줄 소개, Experience, Career, Tools, Character (사진·생년월일·전화번호는 사용자 결정으로 싣지 않는다) | Figma Text | P1 | 1440 이상: Figma의 좌우 2단 Card. 1440 미만: 같은 순서로 쌓기(디자인 없음) |
 | 3 | contents | 목차: Project 3개와 각 Project의 Index 4항목 | Figma Text | P1 | 〃 |
 
 ## aidora
@@ -90,6 +90,7 @@ Figma에 사이트 내비게이션(Header, Menu, 뒤로 가기, Page 사이 링�
 | ID | 위치 | 동작 | JS 없이 |
 |---|---|---|---|
 | loading | index 진입 시 | 빈 책상 위의 Loading 표시 → Portfolio Folder(띠 + 종이)가 오른쪽 위에서 다가와 책상에 놓임 → Cover 글자 등장(사용자 지정, 2026-10-04) | Loading 없이 Cover가 바로 보인다 |
+| sheet-transition | index#cover ↔ index#profile | 아래로 넘기는 입력(Wheel, Swipe, 방향키)에 Cover 종이를 들어 올려 오른쪽 위로 꺼내면 아래의 Profile이 드러난다. 위로 넘기면 Cover를 다시 놓는다. Folder와 띠는 고정(사용자 지정, 2026-10-09) | Cover 아래에 Profile이 이어지는 보통 문서 |
 
 ## Open Content Requests
 `design-source/implementation-spec.md`의 Content Gaps 참조.

@@ -41,8 +41,8 @@
 
       <div class="portfolio-folder">
         <div class="binding" aria-hidden="true"></div>
-        <div class="sheet-stack">
-          <section class="cover sheet" id="cover">
+        <div class="sheet-stack" data-sheet-stack>
+          <section class="cover sheet" id="cover" data-sheet tabindex="-1">
             <div class="cover__inner">
               <div class="cover__heading">
                 <p class="cover__script cover__reveal">Design with clarity.</p>
@@ -59,97 +59,96 @@
               </address>
             </div>
           </section>
+
+          <section class="profile sheet" id="profile" data-sheet tabindex="-1">
+            <div class="profile__card">
+              <div class="profile__aside">
+                <div class="profile__info">
+                  <h2 class="profile__name">김윤겸</h2>
+                  <hr class="profile__divider">
+                  <address class="profile__contact">
+                    <span class="profile__contact-label">E.</span>
+                    <span class="profile__contact-value">inbloodi3@gmail.com</span>
+                  </address>
+                </div>
+              </div>
+
+              <div class="profile__main">
+                <p class="profile__intro">사용자의 숨은 의도를 읽어, 낯선 문제를 직관적인 경험으로 바꿉니다.</p>
+
+                <div class="profile__groups">
+                  <div class="profile__group">
+                    <h3 class="script-heading">Experience</h3>
+                    <ul class="history history--detailed">
+                      <li class="history-item">
+                        <span class="history-item__date">2025.12 - 2026.06</span>
+                        <span class="history-item__body">
+                          <span class="history-item__title">SBS아카데미AIX학원</span>
+                          <span class="history-item__note">UIUX 웹퍼블리셔 양성과정 수료</span>
+                        </span>
+                      </li>
+                      <li class="history-item">
+                        <span class="history-item__date">2015.03 - 2021.02</span>
+                        <span class="history-item__body">
+                          <span class="history-item__title">배재대학교</span>
+                          <span class="history-item__note">일본학 전공(졸업)</span>
+                        </span>
+                      </li>
+                      <li class="history-item">
+                        <span class="history-item__date">2012.03 - 2015.02</span>
+                        <span class="history-item__body">
+                          <span class="history-item__title">보문고등학교</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="profile__group">
+                    <h3 class="script-heading">Career</h3>
+                    <ul class="history">
+                      <li class="history-item">
+                        <span class="history-item__date">2024.08 - 2025.09</span>
+                        <span class="history-item__body">
+                          <span class="history-item__title">후쿠오카 Adecco Japan 근무</span>
+                        </span>
+                      </li>
+                      <li class="history-item">
+                        <span class="history-item__date">2021.12 - 2023.12</span>
+                        <span class="history-item__body">
+                          <span class="history-item__title">배재대학교 · 국제교류처 근무</span>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="profile__group">
+                    <h3 class="script-heading">Tools</h3>
+                    <ul class="tool-cards">
+                      <li class="tool-card"><span class="tool-card__symbol">Ps</span><span class="tool-card__label">Photoshop</span></li>
+                      <li class="tool-card"><span class="tool-card__symbol">Ai</span><span class="tool-card__label">Illustrator</span></li>
+                      <li class="tool-card"><span class="tool-card__symbol">F</span><span class="tool-card__label">Figma</span></li>
+                      <li class="tool-card"><span class="tool-card__symbol">N</span><span class="tool-card__label">Notion</span></li>
+                      <li class="tool-card"><span class="tool-card__symbol">✦</span><span class="tool-card__label">AI Tools</span></li>
+                    </ul>
+                  </div>
+
+                  <div class="profile__group">
+                    <h3 class="script-heading">Character</h3>
+                    <ul class="keywords">
+                      <li class="keywords__item">체계적인</li>
+                      <li class="keywords__item">섬세한</li>
+                      <li class="keywords__item">분석적인</li>
+                      <li class="keywords__item">차분한</li>
+                      <li class="keywords__item">완성도를 중시하는</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
-
-    <section class="profile" id="profile">
-      <div class="profile__card">
-        <div class="profile__aside">
-          <div class="profile__photo"></div>
-          <div class="profile__info">
-            <h2 class="profile__name">김윤겸</h2>
-            <hr class="profile__divider">
-            <address class="profile__contact">
-              <span class="profile__contact-label">E.</span>
-              <span class="profile__contact-value">inbloodi3@gmail.com</span>
-            </address>
-          </div>
-        </div>
-
-        <div class="profile__main">
-          <p class="profile__intro">사용자의 숨은 의도를 읽어, 낯선 문제를 직관적인 경험으로 바꿉니다.</p>
-
-          <div class="profile__groups">
-            <div class="profile__group">
-              <h3 class="script-heading">Experience</h3>
-              <ul class="history history--detailed">
-                <li class="history-item">
-                  <span class="history-item__date">2025.12 - 2026.06</span>
-                  <span class="history-item__body">
-                    <span class="history-item__title">SBS아카데미AIX학원</span>
-                    <span class="history-item__note">UIUX 웹퍼블리셔 양성과정 수료</span>
-                  </span>
-                </li>
-                <li class="history-item">
-                  <span class="history-item__date">2015.03 - 2021.02</span>
-                  <span class="history-item__body">
-                    <span class="history-item__title">배재대학교</span>
-                    <span class="history-item__note">일본학 전공(졸업)</span>
-                  </span>
-                </li>
-                <li class="history-item">
-                  <span class="history-item__date">2012.03 - 2015.02</span>
-                  <span class="history-item__body">
-                    <span class="history-item__title">보문고등학교</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="profile__group">
-              <h3 class="script-heading">Career</h3>
-              <ul class="history">
-                <li class="history-item">
-                  <span class="history-item__date">2024.08 - 2025.09</span>
-                  <span class="history-item__body">
-                    <span class="history-item__title">후쿠오카 Adecco Japan 근무</span>
-                  </span>
-                </li>
-                <li class="history-item">
-                  <span class="history-item__date">2021.12 - 2023.12</span>
-                  <span class="history-item__body">
-                    <span class="history-item__title">배재대학교 · 국제교류처 근무</span>
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div class="profile__group">
-              <h3 class="script-heading">Tools</h3>
-              <ul class="tool-cards">
-                <li class="tool-card"><span class="tool-card__symbol">Ps</span><span class="tool-card__label">Photoshop</span></li>
-                <li class="tool-card"><span class="tool-card__symbol">Ai</span><span class="tool-card__label">Illustrator</span></li>
-                <li class="tool-card"><span class="tool-card__symbol">F</span><span class="tool-card__label">Figma</span></li>
-                <li class="tool-card"><span class="tool-card__symbol">N</span><span class="tool-card__label">Notion</span></li>
-                <li class="tool-card"><span class="tool-card__symbol">✦</span><span class="tool-card__label">AI Tools</span></li>
-              </ul>
-            </div>
-
-            <div class="profile__group">
-              <h3 class="script-heading">Character</h3>
-              <ul class="keywords">
-                <li class="keywords__item">체계적인</li>
-                <li class="keywords__item">섬세한</li>
-                <li class="keywords__item">분석적인</li>
-                <li class="keywords__item">차분한</li>
-                <li class="keywords__item">완성도를 중시하는</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
 </body>

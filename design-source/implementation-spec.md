@@ -81,7 +81,7 @@ Figma Component Instance는 index에 없다(전부 Frame). ASICS Case Study에�
 | Asset | 쓰이는 곳 | Figma Node | 예상 형식 | 권리 분류 | 재사용 |
 |---|---|---|---|---|---|
 | paper-texture (밝은 종이 질감 + 왼쪽 검은 띠) | index#cover, index#contents | `2025:7133`, `2012:9390` 배경 | 사진 → JPG/WebP | **NEEDS RIGHTS CHECK** — 출처 기록 없음 | 2곳 (같은 이미지로 보이며 1개로 관리) |
-| profile-photo (증명사진) | index#profile | `2025:7158` | JPG/WebP | SAFE / USER PROVIDED 후보 — 본인 사진임을 사용자가 확인하면 승인 | 1곳 |
+| profile-photo (증명사진) | index#profile | `2025:7158` | — | **사용하지 않음**(2026-10-09 사용자 결정 — 24절). Export·다운로드·대체 이미지 없음 | 0곳 |
 | AIDORA 제품·공간 이미지 다수 | aidora 전 Section | 이름 붙은 이미지 Node 22개 + 배경 Fill(미집계) | JPG/WebP | **NEEDS RIGHTS CHECK** — 직접 제작(AI 생성 포함)인지 확인 필요. Cover에 "AI Image Tools" 표기가 있음 | 여러 곳 |
 | AIDORA 로고·심볼 | aidora | Vector 18개 | SVG | SAFE / USER PROVIDED 후보(자체 브랜드) | 여러 곳 |
 | AIDORA Case Study의 시장 통계 Chart 2개 | aidora#cs-desk-research | `2025:7351`, `2025:7394` | 이미지 또는 재작성 | **NEEDS RIGHTS CHECK** — 수치 출처 표기가 화면에 있음. 출처 표기 유지 필요 | 1곳 |
@@ -155,7 +155,7 @@ Lorem ipsum, TODO, Sample Text는 `포트폴리오` 안에서 발견되지 않�
 ## 17. Build Order
 1. SITE SCAFFOLD — `extracted-tokens.json` → `docs/css/tokens.css`, 골격. (완료 2026-10-04)
 2. **Master Experience = Loading → index#cover.** (완료 2026-10-04 — 20절)
-3. index#profile (구현 2026-10-04 — 22절, 프로필 사진만 남음) → index#contents.
+3. index#profile (구현 2026-10-04 — 22절. 2026-10-09 사진 없는 구성 + Sheet 전환 — 24절) → index#contents.
 4. Project Page는 G2 결정 후: aidora → tj-media → asics-korea 순(Contents 순서).
 5. Interaction(링크) → FULL QA.
 
@@ -308,3 +308,79 @@ Font와 Asset(Texture, 프로필 사진)이 승인되지 않으면 index도 Figm
 - **Reduced Motion**: 이동·회전·축소 없이 짧은 Fade. **JavaScript 실패**: 8초 뒤 Folder와 글자가 보인다. **JavaScript 꺼짐**: Loading 없이 Cover가 바로 보인다.
 - 쓰는 속성: `transform`, `opacity`, `box-shadow`. Library 없음.
 
+## 24. Photo-less Profile + Sheet Transition (2026-10-09, 사용자 지정. 22절의 사진 관련 내용과 Responsive 표의 "사진 옆에" 부분, 23절의 "현재 Profile은 Stage 아래의 일반 Section" 부분을 대체한다)
+### 사용자 결정
+- **프로필 사진을 쓰지 않는다.** Figma에 사진이 있어도 Export·다운로드·연결하지 않고, 다른 사진·Placeholder·생성 이미지로 대신하지 않는다. 사진 틀도 두지 않는다. 승인된 Website Adaptation이며 Figma와의 Visual Mismatch로 보지 않는다.
+- 이메일 오탈자 수정, 전화번호·생년월일 미게재는 22절 그대로다.
+- Cover → Profile은 "Folder 안의 종이를 한 장 꺼내면 아래 장이 보인다"로 전환한다. Folder와 띠는 움직이지 않는다.
+- 이번 범위에 Contents, Profile → Contents 전환, Project Page는 없다.
+
+### Photo-less Layout (Implementation Judgement)
+| 항목 | 판단 | 이유 |
+|---|---|---|
+| 1440 이상 | Card, 좌우 2단, 단 폭(`--layout-profile-aside-width`), 단 사이 간격(`--space-profile-columns-gap`), 오른쪽 단 전체를 Figma 그대로 둔다. 왼쪽 단은 사진이 빠진 만큼 이름 묶음이 위로 올라와 오른쪽 한 줄 소개와 같은 높이에서 시작한다 | 오른쪽 단의 위치가 Figma와 하나도 달라지지 않는 가장 작은 변경이다. 이름이 위에 오면 왼쪽 단이 "제목 단"으로 읽히고, 위쪽에 빈 사진 자리가 남지 않는다 |
+| 이름 묶음 안의 간격 | 이름 → 구분선 → 이메일 사이 간격은 Figma 값(`--space-profile-info-gap`) 그대로 | 생년월일·전화번호 줄만 빠졌다 |
+| 1440 미만 | 이름 묶음 → 한 줄 소개 → 네 묶음 순으로 쌓는다(사진 옆 배치 규칙 삭제) | 순서 유지 |
+| 사진을 다시 쓰게 될 때 | `.profile__aside` 안, `.profile__info` 앞에 넣는다. 사진 관련 Token(`--layout-profile-photo-*`, `--radius-profile-photo`, `--color-profile-photo-bg`)은 `tokens.css`에 남겨 두었다 | 구조 유지 |
+새 문구·그림·Section은 넣지 않았다.
+
+### 함께 고친 구현 결함
+- 한 줄 소개의 위아래 선을 Border로 그려 높이가 Figma보다 커져 있었다. 안쪽 그림자로 바꿔 Figma 높이와 맞췄다. 그 아래 요소가 모두 제자리로 올라갔다(22절의 "+2" 차이의 실제 원인).
+
+### 1920 Figma 대비 (실측)
+- Card, 한 줄 소개, 필기체 제목 4개, 기간 5개, 이력 이름·설명, Tool Card 5개의 x·y·크기: 차이 0.
+- Character 낱말의 x: 뒤로 갈수록 최대 약 2 왼쪽(낱말 폭이 Figma보다 조금 좁다 — 서체 Subset의 글자 폭 차이. 고치지 않음, P3).
+- 왼쪽 단: 사진 없음(승인된 차이). 이름 묶음이 단의 맨 위에 있다.
+- Figma의 Profile 화면에는 띠가 없다. 사이트에서는 Folder의 띠가 왼쪽에 계속 보인다(아래 "구조"). Card의 왼쪽 여백 안에 들어가며 Card와 겹치지 않는다.
+
+### 구조
+```
+portfolio-stage
+  loader
+  portfolio-folder        화면 크기로 고정. Intro 뒤에는 다시 움직이지 않는다
+    binding               고정
+    sheet-stack           data-active-sheet = 지금 보는 Sheet의 id
+      cover   (sheet)     맨 위
+      profile (sheet)     그 아래
+      (뒤에 올 Sheet)
+```
+- `main.js`가 실행되면 `<html>`에 `.is-sheets-ready`가 붙고 Sheet들이 같은 자리에 겹친다. Profile은 처음부터 Cover 아래에 그려져 있다.
+- 화면보다 긴 Sheet는 그 Sheet 안에서 Scroll된다(768, 390의 Profile).
+- Cover의 종이 질감은 Cover 자신의 것이 됐다(`::before`). Folder 바탕과 같은 Tile을 같은 위치에 깔아 놓여 있을 때는 이전과 같게 보인다. 종이를 글자와 다른 Layer에 둔 것은 글자 가장자리 처리(Antialiasing)를 이전 승인 상태와 같게 유지하기 위해서다.
+- 좁은 화면에서는 Profile의 왼쪽 여백을 띠 폭만큼 넓혔다(`--binding-width`).
+- Sheet는 꺼낸 뒤에도 DOM에 남는다(`.is-extracted`, 화면 밖 + 보이지 않음).
+
+### 동작 (`layout.css`의 `sheet-extract` / `sheet-return`, 값은 `tokens.css`의 "Sheet 전환")
+| 구간 | 모습 |
+|---|---|
+| lift | 종이를 집어 든다: `--sheet-lift-y`, `--sheet-lift-scale`, 그림자 `--shadow-sheet-rest` → `--shadow-sheet-lifted`. 전체 시간(`--duration-sheet-extract`)의 앞부분 |
+| extract | 오른쪽 위로 빼서 옆으로 넘긴다: `--sheet-extract-x`, `--sheet-extract-y`, `--sheet-extract-rotate`, `--ease-sheet-extract`(천천히 빼기 시작해 느려지며 끝난다) |
+| reveal | Profile에는 따로 등장 효과가 없다. Cover가 비켜나면서 가려져 있던 부분이 드러난다 |
+| return | 반대 순서로 Cover를 다시 놓는다(`--duration-sheet-return`) |
+- 이동 거리(`--sheet-extract-x`)는 지시서의 예시 범위보다 크다. 예시 범위만큼만 움직이면 Cover가 Profile의 대부분을 계속 가리기 때문에, 화면 폭만큼 비켜나게 했다. 대신 빠르게 날아가지 않도록 시간과 Easing으로 조절했다.
+- 쓰는 속성: `transform`, `box-shadow`, 끝에서 `visibility`. Library 없음.
+
+### 입력
+| 입력 | 다음 Sheet | 이전 Sheet |
+|---|---|---|
+| Wheel | 아래로, Sheet의 맨 아래에서 시작한 동작 | 위로, 맨 위에서 시작한 동작 |
+| Touch | 위로 쓸어 올림(맨 아래에서 시작) | 아래로 쓸어 내림(맨 위에서 시작) |
+| Keyboard | ArrowDown, PageDown, Space | ArrowUp, PageUp, Shift+Space |
+- 짧은 Threshold(`main.js`의 `THRESHOLD`). Sheet 안을 Scroll하다 끝에 닿은 것만으로는 넘어가지 않는다(새 동작이어야 한다).
+- 전환 중에는 새 전환을 시작하지 않고, 드러나는 Sheet가 미리 Scroll되지 않게 막는다. `animationend`에서 바로 풀린다.
+- Intro(Folder가 놓이는 동작)가 끝나기 전에는 넘기지 않는다.
+- 전환 뒤 새 Sheet로 Focus를 옮긴다(방향키로 그 안을 Scroll할 수 있게).
+- 화면에 "넘기라"는 표시는 넣지 않았다(Figma에 없다).
+
+### Reduced Motion / JavaScript
+- Reduced Motion: 들어 올림·이동·회전 없이 짧은 Fade로 바뀐다.
+- JavaScript 꺼짐 또는 `main.js` 실패: Sheet가 겹치지 않고 Cover 아래에 Profile이 이어지는 보통 문서가 된다. Profile을 보는 데 Motion이 필요하지 않다.
+
+### Intro Regression (이전 commit과 시점별 Frame 비교)
+- Animation·Transition의 이름, 지연, 시간, Easing: 네 폭 모두 이전과 같다.
+- 움직이는 구간: Folder 외곽선의 Antialiasing 수준 차이만 있다.
+- 멈춘 화면: 글자·배치 차이 없음. 띠의 오른쪽 경계 한 줄(1px 폭)의 Antialiasing이 다르다(종이가 별도 Layer가 된 영향, 눈으로 구분되지 않는 수준 — 고치지 않음).
+
+### 남은 것 / 확인하지 못한 것
+- 실제 기기의 Touch 관성, Trackpad 관성은 Emulation으로만 확인했다.
+- `main.js`가 `review_threshold_lines`를 넘었다(Loading + Sheet 전환 두 역할). 파일은 나누지 않았다. Contents Sheet를 넣을 때 다시 본다.
